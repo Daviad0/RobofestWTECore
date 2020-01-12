@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\djree\\Source\\Repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj": {}
+    "C:\\Users\\djree\\source\\repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\djree\\Source\\Repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj": {
+    "C:\\Users\\djree\\source\\repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djree\\Source\\Repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj",
+        "projectUniqueName": "C:\\Users\\djree\\source\\repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj",
         "projectName": "RobofestWTECore",
-        "projectPath": "C:\\Users\\djree\\Source\\Repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj",
+        "projectPath": "C:\\Users\\djree\\source\\repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\RobofestWTECore.csproj",
         "packagesPath": "C:\\Users\\djree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djree\\Source\\Repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\obj\\",
+        "outputPath": "C:\\Users\\djree\\source\\repos\\HDLOfficial\\RobofestWTECore\\RobofestWTECore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -53,16 +53,27 @@
               "version": "[2.1.2, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.10, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
