@@ -9,8 +9,8 @@ namespace RobofestWTECore.Data
 {
     public class GameContext : DbContext
     {
-        public GameContext(DbContextOptions<GameContext> options)
-            : base(options)
+        public GameContext(DbContextOptions<GameContext> context)
+            : base(context)
         {
         }
         public DbSet<RoundEntry> RoundEntries { get; set; }
