@@ -530,7 +530,7 @@ namespace RobofestWTECore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RoundEdit([Bind("EntryID,TeamID,Score,Time,Round,Data,Rerun,Usable,TimeStamp")] RoundEntry roundEntry)
+        public async Task<ActionResult> RoundEdit([Bind("EntryID,TeamID,Score,Time,Round,Data,Rerun,Usable,TimeStamp")] RoundEntry roundEntry)
         {
                 if (ModelState.IsValid)
                 {
@@ -538,16 +538,25 @@ namespace RobofestWTECore.Controllers
                     var TeamNumberSpecific = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberSpecific;
                     string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
                     var PreviousField = (from r in db.RoundEntries where r.EntryID == roundEntry.EntryID select r).FirstOrDefault().Field;
-                    this._hubContext.Clients.All.SendAsync("checkThisScore",PreviousField, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
-                    roundEntry.Field = PreviousField;
-                    db.Set<RoundEntry>().Update(roundEntry);
-                    db.SaveChanges();
-                    UpdateTopTen();
-
-                    string page = roundEntry.TeamID.ToString();
-                    page = "Details/" + page;
-                    return RedirectToAction(page);
+                await this._hubContext.Clients.All.SendAsync("checkThisScore", PreviousField, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
+                RoundEntry roundEntrytoUpdate = db.RoundEntries.Where(x => x.EntryID == roundEntry.EntryID).FirstOrDefault();
+                if(roundEntrytoUpdate != null)
+                {
+                    roundEntrytoUpdate.Field = roundEntry.Field;
+                    roundEntrytoUpdate.Time = roundEntry.Time;
+                    roundEntrytoUpdate.Data = roundEntry.Data;
+                    roundEntrytoUpdate.Score = roundEntry.Score;
+                    roundEntrytoUpdate.StudentInitials = roundEntry.StudentInitials;
+                    roundEntrytoUpdate.JudgeConfirmNotes = roundEntry.JudgeConfirmNotes;
+                    roundEntrytoUpdate.Round = roundEntry.Round;
+                    roundEntrytoUpdate.Rerun = roundEntry.Rerun;
+                    roundEntrytoUpdate.Usable = roundEntry.Usable;
+                    roundEntrytoUpdate.TimeStamp = roundEntry.TimeStamp;
+                    db.Update(roundEntrytoUpdate);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Competition/1");
                 }
+            }
                 return View(roundEntry);
 
         }
