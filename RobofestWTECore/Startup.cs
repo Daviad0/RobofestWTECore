@@ -8,6 +8,10 @@ using RobofestWTECore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RobofestWTE;
+using RobofestWTECore.Models;
+using RobofestWTECore.Controllers;
+using OdeToCode.AddFeatureFolders;
+using Microsoft.AspNet.Mvc.Razor;
 
 namespace RobofestWTECore
 {
@@ -36,11 +40,16 @@ namespace RobofestWTECore
             services.AddDbContext<GameContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("RobofestWTE")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>()
+                    .AddDefaultTokenProviders();
+            
             services.AddSignalR();
+            services.AddSingleton<Controller, TeamController>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.Configure<RazorViewEngineOptions>(options => {
+                options.ViewLocationExpanders.Add(new ViewLocationExpander());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,8 +73,10 @@ namespace RobofestWTECore
                 routes.MapHub<ScoreHub>("/scoreHub");
             });
             app.UseAuthentication();
-
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

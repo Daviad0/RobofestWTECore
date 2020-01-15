@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNet.Mvc.Razor": {
+              "target": "Package",
+              "version": "[6.0.0-rc1-final, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -52,6 +60,10 @@
               "target": "Package",
               "version": "[2.1.2, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -61,6 +73,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "OdeToCode.AddFeatureFolders": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             }
           },
           "imports": [

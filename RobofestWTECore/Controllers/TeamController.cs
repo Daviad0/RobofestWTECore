@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -11,21 +12,22 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using RobofestWTE.Models;
 using RobofestWTECore.Data;
+using RobofestWTECore.Models;
 
 namespace RobofestWTECore.Controllers
 {
     public class TeamController : Controller
     {
         private readonly GameContext db;
-
-        public TeamController(GameContext db)
-        {
-            this.db = db;
-        }
+        //private readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager;
+        private readonly ApplicationDbContext context;
         private readonly IHubContext<ScoreHub> _hubContext;
 
-        public TeamController(IHubContext<ScoreHub> hubContext)
+        public TeamController(/*Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager,*/ ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext)
         {
+            //this.userManager = userManager;
+            this.context = context;
+            this.db = db;
             _hubContext = hubContext;
         }
 
@@ -61,12 +63,12 @@ namespace RobofestWTECore.Controllers
             }
             Scoreboard = Scoreboard.OrderByDescending(p => p.Average).Take(10).ToList();
 
-            this.Clients.All.changeTeamScores(Scoreboard);
+            this._hubContext.Clients.All.SendAsync("changeTeamScores", Scoreboard);
         }
 
         public void StartTimer()
         {
-            this.Clients.All.changeGlobalTimer(2, 0);
+            this._hubContext.Clients.All.SendAsync("changeGlobalTimer",2, 0);
         }
 
         public void UpdateScoresheet()
@@ -105,7 +107,6 @@ namespace RobofestWTECore.Controllers
             this._hubContext.Clients.All.SendAsync("changeScoreboard", TeamDataModels);
 
         }
-
         public ActionResult Presentation(int id)
         {
             if (id == 0)
@@ -160,42 +161,15 @@ namespace RobofestWTECore.Controllers
             return View();
         }
         // GET: Entry
-        public ActionResult ManageUsers()
+        public async Task<ActionResult> ManageUsersAsync()
         {
             if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {
-                var ListofUsers = new List<UserListModel>();
-                var accountdb = new ApplicationDbContext();
-                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(accountdb));
-                var Users = accountdb.Users.ToList();
-                foreach (var user in Users)
-                {
-                    var UserModel = new UserListModel();
-                    UserModel.UserID = user.Id.ToString();
-                    UserModel.UserName = user.Email.ToString();
-                    if (UserManager.IsInRoleAsync(user.Id, "Admin"))
-                    {
-                        UserModel.Roles.Add("Admin");
-                    }
-                    if (UserManager.IsInRoleAsync(user.Id, "Manager"))
-                    {
-                        UserModel.Roles.Add("Manager");
-                    }
-                    if (UserManager.IsInRoleAsync(user.Id, "Judge"))
-                    {
-                        UserModel.Roles.Add("Judge");
-                    }
-                    if (UserManager.IsInRoleAsync(user.Id, "FieldStaff"))
-                    {
-                        UserModel.Roles.Add("Field Staff");
-                    }
-                    if (UserManager.IsInRoleAsync(user.Id, "Banned"))
-                    {
-                        UserModel.Roles.Add("Banned");
-                    }
-                    ListofUsers.Add(UserModel);
-                }
-                return View(ListofUsers);
+
+                var UserList = new List<IdentityUser>();
+                var users = await context.Users.ToListAsync();
+                //users = userManager.Users.Where(u => u.Roles)
+                return View();
             }
             else
             {
@@ -257,14 +231,14 @@ namespace RobofestWTECore.Controllers
             }
             else
             {
-                return View("IsNotAuthenticated");
+                return View("~/Pages/Team/IsNotAuthenticated.cshtml");
             }
 
 
         }
         public ActionResult MatchManager(int id)
         {
-            if ((RUser.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
+            if ((User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
             {
                 var MatchDataModel = new MatchDataModel();
                 var Competition = (from a in db.Competitions where a.CompID == id select a).FirstOrDefault();
@@ -438,8 +412,7 @@ namespace RobofestWTECore.Controllers
         // GET: Entry/Create
         public ActionResult RoundCreate(int id)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Judge")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
+
                 var RoundEntry = new RoundEntry();
                 RoundEntry.TeamID = id;
                 var RoundsCompleted = (from a in db.RoundEntries where a.TeamID == id select a);
@@ -464,11 +437,6 @@ namespace RobofestWTECore.Controllers
                 RoundEntry.Rerun = Rerun;
                 RoundEntry.Usable = true;
                 return View(RoundEntry);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
@@ -494,8 +462,8 @@ namespace RobofestWTECore.Controllers
                 var TeamNumberBranch = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberBranch;
                 var TeamNumberSpecific = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberSpecific;
                 string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
-                this.Clients.All.initFieldView(roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false);
-                this.Clients.All.checkThisScore(roundEntry.Field, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
+                this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false);
+                this._hubContext.Clients.All.SendAsync("checkThisScore",roundEntry.Field, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
                 UpdateScoresheet();
                 UpdateTopTen();
 
@@ -535,7 +503,7 @@ namespace RobofestWTECore.Controllers
             {
                 db.RoundEntries.Add(roundEntry);
                 db.SaveChanges();
-                this.Clients.All.initFieldView(roundEntry.Field, 3);
+                this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3);
                 UpdateScoresheet();
                 UpdateTopTen();
 
@@ -624,7 +592,7 @@ namespace RobofestWTECore.Controllers
                     var TeamNumberSpecific = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberSpecific;
                     string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
                     var PreviousField = (from r in db.RoundEntries where r.EntryID == roundEntry.EntryID select r).FirstOrDefault().Field;
-                    this.Clients.All.checkThisScore(PreviousField, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
+                    this._hubContext.Clients.All.SendAsync("checkThisScore",PreviousField, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
                     roundEntry.Field = PreviousField;
                     db.Set<RoundEntry>().Update(roundEntry);
                     db.SaveChanges();

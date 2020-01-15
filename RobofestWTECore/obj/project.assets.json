@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Microsoft.AspNet.Identity.Core/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc.Razor/6.0.0-rc1-final": {
+        "type": "package",
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Mvc.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Mvc.Razor.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -2785,6 +2803,19 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "OdeToCode.AddFeatureFolders/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/OdeToCode.AddFeatureFolders.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OdeToCode.AddFeatureFolders.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4619,6 +4650,34 @@
     }
   },
   "libraries": {
+    "Microsoft.AspNet.Identity.Core/2.2.3": {
+      "sha512": "Mv5FpoaxspE8hlWLE4r1IdZtovg/OyFgVRhxQbx47J4sqdLImN1hnM1lnwCj+/wLmqtqFk/RYMoZ5GAcwm/00g==",
+      "type": "package",
+      "path": "microsoft.aspnet.identity.core/2.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
+        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
+        "microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
+        "microsoft.aspnet.identity.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Mvc.Razor/6.0.0-rc1-final": {
+      "sha512": "zkC6r/If5OoGsDJLkDY+O16K+WirFi2ZBgPbG8cHr3ybnlR4/u8S0p9bqnOd191kibxAAYKYfafVg+NApv8Vig==",
+      "type": "package",
+      "path": "microsoft.aspnet.mvc.razor/6.0.0-rc1-final",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/dotnet5.4/Microsoft.AspNet.Mvc.Razor.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Mvc.Razor.xml",
+        "lib/net451/Microsoft.AspNet.Mvc.Razor.dll",
+        "lib/net451/Microsoft.AspNet.Mvc.Razor.xml",
+        "microsoft.aspnet.mvc.razor.6.0.0-rc1-final.nupkg.sha512",
+        "microsoft.aspnet.mvc.razor.nuspec"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -7709,6 +7768,20 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "OdeToCode.AddFeatureFolders/2.0.3": {
+      "sha512": "4gtKrvi/L39sBSa9fyiL/fHvp7IH5I/Q25ujw8r0TgOpS++WDHlk6X0+FXhFvGvf751it5ujXpvnFa4dTsFmEg==",
+      "type": "package",
+      "path": "odetocode.addfeaturefolders/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/OdeToCode.AddFeatureFolders.dll",
+        "lib/netstandard1.6/OdeToCode.AddFeatureFolders.dll",
+        "lib/netstandard2.0/OdeToCode.AddFeatureFolders.dll",
+        "odetocode.addfeaturefolders.2.0.3.nupkg.sha512",
+        "odetocode.addfeaturefolders.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -12527,10 +12600,14 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Microsoft.AspNet.Identity.Core >= 2.2.3",
+      "Microsoft.AspNet.Mvc.Razor >= 6.0.0-rc1-final",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
+      "Microsoft.EntityFrameworkCore >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
+      "OdeToCode.AddFeatureFolders >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -12574,6 +12651,14 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Microsoft.AspNet.Identity.Core": {
+            "target": "Package",
+            "version": "[2.2.3, )"
+          },
+          "Microsoft.AspNet.Mvc.Razor": {
+            "target": "Package",
+            "version": "[6.0.0-rc1-final, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -12585,6 +12670,10 @@
             "target": "Package",
             "version": "[2.1.2, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -12594,6 +12683,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "OdeToCode.AddFeatureFolders": {
+            "target": "Package",
+            "version": "[2.0.3, )"
           }
         },
         "imports": [
@@ -12609,5 +12702,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Mvc.Razor 6.0.0-rc1-final' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Mvc.Razor",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    }
+  ]
 }

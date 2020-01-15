@@ -15,11 +15,6 @@ namespace RobofestWTECore.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<GameContext>>()))
             {
-                // Look for any movies.
-                if (context.StudentTeams.Any())
-                {
-                    return;   // DB has been seeded
-                }
 
                 context.StudentTeams.AddRange(
                     new RobofestWTE.Models.StudentTeam

@@ -28,7 +28,6 @@ namespace RobofestWTECore.Controllers
 
 
 
-
         public ActionResult MatchManager()
         {
             ViewBag.Message = "Your contact page.";

@@ -1,0 +1,370 @@
+﻿@model RobofestWTE.Models.CompetitionPageModel
+@using RobofestWTECore.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    table {
+        border: 0px;
+        border-collapse: collapse;
+        width: 100%
+    }
+
+    #outer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .inner {
+        display: inline-block;
+    }
+</style>
+<head>
+    <script src="~/Scripts/jquery-3.3.1.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <br />
+    <div id="outer">
+        <div class="inner"><a href="@Url.Action("GAME", new { id = Model.GameID })" style="display:inline;padding-right:10px"><input type="button" class="btn btn-warning" style="width:30vw;height:7vw;font-size:2vw;display:inline-block;font-family:Calibri" value="Back to GAME" /></a></div>
+    </div>
+    <h2 style="text-align:center">Team Index</h2>
+    <div width="100%" style="background-color:lightgray;border:1px lightgray solid;border-radius:10px;margin:10px">
+        <table style="text-align:center;font-size:25px;margin:10px">
+            <tr>
+                <td width="33%"></td>
+                <td width="33%" style="padding-bottom:10px">
+                    @Html.DisplayFor(model => model.Location)
+                </td>
+                <td width="33%"></td>
+            </tr>
+
+            <tr style="font-size:20px">
+                <td width="33%">
+                    Competition #@Html.DisplayFor(model => model.CompID)
+                </td>
+                <td width="33%">
+                    On @Html.DisplayFor(model => model.Date)
+                </td>
+                <td width="33%">
+                    Extra:@Html.DisplayFor(model => model.ExtraData)
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <h3 style="text-align:center">All Participating Teams:</h3>
+    <h5 style="text-align:center">@Html.ActionLink("Create Team", "TeamCreate")</h5>
+    <table>
+        <tr style="font-size:20px;border-bottom:5px black solid">
+            <th style="background-color:#ffffff;width:1%;padding-right:5px">
+                Rank
+            </th>
+            <th style="background-color:#ffffff">
+                Team #
+            </th>
+            <th style="background-color:#ffffff">
+                Team Name
+            </th>
+            <th style="background-color:#ffd1ba">
+                R1 Score
+            </th>
+            <th style="background-color:#ffd1ba">
+                R1 Time
+            </th>
+            <th style="background-color:#fffaba">
+                R2 Score
+            </th>
+            <th style="background-color:#fffaba">
+                R2 Time
+            </th>
+            <th style="background-color:#ffffff">
+                Average
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+        <tbody class="scoreboard">
+            @{
+                int i = 0;
+            }
+            @foreach (var item in Model.Teams.OrderByDescending(a => a.RoundAverage))
+            {
+                i++;
+                <tr>
+                    <td style="background-color:#ffffff;width:1%">
+                        @i
+                    </td>
+                    <td>
+                        @item.TeamNumberBranch-@item.TeamNumberSpecific
+                    </td>
+                    <td>
+                        @item.TeamName
+                    </td>
+                    <td style="background-color:#ffd1ba">
+                        @item.Round1Score
+                    </td>
+                    <td style="background-color:#ffd1ba">
+                        @item.Round1Time
+                    </td>
+                    <td style="background-color:#fffaba">
+                        @item.Round2Score
+                    </td>
+                    <td style="background-color:#fffaba">
+                        @item.Round2Time
+                    </td>
+                    <td>
+                        @item.RoundAverage
+                    </td>
+                    <td>
+                        <a href="../../Team/Details/@item.TeamID" class="Details" id="@item.TeamID">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <br />
+    <h3 style="text-align:center">Preferred Matches:</h3>
+    <table>
+        <caption style="text-align:center">
+            These are unplayed teams for round <span id="roundpreferred">1</span>!
+        </caption>
+        <tr>
+            <th>Field 1</th>
+            <th>Field 2</th>
+            <th>Field 3</th>
+            <th>Field 4</th>
+            <th>Field 5</th>
+            <th>Field 6</th>
+        </tr>
+        <tr>
+            <td><input type="button" id="field1preferred" value="@Model.FieldPreferred[0]" class="@Model.FieldPreferred[0]" /></td>
+            <td><input type="button" id="field2preferred" value="@Model.FieldPreferred[1]" class="@Model.FieldPreferred[1]" /></td>
+            <td><input type="button" id="field3preferred" value="@Model.FieldPreferred[2]" class="@Model.FieldPreferred[2]" /></td>
+            <td><input type="button" id="field4preferred" value="@Model.FieldPreferred[3]" class="@Model.FieldPreferred[3]" /></td>
+            <td><input type="button" id="field5preferred" value="@Model.FieldPreferred[4]" class="@Model.FieldPreferred[4]" /></td>
+            <td><input type="button" id="field6preferred" value="@Model.FieldPreferred[5]" class="@Model.FieldPreferred[5]" /></td>
+        </tr>
+    </table>
+    <br />
+    <h3 style="text-align:center">Schedule:</h3>
+    <table>
+        <tr style="font-size:20px;border-bottom:5px black solid">
+            <th style="background-color:#ffffff;width:1%;padding-right:5px">
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Game Matches?
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                -
+            </th>
+        </tr>
+        @foreach (var item in Model.ScheduleDatas.OrderBy(a => a.ScheduleID))
+        {
+            <tr>
+                <td style="background-color:#ffffff;width:1%">
+                    @item.ScheduleID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Time
+                </td>
+                <td>
+                    @item.GameMatch
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br />
+
+
+</body>
+@section Scripts {
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+}
+<script>
+    $(function () {
+        var timer = false;
+        var minutesc = 0;
+        var secondsc = 0;
+        var secondsview = "00";
+        var interval = false;
+        var part = 0;
+        var minutess = 0;
+        var secondss = 0;
+        var message = "";
+        // Reference the auto-generated proxy for the hub.
+        var chat = $.connection.scoreHub;
+        // Create a function that the hub can call back to display messages.
+        chat.client.changeScoreboard = function (scoresheet) {
+            // Add the message to the page.
+            //$('#' + teamnumber).text(score);
+            $(".scoreboard").empty();
+            var team = 0;
+            $.each(scoresheet, function (index, value) {
+                var teamid = value.TeamID;
+                var markup = "<tr><td style='background-color:#ffffff;width:1%'>" + (index + 1) + "</td><td>" + value.TeamNumber + "</td><td>" + value.TeamName + "</td><td style='background-color:#ffd1ba'>" + value.Round1Score + "</td><td style='background-color:#ffd1ba'>" + value.Round1Time + "</td><td style='background-color:#fffaba'>" + value.Round2Score + "</td><td style='background-color:#fffaba'>" + value.Round2Time + "</td><td>" + value.RoundAverage + "</td><td>" + "<a href='../../Team/Details/" + value.TeamID + "' class='Details' id='" + value.TeamID + "'>Details</a> | <a href='../../Team/TeamEdit/" + value.TeamID + "' class='Details'>Edit</a>" + "</td></tr>";
+
+
+
+                $(".scoreboard").append(markup);
+            });
+        };
+        chat.client.availableSelections = function (teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, round) {
+            $("#field1preferred").removeClass();
+            $("#field2preferred").removeClass();
+            $("#field3preferred").removeClass();
+            $("#field4preferred").removeClass();
+            $("#field5preferred").removeClass();
+            $("#field6preferred").removeClass();
+            $("#field1preferred").val(teamid1);
+            $("#field1preferred").addClass(teamid1)
+            $("#field2preferred").val(teamid2);
+            $("#field2preferred").addClass(teamid2);
+            $("#field3preferred").val(teamid3);
+            $("#field3preferred").addClass(teamid3)
+            $("#field4preferred").val(teamid4);
+            $("#field4preferred").addClass(teamid4)
+            $("#field5preferred").val(teamid5);
+            $("#field5preferred").addClass(teamid5)
+            $("#field6preferred").val(teamid6);
+            $("#field6preferred").addClass(teamid6)
+            $("#roundpreferred").html(round);
+        };
+        chat.client.changeGlobalTimer = function (minutes, seconds, message) {
+            $("#minutesv").html(minutes);
+            if (seconds < 10) {
+                secondsview = "0" + seconds;
+            } else {
+                secondsview = seconds;
+            }
+            $("#secondsv").html(secondsview);
+            $("#messagev").html(message);
+            minutesc = minutes;
+            secondsc = seconds;
+            abort = true;
+            timer = false;
+            part = 0;
+            $(".timerstatus").css("color", "black");
+
+        };
+        chat.client.startGlobalTimer = function () {
+            abort = false;
+            timer = true;
+            StartTimer();
+            $(".timerstatus").css("color", "green");
+
+        };
+        chat.client.stopGlobalTimer = function () {
+            abort = true;
+            timer = false;
+            $(".timerstatus").css("color", "black");
+        };
+
+        // Start the connection.
+        $.connection.hub.start().done(function () {
+            $("#field1preferred").click(function () {
+                window.open("/Team/RoundCreate/" + $("#field1preferred").val(), "_blank");
+            });
+            $("#field2preferred").click(function () {
+                window.open("/Team/RoundCreate/" + $("#field2preferred").val(), "_blank");
+            });
+            $("#field3preferred").click(function () {
+                window.open("/Team/RoundCreate/" + $("#field3preferred").val(), "_blank");
+            });
+            $("#field4preferred").click(function () {
+                window.open("/Team/RoundCreate/" + $("#field4preferred").val(), "_blank");
+            });
+            $("#field5preferred").click(function () {
+                window.open("/Team/RoundCreate/" + $("#field5preferred").val(), "_blank");
+            });
+            $("#field6preferred").click(function () {
+                window.open("/Team/RoundCreate/" + $("#field6preferred").val(), "_blank");
+            });
+            $('#sendtimer').click(function () {
+                minutess = $("#minutes").val();
+                secondss = $("#seconds").val();
+                message = $("#message").val();
+                chat.server.sendTimer(minutess, secondss, message);
+            });
+            $('#starttimer').click(function () {
+                chat.server.startTimer();
+                $('#starttimer').attr("hidden", true);
+                $('#stoptimer').attr("hidden", false);
+                $('#sendtimer').attr("hidden", true);
+            });
+            $('#stoptimer').click(function () {
+                chat.server.stopTimer();
+                $('#starttimer').attr("hidden", false);
+                $('#stoptimer').attr("hidden", true);
+                $('#sendtimer').attr("hidden", false);
+            });
+
+        });
+        function Countdown() {
+            if (timer == true) {
+                if (secondsc == 0) {
+                    if (minutesc > 0) {
+                        minutesc = minutesc - 1;
+                        secondsc = 59;
+                        secondsview = "59";
+                    } else {
+                        timer = false;
+                        TimerEnded();
+                    }
+
+                } else if (secondsc < 11) {
+                    secondsc = secondsc - 1;
+                    secondsview = "0" + secondsc;
+                }
+                else {
+                    secondsc = secondsc - 1;
+                    secondsview = secondsc;
+                }
+            }
+        }
+        function StartTimer() {
+            var count = setInterval(function () {
+                $("#minutesv").html(minutesc);
+                $("#secondsv").html(secondsview);
+                if (abort == true) {
+                    clearInterval(count);
+                }
+                if ((part % 10) == 0) {
+                    Countdown();
+                }
+                part++;
+                window.focus();
+            }, 100);
+        }
+        function TimerEnded() {
+            abort = true;
+            timer = false;
+            $(".timerstatus").css("color", "red");
+        }
+    });
+</script>

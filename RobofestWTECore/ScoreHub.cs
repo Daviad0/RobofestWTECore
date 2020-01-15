@@ -16,9 +16,9 @@ namespace RobofestWTECore
         {
             this.db = db;
         }
-        public async System.Threading.Tasks.Task SendTimerAsync(int minutes, int seconds, string message, int status)
+        public void SendTimer(int minutes, int seconds, string message, int status)
         {
-            await Clients.All.SendAsync("changeGlobalTimer", minutes, seconds, message, status);
+            Clients.All.SendAsync("changeGlobalTimer", minutes, seconds, message, status);
             //0 = STOPPED, 1 = RUNNING, 2 = DONE
         }
         public void StartTimer()

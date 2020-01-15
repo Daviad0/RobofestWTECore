@@ -1,0 +1,1083 @@
+﻿@model RobofestWTE.Models.RoundEntry
+
+@{
+    ViewBag.Title = "Create";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    .btn-group {
+        display: flex;
+    }
+
+    .btn {
+        flex: 1
+    }
+
+    btn-default: {
+        background-color: gray
+    }
+
+    .big {
+        font-size: 1.2em;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px; /* demo only */
+    }
+
+        .custom-dropdown select {
+            background-color: #1abc9c;
+            color: #fff;
+            font-size: inherit;
+            padding: .5em;
+            padding-right: 2.5em;
+            border: 0;
+            margin: 0;
+            border-radius: 3px;
+            text-indent: 0.01px;
+            text-overflow: '';
+            -webkit-appearance: button; /* hide default arrow in chrome OSX */
+        }
+
+        .custom-dropdown::before,
+        .custom-dropdown::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .custom-dropdown::after { /*  Custom dropdown arrow */
+            content: "\25BC";
+            height: 1em;
+            font-size: .625em;
+            line-height: 1;
+            right: 1.2em;
+            top: 50%;
+            margin-top: -.5em;
+        }
+
+        .custom-dropdown::before { /*  Custom dropdown arrow cover */
+            width: 2em;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .custom-dropdown select[disabled] {
+            color: rgba(0,0,0,.3);
+        }
+
+            .custom-dropdown select[disabled]::after {
+                color: rgba(0,0,0,.1);
+            }
+
+        .custom-dropdown::before {
+            background-color: rgba(0,0,0,.15);
+        }
+
+        .custom-dropdown::after {
+            color: rgba(0,0,0,.4);
+        }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #ecbb06;
+        color: white;
+        text-align: center;
+    }
+
+    .createforms {
+        border: none;
+        border-bottom: 2px solid gray;
+        padding-left: 2px;
+        transition: 0.3s;
+        border-radius: 4px;
+    }
+
+        .createforms:hover {
+            background-color: #ededed;
+            padding-left: 5px;
+        }
+
+        .createforms:focus {
+            border-bottom: 2px solid red;
+            background-color: #ededed;
+            padding-left: 5px;
+        }
+
+        .createforms:disabled, .createforms:read-only {
+            cursor: not-allowed;
+            padding-left: 2px;
+            transition: 0.3s;
+        }
+
+            .createforms:disabled:hover, .createforms:disabled:active, .createforms:read-only:hover, .createforms:read-only:active {
+                cursor: not-allowed;
+                background-color: red;
+                padding-left: 5px;
+                opacity: 0.6;
+            }
+
+    .text-danger {
+        text-align: center;
+    }
+
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .textoverlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        color: black;
+        background-color: white;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+    }
+
+    .judgehelp {
+        animation-name: color;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    @@keyframes color {
+        0% {
+            background-color: yellow
+        }
+
+        50% {
+            background-color: red;
+        }
+    }
+
+    .column {
+        float: left;
+    }
+
+    .left {
+        width: 25%;
+    }
+
+    .right {
+        width: 75%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .autofields {
+        display: none;
+    }
+
+    .centered {
+        display: inherit;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 20%;
+    }
+
+    .footer {
+        position: fixed;
+        height: 100px;
+        bottom: 0;
+        width: 100%;
+        background-color: orange;
+    }
+</style>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+@{var timeStamp = DateTime.UtcNow; }
+<br />
+<h2>Create</h2>
+<h4 style="text-align:center">Round</h4>
+<hr style="text-align:center" />
+<div id="beforelockin" style="text-align:center">
+    <span>Team ID</span>
+    <br />
+    <input type="number" class="form-control" id="lookupteam" aria-describedby="TeamID" placeholder="Team ID" maxlength="7" style="display:inline">
+    <br />
+    <span>Team Number</span>
+    <br />
+    <input type="text" class="form-control" id="teamnumber" aria-describedby="Team #" placeholder="Team Number" readonly style="display:inline">
+    <br />
+    <small id="teamnumberinfo" class="form-text text-muted">This field is automatically filled! Yay!</small>
+
+    <br />
+    <span>Field Number</span>
+    <br />
+    <input type="number" class="form-control" id="fieldn" aria-describedby="Field #" placeholder="Field Number" maxlength="2" style="display:inline" min="1" max="6">
+    <br />
+    <small id="fieldnumberinfo" class="form-text text-muted">Your team & score will be linked to this field.</small>
+
+    <p id="fieldissue" class="text-danger"></p>
+    <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default roundbutton1">
+                <input type="radio" name="rounds" id="round1"> Round 1
+            </label>
+            <label class="btn btn-default roundbutton2">
+                <input type="radio" name="rounds" id="round2"> Round 2
+            </label>
+        </div>
+    </div>
+    <span id="roundchecker"></span>
+    <span>Rerun</span>
+    <input type="checkbox" id="rerun" />
+    <br />
+    <span>Used for Score</span>
+    <input type="checkbox" id="usable" checked />
+    <br />
+    <br />
+    <input type="button" value="Lock In" id="overlaybutton" class="btn btn-info" />
+
+</div>
+<div id="afterlockin" hidden>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="text-align:center">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        @Html.LabelFor(model => model.TeamID, htmlAttributes: new { @class = "control-label col-md-2 autofields" })@Html.ValidationMessageFor(model => model.TeamID, "", new { @class = "text-danger autofields" })
+
+
+        @Html.TextBoxFor(model => model.TeamID, new { id = "teamidhidden", Value = Model.TeamID, @class = "createforms autofields" })
+        @Html.LabelFor(model => model.Field, htmlAttributes: new { @class = "control-label col-md-2 autofields" })@Html.ValidationMessageFor(model => model.Field, "", new { id = "fieldissue", @class = "text-danger autofields" })
+        @Html.TextBoxFor(model => model.Field, new { id = "fieldnhidden", @class = "createforms autofields" })
+
+
+        <div class="beforeconfirmation" style="text-align:center">
+            <span>Timestamp</span>
+            <br />
+            @Html.TextBoxFor(model => model.TimeStamp, new { Value = timeStamp, @class = "form-control", @readonly = "readonly", @style = "display:inline" })
+            <br />
+            <span>Score</span>
+            <br />
+            @Html.TextBoxFor(model => model.Score, new { Value = 0, id = "teamID", @class = "form-control", @style = "display:inline" })
+            <br />
+            <span>Time</span>
+            <br />
+            @Html.TextBoxFor(model => model.Time, new { Value = 0, @class = "form-control", @style = "display:inline" })
+            <br />
+            <span>Data</span>
+            <br />
+            @Html.TextBoxFor(model => model.Data, new { Value = "0/0/0/0/0^0/0/0^0/0^0/0", @class = "form-control", id = "data", @readonly = "readonly", @style = "display:inline" })
+            <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px" class="autofields">
+                <div class="btn-group autofields" data-toggle="buttons">
+                    <label class="btn btn-primary active autofields">
+                        @Html.RadioButtonFor(Model => Model.Round, 1, new { id = "round1hidden", @class = "btn btn-primary active autofields" })Round 1
+                    </label>
+                    <label class="btn btn-primary autofields">
+                        @Html.RadioButtonFor(Model => Model.Round, 2, new { id = "round2hidden", @class = "btn btn-primary autofields" })Round 2
+                    </label>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Round, "", new { @class = "text-danger" })
+        </div>
+        {
+            if (Model.Rerun == true)
+            {
+                <p class="text-danger beforeconfirmation" style="text-align:center">This round seems to be a rerun based on previous round entries! Specify the round you would like to rerun!</p>
+            }
+        }
+        <div class="beforeconfirmation">
+            <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px" class="autofields">
+                @Html.LabelFor(model => model.Rerun, htmlAttributes: new { @class = "control-label col-md-2 autofields" })
+                @Html.CheckBoxFor(model => model.Rerun, new { @class = "checkthis autofields", id = "rerunhidden" })
+            </div>
+            @Html.ValidationMessageFor(model => model.Rerun, "", new { @class = "text-danger autofields" })
+            <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px" class="autofields">
+                @Html.LabelFor(model => model.Usable, htmlAttributes: new { @class = "control-label col-md-2 autofields" })
+                @Html.CheckBoxFor(model => model.Usable, new { @class = "checkthis autofields", @checked = "checked", id = "usablehidden" })
+            </div>
+            @Html.ValidationMessageFor(model => model.Usable, "", new { @class = "text-danger autofields" })
+            <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px" class="autofields">
+                @Html.LabelFor(model => model.JudgeConfirmNotes, htmlAttributes: new { @class = "control-label col-md-2 autofields" })
+                @Html.TextBoxFor(model => model.JudgeConfirmNotes, new { @class = "createforms autofields", id = "judgeconfirmhidden" })
+            </div>
+            @Html.ValidationMessageFor(model => model.JudgeConfirmNotes, "", new { @class = "text-danger autofields" })
+            <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px" class="autofields">
+                @Html.LabelFor(model => model.StudentInitials, htmlAttributes: new { @class = "control-label col-md-2 autofields" })
+                @Html.TextBoxFor(model => model.StudentInitials, new { @class = "createforms autofields", id = "studentconfirmhidden" })
+            </div>
+            @Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class = "text-danger autofields" })
+
+
+
+
+            <div style="text-align:center">
+                <input type="button" class="btn btn-warning" value="Finalize Scores" id="finalize" style="width:100%" />
+            </div>
+            <br />
+        </div>
+
+        <div style="text-align:center" id="confirmmatch" hidden>
+            <h3>Final Score: <span id="finalscore"></span></h3>
+            <br />
+            <span>Judge Confirmation</span>
+            <br />
+            <input type="text" class="form-control" id="judgeconfirm" aria-describedby="judgenotes" placeholder="Judge Initials" style="display:inline">
+            <br />
+            <small id="judgeconfirminfo" class="form-text text-muted">Judges can enter notes and confirmation here.</small>
+            <br />
+            <span>Student Initials</span>
+            <br />
+            <input type="text" class="form-control" id="studentconfirm" aria-describedby="studentnotes" placeholder="Student Initials" style="display:inline" maxlength="7">
+            <br />
+            <small id="studentconfirminfo" class="form-text text-muted">Students enter their initials to accept the match details</small>
+            <br />
+            <span>Judge Access Code</span>
+            <br />
+            <input type="number" class="form-control" id="judgeaccesscode" aria-describedby="judgeaccesscode" placeholder="####" style="display:inline" maxlength="4">
+            <br />
+            <small id="studentconfirminfo" class="form-text text-muted">TEST MATCH ACCESS CODE: 1234</small>
+            <br />
+            <input type="submit" id="create" value="Create" class="btn btn-success" style="margin-bottom:10px;display:none;width:100%" />
+            <br />
+            <input type="button" id="donotfinalize" value="Edit Scores" class="btn btn-danger" style="width:100%" />
+        </div>
+
+
+        <script src="~/Scripts/jquery-3.3.1.js" integrity="" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <div class="beforeconfirmation">
+            <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center">
+                <div style="text-align:center">
+
+                    <h3 style="font-family:'Lucida Console'"></h3>
+                    <div style="display:flex; justify-content: center; align-items: center;padding-bottom:10px;font-size:15px">
+                        <div style="padding-right:10px">
+                            <span class="control-label col-md-2"><strong>Team Number</strong></span>
+                        </div>
+                        <input id="teamnumberview" class="createforms" type="text" maxlength="7" readonly="readonly" />
+                    </div>
+
+
+                    <input type="button" value="Lock In" id="lockin" style="margin-right:5px" />
+                    <input type="button" id="disablescoreupdate" value="Disable Live" style="margin-right:5px" /><input type="button" id="enablescoreupdate" value="Enable Live" />
+
+                    <br />
+
+                    <h4 id="currentscorestatus">Score Updating Enabled!</h4>
+                    <h5 style="margin-top:8px">
+                        <span id="quickstatusf1" style="background-color:gray;padding:5px;border-radius:2px">1</span>
+                        <span id="quickstatusf2" style="background-color:gray;padding:5px;border-radius:2px">2</span>
+                        <span id="quickstatusf3" style="background-color:gray;padding:5px;border-radius:2px">3</span>
+                        <span id="quickstatusf4" style="background-color:gray;padding:5px;border-radius:2px">4</span>
+                        <span id="quickstatusf5" style="background-color:gray;padding:5px;border-radius:2px">5</span>
+                        <span id="quickstatusf6" style="background-color:gray;padding:5px;border-radius:2px">6</span>
+                    </h5>
+
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+    <h2 style="text-align:center">Scoresheet</h2>
+    <h4 style="text-align:center">(!) This area automatically fills in the "Score" field for convience every time you change the scoresheet (!)</h4>
+    <h5 style="text-align:center">Balls into Hole Slot: <span id="balls">0</span> Ball(s)</h5>
+    <h5 id="bvalidation" style="text-align:center;color:darkred"></h5>
+    <h5 id="ivalidation" style="text-align:center;color:darkred"></h5>
+    <br />
+    <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <td>Bottle #1 (Left)</td>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="score" class="bottle1 custom-dropdown big scoresheet">
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #2</td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="score" class="bottle2 custom-dropdown big scoresheet">
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #3</td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="score" class="bottle3 custom-dropdown big scoresheet">
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #4 (Right)</td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="score" class="bottle4 custom-dropdown big scoresheet">
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #5 (Middle)</td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="score" class="bottle5 custom-dropdown big scoresheet">
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <td>While Golf Balls</td>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="score" class="whiteb custom-dropdown big scoresheet">
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Orange Golf Balls</td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="score" class="orangeb custom-dropdown big scoresheet">
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Invalid Balls</td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="score" class="invalidb custom-dropdown big scoresheet">
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Remaining Balls</td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="score" class="remainb custom-dropdown big scoresheet">
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <td>Game Ending Mission</td>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="score" class="extra1 custom-dropdown big scoresheet">
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Robot Stayed Sturdy</td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="score" class="extra2 custom-dropdown big scoresheet">
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <td>Full Reset Requested</td>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="score" class="penalty1 custom-dropdown big scoresheet">
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+
+    <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1" class="beforeconfirmation">
+        <div style="text-align:center">
+            <input type="text" placeholder="Message" id="usermessage" />
+            <span>Issue? </span><input type="checkbox" id="userissue" />
+            <input type="button" id="sendchat" value="Send Test Chat" />
+        </div>
+        <table style="table-layout:fixed;width:100%">
+            <caption>Volunteer Chat Connection</caption>
+            <tr>
+                <th width="20%">Sender</th>
+                <th width="70%">Message</th>
+                <th width="10%">Issue</th>
+            </tr>
+            <tbody class="volunteerchat"></tbody>
+        </table>
+    </div>
+</div>
+<br />
+<br />
+
+<footer class="navbar-fixed-bottom" hidden id="readybar">
+    <div style="background-color:orange;width:100%;height:120px;text-align:center">
+        <div class="status" style="border-bottom:black 3px solid;border-radius:8px;display:inline-block">
+            <h4 style="font-family:'Lucida Console';margin-bottom:0px" class="timerarea"><span id="minutes" class="timerarea">0</span>:<span id="seconds" class="timerarea">00</span></h4>
+        </div>
+        <span>| <span id="message"></span></span>
+        <br />
+        <input type="button" class="btn btn-success" value="Ready" id="readystatus" style="width:30%;padding:3px;margin-top:10px;font-weight:normal;color:white" />
+        <input class="btn btn-danger active" type="button" value="Not Ready" id="notreadystatus" style="width:30%;padding:3px;margin-top:10px;font-weight:bold;color:white" />
+        <br />
+        <input type="button" id="emergencyhelp" value="Panic Button (Help!)" style="width:50%;padding:3px;margin-top:5px" class="btn btn-default" />
+
+    </div>
+</footer>
+<script>
+    $(".bottle1").val(0).attr("selected", "selected");
+    $(".bottle2").val(0).attr("selected", "selected");
+    $(".bottle3").val(0).attr("selected", "selected");
+    $(".bottle4").val(0).attr("selected", "selected");
+    $(".bottle5").val(0).attr("selected", "selected");
+    $(".whiteb").val(0).attr("selected", "selected");
+    $(".orangeb").val(0).attr("selected", "selected");
+    $(".invalidb").val(0).attr("selected", "selected");
+    $(".remainb").val(0).attr("selected", "selected");
+    $(".extra1").val(0).attr("selected", "selected");
+    $(".extra2").val(0).attr("selected", "selected");
+    $(".penalty1").val(0).attr("selected", "selected");
+</script>
+<script>
+    $(document).on('change', '#score', function () {
+        var total = 0;
+        var bot1 = 0;
+        var bot2 = 0;
+        var bot3 = 0;
+        var bot4 = 0;
+        var bot5 = 0;
+        var wgb = 0;
+        var ogb = 0;
+        var igb = 0;
+        var rgb = 0;
+        var ex1 = 0;
+        var ex2 = 0;
+        var pe1 = 0;
+        var pe2 = 0;
+        var scoredballs = 0;
+        var invalidballs = 0;
+        var remainingballs = 5;
+        var stacked = false;
+        var allowedsb = false;
+        $('.bottle1').each(function () {
+            total += parseFloat($(this).val());
+            bot1 += parseFloat($(this).val());
+        });
+        $('.bottle2').each(function () {
+            total += parseFloat($(this).val());
+            bot2 += parseFloat($(this).val());
+        });
+        $('.bottle3').each(function () {
+            total += parseFloat($(this).val());
+            bot3 += parseFloat($(this).val());
+        });
+        $('.bottle4').each(function () {
+            total += parseFloat($(this).val());
+            bot4 += parseFloat($(this).val());
+        });
+        $('.bottle5').each(function () {
+            total += parseFloat($(this).val());
+            bot5 += parseFloat($(this).val());
+        });
+        $('.whiteb').each(function () {
+            total += parseFloat($(this).val());
+            wgb += parseFloat($(this).val());
+            scoredballs += (parseFloat($(this).val()) / 15);
+        });
+        $('.orangeb').each(function () {
+            total += parseFloat($(this).val());
+            ogb += parseFloat($(this).val());
+            scoredballs += (parseFloat($(this).val()) / 18);
+        });
+        $('.invalidb').each(function () {
+            total += parseFloat($(this).val());
+            igb += parseFloat($(this).val());
+            invalidballs += (parseFloat($(this).val()) / -3);
+        });
+        $('.remainb').each(function () {
+            total += parseFloat($(this).val());
+            rgb += parseFloat($(this).val());
+            remainingballs -= parseFloat($(this).val());
+        });
+        $('.extra1').each(function () {
+            total += parseFloat($(this).val());
+            ex1 += parseFloat($(this).val());
+        });
+        $('.extra2').each(function () {
+            total += parseFloat($(this).val());
+            ex2 += parseFloat($(this).val());
+        });
+        $('.penalty1').each(function () {
+            total += parseFloat($(this).val());
+            pe1 += parseFloat($(this).val());
+        });
+        $('#teamID').val(total)
+        $("#finalscore").html(total)
+        var datastring = bot1 + "/" + bot2 + "/" + bot3 + "/" + bot4 + "/" + bot5 + "^" + wgb + "/" + ogb + "/" + igb + "/" + rgb + "^" + ex1 + "/" + ex2 + "^" + pe1 + "/" + pe2;
+        $("#data").val(datastring);
+        $("#balls").html(scoredballs);
+        var enable = true;
+        if (invalidballs > scoredballs) {
+            $("#ivalidation").html("There are more invalid balls than there are in the hole slot! Remember, a ball is only counted invalid if it is hit into the hole slot!")
+            enable = false;
+        } else {
+            $("#ivalidation").html("")
+        }
+        if ((remainingballs + scoredballs) > 5) {
+            $("#bvalidation").html("There are more than 5 balls counted on the scoring sheet. Please adjust your 'REMAINING BALLS' counter!")
+            enable = false;
+        } else {
+            $("#bvalidation").html("")
+        }
+        if (enable == true) {
+            $("#create").attr("disabled", false);
+        } else {
+            $("#create").attr("disabled", true);
+        }
+        $("#fieldn").change(function () {
+            $("#fieldinput").val(this.val());
+        });
+    });
+</script>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+
+
+    $(function () {
+        var teamid = @Model.TeamID;
+        var timer = false;
+        var minutesc = 0;
+        var secondsc = 0;
+        var secondsview = "00";
+        var interval = false;
+        var allseconds = 0;
+        var part = 0;
+        var totalscore = 0;
+        var checkingscore = true;
+        var teamnumber = "";
+        var pong = false;
+        var emergency = false;
+        var publicround = 0;
+        // Reference the auto-generated proxy for the hub.
+        var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
+
+        $("#lookupteam").val(teamid);
+
+        // Create a function that the hub can call back to display messages.
+        chat.on("changeTeamScores", function (topten) {
+            // Add the message to the page.
+            //$('#' + teamnumber).text(score);
+            $(".topteams").empty();
+
+            $.each(topten, function (index, value) {
+                var markup = "<tr style='text-align:center;padding-left:5px'><th width='10%' style='text-align:left'>" + (index + 1) +
+                    "</th><th width='30%' style='text-align:center'>" + value.TeamNumber + "</th><th width='30%' style='text-align:center'>" +
+                    value.TeamName + "</th><th width='30%' style='text-align:center'>" +
+                    value.Average + "</th></tr>";
+                $(".topteams").append(markup);
+            });
+        });
+        chat.on("chatMessage", function (message, issue, sender, time, broadcast) {
+            $(".volunteerchat").append("<tr><td width='20%' style='color:red'><strong>" + sender + "</strong></td><td width='70%'>" + message + "</td><td width='10%'>" + issue + "</td></tr>")
+        });
+        chat.on("changeGlobalTimer", function (minutes, seconds, message, status, score) {
+            $("#minutes").html(minutes);
+            if (seconds < 10) {
+                secondsview = "0" + seconds;
+            } else {
+                secondsview = seconds;
+            }
+            $("#seconds").html(secondsview);
+            $("#message").html(message);
+            if (status == 0) {
+                $(".status").css("border-bottom", "3px black solid");
+            } else if (status == 1) {
+                $(".status").css("border-bottom", "3px green solid");
+
+            } else if (status == 2 && seconds < 1 && minutes < 1) {
+                $(".status").css("border-bottom", "3px red solid");
+            } else {
+                $(".status").css("border-bottom", "3px black solid");
+            }
+
+        });
+        chat.on("retrieveTeam", function (teamnumber) {
+            $("#teamnumber").val(teamnumber);
+            $("#teamnumberview").val(teamnumber);
+        });
+        chat.on("getPong", function (direction) {
+            pong = true;
+        });
+
+        // Start the connection.
+        var fieldsub = 0;
+        var teamnumber = "";
+        var lockedin = false;
+        chat.on("initFieldView", function (field, status, score, team, connection, matchkeeper) {
+            if (status != 5) {
+                if (status == 0) {
+                    $("#quickstatusf" + field).css("background-color", "gray");
+                } else if (status == 1) {
+                    $("#quickstatusf" + field).css("background-color", "tomato");
+                } else if (status == 2) {
+                    $("#quickstatusf" + field).css("background-color", "MediumSeaGreen");
+                } else if (status == 3) {
+                    $("#quickstatusf" + field).css("background-color", "dodgerblue");
+                }
+
+
+            }
+            if (status != 5 && field == fieldsub) {
+                if (status == 0) {
+                    $("#fieldstatus").css("background-color", "gray");
+                    $("#fieldstatus").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $("#fieldstatus").html("Not Using (SC)")
+                    }
+                } else if (status == 1) {
+                    $("#fieldstatus").css("background-color", "tomato");
+                    $("#fieldstatus").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $("#fieldstatus").html("Not Ready (SC)")
+                    }
+                } else if (status == 2) {
+                    $("#fieldstatus").css("background-color", "MediumSeaGreen");
+                    $("#fieldstatus").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $("#fieldstatus").html("Ready (SC)")
+                    }
+                } else if (status == 3) {
+                    $("#fieldstatus").css("background-color", "dodgerblue");
+                    $("#fieldstatus").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $("#fieldstatus").html("Scored (SC)")
+                    }
+                }
+            }
+
+        });
+        chat.on("helpThisJudge", function (field, helping) {
+            if (helping == true) {
+                $("#quickstatusf" + field).addClass("judgehelp");
+            } else {
+                $("#quickstatusf" + field).removeClass("judgehelp");
+            }
+        });
+
+        chat.start().then(function () {
+            $(".roundbutton1").click(function () {
+                publicround = 1;
+            });
+            $(".roundbutton2").click(function () {
+                publicround = 2;
+            });
+            $("#judgeaccesscode").change(function () {
+                if ($("#judgeaccesscode").val() == 1234) {
+                    //INSERT CORRECT ACCESS CODE HERE
+                    $("#create").css("display", "inline");
+                    $("#judgeaccesscode").attr("disabled", true);
+                }
+            });
+            $("#sendchat").click(function () {
+                var message = $("#usermessage").val();
+                var sender = "Field " + fieldsub + " (Judge)"
+                var issue = $("#userissue").is(":checked");
+                chat.invoke("sendMessage",message, issue, sender)
+                $("#usermessage").val("");
+            });
+            $("#disablescoreupdate").click(function () {
+                checkingscore = false;
+                chat.invoke("initField",fieldsub, 5, totalscore, teamnumber, checkingscore, false);
+                $("#currentscorestatus").html("Score Updating Disabled!");
+            });
+            $("#lookupteam").change(function () {
+                chat.invoke("lookUpTeam",parseFloat($("#lookupteam").val()));
+            });
+            $("#emergencyhelp").click(function () {
+                if (emergency == false) {
+                    $("#emergencyhelp").addClass("judgehelp");
+                    $("#emergencyhelp").css("background-color", "yellow");
+                    $("#emergencyhelp").val("Help Requested!");
+                    chat.invoke("sendMessage", "Help Requested from Field " + fieldsub + "!!", true, "Field " + fieldsub + " (Server)")
+                    chat.invoke("judgeHelp",fieldsub, true);
+                    emergency = true;
+                } else {
+                    $("#emergencyhelp").removeClass("judgehelp");
+                    $("#emergencyhelp").css("background-color", "");
+                    $("#emergencyhelp").val("Panic Button (Help!)");
+                    chat.invoke("judgeHelp",fieldsub, false);
+                    emergency = false;
+                }
+            });
+            function PongBack(direction) {
+                if (direction == 7 || direction == fieldsub) {
+                    chat.invoke("pong", fieldsub);
+                }
+            }
+            var pongback = setInterval(function () {
+                if (pong == true) {
+                    chat.invoke("pong", fieldsub);
+                }
+            }, 100);
+            $("#enablescoreupdate").click(function () {
+                checkingscore = true;
+                $("#currentscorestatus").html("Score Updating Enabled!");
+            });
+            $(document).ready(function () {
+                chat.invoke("lookUpTeam", parseFloat($("#lookupteam").val()));
+            });
+            $("#overlaybutton").click(function () {
+                fieldsub = 0;
+                fieldsub += parseFloat($("#fieldn").val());
+                var nan = isNaN(fieldsub)
+                teamnumber += $("#teamnumber").val();
+                if (fieldsub > 6 || fieldsub < 1 || nan) {
+                    if (lockedin == false) {
+                        $("#fieldissue").text("Field must be 1-6!");
+                    }
+
+                } else {
+                    var round = 0;
+                    if (publicround == 1) {
+                        round = 1;
+                        $("#round1hidden").attr("checked", true);
+                        $("#round2hidden").attr("checked", false);
+                    } else {
+                        round = 2;
+                        $("#round1hidden").attr("checked", false);
+                        $("#round2hidden").attr("checked", true);
+                    }
+                    lockedin = true;
+                    $("#fieldn").attr("readonly", "readonly");
+                    $("#fieldstatus").html(fieldsub)
+                    $("#teamnumber").attr("readonly", "readonly");
+                    chat.invoke("initField", fieldsub, 1, totalscore, teamnumber, checkingscore, false);
+                    chat.invoke("teamSelected", $("#lookupteam").val(), fieldsub, round);
+                    $("#fieldissue").text("");
+                    $("#lockin").attr("hidden", true);
+                    $("#afterlockin").attr("hidden", false);
+                    $("#beforelockin").attr("hidden", true);
+                    $("#teamidhidden").val($("#lookupteam").val());
+                    $("#fieldnhidden").val(fieldsub);
+                    $("#rerunhidden").attr("checked", $("#rerun").is(":checked"));
+                    $("#usablehidden").attr("checked", $("#usable").is(":checked"));
+                    $("#readybar").attr("hidden", false);
+                    $("#quickstatusf" + fieldsub).css("border", "2px solid #ffffff");
+
+                }
+            });
+            $("#finalize").click(function () {
+                $("#confirmmatch").attr("hidden", false);
+                $(".beforeconfirmation").css("display", "none");
+                $(".scoresheet").attr("disabled", true);
+                $("#readybar").attr("hidden", true);
+            });
+            $("#donotfinalize").click(function () {
+                $("#confirmmatch").attr("hidden", true);
+                $(".beforeconfirmation").css("display", "block");
+                $(".scoresheet").attr("disabled", false);
+                $("#judgeconfirm").val("");
+                $("#studentconfirm").val("");
+                $("#readybar").attr("hidden", false);
+            });
+            $("#readystatus").click(function () {
+                if (lockedin == true) {
+                    chat.invoke("initField", fieldsub, 2, totalscore, teamnumber, checkingscore, false);
+                    $("#fieldissue").text("");
+                    $("#notreadystatus").css("font-weight", "normal");
+                    $("#readystatus").css("font-weight", "bold");
+                }
+            });
+            $("#notreadystatus").click(function () {
+                if (lockedin == true) {
+                    chat.invoke("initField", fieldsub, 1, totalscore, teamnumber, checkingscore, false);
+                    $("#fieldissue").text("");
+                    $("#notreadystatus").css("font-weight", "bold");
+                    $("#readystatus").css("font-weight", "normal");
+                }
+            });
+            $('#starttimer').click(function () {
+                // Call the Send method on the hub.
+
+                // Clear text box and reset focus for next comment.
+                $('#message').val('').focus();
+            });
+            var updatescore = setInterval(function () {
+                if (lockedin == true && checkingscore == true) {
+                    totalscore = $("#teamID").val();
+                    chat.invoke("initField", fieldsub, 5, totalscore, teamnumber, checkingscore, false);
+                    //USE 5 FOR NO CHANGE
+                }
+            }, 100);
+        });
+        $("#fieldn").change(function () {
+            $("#fieldinput").val($("#fieldn").val());
+        });
+        $("#judgeconfirm").change(function () {
+            $("#judgeconfirmhidden").val($("#judgeconfirm").val());
+        });
+        $("#studentconfirm").change(function () {
+            $("#studentconfirmhidden").val($("#studentconfirm").val());
+        });
+
+        function Countdown() {
+            if (timer == true) {
+                if (secondsc == 0) {
+                    if (minutesc > 0) {
+                        minutesc = minutesc - 1;
+                        secondsc = 59;
+                        secondsview = "59";
+                    } else {
+                        timer = false;
+                        TimerEnded();
+                    }
+
+                } else if (secondsc < 11) {
+                    secondsc = secondsc - 1;
+                    secondsview = "0" + secondsc;
+                }
+                else {
+                    secondsc = secondsc - 1;
+                    secondsview = secondsc;
+                }
+            }
+        }
+        function StartTimer() {
+            var count = setInterval(function () {
+                $("#minutes").html(minutesc);
+                $("#seconds").html(secondsview);
+                if (abort == true) {
+                    clearInterval(count);
+                }
+                if ((part % 10) == 0) {
+                    Countdown();
+                }
+                if (((allseconds / 4) > (minutesc * 60) + (secondsc)) && timer == true) {
+                    $(".status").css("border-bottom", "orange 6px solid");
+                }
+                part++;
+            }, 100);
+        }
+        function TimerEnded() {
+            abort = true;
+            timer = false;
+            $(".status").css("border-bottom", "red 6px solid");
+        }
+
+
+
+    });
+
+
+</script>
+<br />
+
+<script type="text/javascript">
+    $("#bitslot4 select").on("change", function () {
+
+        //Stack
+        var subtotalstack = 0;
+        $(":radio[id='stack']:checked").each(function () {
+            subtotalstack += Number(this.value);
+        });
+        $("#subtotalstack").text(subtotalstack);
+        //Extra
+        var subtotalextra = 0;
+        $(":radio[id='extra']:checked").each(function () {
+            subtotalextra += Number(this.value);
+        });
+        $("#subtotalextra").text(subtotalextra);
+        //Penalty
+        var subtotalpenalty = 0;
+        $(":radio[id='penalty']:checked").each(function () {
+            subtotalpenalty += Number(this.value);
+        });
+        $("#subtotalpenalty").text(subtotalpenalty);
+        //Total
+        var total = 0;
+        $(":radio:checked").each(function () {
+            total += Number(this.value);
+        });
+        $("#total").text(total);
+        $("#teamID").val(total);
+        $("#teamIDcopy").text(total);
+        var description = subtotalbs + "/" + subtotalstack + "/" + subtotalextra + "/" + subtotalpenalty;
+        $("#data").val(description);
+    });
+
+</script>
+<script>
+</script>
+
+
+

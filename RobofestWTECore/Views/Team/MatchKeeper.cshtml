@@ -1,0 +1,2158 @@
+﻿@model RobofestWTE.Models.MatchDataModel
+
+@{
+    ViewBag.Title = "Match Manager";
+}
+<style>
+    .btn-group {
+        display: flex;
+    }
+
+
+    .btn {
+        flex: 1
+    }
+
+    btn-default: {
+        background-color: gray
+    }
+
+    .big {
+        font-size: 1.2em;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px; /* demo only */
+    }
+
+        .custom-dropdown select {
+            background-color: #1abc9c;
+            color: #fff;
+            font-size: inherit;
+            padding: .5em;
+            padding-right: 2.5em;
+            border: 0;
+            margin: 0;
+            border-radius: 3px;
+            text-indent: 0.01px;
+            text-overflow: '';
+            -webkit-appearance: button; /* hide default arrow in chrome OSX */
+        }
+
+        .custom-dropdown::before,
+        .custom-dropdown::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .custom-dropdown::after { /*  Custom dropdown arrow */
+            content: "\25BC";
+            height: 1em;
+            font-size: .625em;
+            line-height: 1;
+            right: 1.2em;
+            top: 50%;
+            margin-top: -.5em;
+        }
+
+        .custom-dropdown::before { /*  Custom dropdown arrow cover */
+            width: 2em;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .custom-dropdown select[disabled] {
+            color: rgba(0,0,0,.3);
+        }
+
+            .custom-dropdown select[disabled]::after {
+                color: rgba(0,0,0,.1);
+            }
+
+        .custom-dropdown::before {
+            background-color: rgba(0,0,0,.15);
+        }
+
+        .custom-dropdown::after {
+            color: rgba(0,0,0,.4);
+        }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #ecbb06;
+        color: white;
+        text-align: center;
+    }
+
+    .createforms {
+        border: none;
+        border-bottom: 2px solid gray;
+        padding-left: 2px;
+        transition: 0.3s;
+        border-radius: 4px;
+    }
+
+        .createforms:hover {
+            background-color: #ededed;
+            padding-left: 5px;
+        }
+
+        .createforms:focus {
+            border-bottom: 2px solid red;
+            background-color: #ededed;
+            padding-left: 5px;
+        }
+
+        .createforms:disabled, .createforms:read-only {
+            cursor: not-allowed;
+            padding-left: 2px;
+            transition: 0.3s;
+        }
+
+            .createforms:disabled:hover, .createforms:disabled:active, .createforms:read-only:hover, .createforms:read-only:active {
+                cursor: not-allowed;
+                background-color: red;
+                padding-left: 5px;
+                opacity: 0.6;
+            }
+
+    .text-danger {
+        text-align: center;
+    }
+
+    .ready {
+        animation-name: color;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    @@keyframes color {
+        0% {
+            background-color: mediumseagreen
+        }
+
+        50% {
+            background-color: seagreen;
+        }
+    }
+
+    .judgehelp {
+        animation-name: color2;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    @@keyframes color2 {
+        0% {
+            background-color: yellow
+        }
+
+        50% {
+            background-color: red;
+        }
+    }
+
+    .overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+    }
+
+    .textoverlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: black;
+        background-color: white;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+    }.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+    
+</style>
+
+@{var timeStamp = DateTime.UtcNow; }
+<br />
+
+<h2>Match Keeper</h2>
+
+<script src="~/Scripts/jquery-3.3.1.js" integrity="" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<div id="scoreoverlayf1" style="display:none" class="overlay">
+    <div class="textoverlay" style="padding:50px;text-align:center">
+
+        <h1>Field 1 Score</h1>
+        <h4>Team Number: <span style="background-color:gray;padding:3px;border-radius:2px" id="teamnumberf1">0000-0</span></h4>
+        <h4>Final Score: <span style="background-color:gray;padding:3px;border-radius:2px" id="finalscoref1">0</span></h4>
+        <table class="table-condensed">
+            <tr>
+                <th style="text-align:center"><span>Bottle 1 </span></th>
+                <th style="text-align:center"><span>Bottle 2 </span></th>
+                <th style="text-align:center"><span>Bottle 3 </span></th>
+                <th style="text-align:center"><span>Bottle 4 </span></th>
+                <th style="text-align:center"><span>Bottle 5 </span></th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="field1datascore" class="bottle1f1" style="font-size:15px" disabled>
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="field1datascore" class="bottle2f1" style="font-size:15px" disabled>
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="field1datascore" class="bottle3f1" style="font-size:15px" disabled>
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="field1datascore" class="bottle4f1" style="font-size:15px" disabled>
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="field1datascore" class="bottle5f1" style="font-size:15px" disabled>
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">White Golf Balls</th>
+                <th style="text-align:center">Orange Golf Balls</th>
+                <th style="text-align:center">Invalid Balls</th>
+                <th style="text-align:center">Remaining Balls</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="field1datascore" class="whitebf1" disabled>
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="field1datascore" class="orangebf1" disabled>
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="field1datascore" class="invalidbf1" disabled>
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="field1datascore" class="remainbf1" disabled>
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">Game Ending Mission</th>
+                <th style="text-align:center">Robot Stayed Sturdy</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field1datascore" class="extra1f1" disabled>
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="field1datascore" class="extra2f1" disabled>
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <th style="text-align:center">Full Reset</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field1datascore" class="penalty1f1" disabled>
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <input type="button" value="Score OK!" id="hidef1score" style="font-size:20px;background-color:mediumseagreen;margin-top:10px" />
+        <input type="button" value="Edit Score" id="editf1score" style="font-size:20px;background-color:tomato;margin-top:10px" />
+    </div>
+</div>
+<div id="scoreoverlayf2" style="display:none" class="overlay">
+    <div class="textoverlay" style="padding:50px;text-align:center">
+
+        <h1>Field 2 Score</h1>
+        <h4>Team Number: <span style="background-color:gray;padding:3px;border-radius:2px" id="teamnumberf2">0000-0</span></h4>
+        <h4>Final Score: <span style="background-color:gray;padding:3px;border-radius:2px" id="finalscoref2">0</span></h4>
+        <table class="table-condensed">
+            <tr>
+                <th style="text-align:center"><span>Bottle 1 </span></th>
+                <th style="text-align:center"><span>Bottle 2 </span></th>
+                <th style="text-align:center"><span>Bottle 3 </span></th>
+                <th style="text-align:center"><span>Bottle 4 </span></th>
+                <th style="text-align:center"><span>Bottle 5 </span></th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="field2datascore" class="bottle1f2" style="font-size:15px" disabled>
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="field2datascore" class="bottle2f2" style="font-size:15px" disabled>
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="field2datascore" class="bottle3f2" style="font-size:15px" disabled>
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="field2datascore" class="bottle4f2" style="font-size:15px" disabled>
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="field2datascore" class="bottle5f2" style="font-size:15px" disabled>
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">White Golf Balls</th>
+                <th style="text-align:center">Orange Golf Balls</th>
+                <th style="text-align:center">Invalid Balls</th>
+                <th style="text-align:center">Remaining Balls</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="field2datascore" class="whitebf2" disabled>
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="field2datascore" class="orangebf2" disabled>
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="field2datascore" class="invalidbf2" disabled>
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="field2datascore" class="remainbf2" disabled>
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">Game Ending Mission</th>
+                <th style="text-align:center">Robot Stayed Sturdy</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field2datascore" class="extra1f2" disabled>
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="field2datascore" class="extra2f2" disabled>
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <th style="text-align:center">Full Reset</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field2datascore" class="penalty1f2" disabled>
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <input type="button" value="Score OK!" id="hidef2score" style="font-size:20px;background-color:mediumseagreen;margin-top:10px" />
+        <input type="button" value="Edit Score" id="editf2score" style="font-size:20px;background-color:tomato;margin-top:10px" />
+    </div>
+</div>
+<div id="scoreoverlayf3" style="display:none" class="overlay">
+    <div class="textoverlay" style="padding:50px;text-align:center">
+
+        <h1>Field 3 Score</h1>
+        <h4>Team Number: <span style="background-color:gray;padding:3px;border-radius:2px" id="teamnumberf3">0000-0</span></h4>
+        <h4>Final Score: <span style="background-color:gray;padding:3px;border-radius:2px" id="finalscoref3">0</span></h4>
+        <table class="table-condensed">
+            <tr>
+                <th style="text-align:center"><span>Bottle 1 </span></th>
+                <th style="text-align:center"><span>Bottle 2 </span></th>
+                <th style="text-align:center"><span>Bottle 3 </span></th>
+                <th style="text-align:center"><span>Bottle 4 </span></th>
+                <th style="text-align:center"><span>Bottle 5 </span></th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="field3datascore" class="bottle1f3" style="font-size:15px" disabled>
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="field3datascore" class="bottle2f3" style="font-size:15px" disabled>
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="field3datascore" class="bottle3f3" style="font-size:15px" disabled>
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="field3datascore" class="bottle4f3" style="font-size:15px" disabled>
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="field3datascore" class="bottle5f3" style="font-size:15px" disabled>
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">White Golf Balls</th>
+                <th style="text-align:center">Orange Golf Balls</th>
+                <th style="text-align:center">Invalid Balls</th>
+                <th style="text-align:center">Remaining Balls</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="field3datascore" class="whitebf3" disabled>
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="field3datascore" class="orangebf3" disabled>
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="field3datascore" class="invalidbf3" disabled>
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="field3datascore" class="remainbf3" disabled>
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">Game Ending Mission</th>
+                <th style="text-align:center">Robot Stayed Sturdy</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field3datascore" class="extra1f3" disabled>
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="field3datascore" class="extra2f3" disabled>
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <th style="text-align:center">Full Reset</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field3datascore" class="penalty1f3" disabled>
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <input type="button" value="Score OK!" id="hidef3score" style="font-size:20px;background-color:mediumseagreen;margin-top:10px" />
+        <input type="button" value="Edit Score" id="editf3score" style="font-size:20px;background-color:tomato;margin-top:10px" />
+    </div>
+</div>
+<div id="scoreoverlayf4" style="display:none" class="overlay">
+    <div class="textoverlay" style="padding:50px;text-align:center">
+
+        <h1>Field 4 Score</h1>
+        <h4>Team Number: <span style="background-color:gray;padding:3px;border-radius:2px" id="teamnumberf4">0000-0</span></h4>
+        <h4>Final Score: <span style="background-color:gray;padding:3px;border-radius:2px" id="finalscoref4">0</span></h4>
+        <table class="table-condensed">
+            <tr>
+                <th style="text-align:center"><span>Bottle 1 </span></th>
+                <th style="text-align:center"><span>Bottle 2 </span></th>
+                <th style="text-align:center"><span>Bottle 3 </span></th>
+                <th style="text-align:center"><span>Bottle 4 </span></th>
+                <th style="text-align:center"><span>Bottle 5 </span></th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="field4datascore" class="bottle1f4" style="font-size:15px" disabled>
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="field4datascore" class="bottle2f4" style="font-size:15px" disabled>
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="field4datascore" class="bottle3f4" style="font-size:15px" disabled>
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="field4datascore" class="bottle4f4" style="font-size:15px" disabled>
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="field4datascore" class="bottle5f4" style="font-size:15px" disabled>
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">White Golf Balls</th>
+                <th style="text-align:center">Orange Golf Balls</th>
+                <th style="text-align:center">Invalid Balls</th>
+                <th style="text-align:center">Remaining Balls</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="field4datascore" class="whitebf4" disabled>
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="field4datascore" class="orangebf4" disabled>
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="field4datascore" class="invalidbf4" disabled>
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="field4datascore" class="remainbf4" disabled>
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">Game Ending Mission</th>
+                <th style="text-align:center">Robot Stayed Sturdy</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field4datascore" class="extra1f4" disabled>
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="field4datascore" class="extra2f4" disabled>
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <th style="text-align:center">Full Reset</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field4datascore" class="penalty1f4" disabled>
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <input type="button" value="Score OK!" id="hidef4score" style="font-size:20px;background-color:mediumseagreen;margin-top:10px" />
+        <input type="button" value="Edit Score" id="editf4score" style="font-size:20px;background-color:tomato;margin-top:10px" />
+    </div>
+</div>
+<div id="scoreoverlayf5" style="display:none" class="overlay">
+    <div class="textoverlay" style="padding:50px;text-align:center">
+
+        <h1>Field 5 Score</h1>
+        <h4>Team Number: <span style="background-color:gray;padding:3px;border-radius:2px" id="teamnumberf5">0000-0</span></h4>
+        <h4>Final Score: <span style="background-color:gray;padding:3px;border-radius:2px" id="finalscoref5">0</span></h4>
+        <table class="table-condensed">
+            <tr>
+                <th style="text-align:center"><span>Bottle 1 </span></th>
+                <th style="text-align:center"><span>Bottle 2 </span></th>
+                <th style="text-align:center"><span>Bottle 3 </span></th>
+                <th style="text-align:center"><span>Bottle 4 </span></th>
+                <th style="text-align:center"><span>Bottle 5 </span></th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="field5datascore" class="bottle1f5" style="font-size:15px" disabled>
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="field5datascore" class="bottle2f5" style="font-size:15px" disabled>
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="field5datascore" class="bottle3f5" style="font-size:15px" disabled>
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="field5datascore" class="bottle4f5" style="font-size:15px" disabled>
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="field5datascore" class="bottle5f5" style="font-size:15px" disabled>
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">White Golf Balls</th>
+                <th style="text-align:center">Orange Golf Balls</th>
+                <th style="text-align:center">Invalid Balls</th>
+                <th style="text-align:center">Remaining Balls</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="field5datascore" class="whitebf5" disabled>
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="field5datascore" class="orangebf5" disabled>
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="field5datascore" class="invalidbf5" disabled>
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="field5datascore" class="remainbf5" disabled>
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">Game Ending Mission</th>
+                <th style="text-align:center">Robot Stayed Sturdy</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field5datascore" class="extra1f5" disabled>
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="field5datascore" class="extra2f5" disabled>
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <th style="text-align:center">Full Reset</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field5datascore" class="penalty1f5" disabled>
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <input type="button" value="Score OK!" id="hidef5score" style="font-size:20px;background-color:mediumseagreen;margin-top:10px" />
+        <input type="button" value="Edit Score" id="editf5score" style="font-size:20px;background-color:tomato;margin-top:10px" />
+    </div>
+</div>
+<div id="scoreoverlayf6" style="display:none" class="overlay">
+    <div class="textoverlay" style="padding:50px;text-align:center">
+
+        <h1>Field 6 Score</h1>
+        <h4>Team Number: <span style="background-color:gray;padding:3px;border-radius:2px" id="teamnumberf6">0000-0</span></h4>
+        <h4>Final Score: <span style="background-color:gray;padding:3px;border-radius:2px" id="finalscoref6">0</span></h4>
+        <table class="table-condensed">
+            <tr>
+                <th style="text-align:center"><span>Bottle 1 </span></th>
+                <th style="text-align:center"><span>Bottle 2 </span></th>
+                <th style="text-align:center"><span>Bottle 3 </span></th>
+                <th style="text-align:center"><span>Bottle 4 </span></th>
+                <th style="text-align:center"><span>Bottle 5 </span></th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeB1(this.value)" id="field6datascore" class="bottle1f6" style="font-size:15px" disabled>
+                        <option name="bot1" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot1" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot1" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB2(this.value)" id="field6datascore" class="bottle2f6" style="font-size:15px" disabled>
+                        <option name="bot2" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot2" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot2" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB3(this.value)" id="field6datascore" class="bottle3f6" style="font-size:15px" disabled>
+                        <option name="bot3" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot3" id="bot" value="5">Moved Out (5)</option>
+                        <option name="bot3" id="bot" value="13">Knocked Over (13)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB4(this.value)" id="field6datascore" class="bottle4f6" style="font-size:15px" disabled>
+                        <option name="bot4" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot4" id="bot" value="3">Moved Out (3)</option>
+                        <option name="bot4" id="bot" value="11">Knocked Over (11)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeB5(this.value)" id="field6datascore" class="bottle5f6" style="font-size:15px" disabled>
+                        <option name="bot5" id="bot" value="0">In Circle (0)</option>
+                        <option name="bot5" id="bot" value="-2">Moved Out (-2)</option>
+                        <option name="bot5" id="bot" value="-2">Knocked Over (-2)</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">White Golf Balls</th>
+                <th style="text-align:center">Orange Golf Balls</th>
+                <th style="text-align:center">Invalid Balls</th>
+                <th style="text-align:center">Remaining Balls</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeWB(this.value)" id="field6datascore" class="whitebf6" disabled>
+                        <option name="wgb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="wgb" id="gb" value="15">One Golf Ball (15)</option>
+                        <option name="wgb" id="gb" value="30">Two Golf Balls (30)</option>
+                        <option name="wgb" id="gb" value="45">Three Golf Balls (45)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeOB(this.value)" id="field6datascore" class="orangebf6" disabled>
+                        <option name="ogb" id="gb" value="0">No Golf Balls (0)</option>
+                        <option name="ogb" id="gb" value="18">One Golf Ball (18)</option>
+                        <option name="ogb" id="gb" value="36">Two Golf Balls (36)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeIB(this.value)" id="field6datascore" class="invalidbf6" disabled>
+                        <option name="igb" id="gb" value="0">No Balls (0)</option>
+                        <option name="igb" id="gb" value="-3">One Ball (-3)</option>
+                        <option name="igb" id="gb" value="-6">Two Balls (-6)</option>
+                        <option name="igb" id="gb" value="-9">Three Balls (-9)</option>
+                        <option name="igb" id="gb" value="-12">Four Balls (-12)</option>
+                        <option name="igb" id="gb" value="-15">Five Balls (-15)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeRB(this.value)" id="field6datascore" class="remainbf6" disabled>
+                        <option name="rgb" id="gb" value="5">No Balls Left (5)</option>
+                        <option name="rgb" id="gb" value="4">One Ball Left (4)</option>
+                        <option name="rgb" id="gb" value="3">Two Balls Left (3)</option>
+                        <option name="rgb" id="gb" value="2">Three Balls Left (2)</option>
+                        <option name="rgb" id="gb" value="1">Four Balls Left (1)</option>
+                        <option name="rgb" id="gb" value="0">Five Balls Left (0)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr style="text-align:center">
+                <th style="text-align:center">Game Ending Mission</th>
+                <th style="text-align:center">Robot Stayed Sturdy</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field6datascore" class="extra1f6" disabled>
+                        <option name="gem" id="bs" value="0">Mission Failed (0)</option>
+                        <option name="gem" id="bs" value="12">Mission Completed (12)</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="OnChangeBS3(this.value)" id="field6datascore" class="extra2f6" disabled>
+                        <option name="str" id="bs" value="0">Not Sturdy (0)</option>
+                        <option name="str" id="bs" value="2">Sturdy (2)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="border:none;width:100%;text-align:center">
+            <tr>
+                <th style="text-align:center">Full Reset</th>
+            </tr>
+            <tr>
+                <td>
+                    <select onchange="OnChangeBS4(this.value)" id="field6datascore" class="penalty1f6" disabled>
+                        <option name="frs" id="bs" value="0">No Reset Done (0)</option>
+                        <option name="frs" id="bs" value="-3">Full Reset Done (-3)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <input type="button" value="Score OK!" id="hidef6score" style="font-size:20px;background-color:mediumseagreen;margin-top:10px" />
+        <input type="button" value="Edit Score" id="editf6score" style="font-size:20px;background-color:tomato;margin-top:10px" />
+    </div>
+</div>
+<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center">
+    <div style="display:inherit">
+
+        <h3 style="font-family:'Lucida Console'"><span id="minutesv" class="timerarea">0</span>:<span id="secondsv" class="timerarea">00</span> <span class="timerstatus">&#9632;</span>  |  <span id="messagev"></span></h3>
+
+        <input type="number" id="minutes" value="2" placeholder="Minutes" />
+        <input type="number" id="seconds" value="0" placeholder="Seconds" />
+        <input type="text" id="message" placeholder="Message" />
+        <br />
+        <input type="button" id="starttimer" value="Start Timer!" style="background-color:mediumseagreen;width:100%;padding:10px;margin:10px" />
+        <input type="button" id="stoptimer" value="Stop Timer!" style="background-color:indianred;width:100%;padding:10px;margin:10px" />
+        <input type="button" id="confirmstop" value="CONFIRM STOP!" style="background-color:red;width:100%;padding:10px;margin:10px" hidden="hidden" />
+        <br />
+        <input type="button" id="sendtimer" value="Send Timer!" style="width:100%;padding:10px;margin:10px" />
+        <br />
+        <input type="button" id="presetmatch" value="Match Preset" />
+        <input type="button" id="presettimeout" value="Timeout Preset" />
+        <input type="button" id="presetpittime" value="Pit Preset" />
+    </div>
+</div>
+<br />
+<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
+    <h3>Match Controls</h3>
+
+    <h5 id="gamestatus" style="width:100%;background-color:mediumseagreen;padding:10px;color:white">>>> OK TO CONTINUE >>></h5>
+    <table style="width:100%">
+        <tr style="background-color:gray;padding-bottom:10px">
+            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox1"><h3>Initialization</h3></th>
+            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox2"><h3>Match Play</h3></th>
+            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox3"><h3>Judge Scoring</h3></th>
+            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox4"><h3>Field Timeout</h3></th>
+        </tr>
+    </table>
+    <br />
+
+    <input type="button" id="prevstage" value="Previous Stage" />
+    <input type="button" id="resetmatch" value="Reset Match" hidden="hidden" />
+    <input type="button" id="nextstage" value="Next Stage" />
+    <br />
+
+    <input type="button" id="dangerchange" value="Show Danger Controls" />
+    <br />
+    <br />
+    <div id="dangercontrols" style="background-color:tomato;padding:10px;display:none">
+
+        <h3>DANGER CONTROLS</h3>
+        <br />
+        <input class="dangerbutton" type="button" id="stage1" value="Stage 1" />
+        <input class="dangerbutton" type="button" id="stage2" value="Stage 2" />
+        <input class="dangerbutton" type="button" id="stage3" value="Stage 3" />
+        <input class="dangerbutton" type="button" id="stage4" value="Stage 4" />
+        <br />
+        <input class="dangerbutton" type="button" id="deinitall" value="Deinitialize All" />
+        <input class="dangerbutton" type="button" id="notreadyall" value="Not Ready All" />
+        <input class="dangerbutton" type="button" id="readyall" value="Ready All" />
+        <input class="dangerbutton" type="button" id="scoredall" value="Scored All" />
+        <input class="dangerbutton" type="button" id="cancelpanic" value="Cancel All Panics" />
+    </div>
+
+</div>
+<br />
+<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
+    <h3>Event Controls</h3>
+    <h5 id="currentevent"></h5>
+    <input type="button" id="nextevent" value="Next Event" />
+    <input type="button" id="previousevent" value="Previous Event" />
+</div>
+<br />
+<table style="width:100%">
+    <caption style="text-align:center">Field Controls</caption>
+    <tr>
+        <th>Field 1</th>
+        <th>Field 2</th>
+        <th>Field 3</th>
+        <th>Field 4</th>
+        <th>Field 5</th>
+        <th>Field 6</th>
+    </tr>
+    <tr>
+        <td><input type="button" value="Deinitialize" id="field1d" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Deinitialize" id="field2d" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Deinitialize" id="field3d" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Deinitialize" id="field4d" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Deinitialize" id="field5d" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Deinitialize" id="field6d" style="margin-bottom:5px" /></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Not Ready" id="field1n" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Not Ready" id="field2n" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Not Ready" id="field3n" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Not Ready" id="field4n" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Not Ready" id="field5n" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Not Ready" id="field6n" style="margin-bottom:5px" /></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Ready" id="field1r" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Ready" id="field2r" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Ready" id="field3r" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Ready" id="field4r" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Ready" id="field5r" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Ready" id="field6r" style="margin-bottom:5px" /></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Scored" id="field1s" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Scored" id="field2s" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Scored" id="field3s" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Scored" id="field4s" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Scored" id="field5s" style="margin-bottom:5px" /></td>
+        <td><input type="button" value="Scored" id="field6s" style="margin-bottom:5px" /></td>
+    </tr>
+    <tr>
+        <td>
+            <span id="field1status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field1connection"></span><br /><span id="panicstatusf1" style="padding:3px"></span>
+        </td>
+        <td>
+            <span id="field2status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field2connection"></span><br /><span id="panicstatusf2" style="padding:3px"></span>
+        </td>
+        <td>
+            <span id="field3status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field3connection"></span><br /><span id="panicstatusf3" style="padding:3px"></span>
+        </td>
+        <td>
+            <span id="field4status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field4connection"></span><br /><span id="panicstatusf4" style="padding:3px"></span>
+        </td>
+        <td>
+            <span id="field5status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field5connection"></span><br /><span id="panicstatusf5" style="padding:3px"></span>
+        </td>
+        <td>
+            <span id="field6status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field6connection"></span><br /><span id="panicstatusf6" style="padding:3px"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" id="seef1score" value="See Score" />
+        </td>
+        <td>
+            <input type="button" id="seef2score" value="See Score" />
+        </td>
+        <td>
+            <input type="button" id="seef3score" value="See Score" />
+        </td>
+        <td>
+            <input type="button" id="seef4score" value="See Score" />
+        </td>
+        <td>
+            <input type="button" id="seef5score" value="See Score" />
+        </td>
+        <td>
+            <input type="button" id="seef6score" value="See Score" />
+        </td>
+    </tr>
+
+</table>
+<br />
+<div class="row" style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
+    <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default roundbutton1">
+                <input type="radio" name="rounds" id="round1"> Round 1
+            </label>
+            <label class="btn btn-default roundbutton2">
+                <input type="radio" name="rounds" id="round2"> Round 2
+            </label>
+        </div>
+    </div>
+    <table class="column" id="round1list">
+        <caption style="text-align:center">
+            Round 1 Unplayed:
+        </caption>
+        <tr style="font-size:20px">
+            <th>
+                Team ID
+            </th>
+            <th>
+                Team #
+            </th>
+            <th>
+                Team Name
+            </th>
+        </tr>
+        <tbody id="round1selection">
+            @foreach (var Team in Model.R1List.Where(a => a.FieldR1 == 0).OrderBy(a => a.TeamNumberBranch).ThenBy(a => a.TeamNumberSpecific))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Team.TeamID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Team.TeamNumberBranch)-@Team.TeamNumberSpecific
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Team.TeamName)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+    <table class="column" id="round2list" style="border-left:2px solid black;margin-bottom:10px">
+        <caption style="text-align:center">
+            Round 2 Unplayed:
+        </caption>
+        <tr style="font-size:20px">
+            <th>
+                Team ID
+            </th>
+            <th>
+                Team #
+            </th>
+            <th>
+                Team Name
+            </th>
+        </tr>
+        <tbody id="round2selection">
+            @foreach (var Team in Model.R1List.Where(a => a.FieldR2 == 0).OrderByDescending(a => a.TeamNumberBranch).ThenByDescending(a => a.TeamNumberSpecific))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Team.TeamID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Team.TeamNumberBranch)-@Team.TeamNumberSpecific
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Team.TeamName)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <input type="number" placeholder="Field 1 Team ID" id="field1selection" />
+            </td>
+            <td>
+                <input type="number" placeholder="Field 2 Team ID" id="field2selection" />
+            </td>
+            <td>
+                <input type="number" placeholder="Field 3 Team ID" id="field3selection" />
+            </td>
+            <td>
+                <input type="number" placeholder="Field 4 Team ID" id="field4selection" />
+            </td>
+            <td>
+                <input type="number" placeholder="Field 5 Team ID" id="field5selection" />
+            </td>
+            <td>
+                <input type="number" placeholder="Field 6 Team ID" id="field6selection" />
+            </td>
+        </tr>
+    </table>
+    <span style="text-align:center" id="teamsubmissionstatus"></span>
+    <br />
+    <input type="button" id="submitteams" value="Submit Selected Team IDs" style="background-color:orange;width:100%;padding:10px;margin:10px" hidden/>
+</div>
+
+<br />
+<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+    <div style="text-align:center">
+        <h1>Broadcast Message</h1>
+        <input type="text" placeholder="Broadcast Message" id="userbroadcastmessage" />
+        <span>Issue? </span><input type="checkbox" id="userbroadcastissue" />
+        <span>Volunteers Only? </span><input type="checkbox" id="userbroadcaststaff" />
+        <input type="button" id="broadcastmessage" value="Send Test Chat" />
+        <h3 id="currentbroadcast">No Current Broadcast</h3>
+        <p id="broadcastsender" style="color:gray"></p>
+    </div>
+
+</div>
+<br />
+<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+    <div style="text-align:center">
+        <input type="text" placeholder="Message" id="usermessage" />
+        <span>Issue? </span><input type="checkbox" id="userissue" />
+        <input type="button" id="sendchat" value="Send Test Chat" />
+        <input type="button" id="clearchat" value="Clear Chat" />
+    </div>
+    <table style="width:100%">
+        <caption>Volunteer Chat Connection</caption>
+        <tr>
+            <th width="20%">Sender</th>
+            <th width="70%">Message</th>
+            <th width="10%">Issue</th>
+        </tr>
+        <tbody class="volunteerchat"></tbody>
+    </table>
+</div>
+<script>
+    $("#seef1score").attr("hidden", true);
+    $("#seef2score").attr("hidden", true);
+    $("#seef3score").attr("hidden", true);
+    $("#seef4score").attr("hidden", true);
+    $("#seef5score").attr("hidden", true);
+    $("#seef6score").attr("hidden", true);
+</script>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        var timer = false;
+        var minutesc = 0;
+        var secondsc = 0;
+        var secondsview = "00";
+        var interval = false;
+        var part = 1;
+        var minutess = 0;
+        var secondss = 0;
+        var message = "";
+        var abort = false;
+        var stopped = true;
+        var initseconds = 0;
+        var fieldarray = [0, 0, 0, 0, 0, 0];
+        var fieldconnected = [false, false, false, false, false, false]
+        var currentstage = 0;
+        var dangercontrols = false;
+        var dangertimer = 0;
+        var confirmstoptimer = 0;
+        var roundidlist = [0, 0, 0, 0, 0, 0];
+        var publicround = 0;
+
+        // Reference the auto-generated proxy for the hub.
+        var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
+        // Create a function that the hub can call back to display messages.
+        chat.on("changeTeamScores",function (topten) {
+            // Add the message to the page.
+            //$('#' + teamnumber).text(score);
+            $(".topteams").empty();
+
+            $.each(topten, function (index, value) {
+                var markup = "<tr style='text-align:center;padding-left:5px'><th width='10%' style='text-align:left'>" + (index + 1) +
+                    "</th><th width='30%' style='text-align:center'>" + value.TeamNumber + "</th><th width='30%' style='text-align:center'>" +
+                    value.TeamName + "</th><th width='30%' style='text-align:center'>" +
+                    value.Average + "</th></tr>";
+                $(".topteams").append(markup);
+            });
+        });
+        chat.on("changelist", function (matchdatamodel) {
+            $("#round1selection").empty();
+            $.each(matchdatamodel.R1List, function (index, value) {
+                var markup = "<tr><td>" + value.TeamID + "</td><td>" + value.TeamNumberBranch + "-" + value.TeamNumberSpecific + "</td><td>" + value.TeamName + "</td></tr>"
+                $("#round1selection").append(markup);
+            });
+            $("#round2selection").empty();
+            $.each(matchdatamodel.R2List, function (index, value) {
+                var markup = "<tr><td>" + value.TeamID + "</td><td>" + value.TeamNumberBranch + "-" + value.TeamNumberSpecific + "</td><td>" + value.TeamName + "</td></tr>"
+                $("#round2selection").append(markup);
+            });
+        });
+        chat.on("broadcast",  function (message, issue, sender, time, volunteersonly) {
+            $("#currentbroadcast").html(message);
+            $("#broadcastsender").html("- " + sender);
+        });
+        chat.on("changeGlobalTimer", function (minutes, seconds, message, status) {
+            $("#minutesv").html(minutes);
+            if (seconds < 10) {
+                secondsview = "0" + seconds;
+            } else {
+                secondsview = seconds;
+            }
+            $("#secondsv").html(secondsview);
+            $("#messagev").html(message);
+
+        });
+        chat.on("initFieldView", function (field, status, score, team, connection, matchkeeper) {
+            if (status == 0) {
+                $("#field" + field + "status").css("background-color", "gray");
+                $("#field" + field + "status").html("Not Using");
+                $("#field" + field + "connection").html("");
+                fieldarray[field - 1] = 0;
+                if (matchkeeper == true) {
+                    $("#field" + field + "status").html("Not Using (SC)");
+                }
+            } else if (status == 1) {
+                $("#field" + field + "status").css("background-color", "tomato");
+                $("#field" + field + "status").html("Not Ready");
+                fieldarray[field - 1] = 1;
+                if (matchkeeper == true) {
+                    $("#field" + field + "status").html("Not Ready (SC)");
+                }
+            } else if (status == 2) {
+                $("#field" + field + "status").css("background-color", "MediumSeaGreen");
+                $("#field" + field + "status").html("Ready");
+                fieldarray[field - 1] = 2;
+                if (matchkeeper == true) {
+                    $("#field" + field + "status").html("Ready (SC)");
+                }
+            } else if (status == 3) {
+                $("#field" + field + "status").css("background-color", "dodgerblue");
+                $("#field" + field + "status").html("Scored");
+                fieldarray[field - 1] = 3;
+                if (matchkeeper == true) {
+                    $("#field" + field + "status").html("Scored (SC)");
+                }
+            }
+            if (currentstage == 3 || currentstage == 4) {
+                if (fieldarray.includes(1) == true || fieldarray.includes(2) == true) {
+                    $("#gamestatus").html("Not Ready to Reset!")
+                    $("#gamestatus").removeClass("ready").css("background-color", "tomato");
+                } else {
+                    $("#gamestatus").html("<<< OK TO RESET <<<");
+                    $("#gamestatus").addClass("ready").css("background-color", "mediumseagreen");
+
+                }
+            }
+            else if (currentstage == 1 || currentstage == 2) {
+                if (fieldarray.includes(1) == true) {
+                    $("#gamestatus").html("Not Ready to Start!");
+                    $("#gamestatus").removeClass("ready").css("background-color", "tomato");
+                } else {
+                    $("#gamestatus").html(">>> OK TO START >>>");
+                    $("#gamestatus").addClass("ready").css("background-color", "mediumseagreen");
+                }
+            }
+
+        });
+        chat.on("updateLive", function (field) {
+            if (field < 7 && field > 0) {
+                fieldconnected[field - 1] = true;
+            }
+        });
+        chat.on("changeStage", function (stage) {
+            $("#stagebox" + 1).css("background-color", "gray");
+            $("#stagebox" + 2).css("background-color", "gray");
+            $("#stagebox" + 3).css("background-color", "gray");
+            $("#stagebox" + 4).css("background-color", "gray");
+            $("#stagebox" + stage).css("background-color", "mediumseagreen");
+            currentstage = stage;
+            if (currentstage == 3 || currentstage == 4) {
+                if (fieldarray.includes(1) == true || fieldarray.includes(2) == true) {
+                    $("#gamestatus").html("Not Ready to Reset!")
+                    $("#gamestatus").removeClass("ready").css("background-color", "tomato");
+                } else {
+                    $("#gamestatus").html("<<< OK TO RESET <<<");
+                    $("#gamestatus").addClass("ready").css("background-color", "mediumseagreen");
+
+                }
+            }
+            else if (currentstage == 1 || currentstage == 2) {
+                if (fieldarray.includes(1) == true) {
+                    $("#gamestatus").html("Not Ready to Start!");
+                    $("#gamestatus").removeClass("ready").css("background-color", "tomato");
+                } else {
+                    $("#gamestatus").html(">>> OK TO START >>>");
+                    $("#gamestatus").addClass("ready").css("background-color", "mediumseagreen");
+                }
+            }
+            if (stage == 3) {
+                $("#resetmatch").attr("hidden", false);
+            } else {
+                $("#resetmatch").attr("hidden", true);
+            }
+        });
+        chat.on("helpThisJudge", function (field, helping) {
+            if (helping == true) {
+                $("#panicstatusf" + field).css("background-color", "yellow");
+                $("#panicstatusf" + field).addClass("judgehelp");
+                $("#panicstatusf" + field).html("Help Requested!");
+            } else {
+                $("#panicstatusf" + field).css("background-color", "");
+                $("#panicstatusf" + field).removeClass("judgehelp");
+                $("#panicstatusf" + field).html("");
+            }
+
+        });
+        
+        chat.on("chatMessage", function (message, issue, sender, time, broadcast) {
+            $(".volunteerchat").append("<tr><td width='20%' style='color:red'><strong>" + sender + "</strong></td><td width='70%'>" + message + "</td><td width='10%'>" + issue + "</td></tr>")
+        });
+        chat.on("checkThisScore", function (field, data, score, roundid, teamnumber) {
+            var splitdata = data.split("^");
+            var bottlesdata = splitdata[0].split("/");
+            var ballsdata = splitdata[1].split("/");
+            var extradata = splitdata[2].split("/");
+            var penaltydata = splitdata[3].split("/");
+            $(".bottle1f" + field).val(bottlesdata[0]).attr("selected", "selected");
+            $(".bottle2f" + field).val(bottlesdata[1]).attr("selected", "selected");
+            $(".bottle3f" + field).val(bottlesdata[2]).attr("selected", "selected");
+            $(".bottle4f" + field).val(bottlesdata[3]).attr("selected", "selected");
+            $(".bottle5f" + field).val(bottlesdata[4]).attr("selected", "selected");
+            $(".whitebf" + field).val(ballsdata[0]).attr("selected", "selected");
+            $(".orangebf" + field).val(ballsdata[1]).attr("selected", "selected");
+            $(".invalidbf" + field).val(ballsdata[2]).attr("selected", "selected");
+            $(".remainbf" + field).val(ballsdata[3]).attr("selected", "selected");
+            $(".extra1f" + field).val(extradata[0]).attr("selected", "selected");
+            $(".extra2f" + field).val(extradata[1]).attr("selected", "selected");
+            $(".penalty1f" + field).val(penaltydata[0]).attr("selected", "selected");
+            $("#finalscoref" + field).html(score);
+            $("#teamnumberf" + field).html(teamnumber);
+            $("#seef" + field + "score").attr("hidden", false);
+            roundidlist[field - 1] = roundid;
+            //finalscore
+            //teamnumber
+        });
+        // Start the connection.
+        var fieldsub = 0;
+        var lockedin = false;
+        chat.start().then(function () {
+            $(".roundbutton1").click(function () {
+                $("#submitteams").attr("hidden", false);
+                $("#round1list").css("background-color", "gray");
+                $("#round2list").css("background-color", "lightgray");
+                publicround = 1;
+            });
+            $(".roundbutton2").click(function () {
+                $("#submitteams").attr("hidden", false);
+                $("#round1list").css("background-color", "lightgray");
+                $("#round2list").css("background-color", "gray");
+                publicround = 2;
+            });
+            $("#submitteams").click(function () {
+                var teamid1 = parseFloat($("#field1selection").val());
+                var teamid2 = parseFloat($("#field2selection").val());
+                var teamid3 = parseFloat($("#field3selection").val());
+                var teamid4 = parseFloat($("#field4selection").val());
+                var teamid5 = parseFloat($("#field5selection").val());
+                var teamid6 = parseFloat($("#field6selection").val());
+                if (isNaN(teamid1)) {
+                    teamid1 = 0;
+                }
+                if (isNaN(teamid2)) {
+                    teamid2 = 0;
+                }
+                if (isNaN(teamid3)) {
+                    teamid3 = 0;
+                }
+                if (isNaN(teamid4)) {
+                    teamid4 = 0;
+                }
+                if (isNaN(teamid5)) {
+                    teamid5 = 0;
+                }
+                if (isNaN(teamid6)) {
+                    teamid6 = 0;
+                }
+                $("#teamsubmissionstatus").html("[" + teamid1 + ", " + teamid2 + ", " + teamid3 + ", " + teamid4 + ", " + teamid5 + ", " + teamid6 + "] selected for judges!")
+                chat.invoke("matchMaker", teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, 1, publicround);
+                $("#field1selection").val("");
+                $("#field2selection").val("");
+                $("#field3selection").val("");
+                $("#field4selection").val("");
+                $("#field5selection").val("");
+                $("#field6selection").val("");
+            });
+            $("#sendchat").click(function () {
+                var message = $("#usermessage").val();
+                var sender = "Match Manager (Official)"
+                var issue = $("#userissue").is(":checked");
+                chat.invoke("sendMessage", message, issue, sender)
+                $("#usermessage").val("");
+            });
+            $("#broadcastmessage").click(function () {
+                var message = $("#userbroadcastmessage").val();
+                var sender = "Match Manager (Official)";
+                var issue = $("#userbroadcastissue").is(":checked");
+                var volunteersonly = $("#userbroadcaststaff").is(":checked")
+                chat.invoke("sendBroadcast", message, issue, sender, volunteersonly)
+            });
+            $("#clearchat").click(function () {
+                $(".volunteerchat").empty();
+            });
+            $("#senddatatest").click(function () {
+                chat.invoke("scoreCheck", 1, "0/13/5/11/-2^0/36/-3/5^12/0^-3/0", 50, 0, "1111-1");
+            });
+
+            $("#lockin").click(function () {
+                fieldsub += parseFloat($("#fieldn").val());
+                if (fieldsub > 6 || fieldsub < 1) {
+                    $("#fieldissue").text("Field must be 1-6!");
+                } else {
+                    lockedin = true;
+                    $("#fieldn").attr("disabled", true);
+                    chat.invoke("initField",fieldsub, 1);
+                    $("#fieldissue").text("");
+                }
+            });
+            $("#stage1").click(function () {
+                chat.invoke("setStage",1);
+            });
+            $("#cancelpanic").click(function () {
+                chat.invoke("judgeHelp",1, false);
+                chat.invoke("judgeHelp",2, false);
+                chat.invoke("judgeHelp",3, false);
+                chat.invoke("judgeHelp",4, false);
+                chat.invoke("judgeHelp",5, false);
+                chat.invoke("judgeHelp",6, false);
+            });
+            $("#stage2").click(function () {
+                chat.invoke("setStage", 2);
+            });
+            $("#stage3").click(function () {
+                chat.invoke("setStage", 3);
+            });
+            $("#stage4").click(function () {
+                chat.invoke("setStage", 4);
+            });
+            $("#nextstage").click(function () {
+                if (currentstage == 4) {
+                    currentstage = 1
+                } else {
+                    currentstage++;
+                }
+                chat.invoke("setStage", currentstage)
+            });
+            $("#resetmatch").click(function () {
+                chat.invoke("setStage", 1);
+                $("#seef1score").attr("hidden", true);
+                $("#seef2score").attr("hidden", true);
+                $("#seef3score").attr("hidden", true);
+                $("#seef4score").attr("hidden", true);
+                $("#seef5score").attr("hidden", true);
+                $("#seef6score").attr("hidden", true);
+            });
+            $("#prevstage").click(function () {
+                if (currentstage == 1) {
+                    currentstage = 3
+                } else {
+                    currentstage--;
+                }
+                chat.invoke("setStage", currentstage)
+            });
+            $("#seef1score").click(function () {
+                $("#scoreoverlayf1").css("display", "block");
+            });
+            $("#seef2score").click(function () {
+                $("#scoreoverlayf2").css("display", "block");
+            });
+            $("#seef3score").click(function () {
+                $("#scoreoverlayf3").css("display", "block");
+            });
+            $("#seef4score").click(function () {
+                $("#scoreoverlayf4").css("display", "block");
+            });
+            $("#seef5score").click(function () {
+                $("#scoreoverlayf5").css("display", "block");
+            });
+            $("#seef6score").click(function () {
+                $("#scoreoverlayf6").css("display", "block");
+            });
+            $("#hidef1score").click(function () {
+                $("#scoreoverlayf1").css("display", "none");
+            });
+            $("#hidef2score").click(function () {
+                $("#scoreoverlayf2").css("display", "none");
+            });
+            $("#hidef3score").click(function () {
+                $("#scoreoverlayf3").css("display", "none");
+            });
+            $("#hidef4score").click(function () {
+                $("#scoreoverlayf4").css("display", "none");
+            });
+            $("#hidef5score").click(function () {
+                $("#scoreoverlayf5").css("display", "none");
+            });
+            $("#hidef6score").click(function () {
+                $("#scoreoverlayf6").css("display", "none");
+            });
+            $("#editf1score").click(function () {
+                window.open("/Team/RoundEdit/" + roundidlist[0], "_blank");
+            });
+            $("#editf2score").click(function () {
+                window.open("/Team/RoundEdit/" + roundidlist[1], "_blank");
+            });
+            $("#editf3score").click(function () {
+                window.open("/Team/RoundEdit/" + roundidlist[2], "_blank");
+            });
+            $("#editf4score").click(function () {
+                window.open("/Team/RoundEdit/" + roundidlist[3], "_blank");
+            });
+            $("#editf5score").click(function () {
+                window.open("/Team/RoundEdit/" + roundidlist[4], "_blank");
+            });
+            $("#editf6score").click(function () {
+                window.open("/Team/RoundEdit/" + roundidlist[5], "_blank");
+            });
+            function dangersetback() {
+                if (dangertimer > 0) {
+                    dangertimer--;
+                    $("#dangerchange").val("Hiding Danger Controls in " + dangertimer + "...")
+                    setTimeout(dangersetback, 1000);
+                } else {
+                    $("#dangerchange").val("Show Danger Controls");
+                    $("#dangerchange").attr("disabled", false);
+                    $("#dangercontrols").css("display", "none");
+                }
+
+
+            }
+            $("#dangerchange").click(function () {
+                $("#dangercontrols").css("display", "");
+                dangercontrols = true;
+                $("#dangerchange").val("Hiding Danger Controls in 7...");
+                dangertimer = 7;
+                $("#dangerchange").attr("disabled", true);
+                setTimeout(dangersetback, 1000);
+                //#dangercontrols
+            });
+            $(".dangerbutton").click(function () {
+                dangertimer = 0;
+                $("#dangerchange").val("Hiding Danger Controls in 0...")
+            });
+            $("#readystatus").click(function () {
+                if (lockedin == true) {
+                    chat.invoke("initField",fieldsub, 2);
+                    $("#fieldissue").text("");
+                }
+            });
+            $("#notreadystatus").click(function () {
+                if (lockedin == true) {
+                    chat.invoke("initField",fieldsub, 1);
+                    $("#fieldissue").text("");
+                }
+            });
+            $('#sendtimer').click(function () {
+                sendTimer();
+
+            });
+            $('#starttimer').click(function () {
+                StartTimer();
+                abort = false;
+                timer = true;
+                $(".timerstatus").css("color", "green");
+                $('#starttimer').attr("hidden", true);
+                $('#stoptimer').attr("hidden", false);
+                $('#sendtimer').attr("hidden", true);
+                $("#presetmatch").attr("hidden", true);
+                $("#presettimeout").attr("hidden", true);
+                $("#presetpittime").attr("hidden", true);
+
+            });
+            function confirmtimerstop() {
+                if (confirmstoptimer > 0) {
+                    confirmstoptimer--;
+                    $("#confirmstop").val("CONFIRM TIMER STOP (" + confirmstoptimer + ")")
+                    setTimeout(confirmtimerstop, 1000);
+                } else {
+                    $('#stoptimer').attr("hidden", false);
+                    $('#confirmstop').attr("hidden", true);
+                }
+            }
+            $("#stoptimer").click(function () {
+                $('#stoptimer').attr("hidden", true);
+                $('#confirmstop').attr("hidden", false);
+                $("#confirmstop").val("CONFIRM TIMER STOP (3)")
+                confirmstoptimer = 3;
+                setTimeout(confirmtimerstop, 1000);
+            });
+            $('#confirmstop').click(function () {
+                abort = true;
+                timer = false;
+                $(".timerstatus").css("color", "black");
+                chat.invoke("sendTimer",minutesc, secondsc, message, 0);
+                confirmstoptimer = 0;
+                $('#starttimer').attr("hidden", false);
+                $('#stoptimer').attr("hidden", true);
+                $('#confirmstop').attr("hidden", true);
+                $('#sendtimer').attr("hidden", false);
+                $("#presetmatch").attr("hidden", false);
+                $("#presettimeout").attr("hidden", false);
+                $("#presetpittime").attr("hidden", false);
+            });
+            $("#presetmatch").click(function () {
+                $("#minutes").val(2);
+                $("#seconds").val(0);
+                $("#message").val("Game Match");
+                sendTimer();
+            });
+            $("#presettimeout").click(function () {
+                $("#minutes").val(5);
+                $("#seconds").val(0);
+                $("#message").val("Field Timeout");
+                sendTimer();
+            });
+            $("#presetpittime").click(function () {
+                $("#minutes").val(30);
+                $("#seconds").val(0);
+                $("#message").val("Pit Work Time");
+                sendTimer();
+            });
+            function checkPongs() {
+                if (fieldconnected[0] == true) {
+                    if (fieldarray[0] != 0 && fieldarray != 3) {
+                        $("#field1connection").html("");
+                    }
+                } else {
+                    if (fieldarray[0] != 0 && fieldarray[0] != 3) {
+                        $("#field1connection").html("Disconnected");
+                        $("#field1connection").css("background-color", "LemonChiffon");
+                        $("#field1connection").css("color", "red");
+                    }
+
+                }
+                if (fieldconnected[1] == true) {
+                    if (fieldarray[1] != 0 && fieldarray != 3) {
+                        $("#field2connection").html("");
+                    }
+                } else {
+                    if (fieldarray[1] != 0 && fieldarray[1] != 3) {
+                        $("#field2connection").html("Disconnected");
+                        $("#field2connection").css("background-color", "LemonChiffon");
+                        $("#field2connection").css("color", "red");
+                    }
+
+                }
+                if (fieldconnected[2] == true) {
+                    if (fieldarray[2] != 0 && fieldarray != 3) {
+                        $("#field3connection").html("");
+                    }
+                } else {
+                    if (fieldarray[2] != 0 && fieldarray[2] != 3) {
+                        $("#field3connection").html("Disconnected");
+                        $("#field3connection").css("background-color", "LemonChiffon");
+                        $("#field3connection").css("color", "red");
+                    }
+
+                }
+                if (fieldconnected[3] == true) {
+                    if (fieldarray[3] != 0 && fieldarray != 3) {
+                        $("#field4connection").html("");
+                    }
+                } else {
+                    if (fieldarray[3] != 0 && fieldarray[3] != 3) {
+                        $("#field4connection").html("Disconnected");
+                        $("#field4connection").css("background-color", "LemonChiffon");
+                        $("#field4connection").css("color", "red");
+                    }
+
+                }
+                if (fieldconnected[4] == true) {
+                    if (fieldarray[4] != 0 && fieldarray != 3) {
+                        $("#field5connection").html("");
+                    }
+                } else {
+                    if (fieldarray[4] != 0 && fieldarray[4] != 3) {
+                        $("#field5connection").html("Disconnected");
+                        $("#field5connection").css("background-color", "LemonChiffon");
+                        $("#field5connection").css("color", "red");
+                    }
+
+                }
+                if (fieldconnected[5] == true) {
+                    if (fieldarray[5] != 0 && fieldarray != 3) {
+                        $("#field6connection").html("");
+                    }
+                } else {
+                    if (fieldarray[5] != 0 && fieldarray[5] != 3) {
+                        $("#field6connection").html("Disconnected");
+                        $("#field6connection").css("background-color", "LemonChiffon");
+                        $("#field6connection").css("color", "red");
+                    }
+
+                }
+                fieldconnected = [false, false, false, false, false, false]
+                $("#ping").html("2");
+                setTimeout(pingTeams, 500);
+            }
+            function sendTimer() {
+                abort = true;
+                timer = false;
+                part = 0;
+                $(".timerstatus").css("color", "black");
+
+                minutess = $("#minutes").val();
+                secondss = $("#seconds").val();
+                message = $("#message").val();
+                initseconds = (minutess) + (secondss * 60);
+                minutesc = minutess;
+                secondsc = secondss;
+                chat.invoke("sendTimer",minutess, secondss, message, 0);
+            }
+            function pingTeams() {
+                $("#ping").html("1");
+                chat.invoke("pingField",7);
+                setTimeout(checkPongs, 3000);
+
+            }
+            setTimeout(pingTeams, 1000);
+
+
+
+            //DEINITIALIZE
+            $("#field1d").click(function () {
+                chat.invoke("initField", 1, 0, 0, "", true, true);
+            });
+            $("#field2d").click(function () {
+                chat.invoke("initField", 2, 0, 0, "", true, true);
+            });
+            $("#field3d").click(function () {
+                chat.invoke("initField", 3, 0, 0, "", true, true);
+            });
+            $("#field4d").click(function () {
+                chat.invoke("initField", 4, 0, 0, "", true, true);
+            });
+            $("#field5d").click(function () {
+                chat.invoke("initField", 5, 0, 0, "", true, true);
+            });
+            $("#field6d").click(function () {
+                chat.invoke("initField", 6, 0, 0, "", true, true);
+            });
+            //NOT READY
+            $("#field1n").click(function () {
+                chat.invoke("initField", 1, 1, 0, "", true, true);
+            });
+            $("#field2n").click(function () {
+                chat.invoke("initField", 2, 1, 0, "", true, true);
+            });
+            $("#field3n").click(function () {
+                chat.invoke("initField", 3, 1, 0, "", true, true);
+            });
+            $("#field4n").click(function () {
+                chat.invoke("initField", 4, 1, 0, "", true, true);
+            });
+            $("#field5n").click(function () {
+                chat.invoke("initField", 5, 1, 0, "", true, true);
+            });
+            $("#field6n").click(function () {
+                chat.invoke("initField", 6, 1, 0, "", true, true);
+            });
+            //READY
+            $("#field1r").click(function () {
+                chat.invoke("initField", 1, 2, 0, "", true, true);
+            });
+            $("#field2r").click(function () {
+                chat.invoke("initField", 2, 2, 0, "", true, true);
+            });
+            $("#field3r").click(function () {
+                chat.invoke("initField", 3, 2, 0, "", true, true);
+            });
+            $("#field4r").click(function () {
+                chat.invoke("initField", 4, 2, 0, "", true, true);
+            });
+            $("#field5r").click(function () {
+                chat.invoke("initField", 5, 2, 0, "", true, true);
+            });
+            $("#field6r").click(function () {
+                chat.invoke("initField", 6, 2, 0, "", true, true);
+            });
+            //SCORED
+            $("#field1s").click(function () {
+                chat.invoke("initField", 1, 3, 0, "", true, true);
+            });
+            $("#field2s").click(function () {
+                chat.invoke("initField", 2, 3, 0, "", true, true);
+            });
+            $("#field3s").click(function () {
+                chat.invoke("initField", 3, 3, 0, "", true, true);
+            });
+            $("#field4s").click(function () {
+                chat.invoke("initField", 4, 3, 0, "", true, true);
+            });
+            $("#field5s").click(function () {
+                chat.invoke("initField", 5, 3, 0, "", true, true);
+            });
+            $("#field6s").click(function () {
+                chat.invoke("initField", 6, 3, 0, "", true, true);
+            });
+            //ALL
+            $("#deinitall").click(function () {
+                chat.invoke("initField", 1, 0, 0, "", true, true);
+                chat.invoke("initField", 2, 0, 0, "", true, true);
+                chat.invoke("initField", 3, 0, 0, "", true, true);
+                chat.invoke("initField", 4, 0, 0, "", true, true);
+                chat.invoke("initField", 5, 0, 0, "", true, true);
+                chat.invoke("initField", 6, 0, 0, "", true, true);
+            });
+            $("#notreadyall").click(function () {
+                chat.invoke("initField", 1, 1, 0, "", true, true);
+                chat.invoke("initField", 2, 1, 0, "", true, true);
+                chat.invoke("initField", 3, 1, 0, "", true, true);
+                chat.invoke("initField", 4, 1, 0, "", true, true);
+                chat.invoke("initField", 5, 1, 0, "", true, true);
+                chat.invoke("initField", 6, 1, 0, "", true, true);
+            });
+            $("#readyall").click(function () {
+                chat.invoke("initField", 1, 2, 0, "", true, true);
+                chat.invoke("initField", 2, 2, 0, "", true, true);
+                chat.invoke("initField", 3, 2, 0, "", true, true);
+                chat.invoke("initField", 4, 2, 0, "", true, true);
+                chat.invoke("initField", 5, 2, 0, "", true, true);
+                chat.invoke("initField", 6, 2, 0, "", true, true);
+            });
+            $("#scoredall").click(function () {
+                chat.invoke("initField", 1, 3, 0, "", true, true);
+                chat.invoke("initField", 2, 3, 0, "", true, true);
+                chat.invoke("initField", 3, 3, 0, "", true, true);
+                chat.invoke("initField", 4, 3, 0, "", true, true);
+                chat.invoke("initField", 5, 3, 0, "", true, true);
+                chat.invoke("initField", 6, 3, 0, "", true, true);
+            });
+            function Countdown() {
+                if (timer == true) {
+                    if (secondsc == 0) {
+                        if (minutesc > 0) {
+                            minutesc = minutesc - 1;
+                            secondsc = 59;
+                            secondsview = "59";
+                        } else {
+                            timer = false;
+                            TimerEnded();
+                        }
+
+                    } else if (secondsc < 11) {
+                        secondsc = secondsc - 1;
+                        secondsview = "0" + secondsc;
+                    }
+                    else {
+                        secondsc = secondsc - 1;
+                        secondsview = secondsc;
+                    }
+                }
+            }
+            function StartTimer() {
+                var count = setInterval(function () {
+
+                    if (abort == true) {
+                        clearInterval(count);
+                        chat.invoke("sendTimer",minutesc, secondsc, message, 2);
+                    } else {
+                        chat.invoke("sendTimer",minutesc, secondsc, message, 1);
+                    }
+
+                    if ((part % 10) == 0) {
+                        Countdown();
+                    }
+                    part++;
+                    window.focus();
+                }, 100);
+            }
+            function TimerEnded() {
+                abort = true;
+                timer = false;
+                $(".timerstatus").css("color", "red");
+                $("#presetmatch").attr("hidden", false);
+                $("#presettimeout").attr("hidden", false);
+                $("#presetpittime").attr("hidden", false);
+                chat.invoke("sendTimer",0, 0, message, 2);
+            }
+        });
+
+
+
+
+
+    });
+
+
+</script>
+<br />
+
+<script type="text/javascript">
+    $("#bitslot4 select").on("change", function () {
+
+        //Stack
+        var subtotalstack = 0;
+        $(":radio[id='stack']:checked").each(function () {
+            subtotalstack += Number(this.value);
+        });
+        $("#subtotalstack").text(subtotalstack);
+        //Extra
+        var subtotalextra = 0;
+        $(":radio[id='extra']:checked").each(function () {
+            subtotalextra += Number(this.value);
+        });
+        $("#subtotalextra").text(subtotalextra);
+        //Penalty
+        var subtotalpenalty = 0;
+        $(":radio[id='penalty']:checked").each(function () {
+            subtotalpenalty += Number(this.value);
+        });
+        $("#subtotalpenalty").text(subtotalpenalty);
+        //Total
+        var total = 0;
+        $(":radio:checked").each(function () {
+            total += Number(this.value);
+        });
+        $("#total").text(total);
+        $("#teamID").val(total);
+        $("#teamIDcopy").text(total);
+        var description = subtotalbs + "/" + subtotalstack + "/" + subtotalextra + "/" + subtotalpenalty;
+        $("#data").val(description);
+    });
+
+</script>
+
+
+@section Scripts {
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+}
