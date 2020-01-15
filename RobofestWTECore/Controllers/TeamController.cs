@@ -163,24 +163,15 @@ namespace RobofestWTECore.Controllers
         // GET: Entry
         public async Task<ActionResult> ManageUsersAsync()
         {
-            if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-            {
 
                 var UserList = new List<IdentityUser>();
                 var users = await context.Users.ToListAsync();
                 //users = userManager.Users.Where(u => u.Roles)
                 return View();
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-            {
 
 
                 var TeamDataModelList = new List<TeamDataModel>();
@@ -228,18 +219,12 @@ namespace RobofestWTECore.Controllers
                     TeamDataModelList.Add(TeamDataModel);
                 }
                 return View(TeamDataModelList.OrderByDescending(a => a.RoundAverage));
-            }
-            else
-            {
-                return View("~/Pages/Team/IsNotAuthenticated.cshtml");
-            }
+
 
 
         }
         public ActionResult MatchManager(int id)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 var MatchDataModel = new MatchDataModel();
                 var Competition = (from a in db.Competitions where a.CompID == id select a).FirstOrDefault();
                 MatchDataModel.RunningFields = Competition.RunningFields;
@@ -261,11 +246,6 @@ namespace RobofestWTECore.Controllers
 
 
                 return View(MatchDataModel);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
         public ActionResult Competition(int id)
@@ -454,8 +434,6 @@ namespace RobofestWTECore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RoundCreate([Bind("TeamID,Score,Time,Round,Data,Rerun,Usable,TimeStamp,Field,JudgeConfirmNotes,StudentInitials")] RoundEntry roundEntry)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Judge")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 db.RoundEntries.Add(roundEntry);
                 db.SaveChanges();
 
@@ -464,31 +442,17 @@ namespace RobofestWTECore.Controllers
                 string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
                 this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false);
                 this._hubContext.Clients.All.SendAsync("checkThisScore",roundEntry.Field, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
-                UpdateScoresheet();
-                UpdateTopTen();
 
                 string page = roundEntry.TeamID.ToString();
                 page = "Details/" + page;
                 return RedirectToAction(page);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
 
         }
 
         public ActionResult RoundCreateBlank()
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Judge")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 return View();
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
@@ -499,22 +463,13 @@ namespace RobofestWTECore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RoundCreateBlank([Bind("TeamID,Score,Time,Round,Data,Rerun,Usable,TimeStamp,Field")] RoundEntry roundEntry)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Judge")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 db.RoundEntries.Add(roundEntry);
                 db.SaveChanges();
                 this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3);
-                UpdateScoresheet();
-                UpdateTopTen();
 
                 string page = roundEntry.TeamID.ToString();
                 page = "Details/" + page;
                 return RedirectToAction(page);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
 
         }
@@ -556,8 +511,6 @@ namespace RobofestWTECore.Controllers
         // GET: Entry/Edit/5*/
         public ActionResult RoundEdit(int id)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("FieldStaff")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 if (id == null)
                 {
                     //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -568,11 +521,6 @@ namespace RobofestWTECore.Controllers
                     //return HttpNotFound();
                 }
                 return View(score);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
@@ -584,8 +532,6 @@ namespace RobofestWTECore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RoundEdit([Bind("EntryID,TeamID,Score,Time,Round,Data,Rerun,Usable,TimeStamp")] RoundEntry roundEntry)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("FieldStaff")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 if (ModelState.IsValid)
                 {
                     var TeamNumberBranch = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberBranch;
@@ -596,7 +542,6 @@ namespace RobofestWTECore.Controllers
                     roundEntry.Field = PreviousField;
                     db.Set<RoundEntry>().Update(roundEntry);
                     db.SaveChanges();
-                    UpdateScoresheet();
                     UpdateTopTen();
 
                     string page = roundEntry.TeamID.ToString();
@@ -604,18 +549,11 @@ namespace RobofestWTECore.Controllers
                     return RedirectToAction(page);
                 }
                 return View(roundEntry);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
         public ActionResult TeamEdit(int id)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("FieldStaff")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 if (id == null)
                 {
                     //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -626,11 +564,6 @@ namespace RobofestWTECore.Controllers
                     //return HttpNotFound();
                 }
                 return View(score);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
@@ -640,10 +573,8 @@ namespace RobofestWTECore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TeamEdit([Bind("TeamID,CompID,TeamName,TeamNumber,Location,Coach,ReadyR1,ReadyR2")] StudentTeam studentTeam)
+        public ActionResult TeamEdit([Bind("TeamID,CompID,TeamName,TeamNumberBranch,TeamNumberSpecific,Location,Coach,ReadyR1,ReadyR2")] StudentTeam studentTeam)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("FieldStaff")) || (User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 if (ModelState.IsValid)
                 {
                     db.Entry(studentTeam).State = EntityState.Modified;
@@ -653,25 +584,13 @@ namespace RobofestWTECore.Controllers
                     return RedirectToAction(page);
                 }
                 return View(studentTeam);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
         // GET: Entry/Create
         public ActionResult TeamCreate()
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 return View();
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
 
         }
 
@@ -680,22 +599,13 @@ namespace RobofestWTECore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TeamCreate([Bind("TeamID,CompID,TeamName,TeamNumber,Location,Coach,ReadyR1,ReadyR2")] StudentTeam studentTeam)
+        public ActionResult TeamCreate([Bind("TeamID,CompID,TeamName,TeamNumberBranch,TeamNumberSpecific,Location,Coach,ReadyR1,ReadyR2")] StudentTeam studentTeam)
         {
-            if ((User.Identity.IsAuthenticated && User.IsInRole("Manager")) || (User.Identity.IsAuthenticated && User.IsInRole("Admin")))
-            {
                 db.StudentTeams.Add(studentTeam);
                 db.SaveChanges();
-                UpdateScoresheet();
                 string page = studentTeam.CompID.ToString();
                 page = "Competition/" + page;
                 return RedirectToAction(page);
-            }
-            else
-            {
-                return View("IsNotAuthenticated");
-            }
-
 
         }
         /*

@@ -137,7 +137,7 @@
     }
 </style>
 @{
-    var groups = Model.Data.Split('\\');
+    var groups = Model.Data.Split('^');
     var datag0 = groups[0].Split('/');
     var datag1 = groups[1].Split('/');
     var datag2 = groups[2].Split('/');
@@ -336,6 +336,8 @@
 
 </div>
 <br />
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
         $(".bottle1").val(@bot1).attr("selected", "selected");
         $(".bottle2").val(@bot2).attr("selected", "selected");

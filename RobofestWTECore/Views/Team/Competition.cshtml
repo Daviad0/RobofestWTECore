@@ -54,7 +54,7 @@
             </tr>
         </table>
     </div>
-    
+
     <h3 style="text-align:center">All Participating Teams:</h3>
     <h5 style="text-align:center">@Html.ActionLink("Create Team", "TeamCreate")</h5>
     <table>
@@ -202,10 +202,8 @@
 
 
 </body>
-@section Scripts {
-    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
-    <script src="~/signalr/hubs"></script>
-}
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
     $(function () {
         var timer = false;
@@ -218,9 +216,9 @@
         var secondss = 0;
         var message = "";
         // Reference the auto-generated proxy for the hub.
-        var chat = $.connection.scoreHub;
+        var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
         // Create a function that the hub can call back to display messages.
-        chat.client.changeScoreboard = function (scoresheet) {
+        chat.on("changeScoreboard", function (scoresheet) {
             // Add the message to the page.
             //$('#' + teamnumber).text(score);
             $(".scoreboard").empty();
@@ -233,8 +231,8 @@
 
                 $(".scoreboard").append(markup);
             });
-        };
-        chat.client.availableSelections = function (teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, round) {
+        });
+        chat.on("availableSelections", function (teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, round) {
             $("#field1preferred").removeClass();
             $("#field2preferred").removeClass();
             $("#field3preferred").removeClass();
@@ -254,8 +252,8 @@
             $("#field6preferred").val(teamid6);
             $("#field6preferred").addClass(teamid6)
             $("#roundpreferred").html(round);
-        };
-        chat.client.changeGlobalTimer = function (minutes, seconds, message) {
+        });
+        chat.on("changeGlobalTimer", function (minutes, seconds, message) {
             $("#minutesv").html(minutes);
             if (seconds < 10) {
                 secondsview = "0" + seconds;
@@ -271,100 +269,9 @@
             part = 0;
             $(".timerstatus").css("color", "black");
 
-        };
-        chat.client.startGlobalTimer = function () {
-            abort = false;
-            timer = true;
-            StartTimer();
-            $(".timerstatus").css("color", "green");
-
-        };
-        chat.client.stopGlobalTimer = function () {
-            abort = true;
-            timer = false;
-            $(".timerstatus").css("color", "black");
-        };
+        });
 
         // Start the connection.
-        $.connection.hub.start().done(function () {
-            $("#field1preferred").click(function () {
-                window.open("/Team/RoundCreate/" + $("#field1preferred").val(), "_blank");
-            });
-            $("#field2preferred").click(function () {
-                window.open("/Team/RoundCreate/" + $("#field2preferred").val(), "_blank");
-            });
-            $("#field3preferred").click(function () {
-                window.open("/Team/RoundCreate/" + $("#field3preferred").val(), "_blank");
-            });
-            $("#field4preferred").click(function () {
-                window.open("/Team/RoundCreate/" + $("#field4preferred").val(), "_blank");
-            });
-            $("#field5preferred").click(function () {
-                window.open("/Team/RoundCreate/" + $("#field5preferred").val(), "_blank");
-            });
-            $("#field6preferred").click(function () {
-                window.open("/Team/RoundCreate/" + $("#field6preferred").val(), "_blank");
-            });
-            $('#sendtimer').click(function () {
-                minutess = $("#minutes").val();
-                secondss = $("#seconds").val();
-                message = $("#message").val();
-                chat.server.sendTimer(minutess, secondss, message);
-            });
-            $('#starttimer').click(function () {
-                chat.server.startTimer();
-                $('#starttimer').attr("hidden", true);
-                $('#stoptimer').attr("hidden", false);
-                $('#sendtimer').attr("hidden", true);
-            });
-            $('#stoptimer').click(function () {
-                chat.server.stopTimer();
-                $('#starttimer').attr("hidden", false);
-                $('#stoptimer').attr("hidden", true);
-                $('#sendtimer').attr("hidden", false);
-            });
-
-        });
-        function Countdown() {
-            if (timer == true) {
-                if (secondsc == 0) {
-                    if (minutesc > 0) {
-                        minutesc = minutesc - 1;
-                        secondsc = 59;
-                        secondsview = "59";
-                    } else {
-                        timer = false;
-                        TimerEnded();
-                    }
-
-                } else if (secondsc < 11) {
-                    secondsc = secondsc - 1;
-                    secondsview = "0" + secondsc;
-                }
-                else {
-                    secondsc = secondsc - 1;
-                    secondsview = secondsc;
-                }
-            }
-        }
-        function StartTimer() {
-            var count = setInterval(function () {
-                $("#minutesv").html(minutesc);
-                $("#secondsv").html(secondsview);
-                if (abort == true) {
-                    clearInterval(count);
-                }
-                if ((part % 10) == 0) {
-                    Countdown();
-                }
-                part++;
-                window.focus();
-            }, 100);
-        }
-        function TimerEnded() {
-            abort = true;
-            timer = false;
-            $(".timerstatus").css("color", "red");
-        }
+        
     });
 </script>

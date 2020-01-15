@@ -20,5 +20,34 @@ namespace RobofestWTECore.Data
         public DbSet<ScoreMethod> ScoreMethods { get; set; }
         public DbSet<ScoreAmount> ScoreAmounts { get; set; }
         public DbSet<CompField> Fields { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StudentTeam>().HasData(
+                new StudentTeam
+                {
+                    TeamID = 1,
+                    TeamNumberBranch = 1001,
+                    TeamNumberSpecific = 1,
+                    TeamName = "Team One",
+                    FieldR1 = 0,
+                    FieldR2 = 0,
+                    Coach = "Robofest",
+                    Location = "Robofest",
+                    CompID = 1
+                },
+                new StudentTeam
+                {
+                    TeamID = 2,
+                    TeamNumberBranch = 1001,
+                    TeamNumberSpecific = 2,
+                    TeamName = "Team Two",
+                    FieldR1 = 0,
+                    FieldR2 = 0,
+                    Coach = "Robofest",
+                    Location = "Robofest",
+                    CompID = 1
+                }
+            );
+        }
     }
 }

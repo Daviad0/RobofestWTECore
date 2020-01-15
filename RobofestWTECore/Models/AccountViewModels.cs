@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace RobofestWTE.Models
+namespace RobofestWTECore.Models
 {
 
     public class ForgotViewModel
@@ -25,6 +25,7 @@ namespace RobofestWTE.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+        public string ReturnUrl { get; set; }
     }
 
     public class RegisterViewModel

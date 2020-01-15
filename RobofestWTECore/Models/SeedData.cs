@@ -4,19 +4,19 @@ using RobofestWTECore.Data;
 using System;
 using System.Linq;
 using RobofestWTECore.Models;
+using System.Collections.Generic;
+using RobofestWTE.Models;
 
 namespace RobofestWTECore.Models
 {
-    public static class SeedData
+    public class SeedData
     {
-        public static void Initialize(IServiceProvider serviceProvider)
+        public static void SeedDefault(GameContext context)
         {
-            using (var context = new GameContext(
-                serviceProvider.GetRequiredService<
-                    DbContextOptions<GameContext>>()))
+            if (!context.StudentTeams.Any())
             {
-
-                context.StudentTeams.AddRange(
+                var studentteams = new List<StudentTeam>
+                {
                     new RobofestWTE.Models.StudentTeam
                     {
                         TeamNumberBranch = 1001,
@@ -35,9 +35,11 @@ namespace RobofestWTECore.Models
                         FieldR2 = 0,
                         Location = "Plymouth"
                     }
-                );
-                context.SaveChanges();
+                };
+                    context.AddRange(studentteams);
+                    context.SaveChanges();
             }
         }
+        
     }
 }
