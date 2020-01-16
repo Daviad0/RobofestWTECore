@@ -11,10 +11,16 @@ namespace RobofestWTECore
     public class ScoreHub : Hub
     {
         private readonly GameContext db;
+        private readonly ApplicationDbContext context;
+        private readonly IHubContext<ScoreHub> _hubContext;
+        private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager;
 
-        public ScoreHub(GameContext db)
+        public ScoreHub(ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext, Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager2)
         {
+            this.context = context;
             this.db = db;
+            _hubContext = hubContext;
+            userManager = userManager2;
         }
         public void SendTimer(int minutes, int seconds, string message, int status)
         {
@@ -121,18 +127,16 @@ namespace RobofestWTECore
         }
         public async System.Threading.Tasks.Task UpdateUserRoleAsync(string UserName, string RoleName)
         {
-            /*var accountdb = new ApplicationDbContext();
-            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(accountdb));
-            bool delete = await UserManager.IsInRoleAsync(accountdb.Users.Where(u => u.UserName == UserName).FirstOrDefault().Id, RoleName);
+            bool delete = await userManager.IsInRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), RoleName);
             if (delete == true)
             {
-                await UserManager.RemoveFromRoleAsync(accountdb.Users.Where(u => u.UserName == UserName).FirstOrDefault().Id, RoleName);
+                await userManager.RemoveFromRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), RoleName);
             }
             else
             {
-                await UserManager.AddToRoleAsync(accountdb.Users.Where(u => u.UserName == UserName).FirstOrDefault().Id, RoleName);
+                await userManager.AddToRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), RoleName);
             }
-            await accountdb.SaveChangesAsync();*/
+            await Clients.All.SendAsync("reloadUsers");
         }
     }
 }

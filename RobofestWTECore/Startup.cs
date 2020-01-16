@@ -41,8 +41,9 @@ namespace RobofestWTECore
                 options.UseSqlServer(
                     Configuration.GetConnectionString("RobofestWTE")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                    .AddEntityFrameworkStores<ApplicationDbContext>()
-                    .AddDefaultTokenProviders();
+                    .AddDefaultUI()
+                    .AddDefaultTokenProviders()
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
             
             services.AddSignalR();
             services.AddSingleton<Controller, TeamController>();

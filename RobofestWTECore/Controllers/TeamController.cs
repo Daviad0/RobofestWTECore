@@ -22,13 +22,15 @@ namespace RobofestWTECore.Controllers
         //private readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager;
         private readonly ApplicationDbContext context;
         private readonly IHubContext<ScoreHub> _hubContext;
+        private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager;
 
-        public TeamController(/*Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager,*/ ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext)
+        public TeamController(/*Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager,*/ ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext, Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager2)
         {
             //this.userManager = userManager;
             this.context = context;
             this.db = db;
             _hubContext = hubContext;
+            userManager = userManager2;
         }
 
 
@@ -161,13 +163,75 @@ namespace RobofestWTECore.Controllers
             return View();
         }
         // GET: Entry
-        public async Task<ActionResult> ManageUsersAsync()
+        public async Task<ActionResult> ManageUsers()
         {
-
-                var UserList = new List<IdentityUser>();
-                var users = await context.Users.ToListAsync();
-                //users = userManager.Users.Where(u => u.Roles)
-                return View();
+            var Userlist = new List<UserListModel>();
+            var users = await context.Users.ToListAsync();
+            foreach(var user in users)
+            {
+                var listitem = new UserListModel();
+                if (await userManager.IsInRoleAsync(user, "Judge"))
+                {
+                    listitem.Roles.Add("Judge");
+                    if(await userManager.IsInRoleAsync(user, "Field1"))
+                    {
+                        listitem.Roles.Add("Field1");
+                    }
+                    if (await userManager.IsInRoleAsync(user, "Field2"))
+                    {
+                        listitem.Roles.Add("Field2");
+                    }
+                    if (await userManager.IsInRoleAsync(user, "Field3"))
+                    {
+                        listitem.Roles.Add("Field3");
+                    }
+                    if (await userManager.IsInRoleAsync(user, "Field4"))
+                    {
+                        listitem.Roles.Add("Field4");
+                    }
+                    if (await userManager.IsInRoleAsync(user, "Field5"))
+                    {
+                        listitem.Roles.Add("Field5");
+                    }
+                    if (await userManager.IsInRoleAsync(user, "Field6"))
+                    {
+                        listitem.Roles.Add("Field6");
+                    }
+                    if (await userManager.IsInRoleAsync(user, "AllFields"))
+                    {
+                        listitem.Roles.Add("AllFields");
+                    }
+                }
+                if (await userManager.IsInRoleAsync(user, "Admin"))
+                {
+                    listitem.Roles.Add("Admin");
+                }
+                if (await userManager.IsInRoleAsync(user, "FieldStaff"))
+                {
+                    listitem.Roles.Add("FieldStaff");
+                }
+                if (await userManager.IsInRoleAsync(user, "Manager"))
+                {
+                    listitem.Roles.Add("Manager");
+                }
+                if (await userManager.IsInRoleAsync(user, "Main"))
+                {
+                    listitem.Roles.Add("Main");
+                }
+                if (await userManager.IsInRoleAsync(user, "Tech"))
+                {
+                    listitem.Roles.Add("Tech");
+                }
+                if (await userManager.IsInRoleAsync(user, "Locked"))
+                {
+                    listitem.Roles.Add("Locked");
+                }
+                listitem.UserID = user.Id;
+                listitem.UserName = user.UserName;
+                Userlist.Add(listitem);
+            }
+            //users = userManager.Users.Where(u => u.Roles)
+            return View(Userlist);
 
         }
         public ActionResult Index()
@@ -305,43 +369,51 @@ namespace RobofestWTECore.Controllers
         }
         public ActionResult GAME(int id)
         {
-            if (id == 0)
+            if (User.IsInRole("Judge"))
             {
-                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var GamePageModel = new GamePageModel();
-
-            //GAME ID CHANGES BASED ON WHATEVER IS PASSED THROUGH CONTROLLER
-            //1 IS A TEST VALUE
-            var GAME = (from a in db.GAMES where a.GameID == id select a).FirstOrDefault();
-            //Count the amount of teams
-            //Where function will have to change based on competition
-            //Create variable "i" to count with each competition so it can find amount of teams attached to each competition
-            //Attach "i" to the where function
-
-
-
-            GamePageModel.Desc = GAME.Desc;
-            GamePageModel.GameID = GAME.GameID;
-            GamePageModel.Name = GAME.Name;
-            foreach (var c in db.Competitions.Where(a => a.GameID == 1).ToList())
-            {
-                int i = 0;
-                foreach (var s in db.StudentTeams.Where(a => a.CompID == c.CompID))
+                if (id == 0)
                 {
-                    i++;
+                    //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
-                var Competition = (from a in db.Competitions where a.CompID == c.CompID select a).FirstOrDefault();
-                var CompetitionPageModel = new CompetitionPageModel();
-                CompetitionPageModel.CompID = Competition.CompID;
-                CompetitionPageModel.Date = Competition.Date;
-                CompetitionPageModel.Location = Competition.Location;
-                CompetitionPageModel.ExtraData = Competition.ExtraData;
-                CompetitionPageModel.TeamCount = i;
-                GamePageModel.Competitions.Add(CompetitionPageModel);
-            }
+                var GamePageModel = new GamePageModel();
 
-            return View(GamePageModel);
+                //GAME ID CHANGES BASED ON WHATEVER IS PASSED THROUGH CONTROLLER
+                //1 IS A TEST VALUE
+                var GAME = (from a in db.GAMES where a.GameID == id select a).FirstOrDefault();
+                //Count the amount of teams
+                //Where function will have to change based on competition
+                //Create variable "i" to count with each competition so it can find amount of teams attached to each competition
+                //Attach "i" to the where function
+
+
+
+                GamePageModel.Desc = GAME.Desc;
+                GamePageModel.GameID = GAME.GameID;
+                GamePageModel.Name = GAME.Name;
+                foreach (var c in db.Competitions.Where(a => a.GameID == 1).ToList())
+                {
+                    int i = 0;
+                    foreach (var s in db.StudentTeams.Where(a => a.CompID == c.CompID))
+                    {
+                        i++;
+                    }
+                    var Competition = (from a in db.Competitions where a.CompID == c.CompID select a).FirstOrDefault();
+                    var CompetitionPageModel = new CompetitionPageModel();
+                    CompetitionPageModel.CompID = Competition.CompID;
+                    CompetitionPageModel.Date = Competition.Date;
+                    CompetitionPageModel.Location = Competition.Location;
+                    CompetitionPageModel.ExtraData = Competition.ExtraData;
+                    CompetitionPageModel.TeamCount = i;
+                    GamePageModel.Competitions.Add(CompetitionPageModel);
+                }
+
+                return View(GamePageModel);
+            }
+            else
+            {
+                return View("IsNotAuthenticated");
+            }
+            
         }
         // GET: Entry/Details/5
         public ActionResult Details(int id)
