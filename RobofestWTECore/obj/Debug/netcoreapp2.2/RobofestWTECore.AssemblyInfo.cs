@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-RobofestWTECore-9D5AB3AD-12D2-4C51-863C-6DCE12C0DD2A")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RobofestWTECore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
