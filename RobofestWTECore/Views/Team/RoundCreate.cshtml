@@ -1,5 +1,6 @@
 ﻿@model RobofestWTE.Models.RoundEntry
-
+@using RobofestWTECore.Models
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewBag.Title = "Create";
 }
@@ -214,7 +215,33 @@
     }
 </style>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-@{var timeStamp = DateTime.UtcNow; }
+@{var timeStamp = DateTime.UtcNow;
+    string CurrentJudgeC = "";
+    if (User.IsInRole("Main"))
+    {
+        CurrentJudgeC = "(Main Account) ";
+    }
+    else if (User.IsInRole("Admin"))
+    {
+        CurrentJudgeC = "(Admin) ";
+    }
+    else if (User.IsInRole("Manager"))
+    {
+        CurrentJudgeC = "(Manager) ";
+    }
+    else if (User.IsInRole("Judge"))
+    {
+        CurrentJudgeC = "(Judge) ";
+    }
+    else if (User.IsInRole("Tech"))
+    {
+        CurrentJudgeC = "(Website Manager) ";
+    }
+    CurrentJudgeC = CurrentJudgeC + UserManager.GetUserName(User);
+
+
+
+    }
 <br />
 <h2>Create</h2>
 <h4 style="text-align:center">Round</h4>
@@ -710,11 +737,11 @@
         });
     });
 </script>
-
 <script>
-
+    var CurrentJudge = "@CurrentJudgeC.ToString()"
 
     $(function () {
+
         var teamid = @Model.TeamID;
         var timer = false;
         var minutesc = 0;
@@ -882,12 +909,12 @@
             });
             function PongBack(direction) {
                 if (direction == 7 || direction == fieldsub) {
-                    chat.invoke("pong", fieldsub);
+                    chat.invoke("pong", fieldsub, CurrentJudge);
                 }
             }
             var pongback = setInterval(function () {
                 if (pong == true) {
-                    chat.invoke("pong", fieldsub);
+                    chat.invoke("pong", fieldsub, CurrentJudge);
                 }
             }, 100);
             $("#enablescoreupdate").click(function () {

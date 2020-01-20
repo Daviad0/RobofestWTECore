@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RobofestWTECore.Data;
 
 namespace RobofestWTECore.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20200120161005_StringTeamNumber")]
+    partial class StringTeamNumber
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,13 +219,13 @@ namespace RobofestWTECore.Migrations
 
                     b.Property<bool>("Rerun");
 
-                    b.Property<int>("RoundNum");
-
                     b.Property<string>("TeamNumber");
 
                     b.Property<bool>("Test");
 
                     b.HasKey("MatchID");
+
+                    b.HasIndex("CompID");
 
                     b.ToTable("TeamMatches");
                 });
@@ -272,6 +274,14 @@ namespace RobofestWTECore.Migrations
                 {
                     b.HasOne("RobofestWTE.Models.Competition", "Competition")
                         .WithMany("StudentTeams")
+                        .HasForeignKey("CompID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RobofestWTE.Models.TeamMatch", b =>
+                {
+                    b.HasOne("RobofestWTE.Models.Competition", "Competition")
+                        .WithMany()
                         .HasForeignKey("CompID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

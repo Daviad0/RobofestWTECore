@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using RobofestWTECore.Models;
 using RobofestWTE.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace RobofestWTECore
 {
@@ -31,6 +33,23 @@ namespace RobofestWTECore
         {
             Clients.All.SendAsync("startGlobalTimer");
         }
+        public async Task ChangeMatches(string jsonrequired)
+        {
+            TeamMatch Match = JsonConvert.DeserializeObject<TeamMatch>(jsonrequired);
+            await db.TeamMatches.AddAsync(Match);
+            await db.SaveChangesAsync();
+            await Clients.All.SendAsync("reloadRequired");
+        }
+        public void ClearSchedule()
+        {
+            var EverythingToClear = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
+            foreach (var match in EverythingToClear)
+            {
+                db.TeamMatches.Remove(match);
+                db.SaveChangesAsync();
+            }
+
+        }
         public void StopTimer()
         {
             Clients.All.SendAsync("stopGlobalTimer");
@@ -54,9 +73,9 @@ namespace RobofestWTECore
         {
             Clients.All.SendAsync("getPong",field);
         }
-        public void Pong(int fieldid)
+        public void Pong(int fieldid, string account)
         {
-            Clients.All.SendAsync("updateLive", fieldid);
+            Clients.All.SendAsync("updateLive", fieldid, account);
         }
         public void SetStage(int stage)
         {
@@ -137,6 +156,11 @@ namespace RobofestWTECore
                 await userManager.AddToRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), RoleName);
             }
             await Clients.All.SendAsync("reloadUsers");
+        }
+        
+        public Task ThrowException()
+        {
+            throw new HubException("This error will be sent to the client!");
         }
     }
 }

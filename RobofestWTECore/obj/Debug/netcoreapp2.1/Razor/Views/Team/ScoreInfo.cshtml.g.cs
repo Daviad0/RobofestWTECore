@@ -384,7 +384,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
                     ");
             EndContext();
             BeginContext(7125, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a5e1755eea7443481a0ab0c827ff0f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb59637824eb439a9024e7a82cd87e2d", async() => {
                 BeginContext(7164, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -408,7 +408,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(7208, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08e34f259abe4fd487561a38a3e760e4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4413e2c0b1064ae69018351446e64447", async() => {
                 BeginContext(7247, 13, true);
                 WriteLiteral("Moved Out (3)");
                 EndContext();
@@ -432,7 +432,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(7291, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9742484fe3094035953332f09dc22f45", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad9d14781a2c4eb7905ab4e1543ef0ee", async() => {
                 BeginContext(7331, 17, true);
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
@@ -456,7 +456,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB2(this.value)\" id=\"score\" class=\"bottle2 custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(7550, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9b78baec377414c91462c2765c7bb34", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86fb61c31897412a9e28094fcb66edfb", async() => {
                 BeginContext(7589, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -480,7 +480,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(7633, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9851609c9d874fb5b65d6500c356076c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70fdd34eeeb34ec9917b3b6328a55f3e", async() => {
                 BeginContext(7672, 13, true);
                 WriteLiteral("Moved Out (5)");
                 EndContext();
@@ -504,7 +504,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(7716, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86e12d6843a94483998d91228b88d39a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9fb6b03fb52f49268251031ee891d53e", async() => {
                 BeginContext(7756, 17, true);
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
@@ -528,7 +528,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB3(this.value)\" id=\"score\" class=\"bottle3 custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(7975, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5208566a88b44e5eb4999f5c5f012534", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34894837e5f74fb2a197276477d5f4e2", async() => {
                 BeginContext(8014, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -552,7 +552,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(8058, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2d06fb201d44924a480999f2fd1328e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb5222dd0277449d9f3d2fa40ce30013", async() => {
                 BeginContext(8097, 13, true);
                 WriteLiteral("Moved Out (5)");
                 EndContext();
@@ -576,7 +576,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(8141, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "538ce69566234e86a0fe907493744438", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "226b9408c7694c97903247c69c089ac0", async() => {
                 BeginContext(8181, 17, true);
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
@@ -600,7 +600,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB4(this.value)\" id=\"score\" class=\"bottle4 custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(8400, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05f3a76a2a8a49c095d116c39e5606db", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8be0d120bda40989e2a1ccc07256bf7", async() => {
                 BeginContext(8439, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -624,7 +624,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(8483, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1adfdafa86ec4d9da2297ce8ca79b647", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9ebccafee324ae8ade8f2ad626c3834", async() => {
                 BeginContext(8522, 13, true);
                 WriteLiteral("Moved Out (3)");
                 EndContext();
@@ -648,7 +648,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(8566, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "555aacd7a56248dc8bb1f840945df8cb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "199589941746463580712f623cdcda69", async() => {
                 BeginContext(8606, 17, true);
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
@@ -672,7 +672,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB5(this.value)\" id=\"score\" class=\"bottle5 custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(8825, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a7cefe110ced42c18e94f5c1c9c1e4fa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb3e5a59ecdd43fba4ecd37b19224529", async() => {
                 BeginContext(8864, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -696,7 +696,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(8908, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67dfb135106c4207b27938b603faba0d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "781de46868894489895e25198b464500", async() => {
                 BeginContext(8948, 14, true);
                 WriteLiteral("Moved Out (-2)");
                 EndContext();
@@ -720,7 +720,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(8993, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6ef0d3d55fd467d8c4c88134245a28f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b08344b6e47d44d7a220f1281fe8846b", async() => {
                 BeginContext(9033, 17, true);
                 WriteLiteral("Knocked Over (-2)");
                 EndContext();
@@ -763,7 +763,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
                     ");
             EndContext();
             BeginContext(9681, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afa7590693844dac93aaf3207303e99e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49bf21abaaa34a1ca08ee1cd34629ae7", async() => {
                 BeginContext(9718, 17, true);
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
@@ -787,7 +787,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(9766, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e80ce9ba641b4f7298b59342a3828912", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3658661de8904a8a827f95b5900e94db", async() => {
                 BeginContext(9804, 18, true);
                 WriteLiteral("One Golf Ball (15)");
                 EndContext();
@@ -811,7 +811,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(9853, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a42306828eb44bdcbf258d0e360c02d4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "537b65714f51404182b8c9a8064435fe", async() => {
                 BeginContext(9891, 19, true);
                 WriteLiteral("Two Golf Balls (30)");
                 EndContext();
@@ -835,7 +835,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(9941, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2913d6a405ce45a5aa9f8e369ee15aeb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "90a6926ebe27401e8a7f86d7cd3147d1", async() => {
                 BeginContext(9979, 21, true);
                 WriteLiteral("Three Golf Balls (45)");
                 EndContext();
@@ -859,7 +859,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeOB(this.value)\" id=\"score\" class=\"orangeb custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(10202, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e1d685663bb43e8bde7126ed209a3a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71b6c43a0f3745499b5ca332f8672997", async() => {
                 BeginContext(10239, 17, true);
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
@@ -883,7 +883,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(10287, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e5277d46ffff430893009f04a5cdf8a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38b19339bb024ff7b5e5faaeb4b8edff", async() => {
                 BeginContext(10325, 18, true);
                 WriteLiteral("One Golf Ball (18)");
                 EndContext();
@@ -907,7 +907,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(10374, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e86ac28cc724b7e9e2fd4a00a94d5e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e995f7decf34bd2a4a30784f035bb23", async() => {
                 BeginContext(10412, 19, true);
                 WriteLiteral("Two Golf Balls (36)");
                 EndContext();
@@ -931,7 +931,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeIB(this.value)\" id=\"score\" class=\"invalidb custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(10634, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9d2d850f89d4c83baaeeb0f3a16be5a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99854645102640eda9ab073fd028b181", async() => {
                 BeginContext(10671, 12, true);
                 WriteLiteral("No Balls (0)");
                 EndContext();
@@ -955,7 +955,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(10714, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef28e2d5caa74f18bdea75cb25247f72", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c5c69ac0cbf4940ace0247a68505517", async() => {
                 BeginContext(10752, 13, true);
                 WriteLiteral("One Ball (-3)");
                 EndContext();
@@ -979,7 +979,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(10796, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a02994fdc4d469d94df6442b942c345", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8bf4f946de9b4473a141a840decac80f", async() => {
                 BeginContext(10834, 14, true);
                 WriteLiteral("Two Balls (-6)");
                 EndContext();
@@ -1003,7 +1003,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(10879, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16c894e048cb4c2c844ff2684ca9e763", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1f74fa96d6a4937a2a14b4ca2b01392", async() => {
                 BeginContext(10917, 16, true);
                 WriteLiteral("Three Balls (-9)");
                 EndContext();
@@ -1027,7 +1027,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(10964, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e09e5cbf1d0400db93cc239965a5dfc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58ff8b1f01544a54970b398898dbadac", async() => {
                 BeginContext(11003, 16, true);
                 WriteLiteral("Four Balls (-12)");
                 EndContext();
@@ -1051,7 +1051,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(11050, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afca7c8bc3744293b7dc3dab647d7675", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11cc4b57c73a4ae1b0af4e97d4cab15b", async() => {
                 BeginContext(11089, 16, true);
                 WriteLiteral("Five Balls (-15)");
                 EndContext();
@@ -1075,7 +1075,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeRB(this.value)\" id=\"score\" class=\"remainb custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(11307, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ace29357f0e74adaaac28f8eb3ea3dcc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "992d9c1b8f154f15a2e661dbd109d939", async() => {
                 BeginContext(11344, 17, true);
                 WriteLiteral("No Balls Left (5)");
                 EndContext();
@@ -1099,7 +1099,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(11392, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56c226a1cf2847d7af447e7d91bea4fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98e5002687644e05af3ae2080b154646", async() => {
                 BeginContext(11429, 17, true);
                 WriteLiteral("One Ball Left (4)");
                 EndContext();
@@ -1123,7 +1123,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(11477, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb74961b2dca499cbd66735d1a00cb9c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cabe2232c29f4d8299c05f01de215ce8", async() => {
                 BeginContext(11514, 18, true);
                 WriteLiteral("Two Balls Left (3)");
                 EndContext();
@@ -1147,7 +1147,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(11563, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4b3c0ad216f413fad7e2df456d63618", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c7a6bdf11804cd4b9e47d46f7f60203", async() => {
                 BeginContext(11600, 20, true);
                 WriteLiteral("Three Balls Left (2)");
                 EndContext();
@@ -1171,7 +1171,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(11651, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eaa26ae7e6374e9ab37629d5bcb840a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42bb196c40c44008aaa6f39c709d33d3", async() => {
                 BeginContext(11688, 19, true);
                 WriteLiteral("Four Balls Left (1)");
                 EndContext();
@@ -1195,7 +1195,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(11738, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bbfc991299ce4040af14802e391783c1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb45e012aa344e85b356229590eb4f38", async() => {
                 BeginContext(11775, 19, true);
                 WriteLiteral("Five Balls Left (0)");
                 EndContext();
@@ -1236,7 +1236,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
                     ");
             EndContext();
             BeginContext(12357, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07337abca684461ba2760a00cb3ea335", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a116e9df6d043b786f623804c93597d", async() => {
                 BeginContext(12394, 18, true);
                 WriteLiteral("Mission Failed (0)");
                 EndContext();
@@ -1260,7 +1260,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(12443, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc0af13c474b4d20a33082dd57ec8fe9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0183527c085649ac83be44acd28e4b92", async() => {
                 BeginContext(12481, 22, true);
                 WriteLiteral("Mission Completed (12)");
                 EndContext();
@@ -1284,7 +1284,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeBS3(this.value)\" id=\"score\" class=\"extra2 custom-dropdown big\">\r\n                    ");
             EndContext();
             BeginContext(12705, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df9a760e26c44502bcadc559d0456ddb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bc4e5a17d1b4fd5a8a9e4d4a36c6b87", async() => {
                 BeginContext(12742, 14, true);
                 WriteLiteral("Not Sturdy (0)");
                 EndContext();
@@ -1308,7 +1308,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(12787, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9398657d9b4847e690ec0ade96138061", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87aec9cbda274bd993a8ba66176c2f7f", async() => {
                 BeginContext(12824, 10, true);
                 WriteLiteral("Sturdy (2)");
                 EndContext();
@@ -1348,7 +1348,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
                     ");
             EndContext();
             BeginContext(13348, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c61a8dc5e0740578f0a8f31d863e7c6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dfc9a90c51a34950bc25dbe11d521d54", async() => {
                 BeginContext(13385, 17, true);
                 WriteLiteral("No Reset Done (0)");
                 EndContext();
@@ -1372,7 +1372,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(13433, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe99031c32274eca83e3dca24277dd74", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cedfc42bc9234af58111bdaddf01d98d", async() => {
                 BeginContext(13471, 20, true);
                 WriteLiteral("Full Reset Done (-3)");
                 EndContext();
@@ -1396,7 +1396,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n\r\n</div>\r\n<br />\r\n");
             EndContext();
             BeginContext(13595, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b94d04c73626499c82c8b807cb6b61a2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8ebf41e704041b9bfe88369828d1aea", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1414,7 +1414,7 @@ Write(Html.ActionLink("Back to Details", "Details", new { id = Model.TeamID }));
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(13658, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a33efd354f324fdcac03e2ec3fe0428e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0c8c318c983498e8255e232d47d8a24", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

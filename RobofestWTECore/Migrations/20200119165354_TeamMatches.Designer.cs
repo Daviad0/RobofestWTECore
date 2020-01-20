@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RobofestWTECore.Data;
 
 namespace RobofestWTECore.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20200119165354_TeamMatches")]
+    partial class TeamMatches
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,21 +211,19 @@ namespace RobofestWTECore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompID");
-
                     b.Property<bool>("Completed");
 
                     b.Property<int>("Order");
 
                     b.Property<bool>("Rerun");
 
-                    b.Property<int>("RoundNum");
-
-                    b.Property<string>("TeamNumber");
+                    b.Property<int>("TeamID");
 
                     b.Property<bool>("Test");
 
                     b.HasKey("MatchID");
+
+                    b.HasIndex("TeamID");
 
                     b.ToTable("TeamMatches");
                 });
@@ -273,6 +273,14 @@ namespace RobofestWTECore.Migrations
                     b.HasOne("RobofestWTE.Models.Competition", "Competition")
                         .WithMany("StudentTeams")
                         .HasForeignKey("CompID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RobofestWTE.Models.TeamMatch", b =>
+                {
+                    b.HasOne("RobofestWTE.Models.StudentTeam", "StudentTeam")
+                        .WithMany()
+                        .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

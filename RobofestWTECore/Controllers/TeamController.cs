@@ -165,73 +165,81 @@ namespace RobofestWTECore.Controllers
         // GET: Entry
         public async Task<ActionResult> ManageUsers()
         {
-            var Userlist = new List<UserListModel>();
-            var users = await context.Users.ToListAsync();
-            foreach(var user in users)
+            if (User.IsInRole("Admin") || User.IsInRole("Main") || User.IsInRole("Tech"))
             {
-                var listitem = new UserListModel();
-                if (await userManager.IsInRoleAsync(user, "Judge"))
+                var Userlist = new List<UserListModel>();
+                var users = await context.Users.ToListAsync();
+                foreach (var user in users)
                 {
-                    listitem.Roles.Add("Judge");
-                    if(await userManager.IsInRoleAsync(user, "Field1"))
+                    var listitem = new UserListModel();
+                    if (await userManager.IsInRoleAsync(user, "Judge"))
                     {
-                        listitem.Roles.Add("Field1");
+                        listitem.Roles.Add("Judge");
+                        if (await userManager.IsInRoleAsync(user, "Field1"))
+                        {
+                            listitem.Roles.Add("Field1");
+                        }
+                        if (await userManager.IsInRoleAsync(user, "Field2"))
+                        {
+                            listitem.Roles.Add("Field2");
+                        }
+                        if (await userManager.IsInRoleAsync(user, "Field3"))
+                        {
+                            listitem.Roles.Add("Field3");
+                        }
+                        if (await userManager.IsInRoleAsync(user, "Field4"))
+                        {
+                            listitem.Roles.Add("Field4");
+                        }
+                        if (await userManager.IsInRoleAsync(user, "Field5"))
+                        {
+                            listitem.Roles.Add("Field5");
+                        }
+                        if (await userManager.IsInRoleAsync(user, "Field6"))
+                        {
+                            listitem.Roles.Add("Field6");
+                        }
+                        if (await userManager.IsInRoleAsync(user, "AllFields"))
+                        {
+                            listitem.Roles.Add("AllFields");
+                        }
                     }
-                    if (await userManager.IsInRoleAsync(user, "Field2"))
+                    if (await userManager.IsInRoleAsync(user, "Admin"))
                     {
-                        listitem.Roles.Add("Field2");
+                        listitem.Roles.Add("Admin");
                     }
-                    if (await userManager.IsInRoleAsync(user, "Field3"))
+                    if (await userManager.IsInRoleAsync(user, "FieldStaff"))
                     {
-                        listitem.Roles.Add("Field3");
+                        listitem.Roles.Add("FieldStaff");
                     }
-                    if (await userManager.IsInRoleAsync(user, "Field4"))
+                    if (await userManager.IsInRoleAsync(user, "Manager"))
                     {
-                        listitem.Roles.Add("Field4");
+                        listitem.Roles.Add("Manager");
                     }
-                    if (await userManager.IsInRoleAsync(user, "Field5"))
+                    if (await userManager.IsInRoleAsync(user, "Main"))
                     {
-                        listitem.Roles.Add("Field5");
+                        listitem.Roles.Add("Main");
                     }
-                    if (await userManager.IsInRoleAsync(user, "Field6"))
+                    if (await userManager.IsInRoleAsync(user, "Tech"))
                     {
-                        listitem.Roles.Add("Field6");
+                        listitem.Roles.Add("Tech");
                     }
-                    if (await userManager.IsInRoleAsync(user, "AllFields"))
+                    if (await userManager.IsInRoleAsync(user, "Locked"))
                     {
-                        listitem.Roles.Add("AllFields");
+                        listitem.Roles.Add("Locked");
                     }
+                    listitem.UserID = user.Id;
+                    listitem.UserName = user.UserName;
+                    Userlist.Add(listitem);
                 }
-                if (await userManager.IsInRoleAsync(user, "Admin"))
-                {
-                    listitem.Roles.Add("Admin");
-                }
-                if (await userManager.IsInRoleAsync(user, "FieldStaff"))
-                {
-                    listitem.Roles.Add("FieldStaff");
-                }
-                if (await userManager.IsInRoleAsync(user, "Manager"))
-                {
-                    listitem.Roles.Add("Manager");
-                }
-                if (await userManager.IsInRoleAsync(user, "Main"))
-                {
-                    listitem.Roles.Add("Main");
-                }
-                if (await userManager.IsInRoleAsync(user, "Tech"))
-                {
-                    listitem.Roles.Add("Tech");
-                }
-                if (await userManager.IsInRoleAsync(user, "Locked"))
-                {
-                    listitem.Roles.Add("Locked");
-                }
-                listitem.UserID = user.Id;
-                listitem.UserName = user.UserName;
-                Userlist.Add(listitem);
+                //users = userManager.Users.Where(u => u.Roles)
+                return View(Userlist);
             }
-            //users = userManager.Users.Where(u => u.Roles)
-            return View(Userlist);
+            else
+            {
+                return View("IsNotAuthenticated");
+            }
+            
 
         }
         public ActionResult Index()
@@ -464,31 +472,34 @@ namespace RobofestWTECore.Controllers
         // GET: Entry/Create
         public ActionResult RoundCreate(int id)
         {
-
-                var RoundEntry = new RoundEntry();
-                RoundEntry.TeamID = id;
-                var RoundsCompleted = (from a in db.RoundEntries where a.TeamID == id select a);
-                bool R1 = false;
-                bool R2 = false;
-                bool Rerun = false;
-                foreach (var Round in RoundsCompleted.OrderBy(a => a.Round).ToList())
+            var Model = new RoundEntryViewModel();
+            var RoundEntry = new RoundEntry();
+            RoundEntry.TeamID = id;
+            var RoundsCompleted = (from a in db.RoundEntries where a.TeamID == id select a);
+            bool R1 = false;
+            bool R2 = false;
+            bool Rerun = false;
+            foreach (var Round in RoundsCompleted.OrderBy(a => a.Round).ToList())
+            {
+                if (Round.Round == 1)
                 {
-                    if (Round.Round == 1)
-                    {
-                        R1 = true;
-                    }
-                    else if (Round.Round == 2)
-                    {
-                        R2 = true;
-                    }
+                    R1 = true;
                 }
-                if (R1 == true && R2 == true)
+                else if (Round.Round == 2)
                 {
-                    Rerun = true;
+                    R2 = true;
                 }
-                RoundEntry.Rerun = Rerun;
-                RoundEntry.Usable = true;
-                return View(RoundEntry);
+            }
+            if (R1 == true && R2 == true)
+            {
+                Rerun = true;
+            }
+            RoundEntry.Rerun = Rerun;
+            RoundEntry.Usable = true;
+            Model.RoundEntryCreated = RoundEntry;
+            Model.UserName = userManager.GetUserName(User);
+            
+            return View(RoundEntry);
 
         }
 
@@ -497,6 +508,13 @@ namespace RobofestWTECore.Controllers
             var Round = (from a in db.RoundEntries where a.EntryID == id select a).FirstOrDefault();
 
             return View(Round);
+        }
+
+        public ActionResult TeamMatches(int id)
+        {
+            var Matches = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
+
+            return View(Matches);
         }
 
         // POST: Entry/Create

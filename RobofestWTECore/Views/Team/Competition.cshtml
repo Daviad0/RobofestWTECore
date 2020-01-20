@@ -142,12 +142,12 @@
             <th>Field 6</th>
         </tr>
         <tr>
-            <td><input type="button" id="field1preferred" value="@Model.FieldPreferred[0]" class="@Model.FieldPreferred[0]" /></td>
-            <td><input type="button" id="field2preferred" value="@Model.FieldPreferred[1]" class="@Model.FieldPreferred[1]" /></td>
-            <td><input type="button" id="field3preferred" value="@Model.FieldPreferred[2]" class="@Model.FieldPreferred[2]" /></td>
-            <td><input type="button" id="field4preferred" value="@Model.FieldPreferred[3]" class="@Model.FieldPreferred[3]" /></td>
-            <td><input type="button" id="field5preferred" value="@Model.FieldPreferred[4]" class="@Model.FieldPreferred[4]" /></td>
-            <td><input type="button" id="field6preferred" value="@Model.FieldPreferred[5]" class="@Model.FieldPreferred[5]" /></td>
+            <td><input type="button" id="field1preferred" value="TeamID: @Model.FieldPreferred[0]" class="@Model.FieldPreferred[0]" /></td>
+            <td><input type="button" id="field2preferred" value="TeamID: @Model.FieldPreferred[1]" class="@Model.FieldPreferred[1]" /></td>
+            <td><input type="button" id="field3preferred" value="TeamID: @Model.FieldPreferred[2]" class="@Model.FieldPreferred[2]" /></td>
+            <td><input type="button" id="field4preferred" value="TeamID: @Model.FieldPreferred[3]" class="@Model.FieldPreferred[3]" /></td>
+            <td><input type="button" id="field5preferred" value="TeamID: @Model.FieldPreferred[4]" class="@Model.FieldPreferred[4]" /></td>
+            <td><input type="button" id="field6preferred" value="TeamID: @Model.FieldPreferred[5]" class="@Model.FieldPreferred[5]" /></td>
         </tr>
     </table>
     <br />
@@ -239,21 +239,21 @@
             $("#field4preferred").removeClass();
             $("#field5preferred").removeClass();
             $("#field6preferred").removeClass();
-            $("#field1preferred").val(teamid1);
+            $("#field1preferred").val("TeamID: " + teamid1);
             $("#field1preferred").addClass(teamid1)
-            $("#field2preferred").val(teamid2);
+            $("#field2preferred").val("TeamID: " + teamid2);
             $("#field2preferred").addClass(teamid2);
-            $("#field3preferred").val(teamid3);
+            $("#field3preferred").val("TeamID: " + teamid3);
             $("#field3preferred").addClass(teamid3)
-            $("#field4preferred").val(teamid4);
+            $("#field4preferred").val("TeamID: " + teamid4);
             $("#field4preferred").addClass(teamid4)
-            $("#field5preferred").val(teamid5);
+            $("#field5preferred").val("TeamID: " + teamid5);
             $("#field5preferred").addClass(teamid5)
-            $("#field6preferred").val(teamid6);
+            $("#field6preferred").val("TeamID: " + teamid6);
             $("#field6preferred").addClass(teamid6)
             $("#roundpreferred").html(round);
         });
-        chat.on("changeGlobalTimer", function (minutes, seconds, message) {
+        chat.on("changeGlobalTimer", function (minutes, seconds, message, status) {
             $("#minutesv").html(minutes);
             if (seconds < 10) {
                 secondsview = "0" + seconds;
@@ -272,6 +272,61 @@
         });
 
         // Start the connection.
-        
+        chat.start().then(function () {
+            function checkPongs() {
+                if (fieldconnected[0] == true) {
+                    if (fieldarray[0] != 0 && fieldarray != 3) {
+                        $("#field1lc").html("C");
+                    }
+                } else {
+                    $("#field1lc").html("NC");
+                }
+                if (fieldconnected[1] == true) {
+                    if (fieldarray[1] != 0 && fieldarray != 3) {
+                        $("#field2lc").html("C");
+                    }
+                } else {
+                    $("#field2lc").html("NC");
+                }
+                if (fieldconnected[2] == true) {
+                    if (fieldarray[2] != 0 && fieldarray != 3) {
+                        $("#field3lc").html("C");
+                    }
+                } else {
+                    $("#field3lc").html("NC");
+                }
+                if (fieldconnected[3] == true) {
+                    if (fieldarray[3] != 0 && fieldarray != 3) {
+                        $("#field4lc").html("C");
+                    }
+                } else {
+                    $("#field4lc").html("NC");
+                }
+                if (fieldconnected[4] == true) {
+                    if (fieldarray[4] != 0 && fieldarray != 3) {
+                        $("#field5lc").html("C");
+                    }
+                } else {
+                    $("#field5lc").html("NC");
+                }
+                if (fieldconnected[5] == true) {
+                    if (fieldarray[5] != 0 && fieldarray != 3) {
+                        $("#field6lc").html("C");
+                    }
+                } else {
+                    $("#field6lc").html("NC");
+                }
+                fieldconnected = [false, false, false, false, false, false]
+                $("#ping").html("2");
+                setTimeout(pingTeams, 1000);
+            }
+            function pingTeams() {
+                $("#ping").html("1");
+                chat.invoke("pingField", 7);
+                setTimeout(checkPongs, 5000);
+
+            }
+            setTimeout(pingTeams, 1000);
+        });
     });
 </script>

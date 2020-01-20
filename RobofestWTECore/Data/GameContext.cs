@@ -15,6 +15,7 @@ namespace RobofestWTECore.Data
         }
         public DbSet<RoundEntry> RoundEntries { get; set; }
         public DbSet<GAME> GAMES { get; set; }
+        public DbSet<TeamMatch> TeamMatches { get; set; }
         public DbSet<Competition> Competitions { get; set; }
         public DbSet<StudentTeam> StudentTeams { get; set; }
         public DbSet<ScoreMethod> ScoreMethods { get; set; }

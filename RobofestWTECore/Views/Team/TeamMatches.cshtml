@@ -1,0 +1,67 @@
+﻿@model List<RobofestWTE.Models.TeamMatch>
+
+<h1>Team Matches</h1>
+<input type="button" class="btn btn-success" id="listallteams" value="List All Teams (TEST)" />
+@{ int i = 0;}
+@foreach (var match in Model.OrderBy(m => m.MatchID).ThenBy(m => m.Order))
+{
+    i++;
+    string idtoinput = i.ToString() + "-" + match.Order;
+    string idtoinputbutton = i.ToString() + "-" + match.Order + "-add";
+    string idtoinputteam = i.ToString() + "-" + match.Order + "-team";
+    string idtoinputbuttonremove = i.ToString() + "-" + match.Order + "-remove";
+    <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;margin-bottom:10px" id="@idtoinput" class="matchentry">
+        <input type="text" class="teamentry" value="@match.TeamNumber" maxlength="7" placeholder="Team Number" id="@idtoinputteam"/>
+        <input type="button" class="btn btn-warning addafter" id="@idtoinputbutton" value="Add Another Below" />
+        <input type="button" class="btn btn-danger removeentry" id="@idtoinputbuttonremove" value="Delete This Entry" />
+    </div>
+}
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
+    chat.on("reloadRequired", function () {
+        location.reload(true);
+    });
+    chat.start().then(function () {
+        var scheduler = {
+            "schedules" : []
+        }
+        $(document).on('click', '#listallteams', function () {
+            var i = 0;
+            chat.invoke("clearSchedule");
+            $(".matchentry").each(function () {
+                i += 1;
+                var localid = this.id
+                var schedule = {
+
+                };
+                schedule.TeamNumber = $(this).children("#" + localid + "-team").val();
+                schedule.RoundNum = 1;
+                schedule.CompID = 1;
+                schedule.Order = i;
+                schedule.Rerun = false;
+                schedule.Test = false;
+                schedule.Completed = false;
+                scheduler.schedules.push(schedule);
+                completedschedule = JSON.stringify(schedule);
+                chat.invoke("changeMatches", completedschedule);
+            });
+            
+        });
+        $(document).on('click', '.addafter', function () {
+            var clearedstring = this.id.replace("-add", "");
+            var newid = clearedstring.split("-")
+            var newidstring = newid[0] + "-" + (parseInt(newid[1]) + 1)
+            $("<div style='background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;margin-bottom:10px' id='" + newidstring + "' class='matchentry'><input type='text' class='teamentry' value='EMPTY' maxlength='7' placeholder='Team Number' id='" + newidstring + "-team'/><input type='button' class='btn btn-warning addafter' id='" + newidstring + "-add' value='Add Another Below'/><input type='button' class='btn btn-danger removeentry' id='" + newidstring + "-remove' value='Delete This Entry'/></div>").insertAfter("#" + clearedstring)
+        });
+        $(document).on('click', '.removeentry', function () {
+            var clearedstring = this.id.replace("-remove", "");
+            $("#" + clearedstring).remove();
+        });
+        //
+    
+    
+        
+    });
+</script>
