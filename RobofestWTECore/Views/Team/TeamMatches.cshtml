@@ -10,10 +10,14 @@
     string idtoinputbutton = i.ToString() + "-" + match.Order + "-add";
     string idtoinputteam = i.ToString() + "-" + match.Order + "-team";
     string idtoinputbuttonremove = i.ToString() + "-" + match.Order + "-remove";
+    string idtoinputround = i.ToString() + "-" + match.Order + "-round";
     <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;margin-bottom:10px" id="@idtoinput" class="matchentry">
-        <input type="text" class="teamentry" value="@match.TeamNumber" maxlength="7" placeholder="Team Number" id="@idtoinputteam"/>
+        <input type="text" class="teamentry input-sm" value="@match.TeamNumber" maxlength="7" placeholder="Team Number" id="@idtoinputteam"/>
         <input type="button" class="btn btn-warning addafter" id="@idtoinputbutton" value="Add Another Below" />
         <input type="button" class="btn btn-danger removeentry" id="@idtoinputbuttonremove" value="Delete This Entry" />
+        <label for="@idtoinputround">Round #</label>
+        <input type="number" class="input-sm" value="@match.RoundNum" id="@idtoinputround" placeholder="Round #" max="2" min="1" />
+        
     </div>
 }
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
@@ -53,7 +57,7 @@
             var clearedstring = this.id.replace("-add", "");
             var newid = clearedstring.split("-")
             var newidstring = newid[0] + "-" + (parseInt(newid[1]) + 1)
-            $("<div style='background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;margin-bottom:10px' id='" + newidstring + "' class='matchentry'><input type='text' class='teamentry' value='EMPTY' maxlength='7' placeholder='Team Number' id='" + newidstring + "-team'/><input type='button' class='btn btn-warning addafter' id='" + newidstring + "-add' value='Add Another Below'/><input type='button' class='btn btn-danger removeentry' id='" + newidstring + "-remove' value='Delete This Entry'/></div>").insertAfter("#" + clearedstring)
+            $("<div style='background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;margin-bottom:10px' id='" + newidstring + "' class='matchentry'><input type='text' class='teamentry input-sm' value='EMPTY' maxlength='7' placeholder='Team Number' id='" + newidstring + "-team'/><input type='button' class='btn btn-warning addafter' id='" + newidstring + "-add' value='Add Another Below'/><input type='button' class='btn btn-danger removeentry' id='" + newidstring + "-remove' value='Delete This Entry' placeholder='Round #'/><label for='" + newidstring + "-round'>Round #</label><input type='number' class='input-sm' id='" + newidstring + "-round' value=1 max='2' min='1'/></div>").insertAfter("#" + clearedstring)
         });
         $(document).on('click', '.removeentry', function () {
             var clearedstring = this.id.replace("-remove", "");

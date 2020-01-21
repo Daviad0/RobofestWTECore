@@ -40,13 +40,13 @@ namespace RobofestWTECore
             await db.SaveChangesAsync();
             await Clients.All.SendAsync("reloadRequired");
         }
-        public void ClearSchedule()
+        public async Task ClearSchedule()
         {
             var EverythingToClear = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
             foreach (var match in EverythingToClear)
             {
                 db.TeamMatches.Remove(match);
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
 
         }
