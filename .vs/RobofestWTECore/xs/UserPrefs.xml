@@ -1,22 +1,28 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Controllers/TeamController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/RobofestWTECore.csproj">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="1" Column="1" />
       <File FileName="RobofestWTECore/Controllers/TeamController.cs" Line="1" Column="1" />
+      <File FileName="RobofestWTECore/appsettings.json" Line="12" Column="22" />
+      <File FileName="RobofestWTECore/RobofestWTECore.csproj" Line="15" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RobofestWTECore" expanded="True">
             <Node name="RobofestWTECore" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TeamController.cs" selected="True" />
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True" />
+                </Node>
               </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="Team" expanded="True" />
               </Node>
+              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
