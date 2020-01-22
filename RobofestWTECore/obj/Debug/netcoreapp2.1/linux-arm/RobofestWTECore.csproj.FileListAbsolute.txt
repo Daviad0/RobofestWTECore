@@ -180,3 +180,5 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\linux-arm\RobofestWTECore.dll
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\linux-arm\RobofestWTECore.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\linux-arm\RobofestWTECore.csproj.CopyComplete
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Debug\netcoreapp2.1\linux-arm\libhostpolicy.so
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Debug\netcoreapp2.1\linux-arm\libhostfxr.so
