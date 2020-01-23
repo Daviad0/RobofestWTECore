@@ -67,6 +67,10 @@ namespace RobofestWTECore
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.All
+            });
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSignalR(routes =>

@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Views/Team/TeamMatches.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Startup.cs">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="1" Column="1" />
       <File FileName="RobofestWTECore/Controllers/TeamController.cs" Line="1" Column="1" />
       <File FileName="RobofestWTECore/appsettings.json" Line="14" Column="1" />
       <File FileName="RobofestWTECore/RobofestWTECore.csproj" Line="15" Column="24" />
-      <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" Line="43" Column="87" />
+      <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" Line="82" Column="10" />
+      <File FileName="RobofestWTECore/ScoreHub.cs" Line="1" Column="1" />
+      <File FileName="RobofestWTECore/Startup.cs" Line="70" Column="16" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,10 +23,9 @@
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Team" expanded="True">
-                  <Node name="TeamMatches.cshtml" selected="True" />
-                </Node>
+                <Node name="Team" expanded="True" />
               </Node>
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
