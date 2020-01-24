@@ -300,3 +300,4 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.dll
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.csproj.CopyComplete
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\Razor\Views\Team\TeamMatchesEdit.cshtml.g.cs

@@ -516,6 +516,12 @@ namespace RobofestWTECore.Controllers
 
             return View(Matches);
         }
+        public ActionResult TeamMatchesEdit(int id)
+        {
+            var Matches = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
+
+            return View(Matches);
+        }
 
         // POST: Entry/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

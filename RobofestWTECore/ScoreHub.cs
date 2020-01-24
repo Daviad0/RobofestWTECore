@@ -50,6 +50,107 @@ namespace RobofestWTECore
             }
 
         }
+        public async Task EditSpecificSchedule(int matchid, string calltype)
+        {
+            var SpecificMatch = (from m in db.TeamMatches where m.MatchID == matchid select m).FirstOrDefault();
+            if (calltype == "completed")
+            {
+                if (SpecificMatch.Completed == true)
+                {
+                    SpecificMatch.Completed = false;
+                }
+                else
+                {
+                    SpecificMatch.Completed = true;
+                }
+            }
+            else if (calltype == "testmatch")
+            {
+                if (SpecificMatch.Test == true)
+                {
+                    SpecificMatch.Test = false;
+                }
+                else
+                {
+                    SpecificMatch.Test = true;
+                }
+            }
+            else if (calltype == "rerun")
+            {
+                if (SpecificMatch.Rerun == true)
+                {
+                    SpecificMatch.Rerun = false;
+                }
+                else
+                {
+                    SpecificMatch.Rerun = true;
+                }
+            }
+            db.TeamMatches.Update(SpecificMatch);
+            await db.SaveChangesAsync();
+            await Clients.All.SendAsync("reloadRequired");
+        }
+        public async Task CompleteAll(bool completed)
+        {
+            var AllMatches = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
+            foreach(var match in AllMatches)
+            {
+                if(completed == true)
+                {
+                    match.Completed = true;
+                }
+                else
+                {
+                    match.Completed = false;
+                }
+                db.TeamMatches.Update(match);
+                await db.SaveChangesAsync();
+            }
+            await Clients.All.SendAsync("reloadRequired");
+        }
+        public async Task AutoComplete()
+        {
+            var AllMatches = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
+            foreach(var match in AllMatches)
+            {
+                if (match.TeamNumber.Contains("-") != true)
+                {
+                    continue;
+                }
+                var TeamNumberParsed = match.TeamNumber.Split("-");
+                var TeamID = (from t in db.StudentTeams where t.TeamNumberBranch.ToString() == TeamNumberParsed[0] & t.TeamNumberSpecific.ToString() == TeamNumberParsed[1] select t).First().TeamID;
+                if(TeamID == 0)
+                {
+                    continue;
+                }
+                if(match.RoundNum == 1)
+                {
+                    var Round1 = (from r in db.RoundEntries where r.TeamID == TeamID & r.Round == 1 select r).FirstOrDefault();
+                    if (Round1 != null)
+                    {
+                        if(Round1.TeamID == TeamID || Round1.Round == match.RoundNum)
+                        {
+                            match.Completed = true;
+                        }
+                        
+                    }
+                }
+                else if (match.RoundNum == 2)
+                {
+                    var Round2 = (from r in db.RoundEntries where r.TeamID == TeamID & r.Round == 2 select r).First();
+                    if (Round2 != null)
+                    {
+                        if (Round2.TeamID != TeamID || Round2.Round != match.RoundNum)
+                        {
+                            match.Completed = true;
+                        }
+                    }
+                }
+                db.TeamMatches.Update(match);
+                await db.SaveChangesAsync();
+            }
+            await Clients.All.SendAsync("reloadRequired");
+        }
         public void StopTimer()
         {
             Clients.All.SendAsync("stopGlobalTimer");
