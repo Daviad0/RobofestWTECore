@@ -17,6 +17,8 @@
             string idtoinputbuttonremove = i.ToString() + "-" + match.Order + "-remove";
             string idtoinputround = i.ToString() + "-" + match.Order + "-round";
             string idtoinputcompleted = i.ToString() + "-" + match.Order + "-completed";
+            string idtoinputrerun = i.ToString() + "-" + match.Order + "-rerun";
+            string idtoinputtestmatch = i.ToString() + "-" + match.Order + "-testmatch";
 <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;margin-bottom:10px;" id="@idtoinput" class="matchentry">
     <input type="text" class="teamentry input-sm" value="@match.TeamNumber" maxlength="7" placeholder="Team Number" id="@idtoinputteam" />
     <input type="button" class="btn addafter" id="@idtoinputbutton" value="Add Another Below" />
@@ -35,6 +37,15 @@
     {
         <span class="badge badge-pill" style="border: 2px solid deeppink;background-color:lightgray;color:deeppink">Test Match</span>
     }
+    @if (match.Rerun == true)
+    {
+        <span class="badge badge-pill" style="background-color:forestgreen">Rerun</span>
+    }
+    <input type="checkbox" class="checkbox" id="@idtoinputrerun" />
+    <label for="@idtoinputrerun">Rerun</label>
+    <input type="checkbox" class="checkbox" id="@idtoinputtestmatch" />
+    <label for="@idtoinputtestmatch">Test Match</label>
+
 
 
 </div>
@@ -63,8 +74,8 @@
                 schedule.RoundNum = $(this).children("#" + localid + "-round").val();
                 schedule.CompID = 1;
                 schedule.Order = i;
-                schedule.Rerun = false;
-                schedule.Test = false;
+                schedule.Rerun = $(this).children("#" + localid + "-rerun").is(":checked");
+                schedule.Test = $(this).children("#" + localid + "-testmatch").is(":checked");
                 schedule.Completed = false;
                 scheduler.schedules.push(schedule);
                 completedschedule = JSON.stringify(schedule);
