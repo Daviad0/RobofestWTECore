@@ -33,11 +33,18 @@ namespace RobofestWTECore
         {
             Clients.All.SendAsync("startGlobalTimer");
         }
-        public async Task ChangeMatches(string jsonrequired)
+        public async Task ChangeMatches(string jsonrequired, int fields)
         {
+            var CompetitionFields = (from d in db.Competitions where d.CompID == 1 select d).FirstOrDefault();
+            CompetitionFields.RunningFields = fields;
+            db.Competitions.Update(CompetitionFields);
             TeamMatch Match = JsonConvert.DeserializeObject<TeamMatch>(jsonrequired);
             await db.TeamMatches.AddAsync(Match);
             await db.SaveChangesAsync();
+            var amountofmatches = db.TeamMatches.Where(t => t.CompID == 1).Count();
+            float matchcountfloat = (float)amountofmatches / (float)CompetitionFields.RunningFields;
+            int matchcount = (int)Math.Ceiling(matchcountfloat);
+            await Clients.All.SendAsync("addMatches", matchcount);
             await Clients.All.SendAsync("reloadRequired");
         }
         public async Task ClearSchedule()
@@ -49,6 +56,45 @@ namespace RobofestWTECore
                 await db.SaveChangesAsync();
             }
 
+        }
+        public async Task SelectThisMatch(int matchtoselect)
+        {
+            var MatchList = (from m in db.TeamMatches where m.CompID == 1 select m).OrderBy(m => m.MatchID).ThenBy(m => m.Order).ToList();
+            var Competition = (from m in db.Competitions where m.CompID == 1 select m).FirstOrDefault();
+            var SendBackList = new List<TeamMatch>();
+            var skipthismany = (matchtoselect - 1) * Competition.RunningFields;
+            foreach(var match in MatchList.Skip(skipthismany).Take(Competition.RunningFields))
+            {
+                SendBackList.Add(match);
+            }
+            await Clients.All.SendAsync("theseTeams", SendBackList);
+        }
+        public async Task CheckIfValid(int match)
+        {
+            var Competition = (from c in db.Competitions where c.CompID == 1 select c).FirstOrDefault();
+            var MatchList = (from m in db.TeamMatches where m.CompID == 1 select m).OrderBy(m => m.MatchID).ThenBy(m => m.Order).ToList();
+            var ListToCheck = new List<TeamMatch>();
+            var skipthismany = (match - 1) * Competition.RunningFields;
+            int[] MatchCheck = { 0, 0, 0, 0, 0, 0 };
+            foreach (var matchsort in MatchList.Skip(skipthismany).Take(Competition.RunningFields))
+            {
+                ListToCheck.Add(matchsort);
+            }
+            int i = 0;
+            foreach(var selectmatch in ListToCheck)
+            {
+                if (selectmatch.TeamNumber.Contains("-"))
+                {
+                    var TeamNumberSplit = selectmatch.TeamNumber.Split("-");
+                    var CheckToDB = db.StudentTeams.Where(t => t.TeamNumberBranch.ToString() == TeamNumberSplit[0] && t.TeamNumberSpecific.ToString() == TeamNumberSplit[1] && t.CompID == 1).FirstOrDefault();
+                    if(CheckToDB != null)
+                    {
+                        MatchCheck[i] = 1;
+                    }
+                }
+                i++;
+            }
+            await Clients.All.SendAsync("validate", MatchCheck[0], MatchCheck[1], MatchCheck[2], MatchCheck[3], MatchCheck[4], MatchCheck[5]);
         }
         public async Task EditSpecificSchedule(int matchid, string calltype)
         {

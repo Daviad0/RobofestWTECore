@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using RobofestWTE.Models;
 using RobofestWTECore.Data;
 using RobofestWTECore.Models;
+using RobofestWTECore.Models.ViewModels;
 
 namespace RobofestWTECore.Controllers
 {
@@ -512,9 +513,12 @@ namespace RobofestWTECore.Controllers
 
         public ActionResult TeamMatches(int id)
         {
+            var MatchDataModel = new TeamMatchDataModel();
+            MatchDataModel.NumFields = db.Competitions.Where(a => a.CompID == 1).FirstOrDefault().RunningFields;
             var Matches = (from m in db.TeamMatches where m.CompID == 1 select m).ToList();
+            MatchDataModel.Matches = Matches;
 
-            return View(Matches);
+            return View(MatchDataModel);
         }
         public ActionResult TeamMatchesEdit(int id)
         {
@@ -587,7 +591,9 @@ namespace RobofestWTECore.Controllers
         public ActionResult MatchKeeper(int id)
         {
             var MatchDataModel = new MatchDataModel();
+            
             MatchDataModel.Competition = (from c in db.Competitions where c.CompID == id select c).FirstOrDefault();
+            MatchDataModel.RunningFields = MatchDataModel.Competition.RunningFields;
             foreach (var s in db.StudentTeams.ToList())
             {
                 var StudentTeam = new StudentTeam();
@@ -601,6 +607,13 @@ namespace RobofestWTECore.Controllers
                 MatchDataModel.R1List.Add(StudentTeam);
                 MatchDataModel.R2List.Add(StudentTeam);
             }
+            var GetMatches = (from m in db.TeamMatches where m.CompID == id select m).ToList();
+            foreach(var item in GetMatches)
+            {
+                MatchDataModel.Matches++;
+            }
+            float numofmatches = (float)MatchDataModel.Matches / (float)MatchDataModel.RunningFields;
+            MatchDataModel.Matches = (int)Math.Ceiling(numofmatches);
             return View(MatchDataModel);
         }
 

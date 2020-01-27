@@ -11,5 +11,6 @@ namespace RobofestWTE.Models
         public List<StudentTeam> R2List = new List<StudentTeam>();
         public int RunningFields;
         public Competition Competition;
+        public int Matches;
     }
 }

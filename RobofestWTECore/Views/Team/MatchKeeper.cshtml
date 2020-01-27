@@ -1231,109 +1231,72 @@
 </table>
 <br />
 <div class="row" style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
-    <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px">
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default roundbutton1">
-                <input type="radio" name="rounds" id="round1"> Round 1
-            </label>
-            <label class="btn btn-default roundbutton2">
-                <input type="radio" name="rounds" id="round2"> Round 2
-            </label>
-        </div>
-    </div>
-    <table class="column" id="round1list">
-        <caption style="text-align:center">
-            Round 1 Unplayed:
-        </caption>
-        <tr style="font-size:20px">
-            <th>
-                Team ID
-            </th>
-            <th>
-                Team #
-            </th>
-            <th>
-                Team Name
-            </th>
-        </tr>
-        <tbody id="round1selection">
-            @foreach (var Team in Model.R1List.Where(a => a.FieldR1 == 0).OrderBy(a => a.TeamNumberBranch).ThenBy(a => a.TeamNumberSpecific))
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Team.TeamID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Team.TeamNumberBranch)-@Team.TeamNumberSpecific
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Team.TeamName)
-                    </td>
-                </tr>
-            }
-        </tbody>
-
-
-    </table>
-    <table class="column" id="round2list" style="border-left:2px solid black;margin-bottom:10px">
-        <caption style="text-align:center">
-            Round 2 Unplayed:
-        </caption>
-        <tr style="font-size:20px">
-            <th>
-                Team ID
-            </th>
-            <th>
-                Team #
-            </th>
-            <th>
-                Team Name
-            </th>
-        </tr>
-        <tbody id="round2selection">
-            @foreach (var Team in Model.R1List.Where(a => a.FieldR2 == 0).OrderByDescending(a => a.TeamNumberBranch).ThenByDescending(a => a.TeamNumberSpecific))
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Team.TeamID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Team.TeamNumberBranch)-@Team.TeamNumberSpecific
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Team.TeamName)
-                    </td>
-                </tr>
-            }
-        </tbody>
-
-
-    </table>
+    <h2>Select Next Match</h2>
+    <select class="dropdown" id="matchselector">
+        @for (int m = 1; m <= Model.Matches; m++)
+        {
+            int matchnum = m;
+            <option value="@matchnum-match">Match @matchnum</option>
+        }
+    </select>
+    <br />
+    <br />
     <table style="width:100%">
         <tr>
             <td>
-                <input type="number" placeholder="Field 1 Team ID" id="field1selection" />
+                <input type="text" placeholder="Field 1 Team Number" id="field1selection" class="input-sm" disabled style="cursor:not-allowed"/>
+                <br />
+                <span class="label label-default" id="field1testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field1rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                <span class="label label-default" id="field1completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field1round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
             </td>
             <td>
-                <input type="number" placeholder="Field 2 Team ID" id="field2selection" />
+                <input type="text" placeholder="Field 2 Team Number" id="field2selection" class="input-sm" disabled style="cursor:not-allowed"/>
+                <br />
+                <span class="label label-default" id="field2testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field2rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                <span class="label label-default" id="field2completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field2round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
             </td>
             <td>
-                <input type="number" placeholder="Field 3 Team ID" id="field3selection" />
+                <input type="text" placeholder="Field 3 Team Number" id="field3selection" class="input-sm" disabled style="cursor:not-allowed"/>
+                <br />
+                <span class="label label-default" id="field3testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field3rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                <span class="label label-default" id="field3completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field3round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
             </td>
             <td>
-                <input type="number" placeholder="Field 4 Team ID" id="field4selection" />
+                <input type="text" placeholder="Field 4 Team Number" id="field4selection" class="input-sm" disabled style="cursor:not-allowed"/>
+                <br />
+                <span class="label label-default" id="field4testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field4rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                <span class="label label-default" id="field4completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field4round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
             </td>
             <td>
-                <input type="number" placeholder="Field 5 Team ID" id="field5selection" />
+                <input type="text" placeholder="Field 5 Team Number" id="field5selection" class="input-sm" disabled style="cursor:not-allowed"/>
+                <br />
+                <span class="label label-default" id="field5testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field5rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                <span class="label label-default" id="field5completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field5round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
             </td>
             <td>
-                <input type="number" placeholder="Field 6 Team ID" id="field6selection" />
+                <input type="text" placeholder="Field 6 Team Number" id="field6selection" class="input-sm" disabled style="cursor:not-allowed"/>
+                <br />
+                <span class="label label-default" id="field6testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field6rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                <span class="label label-default" id="field6completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                <span class="label label-default" id="field6round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
             </td>
         </tr>
     </table>
     <span style="text-align:center" id="teamsubmissionstatus"></span>
     <br />
     <input type="button" id="submitteams" value="Submit Selected Team IDs" style="background-color:orange;width:100%;padding:10px;margin:10px" hidden/>
+    <input type="button" id="checkvalid" value="Check Validity" style="background-color:#5bfcdc;width:100%;padding:10px;margin:10px"/>
 </div>
 
 <br />
@@ -1392,6 +1355,7 @@
         var confirmstoptimer = 0;
         var roundidlist = [0, 0, 0, 0, 0, 0];
         var publicround = 0;
+        var currentmatch = 1;
 
         // Reference the auto-generated proxy for the hub.
         var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
@@ -1573,10 +1537,166 @@
             //finalscore
             //teamnumber
         });
+        chat.on("validate", function (team1, team2, team3, team4, team5, team6) {
+            $("#field1selection").css("background-color", "#fcc65b")
+            $("#field2selection").css("background-color", "#fcc65b")
+            $("#field3selection").css("background-color", "#fcc65b")
+            $("#field4selection").css("background-color", "#fcc65b")
+            $("#field5selection").css("background-color", "#fcc65b")
+            $("#field6selection").css("background-color", "#fcc65b")
+            if (team1 == 1) {
+                $("#field1selection").css("background-color", "#ffffff")
+            } else if ($("#field1selection").val() == "EMPTY") {
+                $("#field1selection").css("background-color", "#fc685b")
+            }
+            if (team2 == 1) {
+                $("#field2selection").css("background-color", "#ffffff")
+            } else if ($("#field2selection").val() == "EMPTY") {
+                $("#field2selection").css("background-color", "#fc685b")
+            }
+            if (team3 == 1) {
+                $("#field3selection").css("background-color", "#ffffff")
+            } else if ($("#field3selection").val() == "EMPTY") {
+                $("#field3selection").css("background-color", "#fc685b")
+            }
+            if (team4 == 1) {
+                $("#field4selection").css("background-color", "#ffffff")
+            } else if ($("#field4selection").val() == "EMPTY") {
+                $("#field4selection").css("background-color", "#fc685b")
+            }
+            if (team5 == 1) {
+                $("#field5selection").css("background-color", "#ffffff")
+            } else if ($("#field5selection").val() == "EMPTY") {
+                $("#field5selection").css("background-color", "#fc685b")
+            }
+            if (team6 == 1) {
+                $("#field6selection").css("background-color", "#ffffff")
+            } else if ($("#field6selection").val() == "EMPTY") {
+                $("#field6selection").css("background-color", "#fc685b")
+            }
+        });
+        
+        chat.on("addMatches", function (numofmatches) {
+            $("#matchselector").empty()
+            var matchescount;
+            for (matchescount = 0; matchescount < numofmatches; matchescount++) {
+                var markup = "<option value='" + (matchescount + 1) + "-match'>Match " + (matchescount + 1) + "</option>";
+                $("#matchselector").append(markup);
+            }
+            matchescount = 0;
+        });
         // Start the connection.
         var fieldsub = 0;
         var lockedin = false;
         chat.start().then(function () {
+            chat.on("theseTeams", function (teams) {
+                $("#field1selection").val("EMPTY");
+                $("#field2selection").val("EMPTY");
+                $("#field3selection").val("EMPTY");
+                $("#field4selection").val("EMPTY");
+                $("#field5selection").val("EMPTY");
+                $("#field6selection").val("EMPTY");
+                $("#field1selection").css("background-color", "#fc685b")
+                $("#field2selection").css("background-color", "#fc685b")
+                $("#field3selection").css("background-color", "#fc685b")
+                $("#field4selection").css("background-color", "#fc685b")
+                $("#field5selection").css("background-color", "#fc685b")
+                $("#field6selection").css("background-color", "#fc685b")
+                $("#field1testmatch").css("background-color", "dimgray")
+                $("#field1rerun").css("background-color", "dimgray")
+                $("#field1completed").css("background-color", "red")
+                $("#field1round").css("background-color", "red")
+                $("#field1round").html("NaN")
+                $("#field1testmatch").html("Competition Match")
+                $("#field1rerun").html("Scheduled Match")
+                $("#field1completed").html("NaN")
+                $("#field2testmatch").css("background-color", "dimgray")
+                $("#field2rerun").css("background-color", "dimgray")
+                $("#field2completed").css("background-color", "red")
+                $("#field2round").css("background-color", "red")
+                $("#field2round").html("NaN")
+                $("#field2testmatch").html("Competition Match")
+                $("#field2rerun").html("Scheduled Match")
+                $("#field2completed").html("NaN")
+                $("#field3testmatch").css("background-color", "dimgray")
+                $("#field3rerun").css("background-color", "dimgray")
+                $("#field3completed").css("background-color", "red")
+                $("#field3round").css("background-color", "red")
+                $("#field3round").html("NaN")
+                $("#field3testmatch").html("Competition Match")
+                $("#field3rerun").html("Scheduled Match")
+                $("#field3completed").html("NaN")
+                $("#field4testmatch").css("background-color", "dimgray")
+                $("#field4rerun").css("background-color", "dimgray")
+                $("#field4round").css("background-color", "red")
+                $("#field4round").html("NaN")
+                $("#field4completed").css("background-color", "red")
+                $("#field4testmatch").html("Competition Match")
+                $("#field4rerun").html("Scheduled Match")
+                $("#field4completed").html("NaN")
+                $("#field5testmatch").css("background-color", "dimgray")
+                $("#field5rerun").css("background-color", "dimgray")
+                $("#field5completed").css("background-color", "red")
+                $("#field5round").css("background-color", "red")
+                $("#field5round").html("NaN")
+                $("#field5testmatch").html("Competition Match")
+                $("#field5rerun").html("Scheduled Match")
+                $("#field5completed").html("NaN")
+                $("#field6testmatch").css("background-color", "dimgray")
+                $("#field6rerun").css("background-color", "dimgray")
+                $("#field6round").css("background-color", "red")
+                $("#field6round").html("NaN")
+                $("#field6completed").css("background-color", "red")
+                $("#field6testmatch").html("Competition Match")
+                $("#field6rerun").html("Scheduled Match")
+                $("#field6completed").html("NaN")
+                $.each(teams, function (index, value) {
+                    $("#field" + (index + 1) + "selection").val(value.teamNumber)
+                    if (value.teamNumber != "EMPTY") {
+                        $("#field" + (index + 1) + "selection").css("background-color", "#ffffff")
+                        if (value.completed == true) {
+                            $("#field" + (index + 1) + "completed").css("background-color", "darkorange")
+                            $("#field" + (index + 1) + "completed").html("Already Completed")
+                        } else {
+                            $("#field" + (index + 1) + "completed").css("background-color", "dimgray")
+                            $("#field" + (index + 1) + "completed").html("Awaiting Completion")
+                        }
+                        if (value.test == true) {
+                            $("#field" + (index + 1) + "testmatch").css("background-color", "deeppink")
+                            $("#field" + (index + 1) + "testmatch").html("Test Match")
+                        } else {
+                            $("#field" + (index + 1) + "testmatch").css("background-color", "dimgray")
+                            $("#field" + (index + 1) + "testmatch").html("Competition Match")
+                        }
+                        if (value.rerun == true) {
+                            $("#field" + (index + 1) + "rerun").css("background-color", "forestgreen")
+                            $("#field" + (index + 1) + "rerun").html("Rerun")
+                        } else {
+                            $("#field" + (index + 1) + "rerun").css("background-color", "dimgray")
+                            $("#field" + (index + 1) + "rerun").html("Scheduled Match")
+                        }
+                        $("#field" + (index + 1) + "round").css("background-color", "dimgray")
+                        $("#field" + (index + 1) + "round").html("Round " + value.roundNum)
+                    } else {
+                        $("#field" + (index + 1) + "testmatch").css("background-color", "dimgray")
+                        $("#field" + (index + 1) + "rerun").css("background-color", "dimgray")
+                        $("#field" + (index + 1) + "completed").css("background-color", "red")
+                        $("#field" + (index + 1) + "testmatch").html("Competition Match")
+                        $("#field" + (index + 1) + "rerun").html("Scheduled Match")
+                        $("#field" + (index + 1) + "completed").html("NaN")
+                        $("#field" + (index + 1) + "round").css("background-color", "red")
+                        $("#field" + (index + 1) + "round").html("NaN")
+                    }
+                
+                });
+                    chat.invoke("checkIfValid", currentmatch)
+            });
+            $("#checkvalid").click(function () {
+                chat.invoke("checkIfValid", currentmatch);
+            });
+            $(document).ready(function () {
+                chat.invoke("selectThisMatch", 1);
+            });
             $(".roundbutton1").click(function () {
                 $("#submitteams").attr("hidden", false);
                 $("#round1list").css("background-color", "gray");
@@ -1629,6 +1749,12 @@
                 var issue = $("#userissue").is(":checked");
                 chat.invoke("sendMessage", message, issue, sender)
                 $("#usermessage").val("");
+            });
+            $("#matchselector").change(function () {
+                var selectedmatch = $(this).children(":selected").val();
+                var matchnumber = selectedmatch.split("-");
+                currentmatch = parseInt(matchnumber[0])
+                chat.invoke("selectThisMatch", parseInt(matchnumber[0]));
             });
             $("#broadcastmessage").click(function () {
                 var message = $("#userbroadcastmessage").val();
