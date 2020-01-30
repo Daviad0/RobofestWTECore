@@ -19,11 +19,17 @@ namespace RobofestWTE.Models
         public virtual GAME GAME { get; set; }
         public virtual ICollection<StudentTeam> StudentTeams { get; set; }
         public virtual ICollection<CompField> Fields { get; set; }
-        public int field1preferred { get; set; }
-        public int field2preferred { get; set; }
-        public int field3preferred { get; set; }
-        public int field4preferred { get; set; }
-        public int field5preferred { get; set; }
-        public int field6preferred { get; set; }
+        public string field1preferred { get; set; }
+        public string field2preferred { get; set; }
+        public string field3preferred { get; set; }
+        public string field4preferred { get; set; }
+        public string field5preferred { get; set; }
+        public string field6preferred { get; set; }
+        public bool validmatch1 { get; set; } 
+        public bool validmatch2 { get; set; } 
+        public bool validmatch3 { get; set; } 
+        public bool validmatch4 { get; set; } 
+        public bool validmatch5 { get; set; } 
+        public bool validmatch6 { get; set; } 
     }
 }

@@ -142,12 +142,12 @@
             <th>Field 6</th>
         </tr>
         <tr>
-            <td><input type="button" id="field1preferred" value="TeamID: @Model.FieldPreferred[0]" class="@Model.FieldPreferred[0]" /></td>
-            <td><input type="button" id="field2preferred" value="TeamID: @Model.FieldPreferred[1]" class="@Model.FieldPreferred[1]" /></td>
-            <td><input type="button" id="field3preferred" value="TeamID: @Model.FieldPreferred[2]" class="@Model.FieldPreferred[2]" /></td>
-            <td><input type="button" id="field4preferred" value="TeamID: @Model.FieldPreferred[3]" class="@Model.FieldPreferred[3]" /></td>
-            <td><input type="button" id="field5preferred" value="TeamID: @Model.FieldPreferred[4]" class="@Model.FieldPreferred[4]" /></td>
-            <td><input type="button" id="field6preferred" value="TeamID: @Model.FieldPreferred[5]" class="@Model.FieldPreferred[5]" /></td>
+            <td><input type="button" id="field1preferred" value="TeamID: @Model.FieldPreferred[0]" class="@Model.FieldPreferred[0] btn btn-default" /></td>
+            <td><input type="button" id="field2preferred" value="TeamID: @Model.FieldPreferred[1]" class="@Model.FieldPreferred[1] btn btn-default" /></td>
+            <td><input type="button" id="field3preferred" value="TeamID: @Model.FieldPreferred[2]" class="@Model.FieldPreferred[2] btn btn-default" /></td>
+            <td><input type="button" id="field4preferred" value="TeamID: @Model.FieldPreferred[3]" class="@Model.FieldPreferred[3] btn btn-default" /></td>
+            <td><input type="button" id="field5preferred" value="TeamID: @Model.FieldPreferred[4]" class="@Model.FieldPreferred[4] btn btn-default" /></td>
+            <td><input type="button" id="field6preferred" value="TeamID: @Model.FieldPreferred[5]" class="@Model.FieldPreferred[5] btn btn-default" /></td>
         </tr>
     </table>
     <br />
@@ -215,7 +215,66 @@
         var minutess = 0;
         var secondss = 0;
         var message = "";
+        var validmatches = ["@Model.validmatches[0]","@Model.validmatches[1]","@Model.validmatches[2]","@Model.validmatches[3]","@Model.validmatches[4]","@Model.validmatches[5]"]
         // Reference the auto-generated proxy for the hub.
+        $(document).ready(function () {
+                $("#field1preferred").attr("disabled", true)
+            $("#field2preferred").attr("disabled", true)
+            $("#field3preferred").attr("disabled", true)
+            $("#field4preferred").attr("disabled", true)
+            $("#field5preferred").attr("disabled", true)
+            $("#field6preferred").attr("disabled", true)
+            $("#field1preferred").css("background-color", "#fcc65b")
+            $("#field2preferred").css("background-color", "#fcc65b")
+            $("#field3preferred").css("background-color", "#fcc65b")
+            $("#field4preferred").css("background-color", "#fcc65b")
+            $("#field5preferred").css("background-color", "#fcc65b")
+            $("#field6preferred").css("background-color", "#fcc65b")
+        if (validmatches[0] == "True") {
+                $("#field1preferred").attr("disabled", false)
+                $("#field1preferred").css("background-color", "#ffffff")
+                
+            }
+            else if ($("#field1preferred").val() == "TeamID: EMPTY") {
+                $("#field1preferred").css("background-color", "#fc685b")
+            }
+            if (validmatches[1] == "True") {
+                $("#field2preferred").attr("disabled", false)
+                $("#field2preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field2preferred").val() == "TeamID: EMPTY") {
+                $("#field2preferred").css("background-color", "#fc685b")
+            }
+            if (validmatches[2] == "True") {
+                $("#field3preferred").attr("disabled", false)
+                $("#field3preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field3preferred").val() == "TeamID: EMPTY") {
+                $("#field3preferred").css("background-color", "#fc685b")
+            }
+            if (validmatches[3] == "True") {
+                $("#field4preferred").attr("disabled", false)
+                $("#field4preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field4preferred").val() == "TeamID: EMPTY") {
+                $("#field4preferred").css("background-color", "#fc685b")
+            }
+            if (validmatches[4] == "True") {
+                $("#field5preferred").attr("disabled", false)
+                $("#field5preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field5preferred").val() == "TeamID: EMPTY") {
+                $("#field5preferred").css("background-color", "#fc685b")
+            }
+            if (validmatches[5] == "True") {
+                $("#field6preferred").attr("disabled", false)
+                $("#field6preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field6preferred").val() == "TeamID: EMPTY") {
+                $("#field6preferred").css("background-color", "#fc685b")
+            }
+            });
+        
         var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
         // Create a function that the hub can call back to display messages.
         chat.on("changeScoreboard", function (scoresheet) {
@@ -232,6 +291,51 @@
                 $(".scoreboard").append(markup);
             });
         });
+        chat.on("validateSelections", function (m1v, m2v, m3v, m4v, m5v, m6v) {
+            if (m1v == true) {
+                $("#field1preferred").attr("disabled", false)
+                $("#field1preferred").css("background-color", "#ffffff")
+                
+            }
+            else if ($("#field1preferred").val() == "TeamID: EMPTY") {
+                $("#field1preferred").css("background-color", "#fc685b")
+            }
+            if (m2v == true) {
+                $("#field2preferred").attr("disabled", false)
+                $("#field2preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field2preferred").val() == "TeamID: EMPTY") {
+                $("#field2preferred").css("background-color", "#fc685b")
+            }
+            if (m3v == true) {
+                $("#field3preferred").attr("disabled", false)
+                $("#field3preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field3preferred").val() == "TeamID: EMPTY") {
+                $("#field3preferred").css("background-color", "#fc685b")
+            }
+            if (m4v == true) {
+                $("#field4preferred").attr("disabled", false)
+                $("#field4preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field4preferred").val() == "TeamID: EMPTY") {
+                $("#field4preferred").css("background-color", "#fc685b")
+            }
+            if (m5v == true) {
+                $("#field5preferred").attr("disabled", false)
+                $("#field5preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field5preferred").val() == "TeamID: EMPTY") {
+                $("#field5preferred").css("background-color", "#fc685b")
+            }
+            if (m6v == true) {
+                $("#field6preferred").attr("disabled", false)
+                $("#field6preferred").css("background-color", "#ffffff")
+            }
+            else if ($("#field6preferred").val() == "TeamID: EMPTY") {
+                $("#field6preferred").css("background-color", "#fc685b")
+            }
+        });
         chat.on("availableSelections", function (teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, round) {
             $("#field1preferred").removeClass();
             $("#field2preferred").removeClass();
@@ -239,6 +343,18 @@
             $("#field4preferred").removeClass();
             $("#field5preferred").removeClass();
             $("#field6preferred").removeClass();
+            $("#field1preferred").attr("disabled", true)
+            $("#field2preferred").attr("disabled", true)
+            $("#field3preferred").attr("disabled", true)
+            $("#field4preferred").attr("disabled", true)
+            $("#field5preferred").attr("disabled", true)
+            $("#field6preferred").attr("disabled", true)
+            $("#field1preferred").css("background-color", "#fcc65b")
+            $("#field2preferred").css("background-color", "#fcc65b")
+            $("#field3preferred").css("background-color", "#fcc65b")
+            $("#field4preferred").css("background-color", "#fcc65b")
+            $("#field5preferred").css("background-color", "#fcc65b")
+            $("#field6preferred").css("background-color", "#fcc65b")
             $("#field1preferred").val("TeamID: " + teamid1);
             $("#field1preferred").addClass(teamid1)
             $("#field2preferred").val("TeamID: " + teamid2);
@@ -251,7 +367,14 @@
             $("#field5preferred").addClass(teamid5)
             $("#field6preferred").val("TeamID: " + teamid6);
             $("#field6preferred").addClass(teamid6)
+            $("#field1preferred").addClass("btn btn-default");
+            $("#field2preferred").addClass("btn btn-default");
+            $("#field3preferred").addClass("btn btn-default");
+            $("#field4preferred").addClass("btn btn-default");
+            $("#field5preferred").addClass("btn btn-default");
+            $("#field6preferred").addClass("btn btn-default");
             $("#roundpreferred").html(round);
+            
         });
         chat.on("changeGlobalTimer", function (minutes, seconds, message, status) {
             $("#minutesv").html(minutes);

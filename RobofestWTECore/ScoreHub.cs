@@ -277,19 +277,26 @@ namespace RobofestWTECore
             MatchDataModelSent.R2List = MatchDataModelSent.R2List.Where(a => a.FieldR2 == 0).OrderByDescending(a => a.TeamNumberBranch).ThenByDescending(a => a.TeamNumberSpecific).ToList();
             Clients.All.SendAsync("changeList", MatchDataModelSent);
         }
-        public void MatchMaker(int teamid1, int teamid2, int teamid3, int teamid4, int teamid5, int teamid6, int compid, int round)
+        public void MatchMaker(string teamnum1, string teamnum2, string teamnum3, string teamnum4, string teamnum5, string teamnum6, int compid, int round, bool m1v, bool m2v, bool m3v, bool m4v, bool m5v, bool m6v)
         {
             //COMPID = 1 for DEMO
             var competition = (from c in db.Competitions where c.CompID == 1 select c).FirstOrDefault();
-            competition.field1preferred = teamid1;
-            competition.field2preferred = teamid2;
-            competition.field3preferred = teamid3;
-            competition.field4preferred = teamid4;
-            competition.field5preferred = teamid5;
-            competition.field6preferred = teamid6;
+            competition.field1preferred = teamnum1;
+            competition.field2preferred = teamnum2;
+            competition.field3preferred = teamnum3;
+            competition.field4preferred = teamnum4;
+            competition.field5preferred = teamnum5;
+            competition.field6preferred = teamnum6;
+            competition.validmatch1 = m1v;
+            competition.validmatch2 = m2v;
+            competition.validmatch3 = m3v;
+            competition.validmatch4 = m4v;
+            competition.validmatch5 = m5v;
+            competition.validmatch6 = m6v;
             db.Competitions.Update(competition);
             db.SaveChanges();
-            Clients.All.SendAsync("availableSelections", teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, round);
+            Clients.All.SendAsync("availableSelections", teamnum1, teamnum2, teamnum3, teamnum4, teamnum5, teamnum6, round);
+            Clients.All.SendAsync("validateSelections", m1v, m2v, m3v, m4v, m5v, m6v);
         }
         public async System.Threading.Tasks.Task UpdateUserRoleAsync(string UserName, string RoleName)
         {

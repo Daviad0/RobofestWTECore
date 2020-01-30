@@ -345,6 +345,12 @@ namespace RobofestWTECore.Controllers
             CompetitionPageModel.FieldPreferred.Add(Competition.field4preferred);
             CompetitionPageModel.FieldPreferred.Add(Competition.field5preferred);
             CompetitionPageModel.FieldPreferred.Add(Competition.field6preferred);
+            CompetitionPageModel.validmatches[0] = Competition.validmatch1;
+            CompetitionPageModel.validmatches[1] = Competition.validmatch2;
+            CompetitionPageModel.validmatches[2] = Competition.validmatch3;
+            CompetitionPageModel.validmatches[3] = Competition.validmatch4;
+            CompetitionPageModel.validmatches[4] = Competition.validmatch5;
+            CompetitionPageModel.validmatches[5] = Competition.validmatch6;
             int sitem = 0;
 
             foreach (var s in db.StudentTeams.ToList())

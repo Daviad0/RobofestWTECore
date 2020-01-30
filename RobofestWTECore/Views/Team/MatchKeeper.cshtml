@@ -1322,7 +1322,7 @@
             </table>
             <span style="text-align:center" id="teamsubmissionstatus"></span>
             <br />
-            <input type="button" id="submitteams" value="Submit Selected Team IDs" style="background-color:orange;width:100%;padding:10px;margin:10px" hidden />
+            <input type="button" id="submitteams" value="Submit Selected Team IDs" style="background-color:orange;width:100%;padding:10px;margin:10px" />
             <input type="button" id="checkvalid" value="Check Validity" style="background-color:#5bfcdc;width:100%;padding:10px;margin:10px" />
         </div>
     </div>
@@ -1385,7 +1385,8 @@
         var roundidlist = [0, 0, 0, 0, 0, 0];
         var publicround = 0;
         var currentmatch = 1;
-
+        var oldmatchselected = false;
+        var matchesvalid = [false, false, false, false, false, false]
         // Reference the auto-generated proxy for the hub.
         var chat = new signalR.HubConnectionBuilder().withUrl("/scoreHub").build();
         // Create a function that the hub can call back to display messages.
@@ -1573,32 +1574,39 @@
             $("#field4selection").css("background-color", "#fcc65b")
             $("#field5selection").css("background-color", "#fcc65b")
             $("#field6selection").css("background-color", "#fcc65b")
+            matchesvalid = [false, false, false, false, false, false]
             if (team1 == 1) {
                 $("#field1selection").css("background-color", "#ffffff")
+                matchesvalid[0] = true
             } else if ($("#field1selection").val() == "EMPTY") {
                 $("#field1selection").css("background-color", "#fc685b")
             }
             if (team2 == 1) {
+                matchesvalid[1] = true
                 $("#field2selection").css("background-color", "#ffffff")
             } else if ($("#field2selection").val() == "EMPTY") {
                 $("#field2selection").css("background-color", "#fc685b")
             }
             if (team3 == 1) {
+                matchesvalid[2] = true
                 $("#field3selection").css("background-color", "#ffffff")
             } else if ($("#field3selection").val() == "EMPTY") {
                 $("#field3selection").css("background-color", "#fc685b")
             }
             if (team4 == 1) {
+                matchesvalid[3] = true
                 $("#field4selection").css("background-color", "#ffffff")
             } else if ($("#field4selection").val() == "EMPTY") {
                 $("#field4selection").css("background-color", "#fc685b")
             }
             if (team5 == 1) {
+                matchesvalid[4] = true
                 $("#field5selection").css("background-color", "#ffffff")
             } else if ($("#field5selection").val() == "EMPTY") {
                 $("#field5selection").css("background-color", "#fc685b")
             }
             if (team6 == 1) {
+                matchesvalid[5] = true
                 $("#field6selection").css("background-color", "#ffffff")
             } else if ($("#field6selection").val() == "EMPTY") {
                 $("#field6selection").css("background-color", "#fc685b")
@@ -1607,6 +1615,9 @@
         
         chat.on("addMatches", function (numofmatches) {
             $("#matchselector").empty()
+            var defaultmarkup = "<option id='oldmatch'>(OLD) Match " + currentmatch + "</option>"
+            $("#matchselector").append(defaultmarkup)
+            oldmatchselected = true
             var matchescount;
             for (matchescount = 0; matchescount < numofmatches; matchescount++) {
                 var markup = "<option value='" + (matchescount + 1) + "-match'>Match " + (matchescount + 1) + "</option>";
@@ -1739,38 +1750,14 @@
                 publicround = 2;
             });
             $("#submitteams").click(function () {
-                var teamid1 = parseFloat($("#field1selection").val());
-                var teamid2 = parseFloat($("#field2selection").val());
-                var teamid3 = parseFloat($("#field3selection").val());
-                var teamid4 = parseFloat($("#field4selection").val());
-                var teamid5 = parseFloat($("#field5selection").val());
-                var teamid6 = parseFloat($("#field6selection").val());
-                if (isNaN(teamid1)) {
-                    teamid1 = 0;
-                }
-                if (isNaN(teamid2)) {
-                    teamid2 = 0;
-                }
-                if (isNaN(teamid3)) {
-                    teamid3 = 0;
-                }
-                if (isNaN(teamid4)) {
-                    teamid4 = 0;
-                }
-                if (isNaN(teamid5)) {
-                    teamid5 = 0;
-                }
-                if (isNaN(teamid6)) {
-                    teamid6 = 0;
-                }
+                var teamid1 = $("#field1selection").val();
+                var teamid2 = $("#field2selection").val();
+                var teamid3 = $("#field3selection").val();
+                var teamid4 = $("#field4selection").val();
+                var teamid5 = $("#field5selection").val();
+                var teamid6 = $("#field6selection").val();
                 $("#teamsubmissionstatus").html("[" + teamid1 + ", " + teamid2 + ", " + teamid3 + ", " + teamid4 + ", " + teamid5 + ", " + teamid6 + "] selected for judges!")
-                chat.invoke("matchMaker", teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, 1, publicround);
-                $("#field1selection").val("");
-                $("#field2selection").val("");
-                $("#field3selection").val("");
-                $("#field4selection").val("");
-                $("#field5selection").val("");
-                $("#field6selection").val("");
+                chat.invoke("matchMaker", teamid1, teamid2, teamid3, teamid4, teamid5, teamid6, 1, publicround, matchesvalid[0],matchesvalid[1],matchesvalid[2],matchesvalid[3],matchesvalid[4],matchesvalid[5]);
             });
             $("#sendchat").click(function () {
                 var message = $("#usermessage").val();
@@ -1780,6 +1767,10 @@
                 $("#usermessage").val("");
             });
             $("#matchselector").change(function () {
+                if (oldmatchselected == true) {
+                    $("#oldmatch").remove();
+                    oldmatchselected = false
+                }
                 var selectedmatch = $(this).children(":selected").val();
                 var matchnumber = selectedmatch.split("-");
                 currentmatch = parseInt(matchnumber[0])

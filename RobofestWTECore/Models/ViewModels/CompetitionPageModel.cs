@@ -15,6 +15,7 @@ namespace RobofestWTE.Models
         public int GameID;
         public System.Collections.Generic.List<RobofestWTE.Models.TeamDataModel> Teams = new List<TeamDataModel>();
         public List<ScheduleDataModel> ScheduleDatas = new List<ScheduleDataModel>();
-        public List<int> FieldPreferred = new List<int>(); 
+        public List<string> FieldPreferred = new List<string>();
+        public bool[] validmatches = new bool[6];
     }
 }

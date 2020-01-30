@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RobofestWTECore.Data;
 
 namespace RobofestWTECore.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20200130205031_TeamSelection")]
+    partial class TeamSelection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,18 +50,6 @@ namespace RobofestWTECore.Migrations
                     b.Property<string>("field5preferred");
 
                     b.Property<string>("field6preferred");
-
-                    b.Property<bool>("validmatch1");
-
-                    b.Property<bool>("validmatch2");
-
-                    b.Property<bool>("validmatch3");
-
-                    b.Property<bool>("validmatch4");
-
-                    b.Property<bool>("validmatch5");
-
-                    b.Property<bool>("validmatch6");
 
                     b.HasKey("CompID");
 
