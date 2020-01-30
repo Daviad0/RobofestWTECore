@@ -724,7 +724,7 @@ using RobofestWTECore.Models;
             WriteLiteral("        ");
             EndContext();
             BeginContext(14587, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dbe16661fd14cdb811843a1a151445c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45d7eb3da3a74c7ca31ce9c56ee4f9cc", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -801,7 +801,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(18008, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5551b3abf2f94a81a6ef1ffe2d558a68", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ea7755e99444d8efeaf3389ec4cd6", async() => {
                 BeginContext(18047, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -825,7 +825,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(18095, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fd3d275bdba401b88987e866053b05c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35ca17715b8a48e09a73f324878960db", async() => {
                 BeginContext(18134, 13, true);
                 WriteLiteral("Moved Out (3)");
                 EndContext();
@@ -849,7 +849,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(18182, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68348e5d6482436cb0189508aaaae2a2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3ed51c734684dfebc903e2185642552", async() => {
                 BeginContext(18222, 17, true);
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
@@ -881,7 +881,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(18545, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2f0812741d542b1a6a7201ec1c0a58b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a249afa95dc49dda85b84b9b6c355f3", async() => {
                 BeginContext(18584, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -905,7 +905,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(18632, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a19c79643ba4d18a3903ba5cb7b3228", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b24bf72bb1c14cd6ad211704e8e82350", async() => {
                 BeginContext(18671, 13, true);
                 WriteLiteral("Moved Out (5)");
                 EndContext();
@@ -929,7 +929,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(18719, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6189db12f19a47d1bac5060e352007a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af62bf82a7d8468ebe1d17c925b3240e", async() => {
                 BeginContext(18759, 17, true);
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
@@ -961,7 +961,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(19082, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20eb0778e5304752ad27df7f77fe2040", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab99865d95804e37b8501d5cd38a9115", async() => {
                 BeginContext(19121, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -985,7 +985,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(19169, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "954bb235e0c2462aa5d644c69aae9964", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7503de9194a84e39898bc97a04b7914e", async() => {
                 BeginContext(19208, 13, true);
                 WriteLiteral("Moved Out (5)");
                 EndContext();
@@ -1009,7 +1009,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(19256, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a63f060b5b86412cba01cd8fbc56d786", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ac5de0bc38b4cfa814f9e3374192ee6", async() => {
                 BeginContext(19296, 17, true);
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
@@ -1041,7 +1041,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(19627, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2cc182aeea4c4df3ac13cb26c1161277", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18900bb5c415403a85b2fa31034a11ed", async() => {
                 BeginContext(19666, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -1065,7 +1065,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(19714, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff12f75f7e3b42e08080a6c36f56d842", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3429366865744bbd9b23b8f8e1580e2e", async() => {
                 BeginContext(19753, 13, true);
                 WriteLiteral("Moved Out (3)");
                 EndContext();
@@ -1089,7 +1089,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(19801, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67d187d73ffa43199d2b0c5602207d0e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "faca2be23aea4e178e983b1df2522001", async() => {
                 BeginContext(19841, 17, true);
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
@@ -1121,7 +1121,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(20173, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf537235326f4d7ca2616a9784ea08ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5104124bf69841e2896721be11e1a6d3", async() => {
                 BeginContext(20212, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -1145,7 +1145,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(20260, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74b5a7e7711e4b0090d53df1eba952c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e574a5817fde4ab8aad284b9da83009c", async() => {
                 BeginContext(20300, 14, true);
                 WriteLiteral("Moved Out (-2)");
                 EndContext();
@@ -1169,7 +1169,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(20349, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "650d005b7301438a9546af6abba8b321", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f216b731847540fea367025f70fe2705", async() => {
                 BeginContext(20389, 17, true);
                 WriteLiteral("Knocked Over (-2)");
                 EndContext();
@@ -1207,7 +1207,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(20931, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "303d592bcada4015882f2a0aa41cb556", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd2efd5237764095939c8918b8645966", async() => {
                 BeginContext(20968, 17, true);
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
@@ -1231,7 +1231,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(21020, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df8705aa52ca4abab8b1ee969fce8b94", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d749cf38627d4ec080e5ded4ee0a8539", async() => {
                 BeginContext(21058, 18, true);
                 WriteLiteral("One Golf Ball (15)");
                 EndContext();
@@ -1255,7 +1255,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(21111, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44e4d20d55e649cc9ade5a779b283740", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0c2e3d5bec04da0828583cfab0acc78", async() => {
                 BeginContext(21149, 19, true);
                 WriteLiteral("Two Golf Balls (30)");
                 EndContext();
@@ -1279,7 +1279,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(21203, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f5ec3ffabab1409085506575cacf8c6b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "087aaee937af495b87e045030786b348", async() => {
                 BeginContext(21241, 21, true);
                 WriteLiteral("Three Golf Balls (45)");
                 EndContext();
@@ -1311,7 +1311,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(21576, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9b10291ea0b4ed0a9d8113d7a87ec90", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69c0dafab0264cbfb0822939b17333fe", async() => {
                 BeginContext(21613, 17, true);
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
@@ -1335,7 +1335,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(21665, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f48e443d7d546658964e21b4ec757ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1aa6f2f67c446e1b9daa47c388e339e", async() => {
                 BeginContext(21703, 18, true);
                 WriteLiteral("One Golf Ball (18)");
                 EndContext();
@@ -1359,7 +1359,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(21756, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae0f7883066a4a92bebd440ef7e3d79e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a080571cfbdd49f698125c7f38c8c647", async() => {
                 BeginContext(21794, 19, true);
                 WriteLiteral("Two Golf Balls (36)");
                 EndContext();
@@ -1391,7 +1391,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(22124, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87af00eeb0434aaeb77b6d62f62f2abe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8968ee884124851b68e8b289d4309b9", async() => {
                 BeginContext(22161, 12, true);
                 WriteLiteral("No Balls (0)");
                 EndContext();
@@ -1415,7 +1415,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(22208, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6a80c9dcb4f4d53ad0cac78c0c32342", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2554ca042a9f419bba7245006e8abc2b", async() => {
                 BeginContext(22246, 13, true);
                 WriteLiteral("One Ball (-3)");
                 EndContext();
@@ -1439,7 +1439,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(22294, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e175b054753445f9d83000e3725d514", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88afd928766249ec99294e8b943bdc15", async() => {
                 BeginContext(22332, 14, true);
                 WriteLiteral("Two Balls (-6)");
                 EndContext();
@@ -1463,7 +1463,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(22381, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2e84435f9e84cf483432a24cd0f12ea", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7ee19367b374db89a80817f2cf3d262", async() => {
                 BeginContext(22419, 16, true);
                 WriteLiteral("Three Balls (-9)");
                 EndContext();
@@ -1487,7 +1487,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(22470, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "755349fe122542eabd02f61f1baf0962", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4df589fc94d4390af2d4efed14cd7bb", async() => {
                 BeginContext(22509, 16, true);
                 WriteLiteral("Four Balls (-12)");
                 EndContext();
@@ -1511,7 +1511,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(22560, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18024a97b3054f81ae8510215150525b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8207862a4cac4daeb80d3e5f508d3ffd", async() => {
                 BeginContext(22599, 16, true);
                 WriteLiteral("Five Balls (-15)");
                 EndContext();
@@ -1543,7 +1543,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(22927, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14a96806c2ce4ff59505abed6cc0a22e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef40a4069f88492db6985c620bb9a2ea", async() => {
                 BeginContext(22964, 17, true);
                 WriteLiteral("No Balls Left (5)");
                 EndContext();
@@ -1567,7 +1567,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(23016, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f68a95aed1c4f70b929156ca000f79e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27d68c7580eb4137b841287e79b4cfea", async() => {
                 BeginContext(23053, 17, true);
                 WriteLiteral("One Ball Left (4)");
                 EndContext();
@@ -1591,7 +1591,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(23105, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f6107846c7d4b7f85d84cdc855a7060", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f9270fbfbe74e1d847e4722fa5188f9", async() => {
                 BeginContext(23142, 18, true);
                 WriteLiteral("Two Balls Left (3)");
                 EndContext();
@@ -1615,7 +1615,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(23195, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb5bbe31adb846118d87305dca48e8e8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8dbabd8e399543509fceb090658f003a", async() => {
                 BeginContext(23232, 20, true);
                 WriteLiteral("Three Balls Left (2)");
                 EndContext();
@@ -1639,7 +1639,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(23287, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "166b464cce3f49878d883f80f7c43b41", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba1e26cd3a104976a16f884c7c7a9fc9", async() => {
                 BeginContext(23324, 19, true);
                 WriteLiteral("Four Balls Left (1)");
                 EndContext();
@@ -1663,7 +1663,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(23378, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c4fdd7824c144f0909c4c1e5f800eb2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58d5a4c7e4f34bbfae7816517cc9c417", async() => {
                 BeginContext(23415, 19, true);
                 WriteLiteral("Five Balls Left (0)");
                 EndContext();
@@ -1701,7 +1701,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(23989, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9f9830da04943588979864da9855ba4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36bb89e9181e4479a71bcbdcde51a00a", async() => {
                 BeginContext(24026, 18, true);
                 WriteLiteral("Mission Failed (0)");
                 EndContext();
@@ -1725,7 +1725,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(24079, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8e4bb84f1e84274a48d5432eef06658", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0eeb48b176e4581834d7b6a780dc1e8", async() => {
                 BeginContext(24117, 22, true);
                 WriteLiteral("Mission Completed (12)");
                 EndContext();
@@ -1757,7 +1757,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(24455, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9fdb137d2ada494e8121d32a006f48e5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72872eba7f464c97bc9dcc017fcbe632", async() => {
                 BeginContext(24492, 14, true);
                 WriteLiteral("Not Sturdy (0)");
                 EndContext();
@@ -1781,7 +1781,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(24541, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30f79812c41e470aa2dd5f8d3a094418", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7795f1c8d3fb48a1b69fcb3edbeddd22", async() => {
                 BeginContext(24578, 10, true);
                 WriteLiteral("Sturdy (2)");
                 EndContext();
@@ -1819,7 +1819,7 @@ using RobofestWTECore.Models;
                         ");
             EndContext();
             BeginContext(25146, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9213bc3b009146229d72e49853ff9709", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64d0c92da60c4e4eae55cb70a9afc7bf", async() => {
                 BeginContext(25183, 17, true);
                 WriteLiteral("No Reset Done (0)");
                 EndContext();
@@ -1843,7 +1843,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(25235, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ea59f76d3c84e599bd5a42d7f1f2ff7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "356ab184ba564025af4bba71f0932ee3", async() => {
                 BeginContext(25273, 20, true);
                 WriteLiteral("Full Reset Done (-3)");
                 EndContext();
@@ -1911,7 +1911,7 @@ using RobofestWTECore.Models;
 ");
             EndContext();
             BeginContext(27293, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8fbb55e02eaf426e98d7377216567e3d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9b307aba677e4305a4b7fb33a6bff7cb", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1929,7 +1929,7 @@ using RobofestWTECore.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(27356, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e78f06fc22944aa1977d41aabe0c8bec", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52d536e2c48e485ab3dce578059154cc", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

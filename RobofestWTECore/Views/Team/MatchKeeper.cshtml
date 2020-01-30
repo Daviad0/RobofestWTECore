@@ -1081,16 +1081,32 @@
     <div style="display:inherit">
 
         <h3 style="font-family:'Lucida Console'"><span id="minutesv" class="timerarea">0</span>:<span id="secondsv" class="timerarea">00</span> <span class="timerstatus">&#9632;</span>  |  <span id="messagev"></span></h3>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span>Minutes</span>
+            </span>
+            <input type="number" id="minutes" value="2" placeholder="Minutes" class="form-control" style="z-index:0" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span>Seconds</span>
+            </span>
+            <input type="number" id="seconds" value="0" placeholder="Seconds" class="form-control" style="z-index:0" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span>Scorekeeper Message</span>
+            </span>
+            <input type="text" id="message" class="form-control" style="z-index:0" />
+        </div>
 
-        <input type="number" id="minutes" value="2" placeholder="Minutes" />
-        <input type="number" id="seconds" value="0" placeholder="Seconds" />
-        <input type="text" id="message" placeholder="Message" />
+        
         <br />
-        <input type="button" id="starttimer" value="Start Timer!" style="background-color:mediumseagreen;width:100%;padding:10px;margin:10px" />
-        <input type="button" id="stoptimer" value="Stop Timer!" style="background-color:indianred;width:100%;padding:10px;margin:10px" />
-        <input type="button" id="confirmstop" value="CONFIRM STOP!" style="background-color:red;width:100%;padding:10px;margin:10px" hidden="hidden" />
+        <input type="button" id="starttimer" value="Start Timer!" style="background-color:mediumseagreen;width:100%;padding:10px;margin-bottom:10px;margin-top:10px" />
+        <input type="button" id="stoptimer" value="Stop Timer!" style="background-color:indianred;width:100%;padding:10px;margin-bottom:10px" />
+        <input type="button" id="confirmstop" value="CONFIRM STOP!" style="background-color:red;width:100%;padding:10px;margin-bottom:10px" hidden="hidden" />
         <br />
-        <input type="button" id="sendtimer" value="Send Timer!" style="width:100%;padding:10px;margin:10px" />
+        <input type="button" id="sendtimer" value="Send Timer!" style="width:100%;padding:10px;margin-bottom:10px" />
         <br />
         <input type="button" id="presetmatch" value="Match Preset" />
         <input type="button" id="presettimeout" value="Timeout Preset" />
@@ -1098,237 +1114,250 @@
     </div>
 </div>
 <br />
-<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
-    <h3>Match Controls</h3>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Staging</a></li>
+    <li><a data-toggle="tab" href="#menu1">Field Management</a></li>
+    <li><a data-toggle="tab" href="#menu2">Schedule</a></li>
+    <li><a data-toggle="tab" href="#menu3">Volunteer Chat</a></li>
+</ul>
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
+            <h3>Match Controls</h3>
 
-    <h5 id="gamestatus" style="width:100%;background-color:mediumseagreen;padding:10px;color:white">>>> OK TO CONTINUE >>></h5>
-    <table style="width:100%">
-        <tr style="background-color:gray;padding-bottom:10px">
-            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox1"><h3>Initialization</h3></th>
-            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox2"><h3>Match Play</h3></th>
-            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox3"><h3>Judge Scoring</h3></th>
-            <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox4"><h3>Field Timeout</h3></th>
-        </tr>
-    </table>
-    <br />
+            <h5 id="gamestatus" style="width:100%;background-color:mediumseagreen;padding:10px;color:white">>>> OK TO CONTINUE >>></h5>
+            <table style="width:100%">
+                <tr style="background-color:gray;padding-bottom:10px">
+                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox1"><h3>Initialization</h3></th>
+                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox2"><h3>Match Play</h3></th>
+                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox3"><h3>Judge Scoring</h3></th>
+                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox4"><h3>Field Timeout</h3></th>
+                </tr>
+            </table>
+            <br />
 
-    <input type="button" id="prevstage" value="Previous Stage" />
-    <input type="button" id="resetmatch" value="Reset Match" hidden="hidden" />
-    <input type="button" id="nextstage" value="Next Stage" />
-    <br />
+            <input type="button" id="prevstage" value="Previous Stage" />
+            <input type="button" id="resetmatch" value="Reset Match" hidden="hidden" />
+            <input type="button" id="nextstage" value="Next Stage" />
+            <br />
 
-    <input type="button" id="dangerchange" value="Show Danger Controls" />
-    <br />
-    <br />
-    <div id="dangercontrols" style="background-color:tomato;padding:10px;display:none">
+            <input type="button" id="dangerchange" value="Show Danger Controls" />
+            <br />
+            <br />
+            <div id="dangercontrols" style="background-color:tomato;padding:10px;display:none">
 
-        <h3>DANGER CONTROLS</h3>
+                <h3>DANGER CONTROLS</h3>
+                <br />
+                <input class="dangerbutton" type="button" id="stage1" value="Stage 1" />
+                <input class="dangerbutton" type="button" id="stage2" value="Stage 2" />
+                <input class="dangerbutton" type="button" id="stage3" value="Stage 3" />
+                <input class="dangerbutton" type="button" id="stage4" value="Stage 4" />
+                <br />
+                <input class="dangerbutton" type="button" id="deinitall" value="Deinitialize All" />
+                <input class="dangerbutton" type="button" id="notreadyall" value="Not Ready All" />
+                <input class="dangerbutton" type="button" id="readyall" value="Ready All" />
+                <input class="dangerbutton" type="button" id="scoredall" value="Scored All" />
+                <input class="dangerbutton" type="button" id="cancelpanic" value="Cancel All Panics" />
+            </div>
+
+        </div>
         <br />
-        <input class="dangerbutton" type="button" id="stage1" value="Stage 1" />
-        <input class="dangerbutton" type="button" id="stage2" value="Stage 2" />
-        <input class="dangerbutton" type="button" id="stage3" value="Stage 3" />
-        <input class="dangerbutton" type="button" id="stage4" value="Stage 4" />
-        <br />
-        <input class="dangerbutton" type="button" id="deinitall" value="Deinitialize All" />
-        <input class="dangerbutton" type="button" id="notreadyall" value="Not Ready All" />
-        <input class="dangerbutton" type="button" id="readyall" value="Ready All" />
-        <input class="dangerbutton" type="button" id="scoredall" value="Scored All" />
-        <input class="dangerbutton" type="button" id="cancelpanic" value="Cancel All Panics" />
+        <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
+            <h3>Event Controls</h3>
+            <h5 id="currentevent"></h5>
+            <input type="button" id="nextevent" value="Next Event" />
+            <input type="button" id="previousevent" value="Previous Event" />
+        </div>
     </div>
+    <div id="menu1" class="tab-pane fade">
+        <table style="width:100%">
+            <caption style="text-align:center">Field Controls</caption>
+            <tr>
+                <th style="text-align:center">Field 1</th>
+                <th style="text-align:center">Field 2</th>
+                <th style="text-align:center">Field 3</th>
+                <th style="text-align:center">Field 4</th>
+                <th style="text-align:center">Field 5</th>
+                <th style="text-align:center">Field 6</th>
+            </tr>
+            <tr>
+                <td style="border:5px solid white"><input type="button" value="Deinitialize" id="field1d" style="margin-bottom:5px;width:100%" class="btn btn-default" /></td>
+                <td style="border:5px solid white"><input type="button" value="Deinitialize" id="field2d" style="margin-bottom:5px;width:100%" class="btn btn-default" /></td>
+                <td style="border:5px solid white"><input type="button" value="Deinitialize" id="field3d" style="margin-bottom:5px;width:100%" class="btn btn-default" /></td>
+                <td style="border:5px solid white"><input type="button" value="Deinitialize" id="field4d" style="margin-bottom:5px;width:100%" class="btn btn-default" /></td>
+                <td style="border:5px solid white"><input type="button" value="Deinitialize" id="field5d" style="margin-bottom:5px;width:100%" class="btn btn-default" /></td>
+                <td style="border:5px solid white"><input type="button" value="Deinitialize" id="field6d" style="margin-bottom:5px;width:100%" class="btn btn-default" /></td>
+            </tr>
+            <tr>
+                <td style="border:5px solid white"><input type="button" value="Not Ready" id="field1n" style="margin-bottom:5px;width:100%" class="btn btn-danger"/></td>
+                <td style="border:5px solid white"><input type="button" value="Not Ready" id="field2n" style="margin-bottom:5px;width:100%" class="btn btn-danger" /></td>
+                <td style="border:5px solid white"><input type="button" value="Not Ready" id="field3n" style="margin-bottom:5px;width:100%" class="btn btn-danger" /></td>
+                <td style="border:5px solid white"><input type="button" value="Not Ready" id="field4n" style="margin-bottom:5px;width:100%" class="btn btn-danger" /></td>
+                <td style="border:5px solid white"><input type="button" value="Not Ready" id="field5n" style="margin-bottom:5px;width:100%" class="btn btn-danger" /></td>
+                <td style="border:5px solid white"><input type="button" value="Not Ready" id="field6n" style="margin-bottom:5px;width:100%" class="btn btn-danger" /></td>
+            </tr>
+            <tr>
+                <td style="border:5px solid white"><input type="button" value="Ready" id="field1r" style="margin-bottom:5px;width:100%" class="btn btn-success" /></td>
+                <td style="border:5px solid white"><input type="button" value="Ready" id="field2r" style="margin-bottom:5px;width:100%" class="btn btn-success" /></td>
+                <td style="border:5px solid white"><input type="button" value="Ready" id="field3r" style="margin-bottom:5px;width:100%" class="btn btn-success" /></td>
+                <td style="border:5px solid white"><input type="button" value="Ready" id="field4r" style="margin-bottom:5px;width:100%" class="btn btn-success" /></td>
+                <td style="border:5px solid white"><input type="button" value="Ready" id="field5r" style="margin-bottom:5px;width:100%" class="btn btn-success" /></td>
+                <td style="border:5px solid white"><input type="button" value="Ready" id="field6r" style="margin-bottom:5px;width:100%" class="btn btn-success" /></td>
+            </tr>
+            <tr>
+                <td style="border:5px solid white"><input type="button" value="Scored" id="field1s" style="margin-bottom:5px;width:100%" class="btn btn-primary" /></td>
+                <td style="border:5px solid white"><input type="button" value="Scored" id="field2s" style="margin-bottom:5px;width:100%" class="btn btn-primary" /></td>
+                <td style="border:5px solid white"><input type="button" value="Scored" id="field3s" style="margin-bottom:5px;width:100%" class="btn btn-primary" /></td>
+                <td style="border:5px solid white"><input type="button" value="Scored" id="field4s" style="margin-bottom:5px;width:100%" class="btn btn-primary" /></td>
+                <td style="border:5px solid white"><input type="button" value="Scored" id="field5s" style="margin-bottom:5px;width:100%" class="btn btn-primary" /></td>
+                <td style="border:5px solid white"><input type="button" value="Scored" id="field6s" style="margin-bottom:5px;width:100%" class="btn btn-primary" /></td>
+            </tr>
+            <tr>
+                <td style="padding-bottom:20px">
+                    <span id="field1status" style="background-color:gray;padding:3px;display:block;margin:10px" class="label label-default">Not Using</span><span id="field1connection" class="label" style="display:block;margin:10px"></span><span id="panicstatusf1" class="label" style="padding:3px;display:block;margin:10px"></span>
+                </td>
+                <td>
+                    <span id="field2status" style="background-color:gray;padding:3px;display:block;margin:10px" class="label label-default">Not Using</span><span id="field2connection" class="label" style="display:block;margin:10px"></span><span id="panicstatusf2" class="label" style="padding:3px;display:block;margin:10px"></span><br /><span id="field2judge" style="font-size:8px"></span>
+                </td>
+                <td>
+                    <span id="field3status" style="background-color:gray;padding:3px;display:block;margin:10px" class="label label-default">Not Using</span><span id="field3connection" class="label" style="display:block;margin:10px"></span><span id="panicstatusf3" class="label" style="padding:3px;display:block;margin:10px"></span><br /><span id="field3judge" style="font-size:8px"></span>
+                </td>
+                <td>
+                    <span id="field4status" style="background-color:gray;padding:3px;display:block;margin:10px" class="label label-default">Not Using</span><span id="field4connection" class="label" style="display:block;margin:10px"></span><span id="panicstatusf4" class="label" style="padding:3px;display:block;margin:10px"></span><br /><span id="field4judge" style="font-size:8px"></span>
+                </td>
+                <td>
+                    <span id="field5status" style="background-color:gray;padding:3px;display:block;margin:10px" class="label label-default">Not Using</span><span id="field5connection" class="label" style="display:block;margin:10px"></span><span id="panicstatusf5" class="label" style="padding:3px;display:block;margin:10px"></span><br /><span id="field5judge" style="font-size:8px"></span>
+                </td>
+                <td>
+                    <span id="field6status" style="background-color:gray;padding:3px;display:block;margin:10px" class="label label-default">Not Using</span><span id="field6connection" class="label" style="display:block;margin:10px"></span><span id="panicstatusf6" class="label" style="padding:3px;display:block;margin:10px"></span><br /><span id="field6judge" style="font-size:8px"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="seef1score" value="See Field Data" />
+                </td>
+                <td>
+                    <input type="button" id="seef2score" value="See Field Data" />
+                </td>
+                <td>
+                    <input type="button" id="seef3score" value="See Field Data" />
+                </td>
+                <td>
+                    <input type="button" id="seef4score" value="See Field Data" />
+                </td>
+                <td>
+                    <input type="button" id="seef5score" value="See Field Data" />
+                </td>
+                <td>
+                    <input type="button" id="seef6score" value="See Field Data" />
+                </td>
+            </tr>
 
-</div>
-<br />
-<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
-    <h3>Event Controls</h3>
-    <h5 id="currentevent"></h5>
-    <input type="button" id="nextevent" value="Next Event" />
-    <input type="button" id="previousevent" value="Previous Event" />
-</div>
-<br />
-<table style="width:100%">
-    <caption style="text-align:center">Field Controls</caption>
-    <tr>
-        <th>Field 1</th>
-        <th>Field 2</th>
-        <th>Field 3</th>
-        <th>Field 4</th>
-        <th>Field 5</th>
-        <th>Field 6</th>
-    </tr>
-    <tr>
-        <td><input type="button" value="Deinitialize" id="field1d" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Deinitialize" id="field2d" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Deinitialize" id="field3d" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Deinitialize" id="field4d" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Deinitialize" id="field5d" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Deinitialize" id="field6d" style="margin-bottom:5px" /></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Not Ready" id="field1n" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Not Ready" id="field2n" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Not Ready" id="field3n" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Not Ready" id="field4n" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Not Ready" id="field5n" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Not Ready" id="field6n" style="margin-bottom:5px" /></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Ready" id="field1r" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Ready" id="field2r" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Ready" id="field3r" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Ready" id="field4r" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Ready" id="field5r" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Ready" id="field6r" style="margin-bottom:5px" /></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Scored" id="field1s" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Scored" id="field2s" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Scored" id="field3s" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Scored" id="field4s" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Scored" id="field5s" style="margin-bottom:5px" /></td>
-        <td><input type="button" value="Scored" id="field6s" style="margin-bottom:5px" /></td>
-    </tr>
-    <tr>
-        <td>
-            <span id="field1status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field1connection"></span><br /><span id="panicstatusf1" style="padding:3px"></span>
-        </td>
-        <td>
-            <span id="field2status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field2connection"></span><br /><span id="panicstatusf2" style="padding:3px"></span><br /><span id="field2judge" style="font-size:8px"></span>
-        </td>
-        <td>
-            <span id="field3status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field3connection"></span><br /><span id="panicstatusf3" style="padding:3px"></span><br /><span id="field3judge" style="font-size:8px"></span>
-        </td>
-        <td>
-            <span id="field4status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field4connection"></span><br /><span id="panicstatusf4" style="padding:3px"></span><br /><span id="field4judge" style="font-size:8px"></span>
-        </td>
-        <td>
-            <span id="field5status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field5connection"></span><br /><span id="panicstatusf5" style="padding:3px"></span><br /><span id="field5judge" style="font-size:8px"></span>
-        </td>
-        <td>
-            <span id="field6status" style="background-color:gray;padding:3px">Not Using</span><br /><span id="field6connection"></span><br /><span id="panicstatusf6" style="padding:3px"></span><br /><span id="field6judge" style="font-size:8px"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input type="button" id="seef1score" value="See Field Data" />
-        </td>
-        <td>
-            <input type="button" id="seef2score" value="See Field Data" />
-        </td>
-        <td>
-            <input type="button" id="seef3score" value="See Field Data" />
-        </td>
-        <td>
-            <input type="button" id="seef4score" value="See Field Data" />
-        </td>
-        <td>
-            <input type="button" id="seef5score" value="See Field Data" />
-        </td>
-        <td>
-            <input type="button" id="seef6score" value="See Field Data" />
-        </td>
-    </tr>
-
-</table>
-<br />
-<div class="row" style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
-    <h2>Select Next Match</h2>
-    <select class="dropdown" id="matchselector">
-        @for (int m = 1; m <= Model.Matches; m++)
+        </table>
+    </div>
+    <br />
+    <div id="menu2" class="tab-pane fade">
+        <div class="row" style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center;padding-bottom:10px">
+            <h2>Select Next Match</h2>
+            <select class="dropdown" id="matchselector">
+                @for (int m = 1; m <= Model.Matches; m++)
         {
             int matchnum = m;
-            <option value="@matchnum-match">Match @matchnum</option>
+                <option value="@matchnum-match">Match @matchnum</option>
         }
-    </select>
-    <br />
-    <br />
-    <table style="width:100%">
-        <tr>
-            <td>
-                <input type="text" placeholder="Field 1 Team Number" id="field1selection" class="input-sm" disabled style="cursor:not-allowed"/>
-                <br />
-                <span class="label label-default" id="field1testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field1rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
-                <span class="label label-default" id="field1completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field1round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
-            </td>
-            <td>
-                <input type="text" placeholder="Field 2 Team Number" id="field2selection" class="input-sm" disabled style="cursor:not-allowed"/>
-                <br />
-                <span class="label label-default" id="field2testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field2rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
-                <span class="label label-default" id="field2completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field2round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
-            </td>
-            <td>
-                <input type="text" placeholder="Field 3 Team Number" id="field3selection" class="input-sm" disabled style="cursor:not-allowed"/>
-                <br />
-                <span class="label label-default" id="field3testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field3rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
-                <span class="label label-default" id="field3completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field3round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
-            </td>
-            <td>
-                <input type="text" placeholder="Field 4 Team Number" id="field4selection" class="input-sm" disabled style="cursor:not-allowed"/>
-                <br />
-                <span class="label label-default" id="field4testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field4rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
-                <span class="label label-default" id="field4completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field4round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
-            </td>
-            <td>
-                <input type="text" placeholder="Field 5 Team Number" id="field5selection" class="input-sm" disabled style="cursor:not-allowed"/>
-                <br />
-                <span class="label label-default" id="field5testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field5rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
-                <span class="label label-default" id="field5completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field5round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
-            </td>
-            <td>
-                <input type="text" placeholder="Field 6 Team Number" id="field6selection" class="input-sm" disabled style="cursor:not-allowed"/>
-                <br />
-                <span class="label label-default" id="field6testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field6rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
-                <span class="label label-default" id="field6completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
-                <span class="label label-default" id="field6round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
-            </td>
-        </tr>
-    </table>
-    <span style="text-align:center" id="teamsubmissionstatus"></span>
-    <br />
-    <input type="button" id="submitteams" value="Submit Selected Team IDs" style="background-color:orange;width:100%;padding:10px;margin:10px" hidden/>
-    <input type="button" id="checkvalid" value="Check Validity" style="background-color:#5bfcdc;width:100%;padding:10px;margin:10px"/>
-</div>
-
-<br />
-<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
-    <div style="text-align:center">
-        <h1>Broadcast Message</h1>
-        <input type="text" placeholder="Broadcast Message" id="userbroadcastmessage" />
-        <span>Issue? </span><input type="checkbox" id="userbroadcastissue" />
-        <span>Volunteers Only? </span><input type="checkbox" id="userbroadcaststaff" />
-        <input type="button" id="broadcastmessage" value="Send Test Chat" />
-        <h3 id="currentbroadcast">No Current Broadcast</h3>
-        <p id="broadcastsender" style="color:gray"></p>
+            </select>
+            <br />
+            <br />
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Field 1 Team Number" id="field1selection" class="input-sm" disabled style="cursor:not-allowed" />
+                        <br />
+                        <span class="label label-default" id="field1testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field1rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                        <span class="label label-default" id="field1completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field1round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Field 2 Team Number" id="field2selection" class="input-sm" disabled style="cursor:not-allowed" />
+                        <br />
+                        <span class="label label-default" id="field2testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field2rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                        <span class="label label-default" id="field2completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field2round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Field 3 Team Number" id="field3selection" class="input-sm" disabled style="cursor:not-allowed" />
+                        <br />
+                        <span class="label label-default" id="field3testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field3rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                        <span class="label label-default" id="field3completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field3round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Field 4 Team Number" id="field4selection" class="input-sm" disabled style="cursor:not-allowed" />
+                        <br />
+                        <span class="label label-default" id="field4testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field4rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                        <span class="label label-default" id="field4completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field4round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Field 5 Team Number" id="field5selection" class="input-sm" disabled style="cursor:not-allowed" />
+                        <br />
+                        <span class="label label-default" id="field5testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field5rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                        <span class="label label-default" id="field5completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field5round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Field 6 Team Number" id="field6selection" class="input-sm" disabled style="cursor:not-allowed" />
+                        <br />
+                        <span class="label label-default" id="field6testmatch" style="background-color:deeppink;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field6rerun" style="background-color:forestgreen;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Rerun</span>
+                        <span class="label label-default" id="field6completed" style="background-color:darkorange;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Test Match</span>
+                        <span class="label label-default" id="field6round" style="background-color:dimgray;padding:2px;display:block;margin:10px;padding-top:4px;padding-bottom:4px">Round 0</span>
+                    </td>
+                </tr>
+            </table>
+            <span style="text-align:center" id="teamsubmissionstatus"></span>
+            <br />
+            <input type="button" id="submitteams" value="Submit Selected Team IDs" style="background-color:orange;width:100%;padding:10px;margin:10px" hidden />
+            <input type="button" id="checkvalid" value="Check Validity" style="background-color:#5bfcdc;width:100%;padding:10px;margin:10px" />
+        </div>
     </div>
+    <div id="menu3" class="tab-pane fade">
+        <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+            <div style="text-align:center">
+                <h1>Broadcast Message</h1>
+                <input type="text" placeholder="Broadcast Message" id="userbroadcastmessage" />
+                <span>Issue? </span><input type="checkbox" id="userbroadcastissue" />
+                <span>Volunteers Only? </span><input type="checkbox" id="userbroadcaststaff" />
+                <input type="button" id="broadcastmessage" value="Send Test Chat" />
+                <h3 id="currentbroadcast">No Current Broadcast</h3>
+                <p id="broadcastsender" style="color:gray"></p>
+            </div>
 
-</div>
-<br />
-<div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
-    <div style="text-align:center">
-        <input type="text" placeholder="Message" id="usermessage" />
-        <span>Issue? </span><input type="checkbox" id="userissue" />
-        <input type="button" id="sendchat" value="Send Test Chat" />
-        <input type="button" id="clearchat" value="Clear Chat" />
+        </div>
+        <br />
+        <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1">
+            <div style="text-align:center">
+                <input type="text" placeholder="Message" id="usermessage" />
+                <span>Issue? </span><input type="checkbox" id="userissue" />
+                <input type="button" id="sendchat" value="Send Test Chat" />
+                <input type="button" id="clearchat" value="Clear Chat" />
+            </div>
+            <table style="width:100%">
+                <caption>Volunteer Chat Connection</caption>
+                <tr>
+                    <th width="20%">Sender</th>
+                    <th width="70%">Message</th>
+                    <th width="10%">Issue</th>
+                </tr>
+                <tbody class="volunteerchat"></tbody>
+            </table>
+        </div>
     </div>
-    <table style="width:100%">
-        <caption>Volunteer Chat Connection</caption>
-        <tr>
-            <th width="20%">Sender</th>
-            <th width="70%">Message</th>
-            <th width="10%">Issue</th>
-        </tr>
-        <tbody class="volunteerchat"></tbody>
-    </table>
 </div>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -1988,7 +2017,9 @@
                 if (fieldconnected[0] == true) {
                     $("#field1judge").html(fieldjudge[0])
                     if (fieldarray[0] != 0 && fieldarray != 3) {
-                        $("#field1connection").html("");
+                        $("#field1connection").html("Connected");
+                        $("#field1connection").css("background-color", "dimgray");
+                        $("#field1connection").css("color", "white");
                     }
                 } else {
                     if (fieldarray[0] != 0 && fieldarray[0] != 3) {
@@ -2001,7 +2032,9 @@
                 if (fieldconnected[1] == true) {
                     $("#field2judge").html(fieldjudge[1])
                     if (fieldarray[1] != 0 && fieldarray != 3) {
-                        $("#field2connection").html("");
+                        $("#field2connection").html("Connected");
+                        $("#field2connection").css("background-color", "dimgray");
+                        $("#field2connection").css("color", "white");
                     }
                 } else {
                     if (fieldarray[1] != 0 && fieldarray[1] != 3) {
@@ -2014,7 +2047,9 @@
                 if (fieldconnected[2] == true) {
                     $("#field3judge").html(fieldjudge[2])
                     if (fieldarray[2] != 0 && fieldarray != 3) {
-                        $("#field3connection").html("");
+                        $("#field3connection").html("Connected");
+                        $("#field3connection").css("background-color", "dimgray");
+                        $("#field3connection").css("color", "white");
                     }
                 } else {
                     if (fieldarray[2] != 0 && fieldarray[2] != 3) {
@@ -2027,7 +2062,9 @@
                 if (fieldconnected[3] == true) {
                     $("#field4judge").html(fieldjudge[3])
                     if (fieldarray[3] != 0 && fieldarray != 3) {
-                        $("#field4connection").html("");
+                        $("#field4connection").html("Connected");
+                        $("#field4connection").css("background-color", "dimgray");
+                        $("#field4connection").css("color", "white");
                     }
                 } else {
                     if (fieldarray[3] != 0 && fieldarray[3] != 3) {
@@ -2040,7 +2077,9 @@
                 if (fieldconnected[4] == true) {
                     $("#field5judge").html(fieldjudge[4])
                     if (fieldarray[4] != 0 && fieldarray != 3) {
-                        $("#field5connection").html("");
+                        $("#field5connection").html("Connected");
+                        $("#field5connection").css("background-color", "dimgray");
+                        $("#field5connection").css("color", "white");
                     }
                 } else {
                     if (fieldarray[4] != 0 && fieldarray[4] != 3) {
@@ -2053,7 +2092,9 @@
                 if (fieldconnected[5] == true) {
                     $("#field6judge").html(fieldjudge[6])
                     if (fieldarray[5] != 0 && fieldarray != 3) {
-                        $("#field6connection").html("");
+                        $("#field6connection").html("Connected");
+                        $("#field6connection").css("background-color", "dimgray");
+                        $("#field6connection").css("color", "white");
                     }
                 } else {
                     if (fieldarray[5] != 0 && fieldarray[5] != 3) {

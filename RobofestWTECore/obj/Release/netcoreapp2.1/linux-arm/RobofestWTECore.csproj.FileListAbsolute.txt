@@ -58,8 +58,6 @@ C:\Users\djree\source\repos\HDLOfficial\RobofestWTECore\RobofestWTECore\obj\Rele
 C:\Users\djree\source\repos\HDLOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\linux-arm\RobofestWTECore.csproj.CopyComplete
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\appsettings.Development.json
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\appsettings.json
-C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\libhostpolicy.so
-C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\libhostfxr.so
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\libman.json
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\Properties\launchSettings.json
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Release\netcoreapp2.1\linux-arm\RobofestWTECore
@@ -148,3 +146,4 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\linux-arm\RobofestWTECore.dll
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\linux-arm\RobofestWTECore.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\linux-arm\RobofestWTECore.csproj.CopyComplete
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\linux-arm\Razor\Views\Team\TeamMatchesEdit.cshtml.g.cs
