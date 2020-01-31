@@ -211,7 +211,6 @@ C:/Users/djree/source/repos/HDLOfficial/RobofestWTECore/RobofestWTECore/obj/Debu
 /Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/obj/Debug/netcoreapp2.1/RobofestWTECore.RazorTargetAssemblyInfo.cs
 /Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/obj/Debug/netcoreapp2.1/RobofestWTECore.Views.pdb
 /Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/obj/Debug/netcoreapp2.1/RobofestWTECore.csproj.CopyComplete
-C:/Users/djree/source/repos/RobofestWTEOfficial/RobofestWTECore/RobofestWTECore/bin/Debug/netcoreapp2.1/RobofestWTECore.Views.dll
 /Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/obj/Debug/netcoreapp2.1/Razor/Views/Team/TeamMatchesEdit.cshtml.g.cs
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Debug\netcoreapp2.1\appsettings.json
@@ -302,3 +301,4 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.dll
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.csproj.CopyComplete
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
