@@ -35,10 +35,10 @@ namespace RobofestWTECore
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<GameContext>(options =>
-                options.UseSqlServer(
+                options.UseNpgsql(
                     Configuration.GetConnectionString("RobofestWTE")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddDefaultUI()
