@@ -100,7 +100,8 @@
                 schedule.TeamNumber = $(this).children("#" + localid + "-team").val();
                 schedule.RoundNum = $(this).children("#" + localid + "-round").val();
                 schedule.CompID = 1;
-                schedule.Order = i;
+                schedule.MatchID = i;
+                schedule.Order = 1;
                 schedule.Rerun = $("#" + localid + "-rerun").is(":checked");
                 schedule.Test = $("#" + localid + "-testmatch").is(":checked");
                 schedule.Completed = $("#" + localid + "-completed").is(":checked");
