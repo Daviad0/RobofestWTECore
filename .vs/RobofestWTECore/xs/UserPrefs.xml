@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Data/GameContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="1" Column="1" />
       <File FileName="RobofestWTECore/Controllers/TeamController.cs" />
-      <File FileName="RobofestWTECore/appsettings.json" />
+      <File FileName="RobofestWTECore/appsettings.json" Line="5" Column="107" />
       <File FileName="RobofestWTECore/RobofestWTECore.csproj" />
-      <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" />
-      <File FileName="RobofestWTECore/ScoreHub.cs" />
+      <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" Line="61" Column="6" />
+      <File FileName="RobofestWTECore/ScoreHub.cs" Line="1" Column="1" />
       <File FileName="RobofestWTECore/Startup.cs" />
       <File FileName="RobofestWTECore/Data/GameContext.cs" Line="25" Column="10" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="248" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,14 +22,14 @@
                 </Node>
               </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True">
-                <Node name="GameContext.cs" selected="True" />
-              </Node>
+              <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Team" expanded="True" />
+                <Node name="Team" expanded="True">
+                  <Node name="TeamMatches.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
