@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Data/GameContext.cs">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="RobofestWTECore/Controllers/TeamController.cs" Line="23" Column="54" />
-      <File FileName="RobofestWTECore/appsettings.json" Line="14" Column="1" />
+      <File FileName="RobofestWTECore/Controllers/TeamController.cs" />
+      <File FileName="RobofestWTECore/appsettings.json" />
       <File FileName="RobofestWTECore/RobofestWTECore.csproj" />
       <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" />
       <File FileName="RobofestWTECore/ScoreHub.cs" />
-      <File FileName="RobofestWTECore/Startup.cs" Line="70" Column="16" />
+      <File FileName="RobofestWTECore/Startup.cs" />
       <File FileName="RobofestWTECore/Data/GameContext.cs" Line="25" Column="10" />
     </Files>
     <Pads>
