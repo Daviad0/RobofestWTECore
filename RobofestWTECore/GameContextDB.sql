@@ -214,10 +214,10 @@ INSERT INTO "Competitions" ("CompID", "GameID", "Location", "ExtraData", "Date",
 VALUES (1, 1, 'Robofest World Championship', 'Yeet', '1/1/2020 12:00:00 AM', 6, 1, '1001-1', '1001-2', '1001-3', '1001-4', '1001-5', '1001-6', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);
 
 INSERT INTO "StudentTeams" ("TeamID", "Coach", "CompID", "FieldR1", "FieldR2", "Location", "TeamName", "TeamNumberBranch", "TeamNumberSpecific")
-VALUES (1, 'Robofest', 1, 0, 0, 'Robofest', 'Team One', 1001, 1);
+VALUES (-1, 'Robofest', 1, 0, 0, 'Robofest', 'Test Team 1', 999, 1);
 
 INSERT INTO "StudentTeams" ("TeamID", "Coach", "CompID", "FieldR1", "FieldR2", "Location", "TeamName", "TeamNumberBranch", "TeamNumberSpecific")
-VALUES (2, 'Robofest', 1, 0, 0, 'Robofest', 'Team Two', 1001, 2);
+VALUES (-2, 'Robofest', 1, 0, 0, 'Robofest', 'Test Team 2', 999, 2);
 
 
 
