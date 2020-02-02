@@ -142,12 +142,12 @@
             <th>Field 6</th>
         </tr>
         <tr>
-            <td><input type="button" id="field1preferred" value="TeamID: @Model.FieldPreferred[0]" class="@Model.FieldPreferred[0] btn btn-default" /></td>
-            <td><input type="button" id="field2preferred" value="TeamID: @Model.FieldPreferred[1]" class="@Model.FieldPreferred[1] btn btn-default" /></td>
-            <td><input type="button" id="field3preferred" value="TeamID: @Model.FieldPreferred[2]" class="@Model.FieldPreferred[2] btn btn-default" /></td>
-            <td><input type="button" id="field4preferred" value="TeamID: @Model.FieldPreferred[3]" class="@Model.FieldPreferred[3] btn btn-default" /></td>
-            <td><input type="button" id="field5preferred" value="TeamID: @Model.FieldPreferred[4]" class="@Model.FieldPreferred[4] btn btn-default" /></td>
-            <td><input type="button" id="field6preferred" value="TeamID: @Model.FieldPreferred[5]" class="@Model.FieldPreferred[5] btn btn-default" /></td>
+            <td>Team <input type="button" id="field1preferred" value="@Model.FieldPreferred[0]" class="@Model.FieldPreferred[0] btn btn-default gotopage" /></td>
+            <td>Team <input type="button" id="field2preferred" value="@Model.FieldPreferred[1]" class="@Model.FieldPreferred[1] btn btn-default gotopage" /></td>
+            <td>Team <input type="button" id="field3preferred" value="@Model.FieldPreferred[2]" class="@Model.FieldPreferred[2] btn btn-default gotopage" /></td>
+            <td>Team <input type="button" id="field4preferred" value="@Model.FieldPreferred[3]" class="@Model.FieldPreferred[3] btn btn-default gotopage" /></td>
+            <td>Team <input type="button" id="field5preferred" value="@Model.FieldPreferred[4]" class="@Model.FieldPreferred[4] btn btn-default gotopage" /></td>
+            <td>Team <input type="button" id="field6preferred" value="@Model.FieldPreferred[5]" class="@Model.FieldPreferred[5] btn btn-default gotopage" /></td>
         </tr>
     </table>
     <br />
@@ -235,42 +235,42 @@
                 $("#field1preferred").css("background-color", "#ffffff")
                 
             }
-            else if ($("#field1preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field1preferred").val() == "EMPTY") {
                 $("#field1preferred").css("background-color", "#fc685b")
             }
             if (validmatches[1] == "True") {
                 $("#field2preferred").attr("disabled", false)
                 $("#field2preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field2preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field2preferred").val() == "EMPTY") {
                 $("#field2preferred").css("background-color", "#fc685b")
             }
             if (validmatches[2] == "True") {
                 $("#field3preferred").attr("disabled", false)
                 $("#field3preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field3preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field3preferred").val() == "EMPTY") {
                 $("#field3preferred").css("background-color", "#fc685b")
             }
             if (validmatches[3] == "True") {
                 $("#field4preferred").attr("disabled", false)
                 $("#field4preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field4preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field4preferred").val() == "EMPTY") {
                 $("#field4preferred").css("background-color", "#fc685b")
             }
             if (validmatches[4] == "True") {
                 $("#field5preferred").attr("disabled", false)
                 $("#field5preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field5preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field5preferred").val() == "EMPTY") {
                 $("#field5preferred").css("background-color", "#fc685b")
             }
             if (validmatches[5] == "True") {
                 $("#field6preferred").attr("disabled", false)
                 $("#field6preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field6preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field6preferred").val() == "EMPTY") {
                 $("#field6preferred").css("background-color", "#fc685b")
             }
             });
@@ -297,42 +297,42 @@
                 $("#field1preferred").css("background-color", "#ffffff")
                 
             }
-            else if ($("#field1preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field1preferred").val() == "EMPTY") {
                 $("#field1preferred").css("background-color", "#fc685b")
             }
             if (m2v == true) {
                 $("#field2preferred").attr("disabled", false)
                 $("#field2preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field2preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field2preferred").val() == "EMPTY") {
                 $("#field2preferred").css("background-color", "#fc685b")
             }
             if (m3v == true) {
                 $("#field3preferred").attr("disabled", false)
                 $("#field3preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field3preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field3preferred").val() == "EMPTY") {
                 $("#field3preferred").css("background-color", "#fc685b")
             }
             if (m4v == true) {
                 $("#field4preferred").attr("disabled", false)
                 $("#field4preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field4preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field4preferred").val() == "EMPTY") {
                 $("#field4preferred").css("background-color", "#fc685b")
             }
             if (m5v == true) {
                 $("#field5preferred").attr("disabled", false)
                 $("#field5preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field5preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field5preferred").val() == "EMPTY") {
                 $("#field5preferred").css("background-color", "#fc685b")
             }
             if (m6v == true) {
                 $("#field6preferred").attr("disabled", false)
                 $("#field6preferred").css("background-color", "#ffffff")
             }
-            else if ($("#field6preferred").val() == "TeamID: EMPTY") {
+            else if ($("#field6preferred").val() == "EMPTY") {
                 $("#field6preferred").css("background-color", "#fc685b")
             }
         });
@@ -355,17 +355,17 @@
             $("#field4preferred").css("background-color", "#fcc65b")
             $("#field5preferred").css("background-color", "#fcc65b")
             $("#field6preferred").css("background-color", "#fcc65b")
-            $("#field1preferred").val("TeamID: " + teamid1);
+            $("#field1preferred").val(teamid1);
             $("#field1preferred").addClass(teamid1)
-            $("#field2preferred").val("TeamID: " + teamid2);
+            $("#field2preferred").val(teamid2);
             $("#field2preferred").addClass(teamid2);
-            $("#field3preferred").val("TeamID: " + teamid3);
+            $("#field3preferred").val(teamid3);
             $("#field3preferred").addClass(teamid3)
-            $("#field4preferred").val("TeamID: " + teamid4);
+            $("#field4preferred").val(teamid4);
             $("#field4preferred").addClass(teamid4)
-            $("#field5preferred").val("TeamID: " + teamid5);
+            $("#field5preferred").val(teamid5);
             $("#field5preferred").addClass(teamid5)
-            $("#field6preferred").val("TeamID: " + teamid6);
+            $("#field6preferred").val(teamid6);
             $("#field6preferred").addClass(teamid6)
             $("#field1preferred").addClass("btn btn-default");
             $("#field2preferred").addClass("btn btn-default");
@@ -393,9 +393,16 @@
             $(".timerstatus").css("color", "black");
 
         });
+        chat.on("sendJudgesToPage", function (teamidsent) {
+            window.location.href = ('/Team/RoundCreate/' + teamidsent);
+        });
 
         // Start the connection.
         chat.start().then(function () {
+            $(".gotopage").click(function () {
+                var teamidtouse = $(this).val();
+                chat.invoke("goToRC", teamidtouse)
+            });
             function checkPongs() {
                 if (fieldconnected[0] == true) {
                     if (fieldarray[0] != 0 && fieldarray != 3) {

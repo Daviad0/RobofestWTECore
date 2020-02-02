@@ -21,6 +21,7 @@ namespace RobofestWTECore.Data
         public DbSet<ScoreMethod> ScoreMethods { get; set; }
         public DbSet<ScoreAmount> ScoreAmounts { get; set; }
         public DbSet<CompField> Fields { get; set; }
+        public DbSet<PresetAccount> PresetAccounts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StudentTeam>().HasData(

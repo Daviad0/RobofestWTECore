@@ -7,6 +7,7 @@ using RobofestWTECore.Models;
 using RobofestWTE.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace RobofestWTECore
 {
@@ -16,13 +17,209 @@ namespace RobofestWTECore
         private readonly ApplicationDbContext context;
         private readonly IHubContext<ScoreHub> _hubContext;
         private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public ScoreHub(ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext, Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager2)
+        public ScoreHub(ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext, Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager2, RoleManager<IdentityRole> roleManager2)
         {
             this.context = context;
             this.db = db;
             _hubContext = hubContext;
             userManager = userManager2;
+            roleManager = roleManager2;
+
+        }
+        public async Task SetupMatch(string Password, string UserName, int compid, int judges, int fieldstaff, int managers, int tech)
+        {
+            var CompetitionID = (from c in db.Competitions where c.CompID == compid select c).FirstOrDefault();
+            if(CompetitionID.setup == false)
+            {
+                if (Password == "RobofestWTE")
+                {
+                    /*if((from c in db.Competitions select c).Count() <= 1)
+                    {
+                        IdentityRole judge = new IdentityRole();
+                        judge.Name = "Judge";
+                        judge.NormalizedName = "JUDGE";
+                        judge.Id = "4";
+                        IdentityRole field1a = new IdentityRole();
+                        field1a.Name = "Field1";
+                        field1a.NormalizedName = "FIELD1";
+                        field1a.Id = "1001";
+                        IdentityRole field2a = new IdentityRole();
+                        field2a.Name = "Field2";
+                        field2a.NormalizedName = "FIELD2";
+                        field2a.Id = "1002";
+                        IdentityRole field3a = new IdentityRole();
+                        field3a.Name = "Field3";
+                        field3a.NormalizedName = "FIELD3";
+                        field3a.Id = "1003";
+                        IdentityRole field4a = new IdentityRole();
+                        field4a.Name = "Field4";
+                        field4a.NormalizedName = "FIELD4";
+                        field4a.Id = "1004";
+                        IdentityRole field5a = new IdentityRole();
+                        field5a.Name = "Field5";
+                        field5a.NormalizedName = "FIELD5";
+                        field5a.Id = "1005";
+                        IdentityRole field6a = new IdentityRole();
+                        field6a.Name = "Field6";
+                        field6a.NormalizedName = "FIELD6";
+                        field6a.Id = "1006";
+                        IdentityRole allfields = new IdentityRole();
+                        field6a.Name = "AllFields";
+                        field6a.NormalizedName = "ALLFIELDS";
+                        field6a.Id = "1000";
+                        IdentityRole admin = new IdentityRole();
+                        admin.Name = "Admin";
+                        admin.NormalizedName = "ADMIN";
+                        admin.Id = "1";
+                        IdentityRole techrole = new IdentityRole();
+                        techrole.Name = "Tech";
+                        techrole.NormalizedName = "TECH";
+                        techrole.Id = "-1";
+                        IdentityRole managerrole = new IdentityRole();
+                        managerrole.Name = "Manager";
+                        managerrole.NormalizedName = "MANAGER";
+                        managerrole.Id = "2";
+                        IdentityRole fieldstaffrole = new IdentityRole();
+                        fieldstaffrole.Name = "FieldStaff";
+                        fieldstaffrole.NormalizedName = "FIELDSTAFF";
+                        fieldstaffrole.Id = "3";
+                        IdentityRole locked = new IdentityRole();
+                        locked.Name = "Locked";
+                        locked.NormalizedName = "LOCKED";
+                        locked.Id = "5";
+                        await Clients.All.SendAsync("setupProgress", 5, "Roles Created, Uploading...");
+                        await roleManager.CreateAsync(judge);
+                        await roleManager.CreateAsync(field1a);
+                        await roleManager.CreateAsync(field2a);
+                        await roleManager.CreateAsync(field3a);
+                        await roleManager.CreateAsync(field4a);
+                        await roleManager.CreateAsync(field5a);
+                        await roleManager.CreateAsync(field6a);
+                        await roleManager.CreateAsync(allfields);
+                        await roleManager.CreateAsync(admin);
+                        await roleManager.CreateAsync(techrole);
+                        await roleManager.CreateAsync(managerrole);
+                        await roleManager.CreateAsync(fieldstaffrole);
+                        await roleManager.CreateAsync(locked);
+                        await Clients.All.SendAsync("setupProgress", 10, "Roles Uploaded to Database!");
+                    }
+                    else
+                    {
+                        await Clients.All.SendAsync("setupProgress", 10, "Role Setup Skipped: Already Exists");
+                    }*/
+                    
+                    await userManager.AddToRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), "Main");
+                    
+                    
+                    await Clients.All.SendAsync("setupProgress", 20, "Competition Status & User Account Updated!");
+                    for (int j = 0;j < judges; j++)
+                    {
+                        ApplicationUser JudgeToAdd = new ApplicationUser();
+                        JudgeToAdd.UserName = "Judge" + (j + 1).ToString();
+                        JudgeToAdd.NormalizedUserName = "JUDGE" + (j + 1).ToString();
+                        //JudgeToAdd.Id = Guid.NewGuid().ToString();
+                        JudgeToAdd.Email = JudgeToAdd.UserName + "@robofest.com";
+                        JudgeToAdd.NormalizedEmail = JudgeToAdd.NormalizedUserName = "@ROBOFEST.COM";
+                        JudgeToAdd.Id = Guid.NewGuid().ToString();
+                        string PublicPass = "J!"+Guid.NewGuid().ToString("n").Substring(0, 8);
+                        await userManager.CreateAsync(JudgeToAdd, PublicPass);
+                        await userManager.AddToRoleAsync(JudgeToAdd, "JUDGE");
+                        await userManager.AddToRoleAsync(JudgeToAdd, "ALLFIELDS");
+                        PresetAccount presetAccount = new PresetAccount();
+                        presetAccount.CompID = compid;
+                        presetAccount.Email = JudgeToAdd.Email;
+                        presetAccount.PresetAccoutID = JudgeToAdd.Id;
+                        presetAccount.PublicPasskey = PublicPass;
+                        presetAccount.Username = JudgeToAdd.UserName;
+                        await db.PresetAccounts.AddAsync(presetAccount); 
+                        await db.SaveChangesAsync();
+                    }
+                    await Clients.All.SendAsync("setupProgress", 40, "Judge Roles Uploaded to Database!");
+                    for (int j = 0; j < fieldstaff; j++)
+                    {
+                        ApplicationUser FSToAdd = new ApplicationUser();
+                        FSToAdd.UserName = "FieldStaff" + (j + 1).ToString();
+                        FSToAdd.NormalizedUserName = "FIELDSTAFF" + (j + 1).ToString();
+                        //JudgeToAdd.Id = Guid.NewGuid().ToString();
+                        FSToAdd.Email = FSToAdd.UserName + "@robofest.com";
+                        FSToAdd.NormalizedEmail = FSToAdd.NormalizedUserName = "@ROBOFEST.COM";
+                        FSToAdd.Id = Guid.NewGuid().ToString();
+                        string PublicPass = "FS!" + Guid.NewGuid().ToString("n").Substring(0, 8);
+                        await userManager.CreateAsync(FSToAdd, PublicPass);
+                        await userManager.AddToRoleAsync(FSToAdd, "FIELDSTAFF");
+                        PresetAccount presetAccount = new PresetAccount();
+                        presetAccount.CompID = compid;
+                        presetAccount.Email = FSToAdd.Email;
+                        presetAccount.PresetAccoutID = FSToAdd.Id;
+                        presetAccount.PublicPasskey = PublicPass;
+                        presetAccount.Username = FSToAdd.UserName;
+                        await db.PresetAccounts.AddAsync(presetAccount);
+                        await db.SaveChangesAsync();
+                    }
+                    await Clients.All.SendAsync("setupProgress", 60, "Field Staff Roles Uploaded to Database!");
+                    for (int j = 0; j < managers; j++)
+                    {
+                        ApplicationUser ManagerToAdd = new ApplicationUser();
+                        ManagerToAdd.UserName = "Manager" + (j + 1).ToString();
+                        ManagerToAdd.NormalizedUserName = "MANAGER" + (j + 1).ToString();
+                        //JudgeToAdd.Id = Guid.NewGuid().ToString();
+                        ManagerToAdd.Email = ManagerToAdd.UserName + "@robofest.com";
+                        ManagerToAdd.NormalizedEmail = ManagerToAdd.NormalizedUserName = "@ROBOFEST.COM";
+                        ManagerToAdd.Id = Guid.NewGuid().ToString();
+                        string PublicPass = "M!" + Guid.NewGuid().ToString("n").Substring(0, 8);
+                        await userManager.CreateAsync(ManagerToAdd, PublicPass);
+                        await userManager.AddToRoleAsync(ManagerToAdd, "MANAGER");
+                        PresetAccount presetAccount = new PresetAccount();
+                        presetAccount.CompID = compid;
+                        presetAccount.Email = ManagerToAdd.Email;
+                        presetAccount.PresetAccoutID = ManagerToAdd.Id;
+                        presetAccount.PublicPasskey = PublicPass;
+                        presetAccount.Username = ManagerToAdd.UserName;
+                        await db.PresetAccounts.AddAsync(presetAccount);
+                        await db.SaveChangesAsync();
+                    }
+                    await Clients.All.SendAsync("setupProgress", 80, "Manager Roles Uploaded to Database!");
+                    for (int j = 0; j < tech; j++)
+                    {
+                        ApplicationUser TechToAdd = new ApplicationUser();
+                        TechToAdd.UserName = "Tech" + (j + 1).ToString();
+                        TechToAdd.NormalizedUserName = "TECH" + (j + 1).ToString();
+                        //JudgeToAdd.Id = Guid.NewGuid().ToString();
+                        TechToAdd.Email = TechToAdd.UserName + "@robofest.com";
+                        TechToAdd.NormalizedEmail = TechToAdd.NormalizedUserName = "@ROBOFEST.COM";
+                        TechToAdd.Id = Guid.NewGuid().ToString();
+                        string PublicPass = "T!" + Guid.NewGuid().ToString("n").Substring(0, 8);
+                        await userManager.CreateAsync(TechToAdd, PublicPass);
+                        await userManager.AddToRoleAsync(TechToAdd, "TECH");
+                        PresetAccount presetAccount = new PresetAccount();
+                        presetAccount.CompID = compid;
+                        presetAccount.Email = TechToAdd.Email;
+                        presetAccount.PresetAccoutID = TechToAdd.Id;
+                        presetAccount.PublicPasskey = PublicPass;
+                        presetAccount.Username = TechToAdd.UserName;
+                        await db.PresetAccounts.AddAsync(presetAccount);
+                        await db.SaveChangesAsync();
+                    }
+                    await Clients.All.SendAsync("setupProgress", 99, "Tech Roles Uploaded to Database!");
+                    await Clients.All.SendAsync("setupProgress", 100, "RSO Setup Complete!");
+                    await Clients.All.SendAsync("setupSuccess");
+                    CompetitionID.setup = true;
+                    db.Competitions.Update(CompetitionID);
+                    await db.SaveChangesAsync();
+                }
+                else
+                {
+                    await Clients.All.SendAsync("setupFailure");
+                }
+            }
+            else
+            {
+                await Clients.All.SendAsync("setupFailure");
+            }
+            
+            
         }
         public void SendTimer(int minutes, int seconds, string message, int status)
         {
@@ -311,7 +508,12 @@ namespace RobofestWTECore
             }
             await Clients.All.SendAsync("reloadUsers");
         }
-        
+        public void GoToRC(string teamnum)
+        {
+            var teamnumbereach = teamnum.Split("-");
+            var TeamID = (from t in db.StudentTeams where t.TeamNumberBranch.ToString() == teamnumbereach[0] && t.TeamNumberSpecific.ToString() == teamnumbereach[1] select t).FirstOrDefault();
+            Clients.All.SendAsync("sendJudgesToPage", TeamID.TeamID);
+        }
         public Task ThrowException()
         {
             throw new HubException("This error will be sent to the client!");

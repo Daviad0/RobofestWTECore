@@ -31,5 +31,6 @@ namespace RobofestWTE.Models
         public bool validmatch4 { get; set; } 
         public bool validmatch5 { get; set; } 
         public bool validmatch6 { get; set; } 
+        public bool setup { get; set; }
     }
 }

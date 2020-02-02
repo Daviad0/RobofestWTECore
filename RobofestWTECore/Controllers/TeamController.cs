@@ -540,18 +540,20 @@ namespace RobofestWTECore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RoundCreate([Bind("TeamID,Score,Time,Round,Data,Rerun,Usable,TimeStamp,Field,JudgeConfirmNotes,StudentInitials")] RoundEntry roundEntry)
         {
-                db.RoundEntries.Add(roundEntry);
-                db.SaveChanges();
+            Random random = new Random();
+            roundEntry.EntryID = random.Next(1, 100000);
+            db.RoundEntries.Add(roundEntry);
+            db.SaveChanges();
 
-                var TeamNumberBranch = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberBranch;
-                var TeamNumberSpecific = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberSpecific;
-                string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
-                this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false);
-                this._hubContext.Clients.All.SendAsync("checkThisScore",roundEntry.Field, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
+            var TeamNumberBranch = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberBranch;
+            var TeamNumberSpecific = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberSpecific;
+            string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
+            this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false);
+            this._hubContext.Clients.All.SendAsync("checkThisScore",roundEntry.Field, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
 
-                string page = roundEntry.TeamID.ToString();
-                page = "Details/" + page;
-                return RedirectToAction(page);
+            string page = roundEntry.TeamID.ToString();
+            page = "Details/" + page;
+            return RedirectToAction(page);
 
 
         }
@@ -725,11 +727,13 @@ namespace RobofestWTECore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult TeamCreate([Bind("TeamID,CompID,TeamName,TeamNumberBranch,TeamNumberSpecific,Location,Coach,ReadyR1,ReadyR2")] StudentTeam studentTeam)
         {
-                db.StudentTeams.Add(studentTeam);
-                db.SaveChanges();
-                string page = studentTeam.CompID.ToString();
-                page = "Competition/" + page;
-                return RedirectToAction(page);
+            Random random = new Random();
+            studentTeam.TeamID = random.Next(1, 100000);
+            db.StudentTeams.Add(studentTeam);
+            db.SaveChanges();
+            string page = studentTeam.CompID.ToString();
+            page = "Competition/" + page;
+            return RedirectToAction(page);
 
         }
         /*

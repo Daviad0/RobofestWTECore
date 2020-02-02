@@ -71,7 +71,7 @@ WriteAttributeValue("", 104, Url.Action("Competition", new { id = Model.CompID }
             WriteLiteral(" style=\"display:inline;padding-right:10px\"><input type=\"button\" class=\"btn btn-warning\" style=\"width:50vw;height:7vw;font-size:2vw;display:inline-block;font-family:Calibri\" value=\"Back to Competition\" /></a></div>\r\n</div>\r\n");
             EndContext();
             BeginContext(381, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af5e4d1925c74cb9a9543508ca7b4ba8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8c492b2ca9a4f4280da4deb5b6456ee", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
