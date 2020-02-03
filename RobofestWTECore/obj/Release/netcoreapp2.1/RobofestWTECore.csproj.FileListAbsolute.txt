@@ -88,3 +88,4 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\RobofestWTECore.dll
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\RobofestWTECore.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\RobofestWTECore.csproj.CopyComplete
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Release\netcoreapp2.1\Razor\Views\Home\Setup.cshtml.g.cs
