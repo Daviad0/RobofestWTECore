@@ -135,30 +135,6 @@ ALTER TABLE "TeamMatches" DROP CONSTRAINT "FK_TeamMatches_Competitions_CompID";
 DROP INDEX "IX_TeamMatches_CompID";
 
 
-ALTER TABLE "Competitions" ALTER COLUMN field6preferred TYPE text;
-ALTER TABLE "Competitions" ALTER COLUMN field6preferred DROP NOT NULL;
-ALTER TABLE "Competitions" ALTER COLUMN field6preferred DROP DEFAULT;
-
-ALTER TABLE "Competitions" ALTER COLUMN field5preferred TYPE text;
-ALTER TABLE "Competitions" ALTER COLUMN field5preferred DROP NOT NULL;
-ALTER TABLE "Competitions" ALTER COLUMN field5preferred DROP DEFAULT;
-
-ALTER TABLE "Competitions" ALTER COLUMN field4preferred TYPE text;
-ALTER TABLE "Competitions" ALTER COLUMN field4preferred DROP NOT NULL;
-ALTER TABLE "Competitions" ALTER COLUMN field4preferred DROP DEFAULT;
-
-ALTER TABLE "Competitions" ALTER COLUMN field3preferred TYPE text;
-ALTER TABLE "Competitions" ALTER COLUMN field3preferred DROP NOT NULL;
-ALTER TABLE "Competitions" ALTER COLUMN field3preferred DROP DEFAULT;
-
-ALTER TABLE "Competitions" ALTER COLUMN field2preferred TYPE text;
-ALTER TABLE "Competitions" ALTER COLUMN field2preferred DROP NOT NULL;
-ALTER TABLE "Competitions" ALTER COLUMN field2preferred DROP DEFAULT;
-
-ALTER TABLE "Competitions" ALTER COLUMN field1preferred TYPE text;
-ALTER TABLE "Competitions" ALTER COLUMN field1preferred DROP NOT NULL;
-ALTER TABLE "Competitions" ALTER COLUMN field1preferred DROP DEFAULT;
-
 
 ALTER TABLE "Competitions" ADD validmatch1 boolean NOT NULL DEFAULT FALSE;
 
