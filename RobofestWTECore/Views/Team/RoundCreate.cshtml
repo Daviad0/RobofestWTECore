@@ -92,7 +92,7 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: #ecbb06;
+        background-color: lightgray;
         color: white;
         text-align: center;
     }
@@ -304,10 +304,7 @@
 
 
         <div class="beforeconfirmation" style="text-align:center">
-            <span>Timestamp</span>
-            <br />
-            @Html.TextBoxFor(model => model.TimeStamp, new { Value = timeStamp, @class = "form-control", @readonly = "readonly", @style = "display:inline" })
-            <br />
+            @Html.TextBoxFor(model => model.TimeStamp, new { Value = timeStamp, @class = "form-control autofields", @readonly = "readonly", @style = "display:none" })
             <span>Score</span>
             <br />
             @Html.TextBoxFor(model => model.Score, new { Value = 0, id = "teamID", @class = "form-control", @style = "display:inline" })
@@ -315,10 +312,7 @@
             <span>Time</span>
             <br />
             @Html.TextBoxFor(model => model.Time, new { Value = 0, @class = "form-control", @style = "display:inline" })
-            <br />
-            <span>Data</span>
-            <br />
-            @Html.TextBoxFor(model => model.Data, new { Value = "0/0/0/0/0^0/0/0^0/0^0/0", @class = "form-control", id = "data", @readonly = "readonly", @style = "display:inline" })
+            @Html.TextBoxFor(model => model.Data, new { Value = "0/0/0/0/0^0/0/0^0/0^0/0", @class = "form-control autofields", id = "data", @readonly = "readonly", @style = "display:none" })
             <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px" class="autofields">
                 <div class="btn-group autofields" data-toggle="buttons">
                     <label class="btn btn-primary active autofields">
@@ -607,8 +601,9 @@
 <br />
 <audio></audio>
 <footer class="navbar-fixed-bottom" hidden id="readybar">
-    <div style="background-color:orange;width:100%;height:120px;text-align:center">
-        <div class="status" style="border-bottom:black 3px solid;border-radius:8px;display:inline-block">
+    <button style="margin:0 auto;margin-left:10px;background-color:black;color:white;border:4px solid black;border-radius:8px 8px 0px 0px;font-size:20px" id="togglecontrols"><span id="togglemessage">Hide Controls</span> (<span id="minutes2">0</span>:<span id="seconds2">00</span>)</button>
+    <div style="background-color:lightgray;width:100%;height:120px;text-align:center;border-top:4px solid black" id="controlpanel">
+        <div class="status" style="border-bottom:black 4px solid;border-radius:8px;display:inline-block">
             <h4 style="font-family:'Lucida Console';margin-bottom:0px" class="timerarea"><span id="minutes" class="timerarea">0</span>:<span id="seconds" class="timerarea">00</span></h4>
         </div>
         <span>| <span id="message"></span></span>
@@ -622,6 +617,20 @@
 </footer>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var controlson = true;
+    $("#togglecontrols").click(function () {
+        if (controlson) {
+            $("#togglemessage").html("Show Controls")
+            $("#controlpanel").css("display", "none")
+            controlson = false;
+        } else {
+            $("#togglemessage").html("Hide Controls")
+            $("#controlpanel").css("display", "block")
+            controlson = true;
+        }
+    });
+</script>
 <script>
     $(".bottle1").val(0).attr("selected", "selected");
     $(".bottle2").val(0).attr("selected", "selected");
@@ -780,12 +789,14 @@
         });
         chat.on("changeGlobalTimer", function (minutes, seconds, message, status, score) {
             $("#minutes").html(minutes);
+            $("#minutes2").html(minutes);
             if (seconds < 10) {
                 secondsview = "0" + seconds;
             } else {
                 secondsview = seconds;
             }
             $("#seconds").html(secondsview);
+            $("#seconds2").html(secondsview);
             $("#message").html(message);
             if (status == 0) {
                 $(".status").css("border-bottom", "3px black solid");
