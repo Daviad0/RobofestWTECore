@@ -64,7 +64,7 @@ using RobofestWTECore.Data;
 #line default
 #line hidden
             BeginContext(100, 2261, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "923e23a4991a429286d6255832c09d7a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b3f251eb37f49e3a234155e2ff5a858", async() => {
                 BeginContext(106, 888, true);
                 WriteLiteral(@"
     <h2>Team Management</h2>
