@@ -103,6 +103,7 @@ namespace RobofestWTECore
                     await roleManager.CreateAsync(managerrole);
                     await roleManager.CreateAsync(fieldstaffrole);
                     await roleManager.CreateAsync(locked);
+                    
                     await Clients.All.SendAsync("setupProgress", 10, "Roles Uploaded to Database!");
                     System.Threading.Thread.Sleep(5000);
                     
