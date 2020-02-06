@@ -35,7 +35,7 @@ namespace RobofestWTECore
             {
                 if (Password == "RobofestWTE")
                 {
-                    /*if((from c in db.Competitions select c).Count() <= 1)
+                    if((from c in db.Competitions select c).Count() <= 1)
                     {
                         IdentityRole judge = new IdentityRole();
                         judge.Name = "Judge";
@@ -108,7 +108,7 @@ namespace RobofestWTECore
                     else
                     {
                         await Clients.All.SendAsync("setupProgress", 10, "Role Setup Skipped: Already Exists");
-                    }*/
+                    }
                     
                     await userManager.AddToRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), "Main");
                     
