@@ -37,6 +37,7 @@ namespace RobofestWTECore
                 {
                     if((from c in db.Competitions select c).Count() <= 1)
                     {
+                        
                         IdentityRole judge = new IdentityRole();
                         judge.Name = "Judge";
                         judge.NormalizedName = "JUDGE";
@@ -105,10 +106,12 @@ namespace RobofestWTECore
                         await roleManager.CreateAsync(fieldstaffrole);
                         await roleManager.CreateAsync(locked);
                         await Clients.All.SendAsync("setupProgress", 10, "Roles Uploaded to Database!");
+                        System.Threading.Thread.Sleep(5000);
                     }
                     else
                     {
                         await Clients.All.SendAsync("setupProgress", 10, "Role Setup Skipped: Already Exists");
+                        System.Threading.Thread.Sleep(5000);
                     }
                     
                     await userManager.AddToRoleAsync(context.Users.Where(u => u.UserName == UserName).FirstOrDefault(), "Main");
