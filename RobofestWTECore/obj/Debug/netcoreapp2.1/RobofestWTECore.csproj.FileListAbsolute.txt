@@ -225,7 +225,6 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\bin\Debug\netcoreapp2.1\RobofestWTECore.Views.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.RazorAssemblyInfo.cache
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.RazorAssemblyInfo.cs
-C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.AssemblyInfoInputs.cache
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.AssemblyInfo.cs
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.TagHelpers.input.cache
@@ -303,3 +302,4 @@ C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.pdb
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.csproj.CopyComplete
 C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\RobofestWTECore.csprojAssemblyReference.cache
+C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

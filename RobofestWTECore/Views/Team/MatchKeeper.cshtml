@@ -1132,6 +1132,7 @@
                     <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox2"><h3>Match Play</h3></th>
                     <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox3"><h3>Judge Scoring</h3></th>
                     <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox4"><h3>Field Timeout</h3></th>
+                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox5"><h3>Splash Screen</h3></th>
                 </tr>
             </table>
             <br />
@@ -1822,7 +1823,7 @@
                 chat.invoke("setStage", 4);
             });
             $("#nextstage").click(function () {
-                if (currentstage == 4) {
+                if (currentstage == 5) {
                     currentstage = 1
                 } else {
                     currentstage++;

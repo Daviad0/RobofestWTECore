@@ -25,11 +25,14 @@
         }
     }
 </style>
-<div class="jumbotron" style="text-align:center">
-    <div id="stage1">
-        <h2>Welcome to @Model.CompData.Location</h2>
+
+
+<div class="jumbotron" style="text-align:center" id="fullscreenthis">
+    <div id="stage1" style="width:100%;margin-left:0;margin-right:0">
+        <img src="~/images/robofest_words_transparent.png" height="50" />
+        <h2><i class="fa fa-robot"></i> Welcome to @Model.CompData.Location <i class="fa fa-robot"></i></h2>
         <h3>@Model.CompData.Date</h3>
-        <table align="center">
+        <!--<table align="center">
             <thead>
                 <caption style="text-align:center">Top Teams! (Total: @Model.TeamCount)</caption>
                 <tr style="text-align:center;padding-right:5px;border-bottom:#000000 1px solid">
@@ -72,46 +75,46 @@
                     }
                 }
             </tbody>
-        </table>
+        </table>-->
 
 
         <br />
-        <table style="text-align:center;width:100%">
+        <table style="text-align:center;width:100%;position:relative;width:100%">
 
             <tr>
-                <td class="field1s" style="background-color:lightgray;border-top:gray 12px solid">
+                <td class="field1s" style="background-color: lightgray; border-top: gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 1</h3>
-                    
+
 
                     <h4 class="field1team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field2s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 2</h3>
-                    
+
 
                     <h4 class="field2team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field3s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 3</h3>
-                    
+
 
                     <h4 class="field3team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field4s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 4</h3>
-                    
+
 
                     <h4 class="field4team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field5s" style="background-color: lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 5</h3>
-                    
+
 
                     <h4 class="field5team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field6s" style="background-color: lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 6</h3>
-                    
+
 
                     <h4 class="field6team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
@@ -139,9 +142,6 @@
 
             </tr>
         </table>
-        <h5 style="text-align:center;font-family:'Lucida Console'" class="lastupdated">* All Fields Deinitialized</h5>
-        <h5 style="text-align:center;font-family:'Lucida Console';color:red" id="gamestatus"></h5>
-        <span id="ping"></span>
 
 
     </div>
@@ -149,7 +149,7 @@
         <div class="status" style="border-bottom:gray 12px solid;border-radius:4px;display:inline-block">
             <h1 style="font-family:'Lucida Console';background-color:black;padding:10px;padding-bottom:0px;border-radius:4px 4px 0px 0px;color:white;margin-bottom:0px" class="timerarea"><span id="minutes" class="timerarea minutes">0</span>:<span id="seconds" class="timerarea seconds">00</span></h1>
         </div>
-        
+
         <h3 style="font-family:'Lucida Console'"><span class="message"></span></h3>
         <br />
         <br />
@@ -243,42 +243,42 @@
             <tr>
                 <td class="field1s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 1</h3>
-                    
+
 
                     <h2 class="field1score" style="font-family:'Lucida Console'">--</h2>
                     <h4 class="field1team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field2s" style="background-color:lightgray;border-top: gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 2</h3>
-                    
+
 
                     <h2 class="field2score" style="font-family:'Lucida Console'">--</h2>
                     <h4 class="field2team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field3s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 3</h3>
-                    
+
 
                     <h2 class="field3score" style="font-family:'Lucida Console'">--</h2>
                     <h4 class="field3team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field4s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 4</h3>
-                    
+
 
                     <h2 class="field4score" style="font-family:'Lucida Console'">--</h2>
                     <h4 class="field4team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field5s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family: 'Lucida Console'">Field 5</h3>
-                    
+
 
                     <h2 class="field5score" style="font-family:'Lucida Console'">--</h2>
                     <h4 class="field5team" style="font-family:'Lucida Console'">No Team</h4>
                 </td>
                 <td class="field6s" style="background-color:lightgray;border-top:gray 12px solid">
                     <h3 style="font-family:'Lucida Console'">Field 6</h3>
-                    
+
 
                     <h2 class="field6score" style="font-family:'Lucida Console'">--</h2>
                     <h4 class="field6team" style="font-family:'Lucida Console'">No Team</h4>
@@ -374,10 +374,32 @@
             </div>
         </div>
     </div>
+    <div id="stage5" class="stage5">
+        <div class="splashscreen" style="padding-top:20vw">
+            <img src="~/images/robofest_words_transparent.png" height="100" />
+            <h1 style="font-family:Georgia, 'Times New Roman', Times, serif;text-shadow:2px 2px lightgray">Scoring Online</h1>
+            <br />
+            <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;text-shadow:2px 2px lightgray">We'll Be Right Back...</h3>
+        </div>
+    </div>
 </div>
+<button onclick="openFullscreen();">Open Fullscreen</button>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var elem = document.documentElement;
+    function openFullscreen() {
+        var el = document.getElementById('fullscreenthis');
 
+        // use necessary prefixed versions
+        el.webkitRequestFullscreen();
+        el.mozRequestFullScreen();
+        el.msRequestFullscreen();
+
+        // finally the standard version
+        el.requestFullscreen();
+    }
+</script>
 <script>
     var myIndex = 0;
     $(document).ready(function () {
@@ -386,6 +408,7 @@
         $("#stage2").css("display", "none")
         $("#stage3").css("display", "none")
         $("#stage4").css("display", "none")
+        $("#stage1").css("display", "none")
     });
     function carousel() {
         var i;
@@ -433,6 +456,7 @@
             $("#stage" + 2).css("display", "none");
             $("#stage" + 3).css("display", "none");
             $("#stage" + 4).css("display", "none");
+            $("#stage" + 5).css("display", "none");
             $("#stage" + stage).css("display", "");
         });
         chat.on("changeGlobalTimer", function (minutes, seconds, message, status) {

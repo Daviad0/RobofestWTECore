@@ -67,7 +67,7 @@ using RobofestWTECore.Data;
 #line default
 #line hidden
             BeginContext(95, 312, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "307e52bd2fee4206b927937ad47d8254", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8be27d87139d4bac8e416efd6b61dd79", async() => {
                 BeginContext(101, 299, true);
                 WriteLiteral(@"
     <link rel=""stylesheet"" href=""https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"">
@@ -726,7 +726,7 @@ WriteAttributeValue("", 18541, item.TeamNumberSpecific, 18541, 24, false);
 ");
             EndContext();
             BeginContext(19194, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "027656713b0e4ff9b52aa4556aa472a5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93b87ab7a8ad48408845cf7477229b15", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -744,7 +744,7 @@ WriteAttributeValue("", 18541, item.TeamNumberSpecific, 18541, 24, false);
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(19257, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "999c99d414cf49dd9d93b5ef1038f428", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd218dce1f2e4d269c6622ab01b03532", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
