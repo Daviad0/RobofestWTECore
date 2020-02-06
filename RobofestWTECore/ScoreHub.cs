@@ -91,6 +91,7 @@ namespace RobofestWTECore
                         locked.Id = "5";
                         await Clients.All.SendAsync("setupProgress", 5, "Roles Created, Uploading...");
                         await roleManager.CreateAsync(judge);
+                        Console.WriteLine("Judge Created");
                         await roleManager.CreateAsync(field1a);
                         await roleManager.CreateAsync(field2a);
                         await roleManager.CreateAsync(field3a);
