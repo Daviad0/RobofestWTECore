@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/ScoreHub.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/AccountContextDB.sql">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="55" Column="2" />
       <File FileName="RobofestWTECore/Controllers/TeamController.cs" />
-      <File FileName="RobofestWTECore/appsettings.json" Line="5" Column="107" />
+      <File FileName="RobofestWTECore/appsettings.json" />
       <File FileName="RobofestWTECore/RobofestWTECore.csproj" />
       <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" />
       <File FileName="RobofestWTECore/ScoreHub.cs" Line="519" Column="2" />
       <File FileName="RobofestWTECore/Startup.cs" />
       <File FileName="RobofestWTECore/Data/GameContext.cs" />
-      <File FileName="../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="248" Column="50" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
+      <File FileName="RobofestWTECore/GameContextDB.sql" Line="20" Column="27" />
+      <File FileName="RobofestWTECore/AccountContextDB.sql" Line="24" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,7 +31,7 @@
                 <Node name="Home" expanded="True" />
                 <Node name="Team" expanded="True" />
               </Node>
-              <Node name="ScoreHub.cs" selected="True" />
+              <Node name="AccountContextDB.sql" selected="True" />
             </Node>
           </Node>
         </State>

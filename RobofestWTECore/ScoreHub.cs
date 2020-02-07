@@ -36,7 +36,7 @@ namespace RobofestWTECore
                 if (Password == "RobofestWTE")
                 {
                         
-                    IdentityRole judge = new IdentityRole();
+                    /*IdentityRole judge = new IdentityRole();
                     judge.Name = "Judge";
                     judge.NormalizedName = "JUDGE";
                     judge.Id = "4";
@@ -102,7 +102,7 @@ namespace RobofestWTECore
                     await roleManager.CreateAsync(techrole);
                     await roleManager.CreateAsync(managerrole);
                     await roleManager.CreateAsync(fieldstaffrole);
-                    await roleManager.CreateAsync(locked);
+                    await roleManager.CreateAsync(locked);*/
                     
                     await Clients.All.SendAsync("setupProgress", 10, "Roles Uploaded to Database!");
                     System.Threading.Thread.Sleep(5000);
@@ -116,18 +116,19 @@ namespace RobofestWTECore
                         ApplicationUser JudgeToAdd = new ApplicationUser();
                         JudgeToAdd.UserName = "Judge" + (j + 1).ToString();
                         JudgeToAdd.NormalizedUserName = "JUDGE" + (j + 1).ToString();
-                        //JudgeToAdd.Id = Guid.NewGuid().ToString();
                         JudgeToAdd.Email = JudgeToAdd.UserName + "@robofest.com";
                         JudgeToAdd.NormalizedEmail = JudgeToAdd.NormalizedUserName = "@ROBOFEST.COM";
                         JudgeToAdd.Id = Guid.NewGuid().ToString();
                         string PublicPass = "J!"+Guid.NewGuid().ToString("n").Substring(0, 8);
                         await userManager.CreateAsync(JudgeToAdd, PublicPass);
-                        await userManager.AddToRoleAsync(JudgeToAdd, "JUDGE");
-                        await userManager.AddToRoleAsync(JudgeToAdd, "ALLFIELDS");
+                        Console.WriteLine("Test Success");
+                        ApplicationUser UserActual = await userManager.FindByEmailAsync(JudgeToAdd.Email);
+                        await userManager.AddToRoleAsync(UserActual, "JUDGE");
+                        await userManager.AddToRoleAsync(UserActual, "ALLFIELDS");
                         PresetAccount presetAccount = new PresetAccount();
                         presetAccount.CompID = compid;
                         presetAccount.Email = JudgeToAdd.Email;
-                        presetAccount.PresetAccoutID = JudgeToAdd.Id;
+                        presetAccount.PresetAccoutID = UserActual.Id;
                         presetAccount.PublicPasskey = PublicPass;
                         presetAccount.Username = JudgeToAdd.UserName;
                         await db.PresetAccounts.AddAsync(presetAccount); 
@@ -144,12 +145,14 @@ namespace RobofestWTECore
                         FSToAdd.NormalizedEmail = FSToAdd.NormalizedUserName = "@ROBOFEST.COM";
                         FSToAdd.Id = Guid.NewGuid().ToString();
                         string PublicPass = "FS!" + Guid.NewGuid().ToString("n").Substring(0, 8);
+                        
                         await userManager.CreateAsync(FSToAdd, PublicPass);
-                        await userManager.AddToRoleAsync(FSToAdd, "FIELDSTAFF");
+                        ApplicationUser UserActual = await userManager.FindByEmailAsync(FSToAdd.Email);
+                        await userManager.AddToRoleAsync(UserActual, "FIELDSTAFF");
                         PresetAccount presetAccount = new PresetAccount();
                         presetAccount.CompID = compid;
                         presetAccount.Email = FSToAdd.Email;
-                        presetAccount.PresetAccoutID = FSToAdd.Id;
+                        presetAccount.PresetAccoutID = UserActual.Id;
                         presetAccount.PublicPasskey = PublicPass;
                         presetAccount.Username = FSToAdd.UserName;
                         await db.PresetAccounts.AddAsync(presetAccount);
@@ -166,12 +169,14 @@ namespace RobofestWTECore
                         ManagerToAdd.NormalizedEmail = ManagerToAdd.NormalizedUserName = "@ROBOFEST.COM";
                         ManagerToAdd.Id = Guid.NewGuid().ToString();
                         string PublicPass = "M!" + Guid.NewGuid().ToString("n").Substring(0, 8);
+                        
                         await userManager.CreateAsync(ManagerToAdd, PublicPass);
-                        await userManager.AddToRoleAsync(ManagerToAdd, "MANAGER");
+                        ApplicationUser UserActual = await userManager.FindByEmailAsync(ManagerToAdd.Email);
+                        await userManager.AddToRoleAsync(UserActual, "MANAGER");
                         PresetAccount presetAccount = new PresetAccount();
                         presetAccount.CompID = compid;
                         presetAccount.Email = ManagerToAdd.Email;
-                        presetAccount.PresetAccoutID = ManagerToAdd.Id;
+                        presetAccount.PresetAccoutID = UserActual.Id;
                         presetAccount.PublicPasskey = PublicPass;
                         presetAccount.Username = ManagerToAdd.UserName;
                         await db.PresetAccounts.AddAsync(presetAccount);
@@ -188,12 +193,14 @@ namespace RobofestWTECore
                         TechToAdd.NormalizedEmail = TechToAdd.NormalizedUserName = "@ROBOFEST.COM";
                         TechToAdd.Id = Guid.NewGuid().ToString();
                         string PublicPass = "T!" + Guid.NewGuid().ToString("n").Substring(0, 8);
+                        
                         await userManager.CreateAsync(TechToAdd, PublicPass);
-                        await userManager.AddToRoleAsync(TechToAdd, "TECH");
+                        ApplicationUser UserActual = await userManager.FindByEmailAsync(TechToAdd.Email);
+                        await userManager.AddToRoleAsync(UserActual, "TECH");
                         PresetAccount presetAccount = new PresetAccount();
                         presetAccount.CompID = compid;
                         presetAccount.Email = TechToAdd.Email;
-                        presetAccount.PresetAccoutID = TechToAdd.Id;
+                        presetAccount.PresetAccoutID = UserActual.Id;
                         presetAccount.PublicPasskey = PublicPass;
                         presetAccount.Username = TechToAdd.UserName;
                         await db.PresetAccounts.AddAsync(presetAccount);
