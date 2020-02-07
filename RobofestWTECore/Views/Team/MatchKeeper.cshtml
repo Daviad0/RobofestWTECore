@@ -1128,11 +1128,11 @@
             <h5 id="gamestatus" style="width:100%;background-color:mediumseagreen;padding:10px;color:white">>>> OK TO CONTINUE >>></h5>
             <table style="width:100%">
                 <tr style="background-color:gray;padding-bottom:10px">
-                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox1"><h3>Initialization</h3></th>
-                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox2"><h3>Match Play</h3></th>
-                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox3"><h3>Judge Scoring</h3></th>
-                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox4"><h3>Field Timeout</h3></th>
-                    <th style="width:25%;text-align:center;padding-bottom:30px" id="stagebox5"><h3>Splash Screen</h3></th>
+                    <th style="width:20%;text-align:center;padding-bottom:30px" id="stagebox1"><h3>Initialization</h3></th>
+                    <th style="width:20%;text-align:center;padding-bottom:30px" id="stagebox2"><h3>Match Play</h3></th>
+                    <th style="width:20%;text-align:center;padding-bottom:30px" id="stagebox3"><h3>Judge Scoring</h3></th>
+                    <th style="width:20%;text-align:center;padding-bottom:30px" id="stagebox4"><h3>Field Timeout</h3></th>
+                    <th style="width:20%;text-align:center;padding-bottom:30px" id="stagebox5"><h3>Splash Screen</h3></th>
                 </tr>
             </table>
             <br />
@@ -1153,6 +1153,7 @@
                 <input class="dangerbutton" type="button" id="stage2" value="Stage 2" />
                 <input class="dangerbutton" type="button" id="stage3" value="Stage 3" />
                 <input class="dangerbutton" type="button" id="stage4" value="Stage 4" />
+                <input class="dangerbutton" type="button" id="stage5" value="Stage 5" />
                 <br />
                 <input class="dangerbutton" type="button" id="deinitall" value="Deinitialize All" />
                 <input class="dangerbutton" type="button" id="notreadyall" value="Not Ready All" />
@@ -1499,6 +1500,7 @@
             $("#stagebox" + 2).css("background-color", "gray");
             $("#stagebox" + 3).css("background-color", "gray");
             $("#stagebox" + 4).css("background-color", "gray");
+            $("#stagebox" + 5).css("background-color", "gray");
             $("#stagebox" + stage).css("background-color", "mediumseagreen");
             currentstage = stage;
             if (currentstage == 3 || currentstage == 4) {
@@ -1821,6 +1823,9 @@
             });
             $("#stage4").click(function () {
                 chat.invoke("setStage", 4);
+            });
+            $("#stage5").click(function () {
+                chat.invoke("setStage", 5);
             });
             $("#nextstage").click(function () {
                 if (currentstage == 5) {

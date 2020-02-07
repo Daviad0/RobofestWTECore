@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/AccountContextDB.sql">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Views/Team/MatchKeeper.cshtml">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="55" Column="2" />
       <File FileName="RobofestWTECore/Controllers/TeamController.cs" />
       <File FileName="RobofestWTECore/appsettings.json" />
       <File FileName="RobofestWTECore/RobofestWTECore.csproj" />
       <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" />
-      <File FileName="RobofestWTECore/ScoreHub.cs" Line="519" Column="2" />
       <File FileName="RobofestWTECore/Startup.cs" />
       <File FileName="RobofestWTECore/Data/GameContext.cs" />
       <File FileName="../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
-      <File FileName="RobofestWTECore/GameContextDB.sql" Line="20" Column="27" />
-      <File FileName="RobofestWTECore/AccountContextDB.sql" Line="24" Column="37" />
+      <File FileName="RobofestWTECore/GameContextDB.sql" Line="209" Column="1" />
+      <File FileName="RobofestWTECore/AccountContextDB.sql" Line="73" Column="1" />
+      <File FileName="RobofestWTECore/Views/Team/Presentation.cshtml" Line="316" Column="22" />
+      <File FileName="RobofestWTECore/Views/Team/MatchKeeper.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,9 +30,10 @@
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Team" expanded="True" />
+                <Node name="Team" expanded="True">
+                  <Node name="MatchKeeper.cshtml" selected="True" />
+                </Node>
               </Node>
-              <Node name="AccountContextDB.sql" selected="True" />
             </Node>
           </Node>
         </State>
@@ -42,7 +44,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.RobofestWTECore PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/ScoreHub.cs" relfile="RobofestWTECore/ScoreHub.cs" line="190" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
