@@ -585,7 +585,7 @@ Write(Html.AntiForgeryToken());
 #line default
 #line hidden
             BeginContext(7293, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41ccacc21a9b40cb98e67b345cfdab43", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b86ab7bc522c432f9ea442f178fc22f8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -627,7 +627,7 @@ Write(Html.AntiForgeryToken());
                     ");
             EndContext();
             BeginContext(8756, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4337341f50e45db92d48cf70aed3230", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3e8d67b0da2416c8c2b81bb0e56fc11", async() => {
                 BeginContext(8795, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -651,7 +651,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(8838, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22675d7b2d0e4093aca20b60d21954fe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4688b705fe464ad6954b38e07f294a4b", async() => {
                 BeginContext(8877, 13, true);
                 WriteLiteral("Moved Out (3)");
                 EndContext();
@@ -675,7 +675,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(8920, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9f753773e7c4e0a8fe4727603cb1645", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49f662a169b441218a5289a544097f40", async() => {
                 BeginContext(8960, 17, true);
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
@@ -699,7 +699,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeB2(this.value)\" id=\"score\" class=\"bottle2 custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(9174, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00d5006cca1047f5af6dc999fc872333", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8beec031fc824344a075ad636075774e", async() => {
                 BeginContext(9213, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -723,7 +723,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(9256, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c89bb407585b410e9dd3525a9b7de3f6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1486d968a7b748d39c7b174cb77e3bdb", async() => {
                 BeginContext(9295, 13, true);
                 WriteLiteral("Moved Out (5)");
                 EndContext();
@@ -747,7 +747,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(9338, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba5daa039a444bb2ac243bfa99b37bc3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8c607c56c1a4e3990d7993d903c06e1", async() => {
                 BeginContext(9378, 17, true);
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
@@ -771,7 +771,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeB3(this.value)\" id=\"score\" class=\"bottle3 custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(9592, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ab7685c43a24da4a7fb3879868a7d64", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6a198c29f6a4ff38384ff3ed2b6a25a", async() => {
                 BeginContext(9631, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -795,7 +795,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(9674, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "961f14cc75a44f9497cebf141a6e5e0d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c9730ef11a64628b163660c19780031", async() => {
                 BeginContext(9713, 13, true);
                 WriteLiteral("Moved Out (5)");
                 EndContext();
@@ -819,7 +819,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(9756, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1197ebe6c23c4ddfa6ee458bb1c7a5f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2763bb514ad24aee9c4e2f8d0aff1102", async() => {
                 BeginContext(9796, 17, true);
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
@@ -843,7 +843,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeB4(this.value)\" id=\"score\" class=\"bottle4 custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(10010, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "616e85882ab44cf79d7dd96989c4101b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cd43952656e4ffbbfe1536efda93bac", async() => {
                 BeginContext(10049, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -867,7 +867,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(10092, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aace4d9454004362b7804e62b5daa500", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "526d15003f90471b8db56b775837ffbb", async() => {
                 BeginContext(10131, 13, true);
                 WriteLiteral("Moved Out (3)");
                 EndContext();
@@ -891,7 +891,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(10174, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66fb6836bc9348d98f0ca5dbe99726fd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f5b1bd44a8e4f0d9d08d9c313d6d75b", async() => {
                 BeginContext(10214, 17, true);
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
@@ -915,7 +915,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeB5(this.value)\" id=\"score\" class=\"bottle5 custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(10428, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22f0bba1073744db95fe334923766220", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e841a221b8ef4d5eb7dcd5bd64f3374e", async() => {
                 BeginContext(10467, 13, true);
                 WriteLiteral("In Circle (0)");
                 EndContext();
@@ -939,7 +939,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(10510, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abb17ffee9ba480cb222f3b7c4744716", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5267e10b03ae48a2a9cf8b544ec4d1b4", async() => {
                 BeginContext(10550, 14, true);
                 WriteLiteral("Moved Out (-2)");
                 EndContext();
@@ -963,7 +963,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(10594, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a6a38b0d51a40ec9b5aa2dd253a0a16", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1eb3eec6ec0e4b5186e56d4da5918c57", async() => {
                 BeginContext(10634, 17, true);
                 WriteLiteral("Knocked Over (-2)");
                 EndContext();
@@ -1006,7 +1006,7 @@ Write(Html.AntiForgeryToken());
                     ");
             EndContext();
             BeginContext(11263, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b774db75e84418ca2b25275aede864b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15b13bd7e2ca45efabbbaa45f74f9864", async() => {
                 BeginContext(11300, 17, true);
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
@@ -1030,7 +1030,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(11347, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c4d0595d63440638989929dca26ec09", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10006825c13b458e81dd3ca1b17b0b28", async() => {
                 BeginContext(11385, 18, true);
                 WriteLiteral("One Golf Ball (15)");
                 EndContext();
@@ -1054,7 +1054,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(11433, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c913b74bb57349afa9685566ce36ce17", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7cb0759ef9c844adb40f489d045fb02e", async() => {
                 BeginContext(11471, 19, true);
                 WriteLiteral("Two Golf Balls (30)");
                 EndContext();
@@ -1078,7 +1078,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(11520, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25f468d121be4f0b8f789f8b52353f48", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "531aeac5d3a44e93a8e65ea6b5d3baa9", async() => {
                 BeginContext(11558, 21, true);
                 WriteLiteral("Three Golf Balls (45)");
                 EndContext();
@@ -1102,7 +1102,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeOB(this.value)\" id=\"score\" class=\"orangeb custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(11776, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cfa8c66bd4ac4304b1daf2dc85f57fa0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6743084fc50b46a5a2c82753f22eaf86", async() => {
                 BeginContext(11813, 17, true);
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
@@ -1126,7 +1126,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(11860, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "094cb006bc0541c685b8f22de0c64767", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9555370d8a344c30a518ca6e82255a11", async() => {
                 BeginContext(11898, 18, true);
                 WriteLiteral("One Golf Ball (18)");
                 EndContext();
@@ -1150,7 +1150,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(11946, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d370a4bc58c4ab08854d84f9cd45162", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca55d0f9f13d41ffbcaf5afee67fe089", async() => {
                 BeginContext(11984, 19, true);
                 WriteLiteral("Two Golf Balls (36)");
                 EndContext();
@@ -1174,7 +1174,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeIB(this.value)\" id=\"score\" class=\"invalidb custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(12201, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10c3b0ecc77b49c288819e863fff4eee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0146a8d8aba64e4b912c152ef296c41a", async() => {
                 BeginContext(12238, 12, true);
                 WriteLiteral("No Balls (0)");
                 EndContext();
@@ -1198,7 +1198,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(12280, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d39e0431caf49ce9b0cfac3d0784b9c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cde5f7e760464e02ade93bee43ecb544", async() => {
                 BeginContext(12318, 13, true);
                 WriteLiteral("One Ball (-3)");
                 EndContext();
@@ -1222,7 +1222,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(12361, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e081c06c0914e16a62e2343f33fdcb5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5a1b92309ea4fa99c41aa10ec47898f", async() => {
                 BeginContext(12399, 14, true);
                 WriteLiteral("Two Balls (-6)");
                 EndContext();
@@ -1246,7 +1246,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(12443, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e9b334431a94438a6a9e81607d483b5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "184dec96585f458599b532abc31f138d", async() => {
                 BeginContext(12481, 16, true);
                 WriteLiteral("Three Balls (-9)");
                 EndContext();
@@ -1270,7 +1270,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(12527, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85327697b73c448592def0e53c27afe8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36c3c44da90241bbb8dd09e1369e9170", async() => {
                 BeginContext(12566, 16, true);
                 WriteLiteral("Four Balls (-12)");
                 EndContext();
@@ -1294,7 +1294,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(12612, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7bcd10381c345eb858c9455bf87a54c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0caf6e64c2e641aebbc44573ac3ff696", async() => {
                 BeginContext(12651, 16, true);
                 WriteLiteral("Five Balls (-15)");
                 EndContext();
@@ -1318,7 +1318,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeRB(this.value)\" id=\"score\" class=\"remainb custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(12864, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "399e6989c43e4d9e91af29c898809fa3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "adf61b9519f5426790be8ee772720e65", async() => {
                 BeginContext(12901, 17, true);
                 WriteLiteral("No Balls Left (5)");
                 EndContext();
@@ -1342,7 +1342,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(12948, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc7b92d7b8cc4138b174b2e826e15ab9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f52785daa53f49a286104a3eeeeb6bf1", async() => {
                 BeginContext(12985, 17, true);
                 WriteLiteral("One Ball Left (4)");
                 EndContext();
@@ -1366,7 +1366,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(13032, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c9d08cf97354b99959f43b6007756d2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ab9687db33e4518be160b464ef28204", async() => {
                 BeginContext(13069, 18, true);
                 WriteLiteral("Two Balls Left (3)");
                 EndContext();
@@ -1390,7 +1390,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(13117, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30c2b28dd0e64d659e22ba1d35b2e13e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "926173b2cd32463487f3403e35f75966", async() => {
                 BeginContext(13154, 20, true);
                 WriteLiteral("Three Balls Left (2)");
                 EndContext();
@@ -1414,7 +1414,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(13204, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7cd5db0444c84cb69c8b8dd9e6826c93", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "874f6fafab6442acb7a88529d2e5514b", async() => {
                 BeginContext(13241, 19, true);
                 WriteLiteral("Four Balls Left (1)");
                 EndContext();
@@ -1438,7 +1438,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(13290, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ebb072fd94014f1e906e03fce4e24ceb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff5810e2030a44ca8df01b759babff74", async() => {
                 BeginContext(13327, 19, true);
                 WriteLiteral("Five Balls Left (0)");
                 EndContext();
@@ -1479,7 +1479,7 @@ Write(Html.AntiForgeryToken());
                     ");
             EndContext();
             BeginContext(13892, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e177ee97d7c4c34ae40d0e1c84f1d14", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618f898b9d87403a9e8d9d11acab566c", async() => {
                 BeginContext(13929, 18, true);
                 WriteLiteral("Mission Failed (0)");
                 EndContext();
@@ -1503,7 +1503,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(13977, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fdfec9cdd844d7ebdc1ffebca0b8aba", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96361925748d434fa0a15e1c6a85b802", async() => {
                 BeginContext(14015, 22, true);
                 WriteLiteral("Mission Completed (12)");
                 EndContext();
@@ -1527,7 +1527,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n            <td>\n                <select onchange=\"OnChangeBS3(this.value)\" id=\"score\" class=\"extra2 custom-dropdown big\">\n                    ");
             EndContext();
             BeginContext(14234, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15e57e6dc3f9402daa49b8f9b34544b7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c75cf01815c4f5ab9e7a9b3610c7766", async() => {
                 BeginContext(14271, 14, true);
                 WriteLiteral("Not Sturdy (0)");
                 EndContext();
@@ -1551,7 +1551,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(14315, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cff7018477849ef80c8f19b558dba93", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0fa8f4cf97c46b39a0cd0ce12a42553", async() => {
                 BeginContext(14352, 10, true);
                 WriteLiteral("Sturdy (2)");
                 EndContext();
@@ -1591,7 +1591,7 @@ Write(Html.AntiForgeryToken());
                     ");
             EndContext();
             BeginContext(14860, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65912d48db2d4665bc1d31e2aab74b45", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c96eee3889db42db931b27ee216171c5", async() => {
                 BeginContext(14897, 17, true);
                 WriteLiteral("No Reset Done (0)");
                 EndContext();
@@ -1615,7 +1615,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                    ");
             EndContext();
             BeginContext(14944, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f6214d7856414aafbd22a9b57edc1e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30ca1c352f2c425e81ea3ecb8055fc9b", async() => {
                 BeginContext(14982, 20, true);
                 WriteLiteral("Full Reset Done (-3)");
                 EndContext();
@@ -1639,7 +1639,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n                </select>\n            </td>\n        </tr>\n    </table>\n\n</div>\n");
             EndContext();
             BeginContext(15091, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f4d386d0dfc45b9883b7c2b2e9c03a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85678a9e933f43228255ba03c2c3321b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1657,7 +1657,7 @@ Write(Html.AntiForgeryToken());
             WriteLiteral("\n");
             EndContext();
             BeginContext(15153, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be6e995aeaa04dea8c00e454e0d50853", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f689c5082c374f749584d561469ae7b2", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

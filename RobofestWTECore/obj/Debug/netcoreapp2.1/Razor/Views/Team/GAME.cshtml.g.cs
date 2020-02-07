@@ -67,7 +67,7 @@ using RobofestWTECore.Data;
             WriteLiteral("<style>\n    table{\n        border:0px;\n        border-collapse:collapse;\n        width:100%\n    }\n</style>\n");
             EndContext();
             BeginContext(182, 2337, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18fa70b5a8f743cf8d5d128fa40d9afd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55d543630f704046ac627de58e13afa4", async() => {
                 BeginContext(188, 379, true);
                 WriteLiteral(@"
     <h2 style=""text-align:center"">Competition Index</h2>
