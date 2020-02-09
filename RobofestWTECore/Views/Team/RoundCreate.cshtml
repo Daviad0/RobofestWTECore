@@ -813,7 +813,7 @@
         var fieldsub = 0;
         var teamnumber = "";
         var lockedin = false;
-        chat.on("initFieldView", function (field, status, score, team, connection, matchkeeper) {
+        chat.on("initFieldView", function (field, status, score, team, connection, matchkeeper,data) {
             if (status != 5) {
                 if (status == 0) {
                     $("#quickstatusf" + field).css("background-color", "black");
@@ -954,7 +954,7 @@
                     $("#fieldn").attr("readonly", "readonly");
                     $("#fieldstatus").html(fieldsub)
                     $("#teamnumber").attr("readonly", "readonly");
-                    chat.invoke("initField", fieldsub, 1, totalscore, teamnumber, checkingscore, false);
+                    chat.invoke("initField", fieldsub, 1, totalscore, teamnumber, checkingscore, false, "0/0/0/0/0^0/0/0/0^0/0^0/0");
                     chat.invoke("teamSelected", $("#lookupteam").val(), fieldsub, round);
                     $("#fieldissue").text("");
                     $("#lockin").attr("hidden", true);
@@ -985,7 +985,7 @@
             });
             $("#readystatus").click(function () {
                 if (lockedin == true) {
-                    chat.invoke("initField", fieldsub, 2, totalscore, teamnumber, checkingscore, false);
+                    chat.invoke("initField", fieldsub, 2, totalscore, teamnumber, checkingscore, false, "0/0/0/0/0^0/0/0/0^0/0^0/0");
                     $("#fieldissue").text("");
                     $("#notreadystatus").css("font-weight", "normal");
                     $("#readystatus").css("font-weight", "bold");
@@ -993,7 +993,7 @@
             });
             $("#notreadystatus").click(function () {
                 if (lockedin == true) {
-                    chat.invoke("initField", fieldsub, 1, totalscore, teamnumber, checkingscore, false);
+                    chat.invoke("initField", fieldsub, 1, totalscore, teamnumber, checkingscore, false, "0/0/0/0/0^0/0/0/0^0/0^0/0");
                     $("#fieldissue").text("");
                     $("#notreadystatus").css("font-weight", "bold");
                     $("#readystatus").css("font-weight", "normal");
@@ -1008,10 +1008,14 @@
             var updatescore = setInterval(function () {
                 if (lockedin == true && checkingscore == true) {
                     totalscore = $("#teamID").val();
-                    chat.invoke("initField", fieldsub, 5, totalscore, teamnumber, checkingscore, false);
+                    var datatosend = $("#data").val();
+                    if (datatosend == "") {
+                        datatosend = "0/0/0/0/0^0/0/0/0^0/0^0/0";
+                    }
+                    chat.invoke("initField", fieldsub, 5, totalscore, teamnumber, checkingscore, false, datatosend);
                     //USE 5 FOR NO CHANGE
                 }
-            }, 100);
+            }, 500);
         });
         $("#fieldn").change(function () {
             $("#fieldinput").val($("#fieldn").val());

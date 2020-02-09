@@ -402,9 +402,9 @@ namespace RobofestWTECore
         {
             Clients.All.SendAsync("stopGlobalTimer");
         }
-        public void InitField(int field, int status, int score, string teamnumber, bool connection, bool matchkeeper)
+        public void InitField(int field, int status, int score, string teamnumber, bool connection, bool matchkeeper, string data)
         {
-            Clients.All.SendAsync("initFieldView",field, status, score, teamnumber, connection, matchkeeper);
+            Clients.All.SendAsync("initFieldView",field, status, score, teamnumber, connection, matchkeeper, data);
             //0 = NotInit, 1 = NotReady, 2 = Ready
         }
         public void LookUpTeam(int id)
