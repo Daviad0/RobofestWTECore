@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+        <link rel="stylesheet" href="~/lib/loading-bar/dist/loading-bar.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -16,10 +17,11 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/loading-bar/dist/loading-bar.css" />
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#ecbb06">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkorange">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,15 +30,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-page="/Index" class="navbar-brand">RobofestWTECore</a>
+                <a href="@Url.Action("Index", "Home")" class="navbar-brand" style="color:white;font-weight:700">RobofestWTECore</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Home")"><input type="button" onclick="on()" style="display:inline-block;font-family:Calibri;background-color:lightslategray;color:black" value="Index (Info)" /></a></li>
-                    <li><a href="@Url.Action("TeamMatches", "Team")"><input type="button" onclick="on()" style="display:inline-block;font-family:Calibri;background-color:lightslategrey;color:black" value="Team Matches" /></a></li>
-                    <li><a href="@Url.Action("MatchKeeper", "Team", new { id = 1 })"><input type="button" onclick="on()" style="display:inline-block;font-family:Calibri;background-color:lightslategray;color:black" value="Match Manager View" /></a></li>
-                    <li><a href="@Url.Action("Competition", "Team", new { id = 1 })"><input type="button" onclick="on()" style="display:inline-block;font-family:Calibri;background-color:lightslategray;color:black" value="Scorekeeper View" /></a></li>
-                    <li><a href="@Url.Action("Presentation", "Team", new { id = 1 })"><input type="button" onclick="on()" style="display:inline-block;font-family:Calibri;background-color:lightslategray;color:black" value="Presentation View" /></a></li>
+                    <li><a href="@Url.Action("Landing", "Home")"><input type="button" onclick="on()" style="display:inline-block;font-family:Calibri;background-color:white;color:orange;border:none" value="Volunteers" /></a></li>
+                    
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

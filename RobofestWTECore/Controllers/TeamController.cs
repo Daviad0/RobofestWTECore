@@ -548,9 +548,9 @@ namespace RobofestWTECore.Controllers
             var TeamNumberBranch = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberBranch;
             var TeamNumberSpecific = (from t in db.StudentTeams where t.TeamID == roundEntry.TeamID select t).FirstOrDefault().TeamNumberSpecific;
             string TeamNumber = TeamNumberBranch + "-" + TeamNumberSpecific;
-            this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false);
+            this._hubContext.Clients.All.SendAsync("initFieldView",roundEntry.Field, 3, roundEntry.Score, TeamNumber, false, false, "0/0/0/0/0^0/0/0/0^0/0^0/0");
             this._hubContext.Clients.All.SendAsync("checkThisScore",roundEntry.Field, roundEntry.Data, roundEntry.Score, roundEntry.EntryID, TeamNumber);
-
+            UpdateTopTen();
             string page = roundEntry.TeamID.ToString();
             page = "Details/" + page;
             return RedirectToAction(page);
@@ -578,7 +578,7 @@ namespace RobofestWTECore.Controllers
                 string page = roundEntry.TeamID.ToString();
                 page = "Details/" + page;
                 return RedirectToAction(page);
-
+            UpdateTopTen();
 
         }
 
@@ -673,6 +673,7 @@ namespace RobofestWTECore.Controllers
                     await db.SaveChangesAsync();
                     return RedirectToAction("Competition/1");
                 }
+                UpdateTopTen();
             }
                 return View(roundEntry);
 

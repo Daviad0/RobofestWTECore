@@ -38,7 +38,7 @@ namespace RobofestWTECore.Controllers
             }
             return View(pageModel);
         }
-        public ActionResult HiMegan()
+        public ActionResult Landing()
         {
             return View();
         }
