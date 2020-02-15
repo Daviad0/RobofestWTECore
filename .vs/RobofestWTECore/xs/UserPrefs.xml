@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Views/Team/Presentation.cshtml">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="55" Column="2" />
       <File FileName="RobofestWTECore/Controllers/TeamController.cs" />
@@ -11,8 +11,7 @@
       <File FileName="../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
       <File FileName="RobofestWTECore/GameContextDB.sql" />
       <File FileName="RobofestWTECore/AccountContextDB.sql" />
-      <File FileName="RobofestWTECore/Views/Team/Presentation.cshtml" />
-      <File FileName="RobofestWTECore/Views/Team/MatchKeeper.cshtml" />
+      <File FileName="RobofestWTECore/Views/Team/Presentation.cshtml" Line="1019" Column="10" />
       <File FileName="RobofestWTECore/Views/Shared/_Layout.cshtml" />
     </Files>
     <Pads>
@@ -25,16 +24,16 @@
                   <Node name="Pages" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
-                <Node name="Team" expanded="True" />
+                <Node name="Team" expanded="True">
+                  <Node name="Presentation.cshtml" selected="True" />
+                </Node>
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="js" expanded="True" />
