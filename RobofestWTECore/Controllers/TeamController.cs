@@ -595,7 +595,10 @@ namespace RobofestWTECore.Controllers
             JudgeIndexPageModel.Competition = (from c in db.Competitions where c.CompID == id select c).FirstOrDefault();
             return View(JudgeIndexPageModel);
         }
-
+        public ActionResult TimerDemo()
+        {
+            return View();
+        }
         public ActionResult MatchKeeper(int id)
         {
             var MatchDataModel = new MatchDataModel();
