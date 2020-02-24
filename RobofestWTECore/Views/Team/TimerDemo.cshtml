@@ -146,6 +146,24 @@
             background-color: seagreen;
         }
     }
+    .almostdone {
+        animation-name: colordone;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+    }
+    @@keyframes colordone {
+        0% {
+            border-bottom-color: green;
+            border-top-color: green;
+            background-color: green
+        }
+
+        50% {
+            border-bottom-color: orange;
+            border-top-color: orange;
+            background-color:orange;
+        }
+    }
 
     .judgehelp {
         animation-name: color2;
@@ -196,51 +214,74 @@
   display: table;
   clear: both;
 }
+.ournavbar{
+    display:none
+}
     
 </style>
 
 @{var timeStamp = DateTime.UtcNow; }
 <br />
-
-<h2>Match Keeper</h2>
-
 <script src="~/Scripts/jquery-3.3.1.js" integrity="" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <div style="background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1;text-align:center">
-    <div style="display:inherit">
+    <div>
+            <div style="border-radius:4px;display:inline-block;border-radius:8px;margin:40px">
+            <strong><span style="border-radius:8px 8px 0px 0px;font-family:Arial, Helvetica, sans-serif;background-color:black;padding:35px;color:white;margin-bottom:0px;margin-top:0px;font-size:200px" class="timerarea"><span id="minutes" class="timerarea minutes">0</span>:<span id="seconds" class="timerarea seconds">00</span></span></strong>
 
-        <h3 style="font-family:'Lucida Console'"><span id="minutesv" class="timerarea">0</span>:<span id="secondsv" class="timerarea">00</span> <span class="timerstatus">&#9632;</span>  |  <span id="messagev"></span></h3>
+
+            <div style="background-color:lightgray;text-align:center;border-radius:0px 0px 8px 8px">
+
+                <div class="statustimeout status" style="background-color:gray;width:100%;height:40px;border-radius:0px 0px 8px 8px"></div>
+            </div>
+
+        </div>
+
+        </div>
+    <div style="display:inherit">
+        <table style="width:100%">
+            <tr>
+                <td style="width:50%">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span>Minutes</span>
+                        </span>
+                        <input type="number" id="minutesi" value="2" placeholder="Minutes" class="form-control" style="z-index:0" />
+                    </div>
+                </td>
+                <td style="width:50%">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span>Seconds</span>
+                        </span>
+                        <input type="number" id="secondsi" value="0" placeholder="Seconds" class="form-control" style="z-index:0" />
+                    </div>
+                </td>
+            </tr>
+           
+        </table>
         <div class="input-group">
             <span class="input-group-addon">
-                <span>Minutes</span>
+                <span>Message</span>
             </span>
-            <input type="number" id="minutes" value="2" placeholder="Minutes" class="form-control" style="z-index:0" />
+            <input type="text" id="messagei" class="form-control" style="z-index:0" />
         </div>
-        <div class="input-group">
-            <span class="input-group-addon">
-                <span>Seconds</span>
-            </span>
-            <input type="number" id="seconds" value="0" placeholder="Seconds" class="form-control" style="z-index:0" />
-        </div>
-        <div class="input-group">
-            <span class="input-group-addon">
-                <span>Scorekeeper Message</span>
-            </span>
-            <input type="text" id="message" class="form-control" style="z-index:0" />
-        </div>
+        
+        
 
         
         <br />
-        <input type="button" id="starttimer" value="Start Timer!" style="background-color:mediumseagreen;width:100%;padding:10px;margin-bottom:10px;margin-top:10px" />
-        <input type="button" id="stoptimer" value="Stop Timer!" style="background-color:indianred;width:100%;padding:10px;margin-bottom:10px" />
-        <input type="button" id="confirmstop" value="CONFIRM STOP!" style="background-color:red;width:100%;padding:10px;margin-bottom:10px" hidden="hidden" />
+        <input type="button" id="starttimer" value="Start" style="background-color:#1fa128;width:100%;padding:10px;margin-bottom:10px;margin-top:10px;color:white;font-weight:600;border:none;border-radius:10px" />
+        <input type="button" id="stoptimer" value="Stop" style="background-color:#e32b56;width:100%;padding:10px;margin-bottom:10px;color:white;font-weight:600;border:none;border-radius:10px" />
+        <input type="button" id="confirmstop" value="CONFIRM STOP!" style="background-color:darkred;width:100%;padding:10px;margin-bottom:10px;color:white;font-weight:600;border:none;border-radius:10px" hidden="hidden" />
         <br />
-        <input type="button" id="sendtimer" value="Send Timer!" style="width:100%;padding:10px;margin-bottom:10px" />
+        <input type="button" id="sendtimer" value="Set to User Specified Value" style="width:100%;padding:10px;margin-bottom:10px;color:black;font-weight:600;border:none;border-radius:10px" />
         <br />
-        <input type="button" id="presetmatch" value="Match Preset" />
-        <input type="button" id="presettimeout" value="Timeout Preset" />
-        <input type="button" id="presetpittime" value="Pit Preset" />
+        <input type="button" id="presetmatch" value="Match Preset" style="background-color:deepskyblue;border-radius:5px;border:none;color:white;font-weight:600"/>
+        <input type="button" id="presettimeout" value="Timeout Preset" style="background-color:deepskyblue;border-radius:5px;border:none;color:white;font-weight:600" />
+        <input type="button" id="presetpittime" value="Pit Preset" style="background-color:deepskyblue;border-radius:5px;border:none;color:white;font-weight:600" />
+        
     </div>
 </div>
 <br />
@@ -305,15 +346,46 @@
             $("#broadcastsender").html("- " + sender);
         });
         chat.on("changeGlobalTimer", function (minutes, seconds, message, status) {
-            $("#minutesv").html(minutes);
+            $(".minutes").html(minutes);
             if (seconds < 10) {
                 secondsview = "0" + seconds;
             } else {
                 secondsview = seconds;
             }
-            $("#secondsv").html(secondsview);
-            $("#messagev").html(message);
+            $(".seconds").html(secondsview);
+            $(".message").html(message);
+            if (status == 0) {
+                $(".status").css("border-bottom", "12px gray solid");
+                $(".status").css("border-top", "12px gray solid");
+                $(".statustopbar").css("border-left", "6px gray solid");
+                $(".statustimeout").css("background-color", "gray");
+                $(".status").removeClass("almostdone");
+                initsec = ((minutes * 60) + (seconds));
+                $(".statustimeout").css("width", "100%");
+            } else if (status == 1) {
+                $(".status").css("border-bottom", "12px green solid");
+                $(".status").css("border-top", "12px green solid");
+                $(".statustopbar").css("border-left", "6px green solid");
+                $(".statustimeout").css("background-color", "green");
+                if (((minutes * 60) + (seconds)) < (initsec / 4)) {
+                    $(".status").addClass("almostdone");
+                }
+                $(".statustimeout").css("width", ((((minutes * 60) + seconds) / initsec)*100)+"%")
+            } else if (status == 2 && seconds < 1 && minutes < 1) {
+                $(".status").css("border-bottom", "12px red solid");
+                $(".statustopbar").css("border-left", "6px red solid");
+                $(".status").css("border-top", "12px red solid");
 
+                $(".statustimeout").css("background-color", "red");
+                $(".statustimeout").css("width", "100%");
+                $(".status").removeClass("almostdone");
+            } else {
+                $(".status").css("border-bottom", "12px gray solid");
+                $(".status").css("border-top", "12px gray solid");
+                $(".statustopbar").css("border-left", "6px gray solid");
+                $(".statustimeout").css("background-color", "gray");
+                $(".status").removeClass("almostdone");
+            }
         });
         chat.on("initFieldView", function (field, status, score, team, connection, matchkeeper) {
             if (status == 0) {
@@ -838,7 +910,6 @@
                 StartTimer();
                 abort = false;
                 timer = true;
-                $(".timerstatus").css("color", "green");
                 $('#starttimer').attr("hidden", true);
                 $('#stoptimer').attr("hidden", false);
                 $('#sendtimer').attr("hidden", true);
@@ -879,21 +950,21 @@
                 $("#presetpittime").attr("hidden", false);
             });
             $("#presetmatch").click(function () {
-                $("#minutes").val(2);
-                $("#seconds").val(0);
-                $("#message").val("Game Match");
+                $("#minutesi").val(2);
+                $("#secondsi").val(0);
+                $("#messagei").val("Game Match");
                 sendTimer();
             });
             $("#presettimeout").click(function () {
-                $("#minutes").val(5);
-                $("#seconds").val(0);
-                $("#message").val("Field Timeout");
+                $("#minutesi").val(5);
+                $("#secondsi").val(0);
+                $("#messagei").val("Field Timeout");
                 sendTimer();
             });
             $("#presetpittime").click(function () {
-                $("#minutes").val(30);
-                $("#seconds").val(0);
-                $("#message").val("Pit Work Time");
+                $("#minutesi").val(30);
+                $("#secondsi").val(0);
+                $("#messagei").val("Pit Work Time");
                 sendTimer();
             });
             function checkPongs() {
@@ -995,11 +1066,10 @@
                 abort = true;
                 timer = false;
                 part = 0;
-                $(".timerstatus").css("color", "black");
 
-                minutess = $("#minutes").val();
-                secondss = $("#seconds").val();
-                message = $("#message").val();
+                minutess = $("#minutesi").val();
+                secondss = $("#secondsi").val();
+                message = $("#messagei").val();
                 initseconds = (minutess) + (secondss * 60);
                 minutesc = minutess;
                 secondsc = secondss;
