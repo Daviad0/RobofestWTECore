@@ -88,15 +88,9 @@ WriteAttributeValue("", 298, ManageNavPages.IndexNavClass(ViewContext), 298, 42,
             BeginContext(341, 1, true);
             WriteLiteral(">");
             EndContext();
-<<<<<<< HEAD
-            BeginContext(349, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f930dd1f6a4f41babd6217d122f7ffd8", async() => {
-                BeginContext(371, 7, true);
-=======
             BeginContext(342, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93a007463e564cbbb3489bde78396ac7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7a585ff8fc840e5bfc0d249c9968b58", async() => {
                 BeginContext(364, 7, true);
->>>>>>> master
                 WriteLiteral("Profile");
                 EndContext();
             }
@@ -126,15 +120,9 @@ WriteAttributeValue("", 396, ManageNavPages.ChangePasswordNavClass(ViewContext),
             BeginContext(448, 1, true);
             WriteLiteral(">");
             EndContext();
-<<<<<<< HEAD
-            BeginContext(457, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "190a29459c8e42a8b2d4be524927e3bf", async() => {
-                BeginContext(509, 8, true);
-=======
             BeginContext(449, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8532e2cd2ce04dbbb84b1b9ae50d3451", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8c31a904cba4f7da4e066b339ad0d22", async() => {
                 BeginContext(501, 8, true);
->>>>>>> master
                 WriteLiteral("Password");
                 EndContext();
             }

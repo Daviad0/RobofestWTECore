@@ -103,17 +103,10 @@ Write(ViewData["Title"]);
         </p>
         ");
             EndContext();
-<<<<<<< HEAD
-            BeginContext(503, 165, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "216982ecdc384a50bab8045f73e6433c", async() => {
-                BeginContext(574, 87, true);
-                WriteLiteral("\r\n            <button class=\"btn btn-default\" type=\"submit\">Download</button>\r\n        ");
-=======
             BeginContext(488, 163, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61160be7692f428b81e93dcb7d3026e1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2c48b124faf4dbab320557d57940aea", async() => {
                 BeginContext(559, 85, true);
                 WriteLiteral("\n            <button class=\"btn btn-default\" type=\"submit\">Download</button>\n        ");
->>>>>>> master
                 EndContext();
             }
             );
@@ -137,15 +130,9 @@ Write(ViewData["Title"]);
             BeginContext(651, 25, true);
             WriteLiteral("\n        <p>\n            ");
             EndContext();
-<<<<<<< HEAD
-            BeginContext(695, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0860b55078ee49e182afca966eec7a79", async() => {
-                BeginContext(752, 6, true);
-=======
             BeginContext(676, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17587692e9ed42398f832b81eee96c73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c726b0fda41040d3964e0b84d63de536", async() => {
                 BeginContext(733, 6, true);
->>>>>>> master
                 WriteLiteral("Delete");
                 EndContext();
             }
@@ -170,13 +157,8 @@ Write(ViewData["Title"]);
                 BeginContext(794, 5, true);
                 WriteLiteral("\n    ");
                 EndContext();
-<<<<<<< HEAD
-                BeginContext(824, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ca311ac1a59b4a7db365d200ac4dbab6", async() => {
-=======
                 BeginContext(799, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a7fc00cc8954e00b719a67cf48ab52e", async() => {
->>>>>>> master
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "19342fd13064455abca82e51caef8a24", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

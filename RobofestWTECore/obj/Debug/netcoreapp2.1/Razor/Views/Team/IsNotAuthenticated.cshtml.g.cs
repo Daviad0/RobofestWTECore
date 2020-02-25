@@ -66,15 +66,9 @@ using RobofestWTECore.Data;
             BeginContext(76, 4, true);
             WriteLiteral("    ");
             EndContext();
-<<<<<<< HEAD
-            BeginContext(85, 1445, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fb5288abdb64995a0ae985f7b26ba2a", async() => {
-                BeginContext(91, 1432, true);
-=======
             BeginContext(80, 1402, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4033fe76109d4044b875c32a68e5ed62", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a368daa3eeb42479754abaefa1a88f5", async() => {
                 BeginContext(86, 1389, true);
->>>>>>> master
                 WriteLiteral(@"
         <style>
             .tabcontent {
