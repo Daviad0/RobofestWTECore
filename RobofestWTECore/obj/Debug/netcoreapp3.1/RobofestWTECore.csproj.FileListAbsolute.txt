@@ -1,4 +1,0 @@
-C:\Users\djree\source\repos\HDLOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp3.1\RobofestWTECore.csprojAssemblyReference.cache
-C:\Users\djree\source\repos\HDLOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp3.1\RobofestWTECore.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\djree\source\repos\HDLOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp3.1\RobofestWTECore.AssemblyInfoInputs.cache
-C:\Users\djree\source\repos\HDLOfficial\RobofestWTECore\RobofestWTECore\obj\Debug\netcoreapp3.1\RobofestWTECore.AssemblyInfo.cs

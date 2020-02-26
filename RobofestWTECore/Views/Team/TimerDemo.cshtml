@@ -227,7 +227,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <div style="background-color:#EEEEEE;border-radius:6px;border:20px solid #EEEEEE;z-index:-1;text-align:center;padding:20px">
-    <div>
+    <div id="timerclass">
         <div style="border-radius:4px;display:inline-block;border-radius:8px;margin:40px">
             <strong><span style="border-radius:8px 8px 0px 0px;font-family:Arial, Helvetica, sans-serif;background-color:black;padding:35px;color:white;margin-bottom:0px;margin-top:0px;font-size:200px" class="timerarea"><span id="minutes" class="timerarea minutes">0</span>:<span id="seconds" class="timerarea seconds">00</span></span></strong>
 
@@ -245,7 +245,7 @@
         <table style="width:100%">
             <tr>
                 <td style="width:50%">
-                    <div class="input-group" style="margin:10px">
+                    <div class="input-group" style="margin:10px;margin-bottom:3px">
                         <span class="input-group-addon" style="background-color:gray;color:white">
                             <span>Minutes</span>
                         </span>
@@ -253,7 +253,7 @@
                     </div>
                 </td>
                 <td style="width:50%">
-                    <div class="input-group" style="margin:10px">
+                    <div class="input-group" style="margin:10px;margin-bottom:3px">
                         <span class="input-group-addon" style="background-color:gray;color:white">
                             <span>Seconds</span>
                         </span>
@@ -278,7 +278,7 @@
         <input type="button" id="stoptimer" value="Stop" style="background-color:#e32b56;width:100%;padding:10px;margin-bottom:10px;color:white;font-weight:600;border:none;border-radius:8px" />
         <input type="button" id="confirmstop" value="CONFIRM STOP!" style="background-color:darkred;width:100%;padding:10px;margin-bottom:10px;color:white;font-weight:600;border:none;border-radius:8px" hidden="hidden" />
         <br />
-        <input type="button" id="sendtimer" value="Set to User Specified Value" style="width:100%;padding:10px;margin-bottom:10px;color:black;font-weight:600;border:none;border-radius:8px" />
+        <input type="button" id="sendtimer" value="Set to User Specified Value" style="width:100%;padding:10px;margin-bottom:10px;color:white;font-weight:600;border:none;border-radius:8px;background-color:dimgray" />
         <br />
         <input type="button" id="presetmatch" value="Match Preset" style="background-color:deepskyblue;border-radius:5px;border:none;color:white;font-weight:600"/>
         <input type="button" id="presettimeout" value="Timeout Preset" style="background-color:deepskyblue;border-radius:5px;border:none;color:white;font-weight:600" />
@@ -289,6 +289,22 @@
 <br />
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var elem = document.documentElement
+    $("#fullscreen").on('click', function () {
+        var el = document.getElementById('timerclass');
+
+        // use necessary prefixed versions
+        el.webkitRequestFullscreen();
+        el.mozRequestFullScreen();
+        el.msRequestFullscreen();
+
+        // finally the standard version
+        el.requestFullscreen();
+    });
+        
+    
+</script>
 <script>
     $(function () {
         var timer = false;
