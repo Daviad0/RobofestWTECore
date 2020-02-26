@@ -88,15 +88,9 @@ WriteAttributeValue("", 305, ManageNavPages.IndexNavClass(ViewContext), 305, 42,
             BeginContext(348, 1, true);
             WriteLiteral(">");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(342, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7a585ff8fc840e5bfc0d249c9968b58", async() => {
-                BeginContext(364, 7, true);
-=======
             BeginContext(349, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6fa6b21ce0e4c63991bdce552e1031c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b7362e59ba54c2eb15824f1062e45fd", async() => {
                 BeginContext(371, 7, true);
->>>>>>> Stashed changes
                 WriteLiteral("Profile");
                 EndContext();
             }
@@ -126,15 +120,9 @@ WriteAttributeValue("", 404, ManageNavPages.ChangePasswordNavClass(ViewContext),
             BeginContext(456, 1, true);
             WriteLiteral(">");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(449, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8c31a904cba4f7da4e066b339ad0d22", async() => {
-                BeginContext(501, 8, true);
-=======
             BeginContext(457, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09105612611e4d6dbe7ef27c43499ae0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "485c08e38b14422c81e58086715c8786", async() => {
                 BeginContext(509, 8, true);
->>>>>>> Stashed changes
                 WriteLiteral("Password");
                 EndContext();
             }

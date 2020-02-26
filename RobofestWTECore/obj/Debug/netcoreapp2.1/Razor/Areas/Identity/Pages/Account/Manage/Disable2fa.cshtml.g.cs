@@ -110,15 +110,9 @@ Write(ViewData["Title"]);
         Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key
         used in an authenticator app you should ");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(597, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "327d772937e94c57b1c7ec11bc9960ad", async() => {
-                BeginContext(632, 30, true);
-=======
             BeginContext(614, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e604456309f949afa684b0fdd4c28bad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04c47091f93b4ffc93bb99b7ea4836ef", async() => {
                 BeginContext(649, 30, true);
->>>>>>> Stashed changes
                 WriteLiteral("reset your authenticator keys.");
                 EndContext();
             }
@@ -138,17 +132,10 @@ Write(ViewData["Title"]);
             BeginContext(683, 33, true);
             WriteLiteral("\r\n    </p>\r\n</div>\r\n\r\n<div>\r\n    ");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(694, 125, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e654d02871a44f19a5814fc9a340dc2", async() => {
-                BeginContext(733, 79, true);
-                WriteLiteral("\n        <button class=\"btn btn-danger\" type=\"submit\">Disable 2FA</button>\n    ");
-=======
             BeginContext(716, 127, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1368cd0a059846a7ad926dc30a277bb6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bd77aea3482428687f9585528b42d4c", async() => {
                 BeginContext(755, 81, true);
                 WriteLiteral("\r\n        <button class=\"btn btn-danger\" type=\"submit\">Disable 2FA</button>\r\n    ");
->>>>>>> Stashed changes
                 EndContext();
             }
             );

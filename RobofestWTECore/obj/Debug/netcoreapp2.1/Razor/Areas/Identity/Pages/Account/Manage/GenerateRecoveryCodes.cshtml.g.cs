@@ -112,15 +112,9 @@ Write(ViewData["Title"]);
         Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key
         used in an authenticator app you should ");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(762, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "790957b73b8f48af8956c4ef066087ad", async() => {
-                BeginContext(797, 30, true);
-=======
             BeginContext(781, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e3e88be96e44bbcb57e9a2721f66586", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a5568659fa1459ca6ae30df959fd64b", async() => {
                 BeginContext(816, 30, true);
->>>>>>> Stashed changes
                 WriteLiteral("reset your authenticator keys.");
                 EndContext();
             }
@@ -140,17 +134,10 @@ Write(ViewData["Title"]);
             BeginContext(850, 31, true);
             WriteLiteral("\r\n    </p>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(858, 137, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a729476a43c449f19a5fc1e78531c52e", async() => {
-                BeginContext(897, 91, true);
-                WriteLiteral("\n        <button class=\"btn btn-danger\" type=\"submit\">Generate Recovery Codes</button>\n    ");
-=======
             BeginContext(881, 139, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86d3849eb3264b839678eeeed3bcc4ba", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae11ca4fb77f46bda216f5d397a71048", async() => {
                 BeginContext(920, 93, true);
                 WriteLiteral("\r\n        <button class=\"btn btn-danger\" type=\"submit\">Generate Recovery Codes</button>\r\n    ");
->>>>>>> Stashed changes
                 EndContext();
             }
             );

@@ -66,15 +66,9 @@ using RobofestWTECore.Data;
             BeginContext(80, 114, true);
             WriteLiteral("<style>\r\n    table{\r\n        border:0px;\r\n        border-collapse:collapse;\r\n        width:100%\r\n    }\r\n</style>\r\n");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(182, 2337, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0d5852026ba4ddaba0d9c4503f96ba9", async() => {
-                BeginContext(188, 379, true);
-=======
             BeginContext(194, 2413, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e9ac6191d1e4f2cbe1fa7866b656148", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22e552de2cdf4835a84b49a4e3bfba4c", async() => {
                 BeginContext(200, 386, true);
->>>>>>> Stashed changes
                 WriteLiteral(@"
     <h2 style=""text-align:center"">Competition Index</h2>
     <div width=""100%"" style=""background-color:lightgray;border:1px lightgray solid;border-radius:10px;margin:10px"">

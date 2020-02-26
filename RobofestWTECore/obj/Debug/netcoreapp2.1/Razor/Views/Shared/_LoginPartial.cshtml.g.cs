@@ -86,27 +86,15 @@ using RobofestWTECore.Models;
             BeginContext(218, 4, true);
             WriteLiteral("    ");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(214, 571, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2715fc40d5dc4fd794f18582bde037ee", async() => {
-                BeginContext(379, 83, true);
-                WriteLiteral("\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li>\n                ");
-                EndContext();
-                BeginContext(462, 126, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb286405b7e04819986c55d514c0473a", async() => {
-                    BeginContext(554, 29, false);
-#line 12 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Shared/_LoginPartial.cshtml"
-=======
             BeginContext(222, 580, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7e359657dbe4bafb3f9edde2eff8bc5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50acefc338c34001890869096035358b", async() => {
                 BeginContext(387, 86, true);
                 WriteLiteral("\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n                ");
                 EndContext();
                 BeginContext(473, 126, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "334386eb617045ddae28bc5ffb88bdd4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f840939f44b0483c80c163f54cf16777", async() => {
                     BeginContext(565, 29, false);
 #line 12 "C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\Views\Shared\_LoginPartial.cshtml"
->>>>>>> Stashed changes
                                                                                                       Write(UserManager.GetUserName(User));
 
 #line default
@@ -184,15 +172,9 @@ else
             BeginContext(816, 58, true);
             WriteLiteral("    <ul class=\"nav navbar-nav navbar-right\">\r\n        <li>");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(852, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "300aa273e8664e86ac05957d183f2d5d", async() => {
-                BeginContext(924, 8, true);
-=======
             BeginContext(874, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1be48f92aa94eb781d8f51f33835bad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "400d5d416d4d4156920ef59c2d7d3808", async() => {
                 BeginContext(946, 8, true);
->>>>>>> Stashed changes
                 WriteLiteral("Register");
                 EndContext();
             }
@@ -215,15 +197,9 @@ else
             BeginContext(958, 19, true);
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
-<<<<<<< Updated upstream
-            BeginContext(954, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ceaa48635ab4774b6cd9a062d2eed80", async() => {
-                BeginContext(1023, 5, true);
-=======
             BeginContext(977, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3443e8494a6749879997fbea3d9d54bf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62b61dea92f94765bb06ca0d0181927f", async() => {
                 BeginContext(1046, 5, true);
->>>>>>> Stashed changes
                 WriteLiteral("Login");
                 EndContext();
             }
