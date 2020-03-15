@@ -133,6 +133,7 @@ Write(Html.Partial("_StatusMessage", Model.StatusMessage));
             BeginContext(523, 24, true);
             WriteLiteral("                        ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(547, 547, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "368525c2563e403c964effa83ed48de7", async() => {
                 BeginContext(616, 69, true);
@@ -140,6 +141,15 @@ Write(Html.Partial("_StatusMessage", Model.StatusMessage));
                 EndContext();
                 BeginContext(685, 75, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "96e2ab4c9dad4f9db41f1b7bbf7ff932", async() => {
+=======
+            BeginContext(528, 541, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52d6fc70a13847209c1eb287488c6715", async() => {
+                BeginContext(597, 67, true);
+                WriteLiteral("\n                            <div>\n                                ");
+                EndContext();
+                BeginContext(664, 75, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "060e580a83164bc9b003a120aca1c0ee", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -165,8 +175,13 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginContext(760, 34, true);
                 WriteLiteral("\r\n                                ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(794, 71, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5dda777cfe0b4dbd989fae29bced852f", async() => {
+=======
+                BeginContext(772, 71, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "27deace1676344658a728fa9d4d5bff4", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -273,10 +288,17 @@ WriteAttributeValue(" ", 963, login.LoginProvider, 964, 20, false);
             BeginContext(1381, 61, true);
             WriteLiteral("    <h4>Add another service to log in.</h4>\r\n    <hr />\r\n    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(1442, 510, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dc1f75fddad4760bbb74ab0d166e129", async() => {
                 BeginContext(1536, 55, true);
                 WriteLiteral("\r\n        <div id=\"socialLoginList\">\r\n            <p>\r\n");
+=======
+            BeginContext(1401, 501, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd2bc51c798c449fa091cd50ffb40b1c", async() => {
+                BeginContext(1495, 52, true);
+                WriteLiteral("\n        <div id=\"socialLoginList\">\n            <p>\n");
+>>>>>>> Stashed changes
                 EndContext();
 #line 45 "C:\Users\djree\source\repos\RobofestWTEOfficial\RobofestWTECore\RobofestWTECore\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml"
                  foreach (var provider in Model.OtherLogins)

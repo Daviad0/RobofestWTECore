@@ -112,10 +112,17 @@ Write(ViewData["Title"]);
 <div>
     ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(729, 201, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ebb1ffd041b4a05ad7806b432d9ab2a", async() => {
                 BeginContext(798, 125, true);
                 WriteLiteral("\r\n        <button id=\"reset-authenticator-button\" class=\"btn btn-danger\" type=\"submit\">Reset authenticator key</button>\r\n    ");
+=======
+            BeginContext(709, 199, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b91495ee7779421c97e5dffa0f2a4de4", async() => {
+                BeginContext(778, 123, true);
+                WriteLiteral("\n        <button id=\"reset-authenticator-button\" class=\"btn btn-danger\" type=\"submit\">Reset authenticator key</button>\n    ");
+>>>>>>> Stashed changes
                 EndContext();
             }
             );

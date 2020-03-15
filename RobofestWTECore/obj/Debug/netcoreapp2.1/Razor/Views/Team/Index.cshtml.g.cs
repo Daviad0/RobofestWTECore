@@ -63,9 +63,15 @@ using RobofestWTECore.Data;
 
 #line default
 #line hidden
+<<<<<<< Updated upstream
             BeginContext(100, 2261, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a444da68c1d54cf6a0e5d99ff28cd402", async() => {
                 BeginContext(106, 888, true);
+=======
+            BeginContext(95, 2195, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fa8ead88ae541d492baf83074e47499", async() => {
+                BeginContext(101, 858, true);
+>>>>>>> Stashed changes
                 WriteLiteral(@"
     <h2>Team Management</h2>
 

@@ -91,8 +91,13 @@ Write(ViewData["Title"]);
                 BeginContext(213, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(219, 44, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9d40da92bb7a4a8c94eac08e2d1bf909", async() => {
+=======
+                BeginContext(209, 44, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8088730bb1c1440d897efc0ca2cc1224", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

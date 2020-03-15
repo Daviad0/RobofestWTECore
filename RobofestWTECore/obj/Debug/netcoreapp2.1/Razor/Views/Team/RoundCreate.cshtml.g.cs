@@ -2344,6 +2344,7 @@ using RobofestWTECore.Models;
                 $(""#studentconfirm"").val("""");
                 $(""#readybar"").attr(""hidden"", false);");
             WriteLiteral(@"
+<<<<<<< Updated upstream
             });
             $(""#readystatus"").click(function () {
                 if (lockedin == true) {
@@ -2503,3 +2504,1992 @@ using RobofestWTECore.Models;
     }
 }
 #pragma warning restore 1591
+=======
+                        <br />
+                        <span style=""background-color:black;color:white;margin:0px auto;padding:8px;padding-left:4vw;padding-right:4vw;font-size:3vw;border-radius:0px 0px 8px 8px"">Time</span>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            ");
+            EndContext();
+            BeginContext(9632, 177, false);
+#line 330 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+       Write(Html.TextBoxFor(model => model.Data, new { Value = "0/0/0/0/0^0/0/0^0/0^0/0", @class = "form-control autofields", id = "data", @readonly = "readonly", @style = "display:none" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(9809, 313, true);
+            WriteLiteral(@"
+            <div style=""display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px"" class=""autofields"">
+                <div class=""btn-group autofields"" data-toggle=""buttons"">
+                    <label class=""btn btn-primary active autofields"">
+                        ");
+            EndContext();
+            BeginContext(10123, 119, false);
+#line 334 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+                   Write(Html.RadioButtonFor(Model => Model.Round, 1, new { id = "round1hidden", @class = "btn btn-primary active autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(10242, 124, true);
+            WriteLiteral("Round 1\n                    </label>\n                    <label class=\"btn btn-primary autofields\">\n                        ");
+            EndContext();
+            BeginContext(10367, 112, false);
+#line 337 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+                   Write(Html.RadioButtonFor(Model => Model.Round, 2, new { id = "round2hidden", @class = "btn btn-primary autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(10479, 91, true);
+            WriteLiteral("Round 2\n                    </label>\n                </div>\n            </div>\n            ");
+            EndContext();
+            BeginContext(10571, 83, false);
+#line 341 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+       Write(Html.ValidationMessageFor(model => model.Round, "", new { @class = "text-danger" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(10654, 16, true);
+            WriteLiteral("\n        </div>\n");
+            EndContext();
+#line 343 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+        {
+            if (Model.Rerun == true)
+            {
+
+#line default
+#line hidden
+            BeginContext(10731, 195, true);
+            WriteLiteral("                <p class=\"text-danger beforeconfirmation\" style=\"text-align:center\">This round seems to be a rerun based on previous round entries! Specify the round you would like to rerun!</p>\n");
+            EndContext();
+#line 347 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+            }
+        }
+
+#line default
+#line hidden
+            BeginContext(10950, 202, true);
+            WriteLiteral("        <div class=\"beforeconfirmation\">\n            <div style=\"display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px\" class=\"autofields\">\n                ");
+            EndContext();
+            BeginContext(11153, 105, false);
+#line 351 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.LabelFor(model => model.Rerun, htmlAttributes: new { @class = "control-label col-md-2 autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(11258, 17, true);
+            WriteLiteral("\n                ");
+            EndContext();
+            BeginContext(11276, 99, false);
+#line 352 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.CheckBoxFor(model => model.Rerun, new { @class = "checkthis autofields", id = "rerunhidden" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(11375, 32, true);
+            WriteLiteral("\n            </div>\n            ");
+            EndContext();
+            BeginContext(11408, 94, false);
+#line 354 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+       Write(Html.ValidationMessageFor(model => model.Rerun, "", new { @class = "text-danger autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(11502, 162, true);
+            WriteLiteral("\n            <div style=\"display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px\" class=\"autofields\">\n                ");
+            EndContext();
+            BeginContext(11665, 106, false);
+#line 356 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.LabelFor(model => model.Usable, htmlAttributes: new { @class = "control-label col-md-2 autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(11771, 17, true);
+            WriteLiteral("\n                ");
+            EndContext();
+            BeginContext(11789, 123, false);
+#line 357 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.CheckBoxFor(model => model.Usable, new { @class = "checkthis autofields", @checked = "checked", id = "usablehidden" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(11912, 32, true);
+            WriteLiteral("\n            </div>\n            ");
+            EndContext();
+            BeginContext(11945, 95, false);
+#line 359 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+       Write(Html.ValidationMessageFor(model => model.Usable, "", new { @class = "text-danger autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(12040, 162, true);
+            WriteLiteral("\n            <div style=\"display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px\" class=\"autofields\">\n                ");
+            EndContext();
+            BeginContext(12203, 117, false);
+#line 361 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.LabelFor(model => model.JudgeConfirmNotes, htmlAttributes: new { @class = "control-label col-md-2 autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(12320, 17, true);
+            WriteLiteral("\n                ");
+            EndContext();
+            BeginContext(12338, 119, false);
+#line 362 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.TextBoxFor(model => model.JudgeConfirmNotes, new { @class = "createforms autofields", id = "judgeconfirmhidden" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(12457, 32, true);
+            WriteLiteral("\n            </div>\n            ");
+            EndContext();
+            BeginContext(12490, 106, false);
+#line 364 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+       Write(Html.ValidationMessageFor(model => model.JudgeConfirmNotes, "", new { @class = "text-danger autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(12596, 162, true);
+            WriteLiteral("\n            <div style=\"display:flex; flex-direction: row; justify-content: center; align-items: center;padding-bottom:10px\" class=\"autofields\">\n                ");
+            EndContext();
+            BeginContext(12759, 115, false);
+#line 366 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.LabelFor(model => model.StudentInitials, htmlAttributes: new { @class = "control-label col-md-2 autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(12874, 17, true);
+            WriteLiteral("\n                ");
+            EndContext();
+            BeginContext(12892, 119, false);
+#line 367 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+           Write(Html.TextBoxFor(model => model.StudentInitials, new { @class = "createforms autofields", id = "studentconfirmhidden" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(13011, 32, true);
+            WriteLiteral("\n            </div>\n            ");
+            EndContext();
+            BeginContext(13044, 104, false);
+#line 369 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+       Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class = "text-danger autofields" }));
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(13148, 223, true);
+            WriteLiteral("\n\n\n\n\n            <div style=\"text-align:center\">\n                <input type=\"button\" class=\"btn btn-warning\" value=\"Finalize Scores\" id=\"finalize\" style=\"width:100%\" />\n            </div>\n            <br />\n        </div>\n");
+            EndContext();
+            BeginContext(13372, 1601, true);
+            WriteLiteral(@"        <div style=""text-align:center"" id=""confirmmatch"" hidden>
+            <h3>Final Score: <span id=""finalscore""></span></h3>
+            <br />
+            <span>Judge Confirmation</span>
+            <br />
+            <input type=""text"" class=""form-control"" id=""judgeconfirm"" aria-describedby=""judgenotes"" placeholder=""Judge Initials"" style=""display:inline"">
+            <br />
+            <small id=""judgeconfirminfo"" class=""form-text text-muted"">Judges can enter notes and confirmation here.</small>
+            <br />
+            <span>Student Initials</span>
+            <br />
+            <input type=""text"" class=""form-control"" id=""studentconfirm"" aria-describedby=""studentnotes"" placeholder=""Student Initials"" style=""display:inline"" maxlength=""7"">
+            <br />
+            <small id=""studentconfirminfo"" class=""form-text text-muted"">Students enter their initials to accept the match details</small>
+            <br />
+            <span>Judge Access Code</span>
+            <br />
+            <input type=""n");
+            WriteLiteral(@"umber"" class=""form-control"" id=""judgeaccesscode"" aria-describedby=""judgeaccesscode"" placeholder=""####"" style=""display:inline"" maxlength=""4"">
+            <br />
+            <small id=""studentconfirminfo"" class=""form-text text-muted"">TEST MATCH ACCESS CODE: 1234</small>
+            <br />
+            <input type=""submit"" id=""create"" value=""Create"" class=""btn btn-success"" style=""margin-bottom:10px;display:none;width:100%"" />
+            <br />
+            <input type=""button"" id=""donotfinalize"" value=""Edit Scores"" class=""btn btn-danger"" style=""width:100%"" />
+        </div>
+");
+            EndContext();
+            BeginContext(14975, 8, true);
+            WriteLiteral("        ");
+            EndContext();
+            BeginContext(14983, 86, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62776cd411ab4236a16cfc2880e17998", async() => {
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_0);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(15069, 423, true);
+            WriteLiteral(@"
+        <script src=""https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"" integrity=""sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"" crossorigin=""anonymous""></script>
+        <script src=""https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"" integrity=""sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"" crossorigin=""anonymous""></script>
+");
+            EndContext();
+#line 410 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+        
+    }
+
+#line default
+#line hidden
+            BeginContext(15507, 865, true);
+            WriteLiteral(@"    <h2 style=""text-align:center"">Scoresheet</h2>
+    <h4 style=""text-align:center"">(!) This area automatically fills in the ""Score"" field for convience every time you change the scoresheet (!)</h4>
+    <h5 style=""text-align:center"">Balls into Hole Slot: <span id=""balls"">0</span> Ball(s)</h5>
+    <h5 id=""bvalidation"" style=""text-align:center;color:darkred""></h5>
+    <h5 id=""ivalidation"" style=""text-align:center;color:darkred""></h5>
+    <br />
+    <div style=""background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1"">
+        <table style=""border:none;width:100%;text-align:center"">
+            <tr style=""text-align:center"">
+                <td>Bottle #1 (Left)</td>
+                <td>
+                    <select onchange=""OnChangeB1(this.value)"" id=""score"" class=""bottle1 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(16372, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a76931868ee4b2fba7645ab46a918a7", async() => {
+                BeginContext(16411, 13, true);
+                WriteLiteral("In Circle (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(16433, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(16458, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1655febaf0dd465ca29112b960a7bfff", async() => {
+                BeginContext(16497, 13, true);
+                WriteLiteral("Moved Out (3)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_6.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(16519, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(16544, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5e19695d731941ecb3569e195e44d803", async() => {
+                BeginContext(16584, 17, true);
+                WriteLiteral("Knocked Over (11)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_7.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(16610, 289, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #2</td>
+                <td>
+                    <select onchange=""OnChangeB2(this.value)"" id=""score"" class=""bottle2 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(16899, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8af1bae20cfd42d091009e2079a4d76a", async() => {
+                BeginContext(16938, 13, true);
+                WriteLiteral("In Circle (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(16960, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(16985, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9857844598a4d54acd4b753844ecf66", async() => {
+                BeginContext(17024, 13, true);
+                WriteLiteral("Moved Out (5)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_9.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(17046, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(17071, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17116d3c7c214f8e8dcf1ed047d539c9", async() => {
+                BeginContext(17111, 17, true);
+                WriteLiteral("Knocked Over (13)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_10.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_10);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(17137, 289, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #3</td>
+                <td>
+                    <select onchange=""OnChangeB3(this.value)"" id=""score"" class=""bottle3 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(17426, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b37b70322b9948178143d81698f6236f", async() => {
+                BeginContext(17465, 13, true);
+                WriteLiteral("In Circle (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(17487, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(17512, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1bf0dbe724564b8b94892af6aa13bd45", async() => {
+                BeginContext(17551, 13, true);
+                WriteLiteral("Moved Out (5)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_9.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(17573, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(17598, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8119eceecca5437088eb09f97231ef4c", async() => {
+                BeginContext(17638, 17, true);
+                WriteLiteral("Knocked Over (13)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_10.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_10);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(17664, 297, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #4 (Right)</td>
+                <td>
+                    <select onchange=""OnChangeB4(this.value)"" id=""score"" class=""bottle4 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(17961, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4853d0e9b27a4b4fa2754dc8ee530d73", async() => {
+                BeginContext(18000, 13, true);
+                WriteLiteral("In Circle (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18022, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(18047, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6e2c8e22c774cba9ccba1f6228e0ca5", async() => {
+                BeginContext(18086, 13, true);
+                WriteLiteral("Moved Out (3)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_6.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18108, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(18133, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d8b1ca44edd44008d323a82dcc531f4", async() => {
+                BeginContext(18173, 17, true);
+                WriteLiteral("Knocked Over (11)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_7.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18199, 298, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bottle #5 (Middle)</td>
+                <td>
+                    <select onchange=""OnChangeB5(this.value)"" id=""score"" class=""bottle5 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(18497, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0136a70c232a4c4c8b0f99de96a14bfb", async() => {
+                BeginContext(18536, 13, true);
+                WriteLiteral("In Circle (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18558, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(18583, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f60a1640814045b796f53d42a722ae27", async() => {
+                BeginContext(18623, 14, true);
+                WriteLiteral("Moved Out (-2)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_14.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_14);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18646, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(18671, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab1db670dc544cdea97a64223006a2ff", async() => {
+                BeginContext(18711, 17, true);
+                WriteLiteral("Knocked Over (-2)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_14.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_14);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18737, 502, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <div style=""background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1"">
+        <table style=""border:none;width:100%;text-align:center"">
+            <tr>
+                <td>While Golf Balls</td>
+                <td>
+                    <select onchange=""OnChangeWB(this.value)"" id=""score"" class=""whiteb custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(19239, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3388416cf0c142b0b64b772bc944ea00", async() => {
+                BeginContext(19276, 17, true);
+                WriteLiteral("No Golf Balls (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(19302, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(19327, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dee08aa612a34539a959f5ab1c7bb8d7", async() => {
+                BeginContext(19365, 18, true);
+                WriteLiteral("One Golf Ball (15)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_17.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_17);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(19392, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(19417, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f43d9c0b1864865b19f3d19bb05e34b", async() => {
+                BeginContext(19455, 19, true);
+                WriteLiteral("Two Golf Balls (30)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_18.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_18);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(19483, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(19508, 68, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0f85845f3744f81ab0d6d50fe981b9a", async() => {
+                BeginContext(19546, 21, true);
+                WriteLiteral("Three Golf Balls (45)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_19.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_19);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(19576, 297, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Orange Golf Balls</td>
+                <td>
+                    <select onchange=""OnChangeOB(this.value)"" id=""score"" class=""orangeb custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(19873, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b79e6e4604549c9b8b8b94630ddf0a1", async() => {
+                BeginContext(19910, 17, true);
+                WriteLiteral("No Golf Balls (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_20);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(19936, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(19961, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6530cb53519d45ed9574cd38bb99afba", async() => {
+                BeginContext(19999, 18, true);
+                WriteLiteral("One Golf Ball (18)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_20);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_21.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_21);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20026, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(20051, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e76cc4c023e2402b9cdcbed11b74c80a", async() => {
+                BeginContext(20089, 19, true);
+                WriteLiteral("Two Golf Balls (36)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_20);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_22.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_22);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20117, 294, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Invalid Balls</td>
+                <td>
+                    <select onchange=""OnChangeIB(this.value)"" id=""score"" class=""invalidb custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(20411, 58, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f3d4da31bb14055b33f0234923f84a4", async() => {
+                BeginContext(20448, 12, true);
+                WriteLiteral("No Balls (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20469, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(20494, 60, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2931820f06b64164a650cf81e2245ebc", async() => {
+                BeginContext(20532, 13, true);
+                WriteLiteral("One Ball (-3)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_24.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_24);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20554, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(20579, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f9f4c619a4409ab9a830ea0bbe60f6", async() => {
+                BeginContext(20617, 14, true);
+                WriteLiteral("Two Balls (-6)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_25.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_25);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20640, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(20665, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "01f5d55bcb8249599fd8328953cc3f7f", async() => {
+                BeginContext(20703, 16, true);
+                WriteLiteral("Three Balls (-9)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_26.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_26);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20728, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(20753, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31fc46500a014872898fd7033734c420", async() => {
+                BeginContext(20792, 16, true);
+                WriteLiteral("Four Balls (-12)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_27.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_27);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20817, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(20842, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23d2c85cbd6d4a05b7de4287c0ea0fc5", async() => {
+                BeginContext(20881, 16, true);
+                WriteLiteral("Five Balls (-15)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_28.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_28);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(20906, 295, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Remaining Balls</td>
+                <td>
+                    <select onchange=""OnChangeRB(this.value)"" id=""score"" class=""remainb custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(21201, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2efe92be3b46440d8f117a5e81c74d99", async() => {
+                BeginContext(21238, 17, true);
+                WriteLiteral("No Balls Left (5)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_9.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21264, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(21289, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dbc388cf6da64b5caeed3695be8dc7d8", async() => {
+                BeginContext(21326, 17, true);
+                WriteLiteral("One Ball Left (4)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_30.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_30);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21352, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(21377, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fafff6fc04ed41c4ac065b83229a0c3e", async() => {
+                BeginContext(21414, 18, true);
+                WriteLiteral("Two Balls Left (3)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_6.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21441, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(21466, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1df276bcd554dc1bd1128bd175b8cd4", async() => {
+                BeginContext(21503, 20, true);
+                WriteLiteral("Three Balls Left (2)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_31.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_31);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21532, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(21557, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "613b172b70f54248a6b2f6a1838a1605", async() => {
+                BeginContext(21594, 19, true);
+                WriteLiteral("Four Balls Left (1)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_32.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_32);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21622, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(21647, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42286983d6f24e6f8a91eeb131433539", async() => {
+                BeginContext(21684, 19, true);
+                WriteLiteral("Five Balls Left (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21712, 532, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <div style=""background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1"">
+        <table style=""border:none;width:100%;text-align:center"">
+            <tr style=""text-align:center"">
+                <td>Game Ending Mission</td>
+                <td>
+                    <select onchange=""OnChangeBS4(this.value)"" id=""score"" class=""extra1 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(22244, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c94736f4766a445099c802fd4f0bb173", async() => {
+                BeginContext(22281, 18, true);
+                WriteLiteral("Mission Failed (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_33);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_34);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(22308, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(22333, 69, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5bafdedd01064950ba3164ff5470e486", async() => {
+                BeginContext(22371, 22, true);
+                WriteLiteral("Mission Completed (12)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_33);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_34);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_35.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_35);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(22402, 299, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Robot Stayed Sturdy</td>
+                <td>
+                    <select onchange=""OnChangeBS3(this.value)"" id=""score"" class=""extra2 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(22701, 60, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca84b617086140b6a3e77d6a4e2e0b11", async() => {
+                BeginContext(22738, 14, true);
+                WriteLiteral("Not Sturdy (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_36);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_34);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(22761, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(22786, 56, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31ce934554134850b1cf1061bc10e194", async() => {
+                BeginContext(22823, 10, true);
+                WriteLiteral("Sturdy (2)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_36);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_34);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_31.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_31);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(22842, 535, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <div style=""background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1"">
+        <table style=""border:none;width:100%;text-align:center"">
+            <tr style=""text-align:center"">
+                <td>Full Reset Requested</td>
+                <td>
+                    <select onchange=""OnChangeBS4(this.value)"" id=""score"" class=""penalty1 custom-dropdown big scoresheet"">
+                        ");
+            EndContext();
+            BeginContext(23377, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d89cf488bebb4774b0a122073e8123bb", async() => {
+                BeginContext(23414, 17, true);
+                WriteLiteral("No Reset Done (0)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_37);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_34);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(23440, 25, true);
+            WriteLiteral("\n                        ");
+            EndContext();
+            BeginContext(23465, 67, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf43cf2cdde649c19b84993d97602e96", async() => {
+                BeginContext(23503, 20, true);
+                WriteLiteral("Full Reset Done (-3)");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_37);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_34);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_24.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_24);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(23532, 3350, true);
+            WriteLiteral(@"
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+
+    <div style=""background-color:lightgray;border-radius:6px;border:10px solid lightgray;z-index:-1"" class=""beforeconfirmation"">
+        <div style=""text-align:center"">
+            <input type=""text"" placeholder=""Message"" id=""usermessage"" />
+            <span>Issue? </span><input type=""checkbox"" id=""userissue"" />
+            <input type=""button"" id=""sendchat"" value=""Send Test Chat"" />
+        </div>
+        <table style=""table-layout:fixed;width:100%"">
+            <caption>Volunteer Chat Connection</caption>
+            <tr>
+                <th width=""20%"">Sender</th>
+                <th width=""70%"">Message</th>
+                <th width=""10%"">Issue</th>
+            </tr>
+            <tbody class=""volunteerchat""></tbody>
+        </table>
+    </div>
+</div>
+<br />
+<br />
+<audio></audio>
+<footer class=""navbar-fixed-bottom"" hidden id=""readybar"">
+    <button style=""margin:0 auto;margin-left:10px;backgrou");
+            WriteLiteral(@"nd-color:black;color:white;border:4px solid black;border-radius:8px 8px 0px 0px;font-size:20px"" id=""togglecontrols""><span id=""togglemessage"">Hide Controls</span> (<span id=""minutes2"">0</span>:<span id=""seconds2"">00</span>) <span id=""quickstatus"" style=""color:white;font-size:25px"">&#9632;</span></button>
+    <div style=""background-color:lightgray;width:100%;height:120px;text-align:center;border-top:4px solid black"" id=""controlpanel"">
+        <div class=""status"" style=""background-color:black;color:white;display:inline-block;margin-top:4px;padding-left:6px;padding-right:6px;border-bottom:3px solid black"">
+            <span style=""font-family:'Lucida Console';margin-bottom:0px;font-size:20px"" class=""timerarea""><span id=""minutes"" class=""timerarea"">0</span>:<span id=""seconds"" class=""timerarea"">00</span></span>
+
+        </div>
+        <span style=""margin-top:4px"">
+            <strong><span id=""quickstatusf1"" style=""background-color:black;color:white;padding:7px;border-radius:2px"">1</span></strong>
+            <stron");
+            WriteLiteral(@"g><span id=""quickstatusf2"" style=""background-color:black;color:white;padding:7px;border-radius:2px"">2</span></strong>
+            <strong><span id=""quickstatusf3"" style=""background-color:black;color:white;padding:7px;border-radius:2px"">3</span></strong>
+            <strong><span id=""quickstatusf4"" style=""background-color:black;color:white;padding:7px;border-radius:2px"">4</span></strong>
+            <strong><span id=""quickstatusf5"" style=""background-color:black;color:white;padding:7px;border-radius:2px"">5</span></strong>
+            <strong><span id=""quickstatusf6"" style=""background-color:black;color:white;padding:7px;border-radius:2px"">6</span></strong>
+        </span>
+        <br />
+        <input type=""button"" class=""btn btn-success fa-input"" value=""&#xf00c;"" id=""readystatus"" style=""width:30%;padding:3px;margin-top:10px;font-weight:normal;color:white;height:55px;font-size:30px"" />
+        <input class=""btn btn-danger active fa-input"" type=""button"" value=""&#xf00d;"" id=""notreadystatus"" style=""width:30%;paddin");
+            WriteLiteral(@"g:3px;margin-top:10px;font-weight:bold;color:white;height:55px;font-size:30px"" />
+        <input type=""button"" id=""emergencyhelp"" value=""&#xf12a;"" style=""width:30%;padding:3px;margin-top:10px;height:55px;font-size:30px"" class=""btn btn-default fa-input"" />
+
+    </div>
+</footer>
+");
+            EndContext();
+            BeginContext(26882, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4b4ea4da037431781b7190ff91653f7", async() => {
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_38);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(26943, 1, true);
+            WriteLiteral("\n");
+            EndContext();
+            BeginContext(26944, 51, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5bee77215d194c2ba9da7a4bf00fe1e3", async() => {
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_39);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(26995, 4887, true);
+            WriteLiteral(@"
+<script>
+    var controlson = true;
+    $(""#togglecontrols"").click(function () {
+        if (controlson) {
+            $(""#togglemessage"").html(""Show Controls"")
+            $(""#controlpanel"").css(""display"", ""none"")
+            controlson = false;
+        } else {
+            $(""#togglemessage"").html(""Hide Controls"")
+            $(""#controlpanel"").css(""display"", ""block"")
+            controlson = true;
+        }
+    });
+</script>
+<script>
+    $("".bottle1"").val(0).attr(""selected"", ""selected"");
+    $("".bottle2"").val(0).attr(""selected"", ""selected"");
+    $("".bottle3"").val(0).attr(""selected"", ""selected"");
+    $("".bottle4"").val(0).attr(""selected"", ""selected"");
+    $("".bottle5"").val(0).attr(""selected"", ""selected"");
+    $("".whiteb"").val(0).attr(""selected"", ""selected"");
+    $("".orangeb"").val(0).attr(""selected"", ""selected"");
+    $("".invalidb"").val(0).attr(""selected"", ""selected"");
+    $("".remainb"").val(0).attr(""selected"", ""selected"");
+    $("".extra1"").val(0).attr(""selected"", ""selected"");
+    $("".extra2"").val(0).attr(""sel");
+            WriteLiteral(@"ected"", ""selected"");
+    $("".penalty1"").val(0).attr(""selected"", ""selected"");
+</script>
+<script>
+    $(document).on('change', '#score', function () {
+        var total = 0;
+        var bot1 = 0;
+        var bot2 = 0;
+        var bot3 = 0;
+        var bot4 = 0;
+        var bot5 = 0;
+        var wgb = 0;
+        var ogb = 0;
+        var igb = 0;
+        var rgb = 0;
+        var ex1 = 0;
+        var ex2 = 0;
+        var pe1 = 0;
+        var pe2 = 0;
+        var scoredballs = 0;
+        var invalidballs = 0;
+        var remainingballs = 5;
+        var stacked = false;
+        var allowedsb = false;
+        $('.bottle1').each(function () {
+            total += parseFloat($(this).val());
+            bot1 += parseFloat($(this).val());
+        });
+        $('.bottle2').each(function () {
+            total += parseFloat($(this).val());
+            bot2 += parseFloat($(this).val());
+        });
+        $('.bottle3').each(function () {
+            total += parseFloat($(this).val());
+            bot3 += parseFloat($(this)");
+            WriteLiteral(@".val());
+        });
+        $('.bottle4').each(function () {
+            total += parseFloat($(this).val());
+            bot4 += parseFloat($(this).val());
+        });
+        $('.bottle5').each(function () {
+            total += parseFloat($(this).val());
+            bot5 += parseFloat($(this).val());
+        });
+        $('.whiteb').each(function () {
+            total += parseFloat($(this).val());
+            wgb += parseFloat($(this).val());
+            scoredballs += (parseFloat($(this).val()) / 15);
+        });
+        $('.orangeb').each(function () {
+            total += parseFloat($(this).val());
+            ogb += parseFloat($(this).val());
+            scoredballs += (parseFloat($(this).val()) / 18);
+        });
+        $('.invalidb').each(function () {
+            total += parseFloat($(this).val());
+            igb += parseFloat($(this).val());
+            invalidballs += (parseFloat($(this).val()) / -3);
+        });
+        $('.remainb').each(function () {
+            total += parseFloat($(this).v");
+            WriteLiteral(@"al());
+            rgb += parseFloat($(this).val());
+            remainingballs -= parseFloat($(this).val());
+        });
+        $('.extra1').each(function () {
+            total += parseFloat($(this).val());
+            ex1 += parseFloat($(this).val());
+        });
+        $('.extra2').each(function () {
+            total += parseFloat($(this).val());
+            ex2 += parseFloat($(this).val());
+        });
+        $('.penalty1').each(function () {
+            total += parseFloat($(this).val());
+            pe1 += parseFloat($(this).val());
+        });
+        $('#teamID').val(total)
+        $(""#finalscore"").html(total)
+        var datastring = bot1 + ""/"" + bot2 + ""/"" + bot3 + ""/"" + bot4 + ""/"" + bot5 + ""^"" + wgb + ""/"" + ogb + ""/"" + igb + ""/"" + rgb + ""^"" + ex1 + ""/"" + ex2 + ""^"" + pe1 + ""/"" + pe2;
+        $(""#data"").val(datastring);
+        $(""#balls"").html(scoredballs);
+        var enable = true;
+        if (invalidballs > scoredballs) {
+            $(""#ivalidation"").html(""There are more invalid balls than ");
+            WriteLiteral(@"there are in the hole slot! Remember, a ball is only counted invalid if it is hit into the hole slot!"")
+            enable = false;
+        } else {
+            $(""#ivalidation"").html("""")
+        }
+        if ((remainingballs + scoredballs) > 5) {
+            $(""#bvalidation"").html(""There are more than 5 balls counted on the scoring sheet. Please adjust your 'REMAINING BALLS' counter!"")
+            enable = false;
+        } else {
+            $(""#bvalidation"").html("""")
+        }
+        if (enable == true) {
+            $(""#create"").attr(""disabled"", false);
+        } else {
+            $(""#create"").attr(""disabled"", true);
+        }
+        $(""#fieldn"").change(function () {
+            $(""#fieldinput"").val(this.val());
+        });
+    });
+</script>
+<script>
+    var CurrentJudge = """);
+            EndContext();
+            BeginContext(31883, 24, false);
+#line 741 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+                   Write(CurrentJudgeC.ToString());
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(31907, 45, true);
+            WriteLiteral("\"\n\n    $(function () {\n\n        var teamid = ");
+            EndContext();
+            BeginContext(31953, 12, false);
+#line 745 "/Users/daviado/Downloads/RobofestWTECore/RobofestWTECore/Views/Team/RoundCreate.cshtml"
+                Write(Model.TeamID);
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(31965, 15782, true);
+            WriteLiteral(@";
+        var timer = false;
+        var minutesc = 0;
+        var secondsc = 0;
+        var secondsview = ""00"";
+        var interval = false;
+        var allseconds = 0;
+        var part = 0;
+        var totalscore = 0;
+        var checkingscore = true;
+        var teamnumber = """";
+        var pong = false;
+        var emergency = false;
+        var publicround = 0;
+        // Reference the auto-generated proxy for the hub.
+        var chat = new signalR.HubConnectionBuilder().withUrl(""/scoreHub"").build();
+
+        $(""#lookupteam"").val(teamid);
+
+        // Create a function that the hub can call back to display messages.
+        chat.on(""changeTeamScores"", function (topten) {
+            // Add the message to the page.
+            //$('#' + teamnumber).text(score);
+            $("".topteams"").empty();
+
+            $.each(topten, function (index, value) {
+                var markup = ""<tr style='text-align:center;padding-left:5px'><th width='10%' style='text-align:left'>"" + (index + 1) +
+                    ""<");
+            WriteLiteral(@"/th><th width='30%' style='text-align:center'>"" + value.TeamNumber + ""</th><th width='30%' style='text-align:center'>"" +
+                    value.TeamName + ""</th><th width='30%' style='text-align:center'>"" +
+                    value.Average + ""</th></tr>"";
+                $("".topteams"").append(markup);
+            });
+        });
+        chat.on(""chatMessage"", function (message, issue, sender, time, broadcast) {
+            $("".volunteerchat"").append(""<tr><td width='20%' style='color:red'><strong>"" + sender + ""</strong></td><td width='70%'>"" + message + ""</td><td width='10%'>"" + issue + ""</td></tr>"")
+        });
+        chat.on(""changeGlobalTimer"", function (minutes, seconds, message, status, score) {
+            $(""#minutes"").html(minutes);
+            $(""#minutes2"").html(minutes);
+            if (seconds < 10) {
+                secondsview = ""0"" + seconds;
+            } else {
+                secondsview = seconds;
+            }
+            $(""#seconds"").html(secondsview);
+            $(""#seconds2"").html");
+            WriteLiteral(@"(secondsview);
+            $(""#message"").html(message);
+            if (status == 0) {
+                $("".status"").css(""border-bottom"", ""3px black solid"");
+            } else if (status == 1) {
+                $("".status"").css(""border-bottom"", ""3px green solid"");
+
+            } else if (status == 2 && seconds < 1 && minutes < 1) {
+                $("".status"").css(""border-bottom"", ""3px red solid"");
+            } else {
+                $("".status"").css(""border-bottom"", ""3px black solid"");
+            }
+
+        });
+        chat.on(""retrieveTeam"", function (teamnumber) {
+            $(""#teamnumber"").val(teamnumber);
+            $(""#teamnumberview"").val(teamnumber);
+        });
+        chat.on(""getPong"", function (direction) {
+            pong = true;
+        });
+
+        // Start the connection.
+        var fieldsub = 0;
+        var teamnumber = """";
+        var lockedin = false;
+        chat.on(""initFieldView"", function (field, status, score, team, connection, matchkeeper,data) {
+            if (status != 5) {
+");
+            WriteLiteral(@"                if (status == 0) {
+                    $(""#quickstatusf"" + field).css(""background-color"", ""black"");
+                } else if (status == 1) {
+                    $(""#quickstatusf"" + field).css(""background-color"", ""tomato"");
+                } else if (status == 2) {
+                    $(""#quickstatusf"" + field).css(""background-color"", ""MediumSeaGreen"");
+                } else if (status == 3) {
+                    $(""#quickstatusf"" + field).css(""background-color"", ""dodgerblue"");
+                }
+
+
+            }
+            
+            if (status != 5 && field == fieldsub) {
+                if (status == 0) {
+                    $(""#fieldstatus"").css(""background-color"", ""gray"");
+                    $(""#fieldstatus"").html(fieldsub);
+                    $(""#quickstatus"").css(""color"", ""white"");
+                    if (matchkeeper == true) {
+                        $(""#fieldstatus"").html(""Not Using (SC)"")
+                    }
+                } else if (status == 1) {
+                    $(""#fiel");
+            WriteLiteral(@"dstatus"").css(""background-color"", ""tomato"");
+                    $(""#quickstatus"").css(""color"", ""tomato"");
+                    $(""#fieldstatus"").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $(""#fieldstatus"").html(""Not Ready (SC)"")
+                    }
+                } else if (status == 2) {
+                    $(""#fieldstatus"").css(""background-color"", ""MediumSeaGreen"");
+                    $(""#quickstatus"").css(""color"", ""MediumSeaGreen"");
+                    $(""#fieldstatus"").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $(""#fieldstatus"").html(""Ready (SC)"")
+                    }
+                } else if (status == 3) {
+                    $(""#fieldstatus"").css(""background-color"", ""dodgerblue"");
+                    $(""#quickstatus"").css(""color"", ""dodgerblue"");
+                    $(""#fieldstatus"").html(fieldsub);
+                    if (matchkeeper == true) {
+                        $(""#fieldstatus"").html(""Scored (SC)"")
+    ");
+            WriteLiteral(@"                }
+                }
+            }
+
+        });
+        chat.on(""helpThisJudge"", function (field, helping) {
+            if (helping == true) {
+                $(""#quickstatusf"" + field).addClass(""judgehelp"");
+            } else {
+                $(""#quickstatusf"" + field).removeClass(""judgehelp"");
+            }
+        });
+
+        chat.start().then(function () {
+            $("".roundbutton1"").click(function () {
+                publicround = 1;
+            });
+            $("".roundbutton2"").click(function () {
+                publicround = 2;
+            });
+            $(""#judgeaccesscode"").change(function () {
+                if ($(""#judgeaccesscode"").val() == 1234) {
+                    //INSERT CORRECT ACCESS CODE HERE
+                    $(""#create"").css(""display"", ""inline"");
+                    $(""#judgeaccesscode"").attr(""disabled"", true);
+                }
+            });
+            $(""#sendchat"").click(function () {
+                var message = $(""#usermessage"").val();
+             ");
+            WriteLiteral(@"   var sender = ""Field "" + fieldsub + "" (Judge)""
+                var issue = $(""#userissue"").is("":checked"");
+                chat.invoke(""sendMessage"",message, issue, sender)
+                $(""#usermessage"").val("""");
+            });
+            $(""#disablescoreupdate"").click(function () {
+                checkingscore = false;
+                chat.invoke(""initField"",fieldsub, 5, totalscore, teamnumber, checkingscore, false);
+                $(""#currentscorestatus"").html(""Score Updating Disabled!"");
+            });
+            $(""#lookupteam"").change(function () {
+                chat.invoke(""lookUpTeam"",parseFloat($(""#lookupteam"").val()));
+            });
+            $(""#emergencyhelp"").click(function () {
+                if (emergency == false) {
+                    $(""#emergencyhelp"").addClass(""judgehelp"");
+                    $(""#emergencyhelp"").css(""background-color"", ""yellow"");
+                    chat.invoke(""sendMessage"", ""Help Requested from Field "" + fieldsub + ""!!"", true, ""Field "" + fieldsub + "" (S");
+            WriteLiteral(@"erver)"")
+                    chat.invoke(""judgeHelp"",fieldsub, true);
+                    emergency = true;
+                } else {
+                    $(""#emergencyhelp"").removeClass(""judgehelp"");
+                    $(""#emergencyhelp"").css(""background-color"", """");
+                    chat.invoke(""judgeHelp"",fieldsub, false);
+                    emergency = false;
+                }
+            });
+            function PongBack(direction) {
+                if (direction == 7 || direction == fieldsub) {
+                    chat.invoke(""pong"", fieldsub, CurrentJudge);
+                }
+            }
+            var pongback = setInterval(function () {
+                if (pong == true) {
+                    chat.invoke(""pong"", fieldsub, CurrentJudge);
+                }
+            }, 100);
+            $(""#enablescoreupdate"").click(function () {
+                checkingscore = true;
+                $(""#currentscorestatus"").html(""Score Updating Enabled!"");
+            });
+            $(document).ready(function ()");
+            WriteLiteral(@" {
+                chat.invoke(""lookUpTeam"", parseFloat($(""#lookupteam"").val()));
+            });
+            $(""#overlaybutton"").click(function () {
+                fieldsub = 0;
+                fieldsub += parseFloat($(""#fieldn"").val());
+                var nan = isNaN(fieldsub)
+                teamnumber += $(""#teamnumber"").val();
+                if (fieldsub > 6 || fieldsub < 1 || nan) {
+                    if (lockedin == false) {
+                        $(""#fieldissue"").text(""Field must be 1-6!"");
+                    }
+
+                } else {
+                    var round = 0;
+                    if (publicround == 1) {
+                        round = 1;
+                        $(""#round1hidden"").attr(""checked"", true);
+                        $(""#round2hidden"").attr(""checked"", false);
+                    } else {
+                        round = 2;
+                        $(""#round1hidden"").attr(""checked"", false);
+                        $(""#round2hidden"").attr(""checked"", true);
+                    }
+ ");
+            WriteLiteral(@"                   lockedin = true;
+                    $(""#fieldn"").attr(""readonly"", ""readonly"");
+                    $(""#fieldstatus"").html(fieldsub)
+                    $(""#teamnumber"").attr(""readonly"", ""readonly"");
+                    chat.invoke(""initField"", fieldsub, 1, totalscore, teamnumber, checkingscore, false, ""0/0/0/0/0^0/0/0/0^0/0^0/0"");
+                    chat.invoke(""teamSelected"", $(""#lookupteam"").val(), fieldsub, round);
+                    $(""#fieldissue"").text("""");
+                    $(""#lockin"").attr(""hidden"", true);
+                    $(""#afterlockin"").attr(""hidden"", false);
+                    $(""#beforelockin"").attr(""hidden"", true);
+                    $(""#teamidhidden"").val($(""#lookupteam"").val());
+                    $(""#fieldnhidden"").val(fieldsub);
+                    $(""#rerunhidden"").attr(""checked"", $(""#rerun"").is("":checked""));
+                    $(""#usablehidden"").attr(""checked"", $(""#usable"").is("":checked""));
+                    $(""#readybar"").attr(""hidden"", false);
+         ");
+            WriteLiteral(@"           $(""#quickstatusf"" + fieldsub).css(""border"", ""2px solid #ffffff"");
+
+                }
+            });
+            $(""#finalize"").click(function () {
+                $(""#confirmmatch"").attr(""hidden"", false);
+                $("".beforeconfirmation"").css(""display"", ""none"");
+                $("".scoresheet"").attr(""disabled"", true);
+                $(""#readybar"").attr(""hidden"", true);
+            });
+            $(""#donotfinalize"").click(function () {
+                $(""#confirmmatch"").attr(""hidden"", true);
+                $("".beforeconfirmation"").css(""display"", ""block"");
+                $("".scoresheet"").attr(""disabled"", false);
+                $(""#judgeconfirm"").val("""");
+                $(""#studentconfirm"").val("""");
+                $(""#readybar"").attr(""hidden"", false);
+            });
+            $(""#readystatus"").click(function () {
+                if (lockedin == true) {
+                    chat.invoke(""initField"", fieldsub, 2, totalscore, teamnumber, checkingscore, false, ""0/0/0/0/0^0/0/0/0^0/0^0/0"");");
+            WriteLiteral(@"
+                    $(""#fieldissue"").text("""");
+                    $(""#notreadystatus"").css(""font-weight"", ""normal"");
+                    $(""#readystatus"").css(""font-weight"", ""bold"");
+                }
+            });
+            $(""#notreadystatus"").click(function () {
+                if (lockedin == true) {
+                    chat.invoke(""initField"", fieldsub, 1, totalscore, teamnumber, checkingscore, false, ""0/0/0/0/0^0/0/0/0^0/0^0/0"");
+                    $(""#fieldissue"").text("""");
+                    $(""#notreadystatus"").css(""font-weight"", ""bold"");
+                    $(""#readystatus"").css(""font-weight"", ""normal"");
+                }
+            });
+            $('#starttimer').click(function () {
+                // Call the Send method on the hub.
+
+                // Clear text box and reset focus for next comment.
+                $('#message').val('').focus();
+            });
+            var updatescore = setInterval(function () {
+                if (lockedin == true && checkingscore == true) {
+      ");
+            WriteLiteral(@"              totalscore = $(""#teamID"").val();
+                    var datatosend = $(""#data"").val();
+                    if (datatosend == """") {
+                        datatosend = ""0/0/0/0/0^0/0/0/0^0/0^0/0"";
+                    }
+                    chat.invoke(""initField"", fieldsub, 5, totalscore, teamnumber, checkingscore, false, datatosend);
+                    //USE 5 FOR NO CHANGE
+                }
+            }, 500);
+        });
+        $(""#fieldn"").change(function () {
+            $(""#fieldinput"").val($(""#fieldn"").val());
+        });
+        $(""#judgeconfirm"").change(function () {
+            $(""#judgeconfirmhidden"").val($(""#judgeconfirm"").val());
+        });
+        $(""#studentconfirm"").change(function () {
+            $(""#studentconfirmhidden"").val($(""#studentconfirm"").val());
+        });
+
+        function Countdown() {
+            if (timer == true) {
+                if (secondsc == 0) {
+                    if (minutesc > 0) {
+                        minutesc = minutesc - 1;
+                   ");
+            WriteLiteral(@"     secondsc = 59;
+                        secondsview = ""59"";
+                    } else {
+                        timer = false;
+                        TimerEnded();
+                    }
+
+                } else if (secondsc < 11) {
+                    secondsc = secondsc - 1;
+                    secondsview = ""0"" + secondsc;
+                }
+                else {
+                    secondsc = secondsc - 1;
+                    secondsview = secondsc;
+                }
+            }
+        }
+        function StartTimer() {
+            var count = setInterval(function () {
+                $(""#minutes"").html(minutesc);
+                $(""#seconds"").html(secondsview);
+                if (abort == true) {
+                    clearInterval(count);
+                }
+                if ((part % 10) == 0) {
+                    Countdown();
+                }
+                if (((allseconds / 4) > (minutesc * 60) + (secondsc)) && timer == true) {
+                    $("".status"").css(""border-bottom"", ""orange 6px");
+            WriteLiteral(@" solid"");
+                }
+                part++;
+            }, 100);
+        }
+        function TimerEnded() {
+            abort = true;
+            timer = false;
+            $("".status"").css(""border-bottom"", ""red 6px solid"");
+        }
+
+
+
+    });
+
+
+</script>
+<br />
+
+<script type=""text/javascript"">
+    $(""#bitslot4 select"").on(""change"", function () {
+
+        //Stack
+        var subtotalstack = 0;
+        $("":radio[id='stack']:checked"").each(function () {
+            subtotalstack += Number(this.value);
+        });
+        $(""#subtotalstack"").text(subtotalstack);
+        //Extra
+        var subtotalextra = 0;
+        $("":radio[id='extra']:checked"").each(function () {
+            subtotalextra += Number(this.value);
+        });
+        $(""#subtotalextra"").text(subtotalextra);
+        //Penalty
+        var subtotalpenalty = 0;
+        $("":radio[id='penalty']:checked"").each(function () {
+            subtotalpenalty += Number(this.value);
+        });
+        $(""#subtotalpenalty"").text(subtotalpenalty);
+     ");
+            WriteLiteral(@"   //Total
+        var total = 0;
+        $("":radio:checked"").each(function () {
+            total += Number(this.value);
+        });
+        $(""#total"").text(total);
+        $(""#teamID"").val(total);
+        $(""#teamIDcopy"").text(total);
+        var description = subtotalbs + ""/"" + subtotalstack + ""/"" + subtotalextra + ""/"" + subtotalpenalty;
+        $(""#data"").val(description);
+    });
+
+</script>
+<script>
+</script>
+
+
+
+");
+            EndContext();
+        }
+        #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public UserManager<ApplicationUser> UserManager { get; private set; }
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<RobofestWTE.Models.RoundEntry> Html { get; private set; }
+    }
+}
+#pragma warning restore 1591
+>>>>>>> Stashed changes

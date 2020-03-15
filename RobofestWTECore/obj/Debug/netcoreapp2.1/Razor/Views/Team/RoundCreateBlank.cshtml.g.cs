@@ -549,8 +549,13 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(6873, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(6875, 86, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3dfcaecf2a6f474aa67174fcd29ed9a4", async() => {
+=======
+            BeginContext(6734, 86, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3a46f5e0d8746faa0e806819713d763", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -640,9 +645,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
                 <select onchange=""OnChangeB1(this.value)"" id=""score"" class=""bottle1 custom-dropdown big"">
                     ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(10156, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80f8935c387c41d88b3f8ef8775daf48", async() => {
                 BeginContext(10195, 13, true);
+=======
+            BeginContext(9971, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "052134610eb54c56a0ec7938b5a628bf", async() => {
+                BeginContext(10010, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("In Circle (0)");
                 EndContext();
             }
@@ -664,9 +675,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(10217, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(10239, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49bae32cb5464858a5c1288e21d0d50d", async() => {
                 BeginContext(10278, 13, true);
+=======
+            BeginContext(10053, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92506c27d2064c58b9f7c5266c805994", async() => {
+                BeginContext(10092, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Moved Out (3)");
                 EndContext();
             }
@@ -688,9 +705,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(10300, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(10322, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0aa2d97a72384284a08f0cd5279b8bdb", async() => {
                 BeginContext(10362, 17, true);
+=======
+            BeginContext(10135, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de456f3d76af44d0bec5141035420552", async() => {
+                BeginContext(10175, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
             }
@@ -712,9 +735,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(10388, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB2(this.value)\" id=\"score\" class=\"bottle2 custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(10581, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16bec6ea5d8140cf9774b70cd9de5669", async() => {
                 BeginContext(10620, 13, true);
+=======
+            BeginContext(10389, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7fc4792cc004383b682344b5fb34f11", async() => {
+                BeginContext(10428, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("In Circle (0)");
                 EndContext();
             }
@@ -736,9 +765,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(10642, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(10664, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc36f2d257284ce29b4ddab77f4ed1fc", async() => {
                 BeginContext(10703, 13, true);
+=======
+            BeginContext(10471, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef02fe6328eb44b79bf4fc47261f87ba", async() => {
+                BeginContext(10510, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Moved Out (5)");
                 EndContext();
             }
@@ -760,9 +795,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(10725, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(10747, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc3464735d244410a46f879f7fe597c4", async() => {
                 BeginContext(10787, 17, true);
+=======
+            BeginContext(10553, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16cc53a40259437f9f7899b013c23a1f", async() => {
+                BeginContext(10593, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
             }
@@ -784,9 +825,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(10813, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB3(this.value)\" id=\"score\" class=\"bottle3 custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11006, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "06f3d673303a488aadb6d4825b70a39b", async() => {
                 BeginContext(11045, 13, true);
+=======
+            BeginContext(10807, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6535cfe4a58b449fa134a3679b10705b", async() => {
+                BeginContext(10846, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("In Circle (0)");
                 EndContext();
             }
@@ -808,9 +855,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11067, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11089, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a4c853747ec403e85291f42eec60699", async() => {
                 BeginContext(11128, 13, true);
+=======
+            BeginContext(10889, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ffac1ed8ae74169b35968c714f4fc4e", async() => {
+                BeginContext(10928, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Moved Out (5)");
                 EndContext();
             }
@@ -832,9 +885,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11150, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11172, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19d799e2b81e45649eaa1ed3de367f82", async() => {
                 BeginContext(11212, 17, true);
+=======
+            BeginContext(10971, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "39608edb2d794807b954f3e8d9cd604d", async() => {
+                BeginContext(11011, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Knocked Over (13)");
                 EndContext();
             }
@@ -856,9 +915,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11238, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB4(this.value)\" id=\"score\" class=\"bottle4 custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11431, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f5a2020949d44ba82fc1471cdb9debe", async() => {
                 BeginContext(11470, 13, true);
+=======
+            BeginContext(11225, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1a9ad63af1340bc80c886db3909aae6", async() => {
+                BeginContext(11264, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("In Circle (0)");
                 EndContext();
             }
@@ -880,9 +945,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11492, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11514, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "988776a73b724fec8451d29d06de0071", async() => {
                 BeginContext(11553, 13, true);
+=======
+            BeginContext(11307, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72df93d166c54613a8b46b382ffbd04f", async() => {
+                BeginContext(11346, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Moved Out (3)");
                 EndContext();
             }
@@ -904,9 +975,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11575, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11597, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7322a0d07ae41f899a89ae66433e33a", async() => {
                 BeginContext(11637, 17, true);
+=======
+            BeginContext(11389, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8874d9d44301487f8b9ca47d538f2da0", async() => {
+                BeginContext(11429, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Knocked Over (11)");
                 EndContext();
             }
@@ -928,9 +1005,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11663, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeB5(this.value)\" id=\"score\" class=\"bottle5 custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11856, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c480b15fd5734d7489d61c8447a518cb", async() => {
                 BeginContext(11895, 13, true);
+=======
+            BeginContext(11643, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4c4a2352c564a818ab4d9a377ecbdd0", async() => {
+                BeginContext(11682, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("In Circle (0)");
                 EndContext();
             }
@@ -952,9 +1035,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(11917, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(11939, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69abf9b420224733bcaf6c24a2d3818c", async() => {
                 BeginContext(11979, 14, true);
+=======
+            BeginContext(11725, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "917baed575a74f35b9db12f9a3fbd528", async() => {
+                BeginContext(11765, 14, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Moved Out (-2)");
                 EndContext();
             }
@@ -976,9 +1065,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(12002, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(12024, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a542a07610534d01a5e25a7bf30bc7ec", async() => {
                 BeginContext(12064, 17, true);
+=======
+            BeginContext(11809, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb5ceceec46d458d9a5a0dc6bd484ae8", async() => {
+                BeginContext(11849, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Knocked Over (-2)");
                 EndContext();
             }
@@ -1019,9 +1114,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
                 <select onchange=""OnChangeWB(this.value)"" id=""score"" class=""whiteb custom-dropdown big"">
                     ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(12712, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33fd96bbeb5044228bc60628d32b0f1d", async() => {
                 BeginContext(12749, 17, true);
+=======
+            BeginContext(12478, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52257a7f2bbc4e57b300f17d91798c34", async() => {
+                BeginContext(12515, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
             }
@@ -1043,9 +1144,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(12775, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(12797, 65, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a098a8b2df8c439aa737949b1d941be3", async() => {
                 BeginContext(12835, 18, true);
+=======
+            BeginContext(12562, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a981f7a516e427fa7893458b3eb21f2", async() => {
+                BeginContext(12600, 18, true);
+>>>>>>> Stashed changes
                 WriteLiteral("One Golf Ball (15)");
                 EndContext();
             }
@@ -1067,9 +1174,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(12862, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(12884, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0c3588decaf416aa82d7da2e34835cf", async() => {
                 BeginContext(12922, 19, true);
+=======
+            BeginContext(12648, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cac3aabf2aa14b65bf00de80743006cc", async() => {
+                BeginContext(12686, 19, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Two Golf Balls (30)");
                 EndContext();
             }
@@ -1091,9 +1204,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(12950, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(12972, 68, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "731b4c37771d48a6a8c246d055d0fa1f", async() => {
                 BeginContext(13010, 21, true);
+=======
+            BeginContext(12735, 68, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a006d43d7d914d54aca92ab2275cdfba", async() => {
+                BeginContext(12773, 21, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Three Golf Balls (45)");
                 EndContext();
             }
@@ -1115,9 +1234,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13040, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeOB(this.value)\" id=\"score\" class=\"orangeb custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13233, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29d7c79f3f1748f6a5612f3bcbfb5c1b", async() => {
                 BeginContext(13270, 17, true);
+=======
+            BeginContext(12991, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82e3fb0e24fa4855987cec447b78221b", async() => {
+                BeginContext(13028, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("No Golf Balls (0)");
                 EndContext();
             }
@@ -1139,9 +1264,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13296, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13318, 65, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1077e03af5314d12b93593572aadb580", async() => {
                 BeginContext(13356, 18, true);
+=======
+            BeginContext(13075, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16984283d22e45179d176de4a19598b4", async() => {
+                BeginContext(13113, 18, true);
+>>>>>>> Stashed changes
                 WriteLiteral("One Golf Ball (18)");
                 EndContext();
             }
@@ -1163,9 +1294,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13383, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13405, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e5d249bc54594946ad840bbec9da9a7e", async() => {
                 BeginContext(13443, 19, true);
+=======
+            BeginContext(13161, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12017a00bf674aef8be50779da90cc57", async() => {
+                BeginContext(13199, 19, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Two Golf Balls (36)");
                 EndContext();
             }
@@ -1187,9 +1324,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13471, 194, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeIB(this.value)\" id=\"score\" class=\"invalidb custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13665, 58, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "548c0aa7b08f4f64815a29ae45471ec7", async() => {
                 BeginContext(13702, 12, true);
+=======
+            BeginContext(13416, 58, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a145a017398f44f2a819b4cd5ae72c69", async() => {
+                BeginContext(13453, 12, true);
+>>>>>>> Stashed changes
                 WriteLiteral("No Balls (0)");
                 EndContext();
             }
@@ -1211,9 +1354,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13723, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13745, 60, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a667429e04f241dca9674640162bbdaa", async() => {
                 BeginContext(13783, 13, true);
+=======
+            BeginContext(13495, 60, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae9118ca02fb4c7cbd885ebfc337bc8d", async() => {
+                BeginContext(13533, 13, true);
+>>>>>>> Stashed changes
                 WriteLiteral("One Ball (-3)");
                 EndContext();
             }
@@ -1235,9 +1384,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13805, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13827, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d7be0479f7f4bb8b3b325b4220d493b", async() => {
                 BeginContext(13865, 14, true);
+=======
+            BeginContext(13576, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93a09a8e4e204a718edb5f921735650a", async() => {
+                BeginContext(13614, 14, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Two Balls (-6)");
                 EndContext();
             }
@@ -1259,9 +1414,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13888, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13910, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a640d8479e614f77b4178ef40567205b", async() => {
                 BeginContext(13948, 16, true);
+=======
+            BeginContext(13658, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be0bd12b1ca8480aa3379f5d49cf7e49", async() => {
+                BeginContext(13696, 16, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Three Balls (-9)");
                 EndContext();
             }
@@ -1283,9 +1444,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(13973, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(13995, 64, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1333863eb69149fbaf5db374eb760405", async() => {
                 BeginContext(14034, 16, true);
+=======
+            BeginContext(13742, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f56b851153334211b1aab67343abf6eb", async() => {
+                BeginContext(13781, 16, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Four Balls (-12)");
                 EndContext();
             }
@@ -1307,9 +1474,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14059, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14081, 64, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1bb064e93a1b4030828bdb0b95dae2b5", async() => {
                 BeginContext(14120, 16, true);
+=======
+            BeginContext(13827, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae6128fd1725435a8c7a21b06b03b671", async() => {
+                BeginContext(13866, 16, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Five Balls (-15)");
                 EndContext();
             }
@@ -1331,9 +1504,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14145, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeRB(this.value)\" id=\"score\" class=\"remainb custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14338, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e73dbdf2c8a49d990534af5a977e3bf", async() => {
                 BeginContext(14375, 17, true);
+=======
+            BeginContext(14079, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "072cac57cc1949c6a825115b8c9dbabd", async() => {
+                BeginContext(14116, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("No Balls Left (5)");
                 EndContext();
             }
@@ -1355,9 +1534,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14401, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14423, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23c559cd2ae848699e0176c3c47dedf2", async() => {
                 BeginContext(14460, 17, true);
+=======
+            BeginContext(14163, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2f4c5e1bdcb4462ada5c2f31527f193", async() => {
+                BeginContext(14200, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("One Ball Left (4)");
                 EndContext();
             }
@@ -1379,9 +1564,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14486, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14508, 64, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "740435b3e3f84e2893ba3b2c7e82beb6", async() => {
                 BeginContext(14545, 18, true);
+=======
+            BeginContext(14247, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bdce58a370e8437299c93e1783cf3600", async() => {
+                BeginContext(14284, 18, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Two Balls Left (3)");
                 EndContext();
             }
@@ -1403,9 +1594,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14572, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14594, 66, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89d11452b57d417f98c1fbeae18010f0", async() => {
                 BeginContext(14631, 20, true);
+=======
+            BeginContext(14332, 66, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a74d1f194e7442e290ac029e34682839", async() => {
+                BeginContext(14369, 20, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Three Balls Left (2)");
                 EndContext();
             }
@@ -1427,9 +1624,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14660, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14682, 65, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9dd68fb0f564953b61fb5cb832c98fb", async() => {
                 BeginContext(14719, 19, true);
+=======
+            BeginContext(14419, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a58fc6e6e0940e3beb0354f92e35f6d", async() => {
+                BeginContext(14456, 19, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Four Balls Left (1)");
                 EndContext();
             }
@@ -1451,9 +1654,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(14747, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(14769, 65, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3de05f7b53a4277a07f249c01bf4fcd", async() => {
                 BeginContext(14806, 19, true);
+=======
+            BeginContext(14505, 65, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36cc74dd62724099a1b6b037b1f3303a", async() => {
+                BeginContext(14542, 19, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Five Balls Left (0)");
                 EndContext();
             }
@@ -1492,9 +1701,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
                 <select onchange=""OnChangeBS4(this.value)"" id=""score"" class=""extra1 custom-dropdown big"">
                     ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(15388, 64, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ebfc097378554da2a4a45a7498f2d7ad", async() => {
                 BeginContext(15425, 18, true);
+=======
+            BeginContext(15107, 64, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aed7885a470343e7a8b69b6ee2ff6551", async() => {
+                BeginContext(15144, 18, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Mission Failed (0)");
                 EndContext();
             }
@@ -1516,9 +1731,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(15452, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(15474, 69, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b5eb384522e489681dddb6e387352d6", async() => {
                 BeginContext(15512, 22, true);
+=======
+            BeginContext(15192, 69, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d417d422f1843bc96b9c8300ba1f5d8", async() => {
+                BeginContext(15230, 22, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Mission Completed (12)");
                 EndContext();
             }
@@ -1540,9 +1761,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(15543, 193, true);
             WriteLiteral("\r\n                </select>\r\n            </td>\r\n            <td>\r\n                <select onchange=\"OnChangeBS3(this.value)\" id=\"score\" class=\"extra2 custom-dropdown big\">\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(15736, 60, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6a23920933941f68d2cc7bd8ba45237", async() => {
                 BeginContext(15773, 14, true);
+=======
+            BeginContext(15449, 60, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "601278674f234b09a8d3084caf64f05b", async() => {
+                BeginContext(15486, 14, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Not Sturdy (0)");
                 EndContext();
             }
@@ -1564,9 +1791,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(15796, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(15818, 56, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d94691d597340ef89db4b3092ad6a4e", async() => {
                 BeginContext(15855, 10, true);
+=======
+            BeginContext(15530, 56, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78c3817e99af47fb84f31bf2cd1bef29", async() => {
+                BeginContext(15567, 10, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Sturdy (2)");
                 EndContext();
             }
@@ -1604,9 +1837,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
                 <select onchange=""OnChangeBS4(this.value)"" id=""score"" class=""penalty1 custom-dropdown big"">
                     ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(16379, 63, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4258cde9104e4131afd1fa4735587c6b", async() => {
                 BeginContext(16416, 17, true);
+=======
+            BeginContext(16075, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e309535f71c04c53a7586733146236d5", async() => {
+                BeginContext(16112, 17, true);
+>>>>>>> Stashed changes
                 WriteLiteral("No Reset Done (0)");
                 EndContext();
             }
@@ -1628,9 +1867,15 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
             BeginContext(16442, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(16464, 67, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ce65861f35a46119f1bb3aa1a6169cb", async() => {
                 BeginContext(16502, 20, true);
+=======
+            BeginContext(16159, 67, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eac4b8cf80254e06ba2a15f5c9e6b5bd", async() => {
+                BeginContext(16197, 20, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Full Reset Done (-3)");
                 EndContext();
             }
@@ -2017,8 +2262,13 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
                 BeginContext(29603, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(29609, 61, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8102823e695455aa56ce624ee42bd20", async() => {
+=======
+                BeginContext(28954, 61, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c526652cbeb346c49c8cb59b55bfccbe", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -2035,8 +2285,13 @@ Write(Html.ValidationMessageFor(model => model.StudentInitials, "", new { @class
                 BeginContext(29670, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(29676, 38, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d07e133d9d074b9585e7e5cc374e380c", async() => {
+=======
+                BeginContext(29020, 38, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ad6670aa12c48b99ff563b32156d87d", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
