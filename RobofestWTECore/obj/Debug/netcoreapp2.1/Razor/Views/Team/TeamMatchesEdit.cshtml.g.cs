@@ -260,8 +260,13 @@ WriteAttributeValue("", 1995, match.MatchID, 1995, 14, false);
 
 #line default
 #line hidden
+<<<<<<< Updated upstream
             BeginContext(2621, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f149b95b29d461eaf0096c737299a02", async() => {
+=======
+            BeginContext(2589, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e628173ddd154fb89632ce0f9e5f397c", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -278,8 +283,13 @@ WriteAttributeValue("", 1995, match.MatchID, 1995, 14, false);
             BeginContext(2682, 1, true);
             WriteLiteral("\n");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(2683, 51, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f55190555437430fa563f4a8da0cff14", async() => {
+=======
+            BeginContext(2651, 51, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db2e3286dcdd4463ad82c8f6b32ded9d", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

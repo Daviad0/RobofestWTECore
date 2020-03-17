@@ -69,6 +69,7 @@ using RobofestWTECore.Data;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
+<<<<<<< Updated upstream
             BeginContext(0, 224, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9211716fe5e344f8b47c9ccafee055ac", async() => {
                 BeginContext(35, 6, true);
@@ -76,6 +77,15 @@ using RobofestWTECore.Data;
                 EndContext();
                 BeginContext(41, 71, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14a32100a9584edf9e1d8699f37e9c65", async() => {
+=======
+            BeginContext(0, 221, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7f05a5e06a9408fae0766a19419f0af", async() => {
+                BeginContext(35, 5, true);
+                WriteLiteral("\n    ");
+                EndContext();
+                BeginContext(40, 71, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f27574d6edc4b7880af2e18517babd5", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -92,8 +102,13 @@ using RobofestWTECore.Data;
                 BeginContext(112, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(118, 90, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c94402db9474f819799bf241d8dd031", async() => {
+=======
+                BeginContext(116, 90, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a94487940214dd0bfcebc2cf4416b57", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -127,6 +142,7 @@ using RobofestWTECore.Data;
             BeginContext(224, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(226, 944, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a6a1d64ee4147c9ab4bf69dbf893636", async() => {
                 BeginContext(261, 6, true);
@@ -136,6 +152,17 @@ using RobofestWTECore.Data;
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0f8acc26e47478f9d5a256faae103b3", async() => {
                     BeginContext(651, 6, true);
                     WriteLiteral("\r\n    ");
+=======
+            BeginContext(222, 931, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0e68a3604104a3989b5740d02d85844", async() => {
+                BeginContext(257, 5, true);
+                WriteLiteral("\n    ");
+                EndContext();
+                BeginContext(262, 394, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "601fb21afe6341babfbe596e1d7e723c", async() => {
+                    BeginContext(642, 5, true);
+                    WriteLiteral("\n    ");
+>>>>>>> Stashed changes
                     EndContext();
                 }
                 );
@@ -160,10 +187,17 @@ using RobofestWTECore.Data;
                 BeginContext(666, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(672, 482, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0b444ae53a3498bb7cea64b36462339", async() => {
                     BeginContext(1139, 6, true);
                     WriteLiteral("\r\n    ");
+=======
+                BeginContext(661, 477, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "839028727b35429687ff3512a6074056", async() => {
+                    BeginContext(1124, 5, true);
+                    WriteLiteral("\n    ");
+>>>>>>> Stashed changes
                     EndContext();
                 }
                 );

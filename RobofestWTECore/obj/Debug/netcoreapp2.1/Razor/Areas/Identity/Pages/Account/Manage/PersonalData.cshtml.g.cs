@@ -103,10 +103,17 @@ Write(ViewData["Title"]);
         </p>
         ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(503, 165, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b978c6acc9854b26b437dffa3ec9c4bc", async() => {
                 BeginContext(574, 87, true);
                 WriteLiteral("\r\n            <button class=\"btn btn-default\" type=\"submit\">Download</button>\r\n        ");
+=======
+            BeginContext(488, 163, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09931ca7ae264dd9a63aec953f82dc83", async() => {
+                BeginContext(559, 85, true);
+                WriteLiteral("\n            <button class=\"btn btn-default\" type=\"submit\">Download</button>\n        ");
+>>>>>>> Stashed changes
                 EndContext();
             }
             );
@@ -130,9 +137,15 @@ Write(ViewData["Title"]);
             BeginContext(668, 27, true);
             WriteLiteral("\r\n        <p>\r\n            ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(695, 67, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e734239d186f4a278be0ecd95fb2bd81", async() => {
                 BeginContext(752, 6, true);
+=======
+            BeginContext(676, 67, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc26cfc17a6547dba65cd29a0f7067d5", async() => {
+                BeginContext(733, 6, true);
+>>>>>>> Stashed changes
                 WriteLiteral("Delete");
                 EndContext();
             }
@@ -157,8 +170,13 @@ Write(ViewData["Title"]);
                 BeginContext(818, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
+<<<<<<< Updated upstream
                 BeginContext(824, 44, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f5d8e8044e0f40158d593132802098f4", async() => {
+=======
+                BeginContext(799, 44, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "913c6412622f491aa9729a81b99947bc", async() => {
+>>>>>>> Stashed changes
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

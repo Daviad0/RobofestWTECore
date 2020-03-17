@@ -110,9 +110,15 @@ Write(ViewData["Title"]);
         Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key
         used in an authenticator app you should ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(614, 69, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ff8bda1d6a747f4bfadd20190ca2213", async() => {
                 BeginContext(649, 30, true);
+=======
+            BeginContext(597, 69, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "587aa1c79ebc43ab9c27d7e3dceda291", async() => {
+                BeginContext(632, 30, true);
+>>>>>>> Stashed changes
                 WriteLiteral("reset your authenticator keys.");
                 EndContext();
             }
@@ -132,10 +138,17 @@ Write(ViewData["Title"]);
             BeginContext(683, 33, true);
             WriteLiteral("\r\n    </p>\r\n</div>\r\n\r\n<div>\r\n    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(716, 127, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ccfafed1ff894422bc2f2514b1d2b51f", async() => {
                 BeginContext(755, 81, true);
                 WriteLiteral("\r\n        <button class=\"btn btn-danger\" type=\"submit\">Disable 2FA</button>\r\n    ");
+=======
+            BeginContext(694, 125, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c920d13991314b29a71c2ea8f68cc76b", async() => {
+                BeginContext(733, 79, true);
+                WriteLiteral("\n        <button class=\"btn btn-danger\" type=\"submit\">Disable 2FA</button>\n    ");
+>>>>>>> Stashed changes
                 EndContext();
             }
             );

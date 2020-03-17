@@ -112,9 +112,15 @@ Write(ViewData["Title"]);
         Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key
         used in an authenticator app you should ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(781, 69, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59836481964246c18816c2355138fa9d", async() => {
                 BeginContext(816, 30, true);
+=======
+            BeginContext(762, 69, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "415280b198284816a962cba242412ea5", async() => {
+                BeginContext(797, 30, true);
+>>>>>>> Stashed changes
                 WriteLiteral("reset your authenticator keys.");
                 EndContext();
             }
@@ -134,10 +140,17 @@ Write(ViewData["Title"]);
             BeginContext(850, 31, true);
             WriteLiteral("\r\n    </p>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(881, 139, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da6689c624654c56817a56e469a7274b", async() => {
                 BeginContext(920, 93, true);
                 WriteLiteral("\r\n        <button class=\"btn btn-danger\" type=\"submit\">Generate Recovery Codes</button>\r\n    ");
+=======
+            BeginContext(858, 137, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16e6f1996b1041f0bcaa7ce478823bf7", async() => {
+                BeginContext(897, 91, true);
+                WriteLiteral("\n        <button class=\"btn btn-danger\" type=\"submit\">Generate Recovery Codes</button>\n    ");
+>>>>>>> Stashed changes
                 EndContext();
             }
             );

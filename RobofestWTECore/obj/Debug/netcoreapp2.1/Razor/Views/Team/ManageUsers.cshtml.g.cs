@@ -69,9 +69,15 @@ using RobofestWTECore.Data;
             BeginContext(86, 4, true);
             WriteLiteral("    ");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(90, 8256, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68ea90fbab0e492ab9b0f270c69fda4d", async() => {
                 BeginContext(96, 453, true);
+=======
+            BeginContext(85, 8095, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8649abf8cd9f4bb1b2b514cee47d3f51", async() => {
+                BeginContext(91, 437, true);
+>>>>>>> Stashed changes
                 WriteLiteral(@"
         <h2>Volunteer & Student Management</h2>
 
@@ -660,8 +666,13 @@ WriteAttributeValue("", 8211, user.UserName, 8211, 14, false);
             BeginContext(8346, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(8348, 61, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f5927ed0786748eeaee942957cf47837", async() => {
+=======
+            BeginContext(8181, 61, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca1d5fa3e3034ffa8e64bc1cd96197d4", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -678,8 +689,13 @@ WriteAttributeValue("", 8211, user.UserName, 8211, 14, false);
             BeginContext(8409, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+<<<<<<< Updated upstream
             BeginContext(8411, 51, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab072094f2e4142a6ec96b2db7b5f9f", async() => {
+=======
+            BeginContext(8243, 51, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a7751d3175f4696bc0d94108ad48561", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
