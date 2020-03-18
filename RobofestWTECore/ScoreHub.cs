@@ -8,6 +8,7 @@ using RobofestWTE.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
+using RobofestWTECore.Models.ViewModels;
 
 namespace RobofestWTECore
 {
@@ -18,6 +19,7 @@ namespace RobofestWTECore
         private readonly IHubContext<ScoreHub> _hubContext;
         private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
+        private static StaticField[] Fields = new StaticField[6];
 
         public ScoreHub(ApplicationDbContext context, GameContext db, IHubContext<ScoreHub> hubContext, Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager2, RoleManager<IdentityRole> roleManager2)
         {
@@ -26,7 +28,6 @@ namespace RobofestWTECore
             _hubContext = hubContext;
             userManager = userManager2;
             roleManager = roleManager2;
-
         }
         public async Task SetupMatch(string Password, string UserName, int compid, int judges, int fieldstaff, int managers, int tech)
         {
@@ -517,6 +518,11 @@ namespace RobofestWTECore
             var teamnumbereach = teamnum.Split("-");
             var TeamID = (from t in db.StudentTeams where t.TeamNumberBranch.ToString() == teamnumbereach[0] && t.TeamNumberSpecific.ToString() == teamnumbereach[1] select t).FirstOrDefault();
             Clients.All.SendAsync("sendJudgesToPage", TeamID.TeamID);
+        }
+        public void EV3Connection(int fieldNum)
+        {
+            Fields[fieldNum - 1].FieldConnectionID = Context.ConnectionId;
+            Clients.Client(Context.ConnectionId).SendAsync("ev3ConnectionSuccessful");
         }
         public Task ThrowException()
         {
