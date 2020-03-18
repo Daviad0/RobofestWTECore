@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{B243CB96-E0BA-46CB-9123-FE435FB5CE30}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/ScoreHub.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RobofestWTECore/Views/Team/Presentation.cshtml">
     <Files>
       <File FileName="RobofestWTECore/Controllers/HomeController.cs" Line="55" Column="2" />
-      <File FileName="RobofestWTECore/Controllers/TeamController.cs" Line="14" Column="28" />
+      <File FileName="RobofestWTECore/Controllers/TeamController.cs" />
       <File FileName="RobofestWTECore/appsettings.json" />
       <File FileName="RobofestWTECore/RobofestWTECore.csproj" />
       <File FileName="RobofestWTECore/Views/Team/TeamMatches.cshtml" />
@@ -14,6 +14,9 @@
       <File FileName="RobofestWTECore/Views/Shared/_Layout.cshtml" />
       <File FileName="RobofestWTECore/Views/Team/TimerDemo.cshtml" />
       <File FileName="RobofestWTECore/ScoreHub.cs" Line="29" Column="1" />
+      <File FileName="RobofestWTECore/Views/Team/MatchManager.cshtml" Line="1" Column="1" />
+      <File FileName="RobofestWTECore/Views/Team/MatchKeeper.cshtml" Line="1394" Column="60" />
+      <File FileName="RobofestWTECore/Views/Team/Presentation.cshtml" Line="716" Column="65" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,7 +35,9 @@
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
-                <Node name="Team" expanded="True" />
+                <Node name="Team" expanded="True">
+                  <Node name="Presentation.cshtml" selected="True" />
+                </Node>
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="js" expanded="True" />
@@ -44,10 +49,12 @@
                   </Node>
                 </Node>
               </Node>
-              <Node name="ScoreHub.cs" selected="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
